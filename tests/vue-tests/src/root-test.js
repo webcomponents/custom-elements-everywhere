@@ -9,24 +9,28 @@ let Root = Vue.extend(Component);
 let app = document.createElement('div');
 app.id = 'app';
 document.body.appendChild(app);
+let scratch; // This will hold the actual element under test.
 
 describe('root', function() {
 
   beforeEach(function() {
-    app.innerHTML = `<div id="scratch"></div>`;
+    scratch = document.createElement('div');
+    scratch.id = 'scratch';
+    app.appendChild(scratch);
   });
 
   afterEach(function() {
     app.innerHTML = '';
+    scratch = null;
   });
 
   it('renders without problems', function() {
-    let root = new Root().$mount('#scratch').$el;
+    let root = new Root().$mount(scratch).$el;
     expect(root).toExist();
   });
 
   it('can display a Custom Element with children created during connectedCallback', function() {
-    let root = new Root().$mount('#scratch').$el;
+    let root = new Root().$mount(scratch).$el;
     let wc = app.querySelector('x-foo');
     expect(wc).toExist();
     let heading = wc.querySelector('h1');
