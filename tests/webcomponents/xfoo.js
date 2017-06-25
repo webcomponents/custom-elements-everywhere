@@ -1,6 +1,6 @@
 class XFoo extends HTMLElement {
   connectedCallback() {
-    console.log('x-foo connected');
+    this.innerHTML = `<h1>Hello from x-foo</h1>`;
   }
 }
 customElements.define('x-foo', XFoo);
