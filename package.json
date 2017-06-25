@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Compare how different frameworks handle Web Components.",
   "scripts": {
-    "test": "npm run test-preact && npm run test-react",
+    "install-all": "npm run install-preact && npm run install-react && npm run install-vue",
+    "install-preact": "cd tests/preact-tests && npm install",
+    "install-react": "cd tests/react-tests && npm install",
+    "install-vue": "cd tests/vue-tests && npm install",
+    "test": "npm run test-preact && npm run test-react && npm run test-vue",
     "test-preact": "cd tests/preact-tests && npm test",
-    "test-react": "cd tests/react-tests && npm test"
+    "test-react": "cd tests/react-tests && npm test",
+    "test-vue": "cd tests/vue-tests && npm test"
   },
   "repository": {
     "type": "git",

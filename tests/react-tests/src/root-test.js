@@ -4,7 +4,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 import expect from 'expect';
 import { Root } from './root';
 
-let app = null;
+let app;
 describe('root', function() {
 
   beforeEach(function() {
@@ -13,8 +13,7 @@ describe('root', function() {
   });
 
   afterEach(function() {
-    document.body.removeChild(app);
-    app = null;
+    app.innerHTML = '';
   });
 
   it('renders without problems', function() {
