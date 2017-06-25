@@ -1,10 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactTestUtils from 'react-dom/test-utils';
+import { h, render } from 'preact';
 import expect from 'expect';
 import { Root } from './root';
 
-let app = null;
+let app;
 describe('root', function() {
 
   beforeEach(function() {
@@ -13,18 +11,17 @@ describe('root', function() {
   });
 
   afterEach(function() {
-    document.body.removeChild(app);
-    app = null;
+    app.innerHTML = '';
   });
 
   it('renders without problems', function() {
-    let root = ReactDOM.render(<Root />, app);
+    let root = render(<Root />, app);
     expect(root).toExist();
   });
 
   it('can display a Custom Element with children created during connectedCallback', function() {
-    let root = ReactDOM.render(<Root />, app);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let root = render(<Root />, app);
+    let wc = app.querySelector('x-foo');
     expect(wc).toExist();
     let heading = wc.querySelector('h1');
     expect(heading).toExist();
