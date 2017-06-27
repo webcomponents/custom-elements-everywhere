@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = function (config) {
   config.set({
     browsers: [ 'Chrome' ], // run in Chrome
-    singleRun: false, // set this to false to leave the browser open
+    singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
       // { pattern: path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
@@ -25,7 +25,7 @@ module.exports = function (config) {
     webpack: { // kind of a copy of your webpack config
       devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.js', '.ts'],
         modules: [
           path.resolve(__dirname, '../webcomponents'),
           path.resolve(__dirname, './node_modules')
@@ -35,13 +35,13 @@ module.exports = function (config) {
         rules: [
           // Support for .ts files.
           {
-            test: /\.ts$/,
-            loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+            test: /\.js$/,
+            loaders: ['babel-loader'],
             exclude: /node_modules/
           },
           {
-            test: /\.js$/,
-            loaders: ['babel-loader'],
+            test: /\.ts$/,
+            loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
             exclude: /node_modules/
           }
         ]

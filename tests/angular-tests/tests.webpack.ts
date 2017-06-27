@@ -1,7 +1,7 @@
-import 'core-js/es6/reflect';
+import 'reflect-metadata/Reflect';
 import 'zone.js/dist/zone';
 import 'zone.js/dist/long-stack-trace-zone';
-import 'zone.js/dist/proxy.js';
+import 'zone.js/dist/proxy';
 import 'zone.js/dist/sync-test';
 import 'zone.js/dist/mocha-patch';
 import 'zone.js/dist/async-test';
@@ -24,7 +24,7 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./src', true, /-test\.ts$/);
+const context = require.context('./src', true, /-test\.js$/);
 // And load the modules.
 context.keys().map(context);
 // Finally, start Karma to run the tests.

@@ -17,8 +17,14 @@ describe('Root', function() {
     let fixture = TestBed.createComponent(Root);
     fixture.detectChanges();
     expect(fixture).toExist();
-    // let heading = fixture.debugElement.query(By.css('h1'));
-    // expect(heading.textContent).toEqual('Hello from Angular!');
+  });
+
+  it('should have the correct heading text', function() {
+    let fixture = TestBed.createComponent(Root);
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement;
+    let heading = el.querySelector('h1');
+    expect(heading.textContent).toEqual('Hello from Angular!');
   });
 
 });
