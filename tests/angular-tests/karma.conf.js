@@ -7,8 +7,8 @@ module.exports = function (config) {
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
-      // { pattern: path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
-      // { pattern: path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
+      { pattern: path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
+      { pattern: path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
 
       // RxJs.
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },

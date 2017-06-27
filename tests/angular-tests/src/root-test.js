@@ -23,8 +23,10 @@ describe('Root', function() {
     let fixture = TestBed.createComponent(Root);
     fixture.detectChanges();
     let el = fixture.debugElement.nativeElement;
-    let heading = el.querySelector('h1');
-    expect(heading.textContent).toEqual('Hello from Angular!');
+    let wc = el.querySelector('x-foo');
+    expect(wc).toExist();
+    let heading = wc.querySelector('h1');
+    expect(heading.textContent).toEqual('Hello from x-foo');
   });
 
 });

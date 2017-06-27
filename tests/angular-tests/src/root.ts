@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import 'xfoo';
 
 @Component({
-  template: `<h1>Hello from Angular!</h1>`
+  template: `
+    <div>
+      <x-foo></x-foo>
+    </div>
+  `
 })
 export class Root {
 }

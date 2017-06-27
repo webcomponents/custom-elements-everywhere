@@ -1,5 +1,6 @@
 import 'reflect-metadata/Reflect';
 import 'zone.js/dist/zone';
+import 'zone.js/dist/webapis-shadydom'; // https://github.com/angular/zone.js/pull/784
 import 'zone.js/dist/long-stack-trace-zone';
 import 'zone.js/dist/proxy';
 import 'zone.js/dist/sync-test';
