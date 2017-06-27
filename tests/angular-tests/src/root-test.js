@@ -13,7 +13,7 @@ describe('Root', function() {
     });
   });
 
-  it('should have an url', function() {
+  it('should exist', function() {
     let fixture = TestBed.createComponent(Root);
     fixture.detectChanges();
     expect(fixture).toExist();
