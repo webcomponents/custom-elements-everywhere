@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome' ], // run in Chrome
+    browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
@@ -19,7 +19,7 @@ module.exports = function (config) {
       devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
-          path.resolve(__dirname, '../webcomponents'),
+          path.resolve(__dirname, '../webcomponents/src'),
           path.resolve(__dirname, './node_modules')
         ]
       },
