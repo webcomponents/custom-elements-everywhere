@@ -143,8 +143,12 @@ describe('React', function() {
 
   });
 
-  // it('it can listen to events from a Custom Element', function() {
+  describe('events', function() {
 
-  // });
+    it('it can listen to events from a Custom Element', function() {
+
+    });
+
+  });
 
 });
