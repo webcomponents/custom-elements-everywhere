@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import 'ce-without-children';
 import 'ce-with-children';
+import 'ce-with-properties';
 
 export class ComponentWithoutChildren extends Component {
   render() {
@@ -62,6 +63,54 @@ export class ComponentWithDifferentViews extends Component {
         ) : (
           <div ref="dummy">Dummy view</div>
         )}
+      </div>
+    );
+  }
+}
+
+export class ComponentWithProperties extends Component {
+  render () {
+    const data = {
+      bool: true,
+      num: 42,
+      str: 'React',
+      arr: ['R', 'e', 'a', 'c', 't'],
+      obj: { org: 'facebook', repo: 'react' }
+    };
+    return (
+      <div>
+        <ce-with-properties ref="wc"
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+        ></ce-with-properties>
+      </div>
+    );
+  }
+}
+
+export class ComponentWithUnregistered extends Component {
+  render () {
+    const data = {
+      bool: true,
+      num: 42,
+      str: 'React',
+      arr: ['R', 'e', 'a', 'c', 't'],
+      obj: { org: 'facebook', repo: 'react' }
+    };
+    return (
+      <div>
+        {/* This element doesn't actually exist.
+        It's used to test unupgraded behavior. */}
+        <ce-unregistered ref="wc"
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+        ></ce-unregistered>
       </div>
     );
   }
