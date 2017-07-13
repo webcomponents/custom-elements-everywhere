@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>React + Custom Elements (no Shadow DOM)</title>
+    <style type="text/css">html,body{font-family:Arial,sans-serif;font-size:1rem;margin:0;padding:0;}body{padding:10px 40px;}h1{margin-bottom:0;}h2{margin-top:0;margin-bottom:0;color:#999;}table{width:100%;margin-top:20px;margin-bottom:20px;table-layout:fixed;}tr.header{background:#ddd;font-weight:bold;border-bottom:none;}td{padding:7px;border-top:none;border-left:1px black solid;border-bottom:1px black solid;border-right:none;word-break:break-all;word-wrap:break-word;}tr.pass td{color:#003b07;background:#86e191;}tr.skip td{color:#7d3a00;background:#ffd24a;}tr.fail td{color:#5e0e00;background:#ff9c8a;}tr:first-child td{border-top:1px black solid;}td:last-child{border-right:1px black solid;}tr.overview{font-weight:bold;color:#777;}tr.overview td{padding-bottom:0px;border-bottom:none;}tr.system-out td{color:#777;}tr.system-errors td{color:#f00;}hr{height:2px;margin:30px 0;background:#000;border:none;}section{margin-top:40px;}h3{margin:6px 0;}.overview{color:#333;font-weight:bold;}.system-out{margin:0.4rem 0;}.system-errors{color:#a94442}.spec{padding:0.8rem;margin:0.3rem 0;}.spec--pass{color:#3c763d;background-color:#dff0d8;border:1px solid #d6e9c6;}.spec--skip{color:#8a6d3b;background-color:#fcf8e3;border:1px solid #faebcc;}.spec--fail{color:#a94442;background-color:#f2dede;border:1px solid #ebccd1;}.spec--group{color:#636363;background-color:#f0f0f0;border:1px solid #e6e6e6;margin:0;}.spec--group:not(:first-of-type){margin:20px 0 0 0;}.spec__title{display:inline;}.spec__suite{display:inline;}.spec__descrip{font-weight:normal;}.spec__status{float:right;}.spec__log{padding-left: 2.3rem;}.hidden{display:none;}body.compact .spec p{margin-top:0;margin-bottom:0.5rem;}body.compact .spec,body.compact tr,body.compact .overview,body.compact .system-out,body.compact .system-errors{font-size:0.85rem;}body.compact .spec{padding:0.3rem 0.5rem;}body.compact section{margin-top:30px;}</style>
+  </head>
+  <body class="compact">
+    <h1>React + Custom Elements (no Shadow DOM)</h1>
+    <section>
+      <header class="overview">
+        <div class="browser">Browser: Chrome 59.0.3071 (Mac OS X 10.12.5)</div>
+        <div class="timestamp">Timestamp: 7/13/2017, 2:44:12 PM</div>
+        <p class="results">
+          15 tests / 
+          0 errors / 
+          9 failures / 
+          0 skipped / 
+          runtime: 0.085s
+        </p>
+      </header>
+      <div class="spec spec--group">
+        <h3 class="spec__header">no children</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">no children</p>
+            <em class="spec__descrip">can display a Custom Element with no children</em>
+          </div>
+          <div class="spec__status">Passed in 0.032s</div>
+        </h3>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">with children</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback</em>
+          </div>
+          <div class="spec__status">Passed in 0.003s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and render additional children inside of it</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected null to exist<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toExist (webpack:///~/expect/lib/Expectation.js:52:0 &lt;- tests.webpack.js:6663:28)<br />    at expectHasChildren (webpack:///src/ce-components-tests.js:45:15 &lt;- tests.webpack.js:12234:31)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:63:4 &lt;- tests.webpack.js:12252:5)<br /></p>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and handle hiding and showing the element</em>
+          </div>
+          <div class="spec__status">Passed in 0.014s</div>
+        </h3>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">attributes and properties</h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to be true<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toBe (webpack:///~/expect/lib/Expectation.js:66:0 &lt;- tests.webpack.js:6677:28)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:86:20 &lt;- tests.webpack.js:12274:36)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal 42<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:92:19 &lt;- tests.webpack.js:12280:35)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal 'React'<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:98:19 &lt;- tests.webpack.js:12286:35)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:104:19 &lt;- tests.webpack.js:12292:35)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal { org: 'facebook', repo: 'react' }<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:110:19 &lt;- tests.webpack.js:12298:35)<br /></p>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.002s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected 'R,e,a,c,t' to equal '["R","e","a","c","t"]'<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:134:35 &lt;- tests.webpack.js:12322:51)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected '[object Object]' to equal '{"org":"facebook","repo":"react"}'<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:140:35 &lt;- tests.webpack.js:12328:51)<br /></p>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">events</h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to events from a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected 'true' to equal 'false'<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:153:31 &lt;- tests.webpack.js:12340:47)<br /></p>
+      </div>
+    </section>
+    <section>
+      <header class="overview">
+        <div class="browser">Browser: Firefox 54.0.0 (Mac OS X 10.12.0)</div>
+        <div class="timestamp">Timestamp: 7/13/2017, 2:44:15 PM</div>
+        <p class="results">
+          15 tests / 
+          0 errors / 
+          9 failures / 
+          0 skipped / 
+          runtime: 0.099s
+        </p>
+      </header>
+      <div class="spec spec--group">
+        <h3 class="spec__header">no children</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">no children</p>
+            <em class="spec__descrip">can display a Custom Element with no children</em>
+          </div>
+          <div class="spec__status">Passed in 0.019s</div>
+        </h3>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">with children</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback</em>
+          </div>
+          <div class="spec__status">Passed in 0.009s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and render additional children inside of it</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected null to exist<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toExist@webpack:///~/expect/lib/Expectation.js:52:0 &lt;- tests.webpack.js:6663:8<br />expectHasChildren@webpack:///src/ce-components-tests.js:45:4 &lt;- tests.webpack.js:12234:6<br />@webpack:///src/ce-components-tests.js:63:4 &lt;- tests.webpack.js:12252:5<br /><br /></p>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">with children</p>
+            <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and handle hiding and showing the element</em>
+          </div>
+          <div class="spec__status">Passed in 0.016s</div>
+        </h3>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">attributes and properties</h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to be true<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toBe@webpack:///~/expect/lib/Expectation.js:66:0 &lt;- tests.webpack.js:6677:8<br />@webpack:///src/ce-components-tests.js:86:4 &lt;- tests.webpack.js:12274:6<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal 42<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:92:4 &lt;- tests.webpack.js:12280:6<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal 'React'<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:98:4 &lt;- tests.webpack.js:12286:6<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:104:4 &lt;- tests.webpack.js:12292:6<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal { org: 'facebook', repo: 'react' }<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:110:4 &lt;- tests.webpack.js:12298:6<br /><br /></p>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.004s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.007s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected 'R,e,a,c,t' to equal '["R","e","a","c","t"]'<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:134:4 &lt;- tests.webpack.js:12322:6<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected '[object Object]' to equal '{"org":"facebook","repo":"react"}'<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:140:4 &lt;- tests.webpack.js:12328:6<br /><br /></p>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">events</h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to events from a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected 'true' to equal 'false'<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:4711:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:6692:10<br />@webpack:///src/ce-components-tests.js:153:4 &lt;- tests.webpack.js:12340:6<br /><br /></p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-event';
 
 export class ComponentWithoutChildren extends Component {
   render() {
@@ -111,6 +112,26 @@ export class ComponentWithUnregistered extends Component {
           arr={data.arr}
           obj={data.obj}
         ></ce-unregistered>
+      </div>
+    );
+  }
+}
+
+export class ComponentWithEvent extends Component {
+  constructor() {
+    super();
+    this.state = { wasClicked: false };
+  }
+  componentDidMount() {
+    this.refs['wc'].addEventListener('test-event', e => {
+      this.setState({ wasClicked: !this.state.wasClicked });
+    });
+  }
+  render() {
+    return (
+      <div>
+        <div ref="toggle">{this.state.wasClicked.toString()}</div>
+        <ce-with-event ref="wc"></ce-with-event>
       </div>
     );
   }
