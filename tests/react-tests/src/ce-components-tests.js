@@ -30,17 +30,14 @@ afterEach(function() {
 });
 
 describe('no children', function() {
-
   it('can display a Custom Element with no children', function() {
     let root = ReactDOM.render(<ComponentWithoutChildren />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expect(wc).toExist();
   });
-
 });
 
 describe('with children', function() {
-
   function expectHasChildren(wc) {
     expect(wc).toExist();
     let heading = wc.querySelector('h1');
@@ -75,11 +72,9 @@ describe('with children', function() {
     wc = ReactDOM.findDOMNode(root.refs.wc);
     expectHasChildren(wc);
   });
-
 });
 
 describe('attributes and properties', function() {
-
   it('will set boolean properties on a Custom Element that has already been defined and upgraded', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
@@ -139,11 +134,9 @@ describe('attributes and properties', function() {
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expect(wc.getAttribute('obj')).toEqual(JSON.stringify({ org: 'facebook', repo: 'react' }));
   });
-
 });
 
 describe('events', function() {
-
   it('can listen to events from a Custom Element', function() {
     let root = ReactDOM.render(<ComponentWithEvent />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
@@ -152,5 +145,4 @@ describe('events', function() {
     wc.click();
     expect(toggle.textContent).toEqual('false');
   });
-
 });

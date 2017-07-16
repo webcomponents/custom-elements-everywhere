@@ -22,7 +22,7 @@ module.exports = function (config) {
       useCompactStyle: true
     },
     webpack: { // kind of a copy of your webpack config
-      devtool: 'inline-source-map', // just do inline source maps instead of the default
+      // devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
           path.resolve(__dirname, '../webcomponents/src'),

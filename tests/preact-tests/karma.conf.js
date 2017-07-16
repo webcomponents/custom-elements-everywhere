@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome' ], // run in Chrome
+    browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
@@ -14,12 +14,18 @@ module.exports = function (config) {
     preprocessors: {
       'tests.webpack.js': [ 'webpack', 'sourcemap' ] // preprocess with webpack and our sourcemap loader
     },
-    reporters: [ 'dots' ], // report results in this format
+    reporters: [ 'dots', 'html' ], // report results in these formats
+    htmlReporter: {
+      outputFile: path.resolve(__dirname, './out/test-results.html'),
+      pageTitle: 'Preact + Custom Elements (no Shadow DOM)',
+      groupSuites: true,
+      useCompactStyle: true
+    },
     webpack: { // kind of a copy of your webpack config
-      // devtool: 'inline-source-map', // just do inline source maps instead of the default
+      devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
-          path.resolve(__dirname, '../webcomponents'),
+          path.resolve(__dirname, '../webcomponents/src'),
           path.resolve(__dirname, './node_modules')
         ]
       },

@@ -21,13 +21,13 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: [ 'dots' ], // report results in this format
+    reporters: [ 'dots' ], // report results in these formats
     webpack: { // kind of a copy of your webpack config
       // devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         extensions: ['.js', '.ts'],
         modules: [
-          path.resolve(__dirname, '../webcomponents'),
+          path.resolve(__dirname, '../webcomponents/src'),
           path.resolve(__dirname, './node_modules')
         ]
       },

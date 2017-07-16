@@ -41,7 +41,7 @@ export class ComponentWithChildrenRerender extends Component {
     const { count } = this.state;
     return (
       <div>
-        <ce-with-children>{count}</ce-with-children>
+        <ce-with-children ref="wc">{count}</ce-with-children>
       </div>
     );
   }
