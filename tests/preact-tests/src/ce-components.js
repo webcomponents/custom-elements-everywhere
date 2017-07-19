@@ -90,47 +90,46 @@ export class ComponentWithProperties extends Component {
   }
 }
 
-// export class ComponentWithUnregistered extends Component {
-//   render () {
-//     const data = {
-//       bool: true,
-//       num: 42,
-//       str: 'React',
-//       arr: ['R', 'e', 'a', 'c', 't'],
-//       obj: { org: 'facebook', repo: 'react' }
-//     };
-//     return (
-//       <div>
-//         {/* This element doesn't actually exist.
-//         It's used to test unupgraded behavior. */}
-//         <ce-unregistered id="wc"
-//           bool={data.bool}
-//           num={data.num}
-//           str={data.str}
-//           arr={data.arr}
-//           obj={data.obj}
-//         ></ce-unregistered>
-//       </div>
-//     );
-//   }
-// }
+export class ComponentWithUnregistered extends Component {
+  render () {
+    const data = {
+      bool: true,
+      num: 42,
+      str: 'Preact',
+      arr: ['P', 'r', 'e', 'a', 'c', 't'],
+      obj: { org: 'developit', repo: 'preact' }
+    };
+    return (
+      <div>
+        {/* This element doesn't actually exist.
+        It's used to test unupgraded behavior. */}
+        <ce-unregistered id="wc"
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+        ></ce-unregistered>
+      </div>
+    );
+  }
+}
 
-// export class ComponentWithEvent extends Component {
-//   constructor() {
-//     super();
-//     this.state = { wasClicked: false };
-//   }
-//   componentDidMount() {
-//     this.refs['wc'].addEventListener('test-event', e => {
-//       this.setState({ wasClicked: !this.state.wasClicked });
-//     });
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <div id="toggle">{this.state.wasClicked.toString()}</div>
-//         <ce-with-event id="wc"></ce-with-event>
-//       </div>
-//     );
-//   }
-// }
+export class ComponentWithEvent extends Component {
+  constructor() {
+    super();
+    this.state = { wasClicked: false };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e) {
+    this.setState({ wasClicked: !this.state.wasClicked });
+  }
+  render() {
+    return (
+      <div>
+        <div id="toggle">{this.state.wasClicked.toString()}</div>
+        <ce-with-event id="wc" onClick={this.handleClick}></ce-with-event>
+      </div>
+    );
+  }
+}

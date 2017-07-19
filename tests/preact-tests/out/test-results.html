@@ -10,13 +10,13 @@
     <section>
       <header class="overview">
         <div class="browser">Browser: Chrome 59.0.3071 (Mac OS X 10.12.5)</div>
-        <div class="timestamp">Timestamp: 7/15/2017, 9:10:45 AM</div>
+        <div class="timestamp">Timestamp: 7/18/2017, 10:45:23 AM</div>
         <p class="results">
-          5 tests / 
+          15 tests / 
           0 errors / 
-          0 failures / 
+          2 failures / 
           0 skipped / 
-          runtime: 0.03s
+          runtime: 0.023s
         </p>
       </header>
       <div class="spec spec--group">
@@ -40,7 +40,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children created during connectedCallback</em>
           </div>
-          <div class="spec__status">Passed in 0.002s</div>
+          <div class="spec__status">Passed in 0.004s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -49,7 +49,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and render additional children inside of it</em>
           </div>
-          <div class="spec__status">Passed in 0.019s</div>
+          <div class="spec__status">Passed in 0.002s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -70,20 +70,115 @@
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will set boolean properties on a Custom Element that has already been defined and upgraded</em>
           </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
           <div class="spec__status">Passed in 0.002s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal [ 'P', 'r', 'e', 'a', 'c', 't' ]<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:102:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:201:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:133:19 &lt;- tests.webpack.js:1647:60)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Error: Expected undefined to equal { org: 'developit', repo: 'preact' }<br />    at assert (webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:102:9)<br />    at Expectation.toEqual (webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:201:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/ce-components-tests.js:139:19 &lt;- tests.webpack.js:1653:60)<br /></p>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">events</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to events from a Custom Element</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
         </h3>
       </div>
     </section>
     <section>
       <header class="overview">
         <div class="browser">Browser: Firefox 54.0.0 (Mac OS X 10.12.0)</div>
-        <div class="timestamp">Timestamp: 7/15/2017, 9:10:47 AM</div>
+        <div class="timestamp">Timestamp: 7/18/2017, 10:45:25 AM</div>
         <p class="results">
-          5 tests / 
+          15 tests / 
           0 errors / 
-          0 failures / 
+          2 failures / 
           0 skipped / 
-          runtime: 0.024s
+          runtime: 0.03s
         </p>
       </header>
       <div class="spec spec--group">
@@ -107,7 +202,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children created during connectedCallback</em>
           </div>
-          <div class="spec__status">Passed in 0.007s</div>
+          <div class="spec__status">Passed in 0.003s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -116,7 +211,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and render additional children inside of it</em>
           </div>
-          <div class="spec__status">Passed in 0.003s</div>
+          <div class="spec__status">Passed in 0.002s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -125,7 +220,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children created during connectedCallback and handle hiding and showing the element</em>
           </div>
-          <div class="spec__status">Passed in 0.008s</div>
+          <div class="spec__status">Passed in 0.005s</div>
         </h3>
       </div>
       <div class="spec spec--group">
@@ -136,6 +231,101 @@
           <div class="spec__title">
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will set boolean properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.002s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.003s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set boolean attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set numeric attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set string attributes on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Passed in 0.001s</div>
+        </h3>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set array properties on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal [ 'P', 'r', 'e', 'a', 'c', 't' ]<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:102:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:201:10<br />@webpack:///src/ce-components-tests.js:133:4 &lt;- tests.webpack.js:1647:5<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">attributes and properties</p>
+            <em class="spec__descrip">will set object properties on a Custom Element that has not already been defined and upgraded</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">Expected undefined to equal { org: 'developit', repo: 'preact' }<br />assert@webpack:///~/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:102:9<br />toEqual@webpack:///~/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:201:10<br />@webpack:///src/ce-components-tests.js:139:4 &lt;- tests.webpack.js:1653:5<br /><br /></p>
+      </div>
+      <div class="spec spec--group">
+        <h3 class="spec__header">events</h3>
+      </div>
+      <div class="spec spec--pass" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to events from a Custom Element</em>
           </div>
           <div class="spec__status">Passed in 0.002s</div>
         </h3>
