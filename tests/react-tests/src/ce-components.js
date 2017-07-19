@@ -31,7 +31,7 @@ export class ComponentWithChildrenRerender extends Component {
     this.state = { count: 1 };
   }
   componentDidMount () {
-    this.interval = setTimeout(() =>
+    this.interval = setInterval(() =>
       this.setState({count: this.state.count += 1}), 1000);
   }
   componentWillUnmount () {

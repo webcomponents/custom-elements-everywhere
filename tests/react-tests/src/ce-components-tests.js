@@ -143,6 +143,6 @@ describe('events', function() {
     let toggle = ReactDOM.findDOMNode(root.refs.toggle);
     expect(toggle.textContent).toEqual('false');
     wc.click();
-    expect(toggle.textContent).toEqual('false');
+    expect(toggle.textContent).toEqual('true');
   });
 });

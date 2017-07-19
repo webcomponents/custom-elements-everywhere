@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import 'ce-without-children';
 import 'ce-with-children';
-// import 'ce-with-properties';
+import 'ce-with-properties';
+import 'ce-with-event';
 
-const ComponentWithoutChildren = Vue.component('component-without-children', {
+export const ComponentWithoutChildren = Vue.extend({
   template: `
     <div>
       <ce-without-children id="wc"></ce-without-children>
@@ -11,7 +12,7 @@ const ComponentWithoutChildren = Vue.component('component-without-children', {
   `
 });
 
-const ComponentWithChildren = Vue.component('component-with-children', {
+export const ComponentWithChildren = Vue.extend({
   template: `
     <div>
       <ce-with-children id="wc"></ce-with-children>
@@ -19,118 +20,107 @@ const ComponentWithChildren = Vue.component('component-with-children', {
   `
 });
 
-// const ComponentWithChildrenRerender = Vue.component({
-//   constructor () {
-//     super();
-//     this.state = { count: 1 };
-//   }
-//   componentDidMount () {
-//     this.interval = setTimeout(() =>
-//       this.setState({count: this.state.count += 1}), 1000);
-//   }
-//   componentWillUnmount () {
-//     clearInterval(this.interval);
-//   }
-//   render () {
-//     const { count } = this.state;
-//     return (
-//       <div>
-//         <ce-with-children id="wc">{count}</ce-with-children>
-//       </div>
-//     );
-//   }
-// });
+export const ComponentWithChildrenRerender = Vue.extend({
+  template: `
+    <div>
+      <ce-with-children id="wc">{{count}}</ce-with-children>
+    </div>
+  `,
+  data: function() {
+    return {
+      count: 1
+    }
+  },
+  mounted: function() {
+    this.interval = setInterval(() => this.count += 1, 1000);
+  },
+  destroyed: function() {
+    clearInterval(this.interval);
+  }
+});
 
-// export class ComponentWithDifferentViews extends Component {
-//   constructor () {
-//     super();
-//     this.state = { showWC: true };
-//   }
-//   toggle() {
-//     this.setState({ showWC: !this.state.showWC });
-//   }
-//   render () {
-//     const { showWC } = this.state;
-//     return (
-//       <div>
-//         {showWC ? (
-//           <ce-with-children id="wc"></ce-with-children>
-//         ) : (
-//           <div id="dummy">Dummy view</div>
-//         )}
-//       </div>
-//     );
-//   }
-// }
+export const ComponentWithDifferentViews = Vue.extend({
+  template: `
+    <div>
+      <ce-with-children id="wc" v-if="showWC"></ce-with-children>
+      <div id="dummy" v-else>Dummy view</div>
+    </div>
+  `,
+  data: function() {
+    return {
+      showWC: true
+    }
+  },
+  methods: {
+    toggle: function() {
+      this.showWC = !this.showWC;
+    }
+  }
+});
 
-// export class ComponentWithProperties extends Component {
-//   render () {
-//     const data = {
-//       bool: true,
-//       num: 42,
-//       str: 'Preact',
-//       arr: ['P', 'r', 'e', 'a', 'c', 't'],
-//       obj: { org: 'developit', repo: 'preact' }
-//     };
-//     return (
-//       <div>
-//         <ce-with-properties id="wc"
-//           bool={data.bool}
-//           num={data.num}
-//           str={data.str}
-//           arr={data.arr}
-//           obj={data.obj}
-//         ></ce-with-properties>
-//       </div>
-//     );
-//   }
-// }
+export const ComponentWithProperties = Vue.extend({
+  template: `
+    <div>
+      <ce-with-properties id="wc"
+        :bool.prop="bool"
+        :num.prop="num"
+        :str.prop="str"
+        :arr.prop="arr"
+        :obj.prop="obj"
+      ></ce-with-properties>
+    </div>
+  `,
+  data: function() {
+    return {
+      bool: true,
+      num: 42,
+      str: 'Vue',
+      arr: ['V', 'u', 'e'],
+      obj: { org: 'vuejs', repo: 'vue' }
+    }
+  }
+});
 
-// export class ComponentWithUnregistered extends Component {
-//   render () {
-//     const data = {
-//       bool: true,
-//       num: 42,
-//       str: 'Preact',
-//       arr: ['P', 'r', 'e', 'a', 'c', 't'],
-//       obj: { org: 'developit', repo: 'preact' }
-//     };
-//     return (
-//       <div>
-//         {/* This element doesn't actually exist.
-//         It's used to test unupgraded behavior. */}
-//         <ce-unregistered id="wc"
-//           bool={data.bool}
-//           num={data.num}
-//           str={data.str}
-//           arr={data.arr}
-//           obj={data.obj}
-//         ></ce-unregistered>
-//       </div>
-//     );
-//   }
-// }
+export const ComponentWithUnregistered = Vue.extend({
+  template: `
+    <div>
+      <!-- This element doesn't actually exist.
+      It's used to test unupgraded behavior. -->
+      <ce-unregistered id="wc"
+        :bool="bool"
+        :num="num"
+        :str="str"
+        :arr.prop="arr"
+        :obj.prop="obj"
+      ></ce-unregistered>
+    </div>
+  `,
+  data: function() {
+    return {
+      bool: true,
+      num: 42,
+      str: 'Vue',
+      arr: ['V', 'u', 'e'],
+      obj: { org: 'vuejs', repo: 'vue' }
+    }
+  }
+});
 
-// export class ComponentWithEvent extends Component {
-//   constructor() {
-//     super();
-//     this.state = { wasClicked: false };
-//     this.handleClick = this.handleClick.bind(this);
-//   }
-//   handleClick(e) {
-//     this.setState({ wasClicked: !this.state.wasClicked });
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <div id="toggle">{this.state.wasClicked.toString()}</div>
-//         <ce-with-event id="wc" onClick={this.handleClick}></ce-with-event>
-//       </div>
-//     );
-//   }
-// }
-
-export {
-  ComponentWithoutChildren,
-  ComponentWithChildren
-};
+export const ComponentWithEvent = Vue.extend({
+  template: `
+    <div>
+      <div id="toggle">{{wasClicked}}</div>
+      <ce-with-event id="wc" v-on:test-event="handleTestEvent"></ce-with-event>
+    </div>
+  `,
+  data: function() {
+    return {
+      wasClicked: false
+    }
+  },
+  methods: {
+    handleTestEvent: function(event) {
+      this.wasClicked = !this.wasClicked;
+    }
+  }
+});

@@ -1,7 +1,12 @@
 import Vue from 'vue';
 import {
   ComponentWithoutChildren,
-  ComponentWithChildren
+  ComponentWithChildren,
+  ComponentWithChildrenRerender,
+  ComponentWithDifferentViews,
+  ComponentWithProperties,
+  ComponentWithUnregistered,
+  ComponentWithEvent
 } from './ce-components';
 import expect from 'expect';
 
@@ -47,101 +52,100 @@ describe('with children', function() {
     expectHasChildren(wc);
   });
 
-  // it('can display a Custom Element with children created during connectedCallback and render additional children inside of it', function() {
-  //   let root = render(<ComponentWithChildrenRerender />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expectHasChildren(wc);
-  // });
+  it('can display a Custom Element with children created during connectedCallback and render additional children inside of it', function() {
+    let root = new ComponentWithChildrenRerender().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expectHasChildren(wc);
+  });
 
-  // it('can display a Custom Element with children created during connectedCallback and handle hiding and showing the element', function() {
-  //   let root = render(<ComponentWithDifferentViews />, scratch);
-  //   let component = root._component;
-  //   let wc = root.querySelector('#wc');
-  //   expectHasChildren(wc);
-  //   component.toggle();
-  //   component.forceUpdate();
-  //   let dummy = root.querySelector('#dummy');
-  //   expect(dummy).toExist();
-  //   expect(dummy.textContent).toEqual('Dummy view');
-  //   component.toggle();
-  //   component.forceUpdate();
-  //   wc = root.querySelector('#wc');
-  //   expectHasChildren(wc);
-  // });
+  it('can display a Custom Element with children created during connectedCallback and handle hiding and showing the element', async function() {
+    let vm = new ComponentWithDifferentViews().$mount(scratch);
+    let root = vm.$el;
+    let wc = root.querySelector('#wc');
+    expectHasChildren(wc);
+    vm.toggle();
+    await vm.$nextTick();
+    let dummy = root.querySelector('#dummy');
+    expect(dummy).toExist();
+    expect(dummy.textContent).toEqual('Dummy view');
+    vm.toggle();
+    await vm.$nextTick();
+    wc = root.querySelector('#wc');
+    expectHasChildren(wc);
+  });
 });
 
-// describe('attributes and properties', function() {
-//   it('will set boolean properties on a Custom Element that has already been defined and upgraded', function() {
-//     let root = render(<ComponentWithProperties />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.bool).toBe(true);
-//   });
+describe('attributes and properties', function() {
+  it('will set boolean properties on a Custom Element that has already been defined and upgraded', function() {
+    let root = new ComponentWithProperties().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.bool).toBe(true);
+  });
 
-//   it('will set numeric properties on a Custom Element that has already been defined and upgraded', function() {
-//     let root = render(<ComponentWithProperties />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.num).toEqual(42);
-//   });
+  it('will set numeric properties on a Custom Element that has already been defined and upgraded', function() {
+    let root = new ComponentWithProperties().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.num).toEqual(42);
+  });
 
-//   it('will set string properties on a Custom Element that has already been defined and upgraded', function() {
-//     let root = render(<ComponentWithProperties />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.str).toEqual('Preact');
-//   });
+  it('will set string properties on a Custom Element that has already been defined and upgraded', function() {
+    let root = new ComponentWithProperties().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.str).toEqual('Vue');
+  });
 
-//   it('will set array properties on a Custom Element that has already been defined and upgraded', function() {
-//     let root = render(<ComponentWithProperties />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.arr).toEqual(['P', 'r', 'e', 'a', 'c', 't']);
-//   });
+  it('will set array properties on a Custom Element that has already been defined and upgraded', function() {
+    let root = new ComponentWithProperties().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.arr).toEqual(['V', 'u', 'e']);
+  });
 
-//   it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
-//     let root = render(<ComponentWithProperties />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.obj).toEqual({ org: 'developit', repo: 'preact' });
-//   });
+  it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
+    let root = new ComponentWithProperties().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.obj).toEqual({ org: 'vuejs', repo: 'vue' });
+  });
 
-//   it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
-//     let root = render(<ComponentWithUnregistered />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.hasAttribute('bool')).toBe(true);
-//   });
+  it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let root = new ComponentWithUnregistered().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.hasAttribute('bool')).toBe(true);
+  });
 
-//   it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
-//     let root = render(<ComponentWithUnregistered />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.getAttribute('num')).toEqual('42');
-//   });
+  it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let root = new ComponentWithUnregistered().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.getAttribute('num')).toEqual('42');
+  });
 
-//   it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
-//     let root = render(<ComponentWithUnregistered />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.getAttribute('str')).toEqual('Preact');
-//   });
+  it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let root = new ComponentWithUnregistered().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.getAttribute('str')).toEqual('Vue');
+  });
 
-//   // Related:
-//   // https://github.com/developit/preact/issues/678
-//   // https://github.com/developit/preact/pull/511
-//   it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
-//     let root = render(<ComponentWithUnregistered />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.arr).toEqual(['P', 'r', 'e', 'a', 'c', 't']);
-//   });
+  it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
+    let root = new ComponentWithUnregistered().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.arr).toEqual(['V', 'u', 'e']);
+  });
 
-//   it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
-//     let root = render(<ComponentWithUnregistered />, scratch);
-//     let wc = root.querySelector('#wc');
-//     expect(wc.obj).toEqual({ org: 'developit', repo: 'preact' });
-//   });
-// });
+  it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
+    let root = new ComponentWithUnregistered().$mount(scratch).$el;
+    let wc = root.querySelector('#wc');
+    expect(wc.obj).toEqual({ org: 'vuejs', repo: 'vue' });
+  });
+});
 
-// describe('events', function() {
-//   it('can listen to events from a Custom Element', function() {
-//     let root = render(<ComponentWithEvent />, scratch);
-//     let wc = root.querySelector('#wc');
-//     let toggle = root.querySelector('#toggle');
-//     expect(toggle.textContent).toEqual('false');
-//     wc.click();
-//     expect(toggle.textContent).toEqual('false');
-//   });
-// });
+describe('events', function() {
+  it('can listen to events from a Custom Element', async function() {
+    let vm = new ComponentWithEvent().$mount(scratch);
+    let root = vm.$el;
+    let wc = root.querySelector('#wc');
+    let toggle = root.querySelector('#toggle');
+    expect(toggle.textContent).toEqual('false');
+    wc.click();
+    await vm.$nextTick();
+    expect(toggle.textContent).toEqual('true');
+  });
+});

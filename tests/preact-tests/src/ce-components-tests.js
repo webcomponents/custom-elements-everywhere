@@ -147,6 +147,6 @@ describe('events', function() {
     let toggle = root.querySelector('#toggle');
     expect(toggle.textContent).toEqual('false');
     wc.click();
-    expect(toggle.textContent).toEqual('false');
+    expect(toggle.textContent).toEqual('true');
   });
 });
