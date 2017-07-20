@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome' ], // run in Chrome
+    browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
@@ -21,9 +21,15 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: [ 'dots' ], // report results in these formats
+    reporters: [ 'dots', 'html' ], // report results in these formats
+    htmlReporter: {
+      outputFile: path.resolve(__dirname, './out/test-results.html'),
+      pageTitle: 'Angular + Custom Elements (no Shadow DOM)',
+      groupSuites: true,
+      useCompactStyle: true
+    },
     webpack: { // kind of a copy of your webpack config
-      // devtool: 'inline-source-map', // just do inline source maps instead of the default
+      devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         extensions: ['.js', '.ts'],
         modules: [

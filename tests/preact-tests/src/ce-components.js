@@ -2,6 +2,7 @@ import { h, render, Component } from 'preact';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-event';
 
 export class ComponentWithoutChildren extends Component {
   render() {
@@ -119,16 +120,16 @@ export class ComponentWithEvent extends Component {
   constructor() {
     super();
     this.state = { wasClicked: false };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleTestEvent = this.handleTestEvent.bind(this);
   }
-  handleClick(e) {
+  handleTestEvent(e) {
     this.setState({ wasClicked: !this.state.wasClicked });
   }
   render() {
     return (
       <div>
         <div id="toggle">{this.state.wasClicked.toString()}</div>
-        <ce-with-event id="wc" onClick={this.handleClick}></ce-with-event>
+        <ce-with-event id="wc" ontest-event={this.handleTestEvent}></ce-with-event>
       </div>
     );
   }

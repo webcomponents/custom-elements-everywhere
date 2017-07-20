@@ -143,10 +143,12 @@ describe('attributes and properties', function() {
 describe('events', function() {
   it('can listen to events from a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
+    let component = root._component;
     let wc = root.querySelector('#wc');
     let toggle = root.querySelector('#toggle');
     expect(toggle.textContent).toEqual('false');
     wc.click();
+    component.forceUpdate();
     expect(toggle.textContent).toEqual('true');
   });
 });

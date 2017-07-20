@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { Root } from './root';
+import {
+  ComponentWithoutChildren,
+  ComponentWithChildren
+} from './ce-components';
 
 @NgModule({
   imports: [
@@ -12,10 +15,10 @@ import { Root } from './root';
     FormsModule
   ],
   declarations: [
-    Root
+    ComponentWithoutChildren,
+    ComponentWithChildren
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [Root]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
   
