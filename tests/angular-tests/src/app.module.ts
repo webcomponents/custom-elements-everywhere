@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import {
   ComponentWithoutChildren,
-  ComponentWithChildren
+  ComponentWithChildren,
+  ComponentWithChildrenRerender,
+  ComponentWithDifferentViews
 } from './ce-components';
 
 @NgModule({
@@ -16,7 +18,9 @@ import {
   ],
   declarations: [
     ComponentWithoutChildren,
-    ComponentWithChildren
+    ComponentWithChildren,
+    ComponentWithChildrenRerender,
+    ComponentWithDifferentViews
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

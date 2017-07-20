@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'ce-without-children';
 import 'ce-with-children';
 
@@ -25,9 +25,31 @@ export class ComponentWithChildren {
 @Component({
   template: `
     <div>
-      <ce-with-children id="wc"></ce-with-children>
+      <ce-with-children id="wc">{{count}}</ce-with-children>
     </div>
   `
 })
-export class ComponentWithChildrenRerender {
+export class ComponentWithChildrenRerender implements OnInit, OnDestroy {
+  count = 1;
+  interval = undefined;
+  ngOnInit() {
+    this.interval = setInterval(() =>
+      this.count += 1, 1000);
+  }
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
+}
+
+@Component({
+  template: `
+    <ce-with-children id="wc" *ngIf="showWC; else elseBlock"></ce-with-children>
+    <ng-template #elseBlock><div id="dummy">Dummy view</div></ng-template>
+  `
+})
+export class ComponentWithDifferentViews {
+  showWC = true;
+  toggle() {
+    this.showWC = !this.showWC;
+  }
 }
