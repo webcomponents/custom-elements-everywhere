@@ -6,7 +6,10 @@ import {
   ComponentWithoutChildren,
   ComponentWithChildren,
   ComponentWithChildrenRerender,
-  ComponentWithDifferentViews
+  ComponentWithDifferentViews,
+  ComponentWithProperties,
+  ComponentWithUnregistered,
+  ComponentWithEvent
 } from './ce-components';
 
 beforeEach(function() {
@@ -15,7 +18,10 @@ beforeEach(function() {
       ComponentWithoutChildren,
       ComponentWithChildren,
       ComponentWithChildrenRerender,
-      ComponentWithDifferentViews
+      ComponentWithDifferentViews,
+      ComponentWithProperties,
+      ComponentWithUnregistered,
+      ComponentWithEvent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   });
@@ -84,78 +90,96 @@ describe('with children', function() {
 
 describe('attributes and properties', function() {
   it('will set boolean properties on a Custom Element that has already been defined and upgraded', function() {
-    let root = render(<ComponentWithProperties />, scratch);
+    let fixture = TestBed.createComponent(ComponentWithProperties);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
     expect(wc.bool).toBe(true);
   });
 
-  // it('will set numeric properties on a Custom Element that has already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithProperties />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.num).toEqual(42);
-  // });
+  it('will set numeric properties on a Custom Element that has already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithProperties);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.num).toEqual(42);
+  });
 
-  // it('will set string properties on a Custom Element that has already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithProperties />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.str).toEqual('Preact');
-  // });
+  it('will set string properties on a Custom Element that has already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithProperties);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.str).toEqual('Angular');
+  });
 
-  // it('will set array properties on a Custom Element that has already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithProperties />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.arr).toEqual(['P', 'r', 'e', 'a', 'c', 't']);
-  // });
+  it('will set array properties on a Custom Element that has already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithProperties);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.arr).toEqual(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
+  });
 
-  // it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithProperties />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.obj).toEqual({ org: 'developit', repo: 'preact' });
-  // });
+  it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithProperties);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.obj).toEqual({ org: 'angular', repo: 'angular' });
+  });
 
-  // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithUnregistered />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.hasAttribute('bool')).toBe(true);
-  // });
+  it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithUnregistered);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.hasAttribute('bool')).toBe(true);
+  });
 
-  // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithUnregistered />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.getAttribute('num')).toEqual('42');
-  // });
+  it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithUnregistered);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.getAttribute('num')).toEqual('42');
+  });
 
-  // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithUnregistered />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.getAttribute('str')).toEqual('Preact');
-  // });
+  it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithUnregistered);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.getAttribute('str')).toEqual('Angular');
+  });
 
-  // // Related:
-  // // https://github.com/developit/preact/issues/678
-  // // https://github.com/developit/preact/pull/511
-  // it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithUnregistered />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.arr).toEqual(['P', 'r', 'e', 'a', 'c', 't']);
-  // });
+  it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithUnregistered);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.arr).toEqual(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
+  });
 
-  // it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
-  //   let root = render(<ComponentWithUnregistered />, scratch);
-  //   let wc = root.querySelector('#wc');
-  //   expect(wc.obj).toEqual({ org: 'developit', repo: 'preact' });
-  // });
+  it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
+    let fixture = TestBed.createComponent(ComponentWithUnregistered);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    expect(wc.obj).toEqual({ org: 'angular', repo: 'angular' });
+  });
 });
 
-// describe('events', function() {
-//   it('can listen to events from a Custom Element', function() {
-//     let root = render(<ComponentWithEvent />, scratch);
-//     let component = root._component;
-//     let wc = root.querySelector('#wc');
-//     let toggle = root.querySelector('#toggle');
-//     expect(toggle.textContent).toEqual('false');
-//     wc.click();
-//     component.forceUpdate();
-//     expect(toggle.textContent).toEqual('true');
-//   });
-// });
+describe('events', function() {
+  it('can listen to events from a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let toggle = root.querySelector('#toggle');
+    expect(toggle.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(toggle.textContent).toEqual('true');
+  });
+});

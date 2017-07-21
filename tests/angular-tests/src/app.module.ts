@@ -7,7 +7,10 @@ import {
   ComponentWithoutChildren,
   ComponentWithChildren,
   ComponentWithChildrenRerender,
-  ComponentWithDifferentViews
+  ComponentWithDifferentViews,
+  ComponentWithProperties,
+  ComponentWithUnregistered,
+  ComponentWithEvent
 } from './ce-components';
 
 @NgModule({
@@ -20,7 +23,10 @@ import {
     ComponentWithoutChildren,
     ComponentWithChildren,
     ComponentWithChildrenRerender,
-    ComponentWithDifferentViews
+    ComponentWithDifferentViews,
+    ComponentWithProperties,
+    ComponentWithUnregistered,
+    ComponentWithEvent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
