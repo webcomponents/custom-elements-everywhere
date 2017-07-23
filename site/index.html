@@ -34,23 +34,31 @@
                 </div>
                 <progress class="progress is-primary" value="85" max="100">85%</progress>
                 <div class="content">
-                  React passes all data to Custom Elements in the form of
-                  HTML attributes. For primitive data this is fine, but
-                  the system breaks down when passing rich data like objects
-                  or arrays. In these instances you end up with an attributes
+                  React passes all data to Custom Elements in the form of HTML attributes. For primitive data this is fine, but the system
+                  breaks down when passing rich data like objects or arrays. In these instances you end up with an attributes
                   value of <code>"[object Object]"</code> which is not useable.
                 </div>
                 <div class="content">
-                  Because React implements its own synthetic event system, it
-                  cannot listen for DOM events coming from Custom Elements
-                  without the use of a workaround. Developers will need to
-                  reference their Custom Elements using a <code>ref</code> and
-                  manually attach event listeners with
-                  <code>addEventListener</code>. This makes working with Custom
-                  Elements a bit cumbersome.
+                  Because React implements its own synthetic event system, it cannot listen for DOM events coming from Custom Elements without
+                  the use of a workaround. Developers will need to reference their Custom Elements using a <code>ref</code>                  and manually attach event listeners with
+                  <code>addEventListener</code>. This makes working with Custom Elements a bit cumbersome.
                 </div>
               </div>
-              <div class="column">
+              <div class="column is-offset-1">
+                <div class="box">
+                  <h3 class="title is-3">Related Issues</h3>
+                  <article class="media">
+                    <div class="media-content">
+                      <div class="content">
+                        <p>
+                          <strong>HTTP URL's incorrectly handled as local resources</strong>
+                          <br>
+                          <small>#35 opened 2 days ago by AlexHenkel</small>
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
