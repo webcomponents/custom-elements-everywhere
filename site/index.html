@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="/styles/site.css">
+</head>
+
+<body>
+  <main class="wrapper">
+    <section class="section">
+      <div class="container is-fluid">
+        <div class="columns">
+          <div class="column">
+            <div class="columns">
+              <div class="column">
+                <div class="level">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <h2 class="title is-2">React</h2>
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <div>
+                        <p class="heading">Support</p>
+                        <p class="title">85%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <progress class="progress is-primary" value="85" max="100">85%</progress>
+                <div class="content">
+                  React passes all data to Custom Elements in the form of
+                  HTML attributes. For primitive data this is fine, but
+                  the system breaks down when passing rich data like objects
+                  or arrays. In these instances you end up with an attributes
+                  value of <code>"[object Object]"</code> which is not useable.
+                </div>
+                <div class="content">
+                  Because React implements its own synthetic event system, it
+                  cannot listen for DOM events coming from Custom Elements
+                  without the use of a workaround. Developers will need to
+                  reference their Custom Elements using a <code>ref</code> and
+                  manually attach event listeners with
+                  <code>addEventListener</code>. This makes working with Custom
+                  Elements a bit cumbersome.
+                </div>
+              </div>
+              <div class="column">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
