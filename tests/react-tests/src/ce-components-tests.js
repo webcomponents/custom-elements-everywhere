@@ -40,27 +40,28 @@ describe('no children', function() {
 describe('with children', function() {
   function expectHasChildren(wc) {
     expect(wc).toExist();
-    let heading = wc.querySelector('h1');
+    let shadowRoot = wc.shadowRoot;
+    let heading = shadowRoot.querySelector('h1');
     expect(heading).toExist();
     expect(heading.textContent).toEqual('Test h1');
-    let paragraph = wc.querySelector('p');
+    let paragraph = shadowRoot.querySelector('p');
     expect(paragraph).toExist();
     expect(paragraph.textContent).toEqual('Test p');
   }
 
-  it('can display a Custom Element with children created during connectedCallback', function() {
+  it('can display a Custom Element with children in the Shadow DOM', function() {
     let root = ReactDOM.render(<ComponentWithChildren />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expectHasChildren(wc);
   });
 
-  it('can display a Custom Element with children created during connectedCallback and render additional children inside of it', function() {
+  it('can display a Custom Element with children in the Shadow DOM and render additional children inside of it', function() {
     let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expectHasChildren(wc);
   });
 
-  it('can display a Custom Element with children created during connectedCallback and handle hiding and showing the element', function() {
+  it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {
     let root = ReactDOM.render(<ComponentWithDifferentViews />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expectHasChildren(wc);
@@ -75,65 +76,76 @@ describe('with children', function() {
 });
 
 describe('attributes and properties', function() {
-  it('will set boolean properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass boolean data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.bool).toBe(true);
+    let data = wc.bool || wc.hasAttribute('bool');
+    expect(data).toBe(true);
   });
 
-  it('will set numeric properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass numeric data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.num).toEqual(42);
+    let data = wc.num || wc.getAttribute('num');
+    expect(data).toEqual(42);
   });
 
-  it('will set string properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass string data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.str).toEqual('React');
+    let data = wc.str || wc.getAttribute('str');
+    expect(data).toEqual('React');
   });
 
-  it('will set array properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass array data as a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.arr).toEqual(['R', 'e', 'a', 'c', 't']);
+    let data = wc.arr;
+    expect(data).toEqual(['R', 'e', 'a', 'c', 't']);
   });
 
-  it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass object data as a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.obj).toEqual({ org: 'facebook', repo: 'react' });
+    let data = wc.obj;
+    expect(data).toEqual({ org: 'facebook', repo: 'react' });
   });
 
-  it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
-    let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.hasAttribute('bool')).toBe(true);
-  });
+  // TODO: Is it the framework's responsibility to check if the underlying
+  // property is defined? Or should it just always assume it is and do its
+  // usual default behavior? Preact will actually check if it's defined and
+  // use an attribute if it is not, otherwise it prefers properties for
+  // everything. Is there a "right" answer in this situation?
+  
+  // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
+  //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
+  //   let wc = ReactDOM.findDOMNode(root.refs.wc);
+  //   expect(wc.hasAttribute('bool')).toBe(true);
+  // });
 
-  it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
-    let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.getAttribute('num')).toEqual('42');
-  });
+  // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
+  //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
+  //   let wc = ReactDOM.findDOMNode(root.refs.wc);
+  //   expect(wc.getAttribute('num')).toEqual('42');
+  // });
 
-  it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
-    let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.getAttribute('str')).toEqual('React');
-  });
+  // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
+  //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
+  //   let wc = ReactDOM.findDOMNode(root.refs.wc);
+  //   expect(wc.getAttribute('str')).toEqual('React');
+  // });
 
-  it('will set array attributes on a Custom Element that has not already been defined and upgraded', function() {
-    let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.getAttribute('arr')).toEqual(JSON.stringify(['R', 'e', 'a', 'c', 't']));
-  });
+  // it('will set array attributes on a Custom Element that has not already been defined and upgraded', function() {
+  //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
+  //   let wc = ReactDOM.findDOMNode(root.refs.wc);
+  //   expect(wc.getAttribute('arr')).toEqual(JSON.stringify(['R', 'e', 'a', 'c', 't']));
+  // });
 
-  it('will set object attributes on a Custom Element that has not already been defined and upgraded', function() {
-    let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expect(wc.getAttribute('obj')).toEqual(JSON.stringify({ org: 'facebook', repo: 'react' }));
-  });
+  // it('will set object attributes on a Custom Element that has not already been defined and upgraded', function() {
+  //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
+  //   let wc = ReactDOM.findDOMNode(root.refs.wc);
+  //   expect(wc.getAttribute('obj')).toEqual(JSON.stringify({ org: 'facebook', repo: 'react' }));
+  // });
 });
 
 describe('events', function() {

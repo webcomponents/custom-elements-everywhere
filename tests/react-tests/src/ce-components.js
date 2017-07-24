@@ -121,17 +121,16 @@ export class ComponentWithEvent extends Component {
   constructor() {
     super();
     this.state = { wasClicked: false };
+    this.handleTestEvent = this.handleTestEvent.bind(this);
   }
-  componentDidMount() {
-    this.refs['wc'].addEventListener('test-event', e => {
-      this.setState({ wasClicked: !this.state.wasClicked });
-    });
+  handleTestEvent(e) {
+    this.setState({ wasClicked: !this.state.wasClicked });
   }
   render() {
     return (
       <div>
         <div ref="toggle">{this.state.wasClicked.toString()}</div>
-        <ce-with-event ref="wc"></ce-with-event>
+        <ce-with-event ref="wc" ontest-event={this.handleTestEvent}></ce-with-event>
       </div>
     );
   }
