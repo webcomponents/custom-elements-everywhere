@@ -10,7 +10,7 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithEvent
-} from './ce-components';
+} from './components';
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement('div');
@@ -49,16 +49,20 @@ describe('with children', function() {
     expect(paragraph.textContent).toEqual('Test p');
   }
 
-  it('can display a Custom Element with children in the Shadow DOM', function() {
+  it('can display a Custom Element with children in a Shadow Root', function() {
     let root = ReactDOM.render(<ComponentWithChildren />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     expectHasChildren(wc);
   });
 
-  it('can display a Custom Element with children in the Shadow DOM and render additional children inside of it', function() {
+  it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', function(done) {
     let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    expectHasChildren(wc);
+    setTimeout(function() {
+      expectHasChildren(wc);
+      expect(wc.textContent.includes('2')).toEqual(true);
+      done();
+    }, 1000);
   });
 
   it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {
@@ -149,7 +153,7 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
-  it('can listen to events from a Custom Element', function() {
+  it('can listen to a DOM event dispatched by a Custom Element', function() {
     let root = ReactDOM.render(<ComponentWithEvent />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
     let toggle = ReactDOM.findDOMNode(root.refs.toggle);

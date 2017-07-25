@@ -32,10 +32,9 @@ export const ComponentWithChildrenRerender = Vue.extend({
     }
   },
   mounted: function() {
-    this.interval = setInterval(() => this.count += 1, 1000);
-  },
-  destroyed: function() {
-    clearInterval(this.interval);
+    Vue.nextTick(function() {
+      this.count += 1;
+    }.bind(this));
   }
 });
 

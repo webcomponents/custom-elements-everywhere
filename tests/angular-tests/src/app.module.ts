@@ -11,7 +11,7 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithEvent
-} from './ce-components';
+} from './components';
 
 @NgModule({
   imports: [
