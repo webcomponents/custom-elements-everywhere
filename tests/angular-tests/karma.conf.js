@@ -3,7 +3,12 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
+    // Instead of configuring Karma with multiple browsers for Angular
+    // the npm test command will pass in each browser individually. This is
+    // to resolve an issue that only seems to occur when testing Angular and
+    // Karma using multiple browsers.
+    // https://github.com/karma-runner/karma-jasmine/issues/135#issuecomment-262891005
+    // browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [

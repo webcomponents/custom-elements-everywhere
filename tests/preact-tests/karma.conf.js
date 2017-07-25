@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
+    browsers: [ 'ChromeHeadless', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
