@@ -16,8 +16,8 @@ module.exports = function (config) {
     },
     reporters: [ 'dots', 'html' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, './out/test-results.html'),
-      pageTitle: 'Preact + Custom Elements (no Shadow DOM)',
+      outputFile: path.resolve(__dirname, '../../site/results/preact/index.html'),
+      pageTitle: 'Preact + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
     },

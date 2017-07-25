@@ -16,7 +16,7 @@ module.exports = function (config) {
     },
     reporters: [ 'dots', 'html' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, './out/test-results.html'),
+      outputFile: path.resolve(__dirname, '../../site/results/react/index.html'),
       pageTitle: 'React + Custom Elements (no Shadow DOM)',
       groupSuites: true,
       useCompactStyle: true
