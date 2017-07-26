@@ -14,12 +14,15 @@ module.exports = function (config) {
     preprocessors: {
       'tests.webpack.js': [ 'webpack', 'sourcemap' ] // preprocess with webpack and our sourcemap loader
     },
-    reporters: [ 'dots', 'html' ], // report results in these formats
+    reporters: [ 'dots', 'html', 'json-result' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, '../../site/results/preact/index.html'),
+      outputFile: path.resolve(__dirname, '../../site/libraries/preact/results.html'),
       pageTitle: 'Preact + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
+    },
+    jsonResultReporter: {
+      outputFile: path.resolve(__dirname, '../../site/libraries/preact/results.json')
     },
     webpack: { // kind of a copy of your webpack config
       devtool: 'inline-source-map', // just do inline source maps instead of the default

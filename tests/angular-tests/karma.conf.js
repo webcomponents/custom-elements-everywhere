@@ -3,12 +3,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
-    // Instead of configuring Karma with multiple browsers for Angular
-    // the npm test command will pass in each browser individually. This is
-    // to resolve an issue that only seems to occur when testing Angular and
-    // Karma using multiple browsers.
-    // https://github.com/karma-runner/karma-jasmine/issues/135#issuecomment-262891005
-    // browsers: [ 'Chrome', 'Firefox' ], // run in Chrome and Firefox
+    browsers: [ 'ChromeHeadless', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
     files: [
@@ -26,12 +21,15 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: [ 'dots', 'html' ], // report results in these formats
+    reporters: [ 'dots', 'html', 'json-result' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, '../../site/results/angular/index.html'),
+      outputFile: path.resolve(__dirname, '../../site/libraries/angular/results.html'),
       pageTitle: 'Angular + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
+    },
+    jsonResultReporter: {
+      outputFile: path.resolve(__dirname, '../../site/libraries/angular/results.json')
     },
     webpack: { // kind of a copy of your webpack config
       devtool: 'inline-source-map', // just do inline source maps instead of the default

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="/styles/site.css">
+</head>
+
+<body>
+  <section class="hero is-info is-large">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">
+          Custom Elements Everywhere
+        </h1>
+        <h2 class="subtitle is-4">
+          Making sure frameworks and custom elements can be BFFs 🍻
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <div class="content">
+            <h2 class="title is-2">What's this now?</h2>
+            <p>
+              Custom Elements are the lynchpin in the Web Components specifications. They give developers the ability to define their own
+              HTML elements, which, when coupled with Shadow DOM, should be able to work in any application.
+            </p>
+            <p>
+              But reality can sometimes prove otherwise. Often when developers try to incorporate Custom Elements into their apps, they
+              run into interoperability issues with their chosen framework or library. These issues could arise from a number
+              of different sources: disagreements about how data should be passed, polyfill quirks, different style scoping
+              strategies, etc.
+            </p>
+            <p>
+              This project runs a suite of tests against each framework to determine how they render and communicate with Custom Elements.
+              The goal is to both identify interoperability issues, and highlight potential fixes already implemented in
+              other frameworks. Ultimately, if frameworks agree on <em>how</em> they will communicate with
+              Custom Elements, it makes developers jobs easier as they can author their elements to meet these expectations.
+            </p>
+            <p>
+              Lastly, it's important to note that sometimes the expected behavior is not always clear. The tests in this project are a
+              best guess as to how things should work, but are by no means final. Driving discussion and finding consensus
+              is also a primary goal of this project so don't be afraid to open a GitHub issue to discuss places where the
+              tests could be improved. ✌️
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{#each libraries}}
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="columns">
+            <div class="column">
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <h2 class="title is-2">{{name}}</h2>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <div>
+                      <p class="heading has-text-centered">Score</p>
+                      <p class="title">{{results.success}}/{{results.total}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <progress class="progress is-primary" value="{{results.percent}}" max="100">{{results.percent}}%</progress>
+              <div class="content">
+                 {{{summary.content}}}
+              </div>
+              <div class="content">
+                <a class="button is-info is-outlined" href="/libraries/{{name}}/results.html">
+                  View the tests
+                </a>
+              </div>
+            </div>
+            <div class="column is-offset-1">
+              <div class="box">
+                <h3 class="title is-3">Related Issues</h3>
+                {{#each issues}}
+                <article class="media">
+                  <div class="media-content">
+                    <a href="{{link}}">
+                      <div class="content">
+                        <p>
+                          <strong>{{title}}</strong>
+                          <br>
+                          <small>{{meta}}</small>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{/each}}
+</body>
+
+</html>

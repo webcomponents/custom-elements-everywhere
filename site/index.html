@@ -29,36 +29,180 @@
           <div class="content">
             <h2 class="title is-2">What's this now?</h2>
             <p>
-              Custom Elements are the lynchpin in the Web Components
-              specifications. They give developers the ability to define their
-              own HTML elements, which, when coupled with Shadow DOM, should be
-              able to work in any application.
+              Custom Elements are the lynchpin in the Web Components specifications. They give developers the ability to define their own
+              HTML elements, which, when coupled with Shadow DOM, should be able to work in any application.
             </p>
             <p>
-              But reality can sometimes prove otherwise. Often when developers
-              try to incorporate Custom Elements into their apps, they run into
-              interoperability issues with their chosen framework or library.
-              These issues could arise from a number of different sources:
-              disagreements about how data should be passed, polyfill quirks,
-              different style scoping strategies, etc.
+              But reality can sometimes prove otherwise. Often when developers try to incorporate Custom Elements into their apps, they
+              run into interoperability issues with their chosen framework or library. These issues could arise from a number
+              of different sources: disagreements about how data should be passed, polyfill quirks, different style scoping
+              strategies, etc.
             </p>
             <p>
-              This project runs a suite of tests against each framework to
-              determine how they render and communicate with Custom Elements.
-              The goal is to both identify interoperability issues, and
-              highlight potential fixes already implemented in other frameworks.
-              Ultimately, if frameworks agree on <em>how</em> they will
-              communicate with Custom Elements, it makes developers jobs easier
-              as they can author their elements to meet these expectations.
+              This project runs a suite of tests against each framework to determine how they render and communicate with Custom Elements.
+              The goal is to both identify interoperability issues, and highlight potential fixes already implemented in
+              other frameworks. Ultimately, if frameworks agree on <em>how</em> they will communicate with
+              Custom Elements, it makes developers jobs easier as they can author their elements to meet these expectations.
             </p>
             <p>
-              Lastly, it's important to note that sometimes the expected
-              behavior is not always clear. The tests in this project are a best
-              guess as to how things should work, but are by no means final.
-              Driving discussion and finding consensus is also a primary goal of
-              this project so don't be afraid to open a GitHub issue to discuss
-              places where the tests could be improved. ✌️
+              Lastly, it's important to note that sometimes the expected behavior is not always clear. The tests in this project are a
+              best guess as to how things should work, but are by no means final. Driving discussion and finding consensus
+              is also a primary goal of this project so don't be afraid to open a GitHub issue to discuss places where the
+              tests could be improved. ✌️
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="columns">
+            <div class="column">
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <h2 class="title is-2">Angular</h2>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <div>
+                      <p class="heading has-text-centered">Score</p>
+                      <p class="title">20/20</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <progress class="progress is-primary" value="100" max="100">100%</progress>
+              <div class="content">
+                 <p>React passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data
+like objects or arrays. In these instances you end up with an attribute values
+of <code>&quot;[object Object]&quot;</code> which is not useable.</p>
+<p>Because React implements its own synthetic event system, it cannot listen for
+DOM events coming from Custom Elements without the use of a workaround.
+Developers will need to reference their Custom Elements using a <code>ref</code>
+and manually attach event listeners with <code>addEventListener</code>. This
+makes working with Custom Elements cumbersome.</p>
+
+              </div>
+              <div class="content">
+                <a class="button is-info is-outlined" href="/libraries/Angular/results.html">
+                  View the tests
+                </a>
+              </div>
+            </div>
+            <div class="column is-offset-1">
+              <div class="box">
+                <h3 class="title is-3">Related Issues</h3>
+                <article class="media">
+                  <div class="media-content">
+                    <a href="https://google.com">
+                      <div class="content">
+                        <p>
+                          <strong>HTTP URL&#x27;s incorrectly handled as local resources</strong>
+                          <br>
+                          <small>#35 opened 2 days ago by AlexHenkel</small>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+                <article class="media">
+                  <div class="media-content">
+                    <a href="https://reddit.com">
+                      <div class="content">
+                        <p>
+                          <strong>Lorem ipsum</strong>
+                          <br>
+                          <small>#42 opened 2 days ago by DouglasAdams</small>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="columns">
+            <div class="column">
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <h2 class="title is-2">Preact</h2>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <div>
+                      <p class="heading has-text-centered">Score</p>
+                      <p class="title">20/20</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <progress class="progress is-primary" value="100" max="100">100%</progress>
+              <div class="content">
+                 <p>React passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data
+like objects or arrays. In these instances you end up with an attribute values
+of <code>\&quot;[object Object]\&quot;</code> which is not useable.</p>
+<p>Because React implements its own synthetic event system, it cannot listen for
+DOM events coming from Custom Elements without the use of a workaround.
+Developers will need to reference their Custom Elements using a <code>ref</code>
+and manually attach event listeners with <code>addEventListener</code>. This
+makes working with Custom Elements cumbersome.</p>
+
+              </div>
+              <div class="content">
+                <a class="button is-info is-outlined" href="/libraries/Preact/results.html">
+                  View the tests
+                </a>
+              </div>
+            </div>
+            <div class="column is-offset-1">
+              <div class="box">
+                <h3 class="title is-3">Related Issues</h3>
+                <article class="media">
+                  <div class="media-content">
+                    <a href="https://google.com">
+                      <div class="content">
+                        <p>
+                          <strong>HTTP URL&#x27;s incorrectly handled as local resources</strong>
+                          <br>
+                          <small>#35 opened 2 days ago by AlexHenkel</small>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+                <article class="media">
+                  <div class="media-content">
+                    <a href="https://reddit.com">
+                      <div class="content">
+                        <p>
+                          <strong>Lorem ipsum</strong>
+                          <br>
+                          <small>#42 opened 2 days ago by DouglasAdams</small>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -80,29 +224,26 @@
                   <div class="level-item">
                     <div>
                       <p class="heading has-text-centered">Score</p>
-                      <p class="title">7/10</p>
+                      <p class="title">14/20</p>
                     </div>
                   </div>
                 </div>
               </div>
               <progress class="progress is-primary" value="70" max="100">70%</progress>
               <div class="content">
-                React passes all data to Custom Elements in the form of HTML
-                attributes. For primitive data this is fine, but the system
-                breaks down when passing rich data like objects or arrays. In
-                these instances you end up with an attribute values of
-                <code>"[object Object]"</code> which is not useable.
+                 <p>React passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data
+like objects or arrays. In these instances you end up with an attribute values
+of <code>\&quot;[object Object]\&quot;</code> which is not useable.</p>
+<p>Because React implements its own synthetic event system, it cannot listen for
+DOM events coming from Custom Elements without the use of a workaround.
+Developers will need to reference their Custom Elements using a <code>ref</code>
+and manually attach event listeners with <code>addEventListener</code>. This
+makes working with Custom Elements cumbersome.</p>
+
               </div>
               <div class="content">
-                Because React implements its own synthetic event system, it
-                cannot listen for DOM events coming from Custom Elements without
-                the use of a workaround. Developers will need to reference their
-                Custom Elements using a <code>ref</code> and manually attach
-                event listeners with <code>addEventListener</code>. This makes
-                working with Custom Elements cumbersome.
-              </div>
-              <div class="content">
-                <a class="button is-info is-outlined" href="/results/react">
+                <a class="button is-info is-outlined" href="/libraries/React/results.html">
                   View the tests
                 </a>
               </div>
@@ -112,35 +253,28 @@
                 <h3 class="title is-3">Related Issues</h3>
                 <article class="media">
                   <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
+                    <a href="https://google.com">
+                      <div class="content">
+                        <p>
+                          <strong>HTTP URL&#x27;s incorrectly handled as local resources</strong>
+                          <br>
+                          <small>#35 opened 2 days ago by AlexHenkel</small>
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </article>
                 <article class="media">
                   <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-                <article class="media">
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
+                    <a href="https://reddit.com">
+                      <div class="content">
+                        <p>
+                          <strong>Lorem ipsum</strong>
+                          <br>
+                          <small>#42 opened 2 days ago by DouglasAdams</small>
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </article>
               </div>
@@ -159,31 +293,33 @@
               <div class="level">
                 <div class="level-left">
                   <div class="level-item">
-                    <h2 class="title is-2">Angular</h2>
+                    <h2 class="title is-2">Vue</h2>
                   </div>
                 </div>
                 <div class="level-right">
                   <div class="level-item">
                     <div>
                       <p class="heading has-text-centered">Score</p>
-                      <p class="title">10/10</p>
+                      <p class="title">20/20</p>
                     </div>
                   </div>
                 </div>
               </div>
               <progress class="progress is-primary" value="100" max="100">100%</progress>
               <div class="content">
-                React passes all data to Custom Elements in the form of HTML attributes. For primitive data this is fine, but the system
-                breaks down when passing rich data like objects or arrays. In these instances you end up with an attributes
-                value of <code>"[object Object]"</code> which is not useable.
+                 <p>React passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data
+like objects or arrays. In these instances you end up with an attribute values
+of <code>\&quot;[object Object]\&quot;</code> which is not useable.</p>
+<p>Because React implements its own synthetic event system, it cannot listen for
+DOM events coming from Custom Elements without the use of a workaround.
+Developers will need to reference their Custom Elements using a <code>ref</code>
+and manually attach event listeners with <code>addEventListener</code>. This
+makes working with Custom Elements cumbersome.</p>
+
               </div>
               <div class="content">
-                Because React implements its own synthetic event system, it cannot listen for DOM events coming from Custom Elements without
-                the use of a workaround. Developers will need to reference their Custom Elements using a <code>ref</code>                and manually attach event listeners with
-                <code>addEventListener</code>. This makes working with Custom Elements a bit cumbersome.
-              </div>
-              <div class="content">
-                <a class="button is-info is-outlined" href="/results/angular">
+                <a class="button is-info is-outlined" href="/libraries/Vue/results.html">
                   View the tests
                 </a>
               </div>
@@ -193,35 +329,28 @@
                 <h3 class="title is-3">Related Issues</h3>
                 <article class="media">
                   <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
+                    <a href="https://google.com">
+                      <div class="content">
+                        <p>
+                          <strong>HTTP URL&#x27;s incorrectly handled as local resources</strong>
+                          <br>
+                          <small>#35 opened 2 days ago by AlexHenkel</small>
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </article>
                 <article class="media">
                   <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-                <article class="media">
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>HTTP URL's incorrectly handled as local resources</strong>
-                        <br>
-                        <small>#35 opened 2 days ago by AlexHenkel</small>
-                      </p>
-                    </div>
+                    <a href="https://reddit.com">
+                      <div class="content">
+                        <p>
+                          <strong>Lorem ipsum</strong>
+                          <br>
+                          <small>#42 opened 2 days ago by DouglasAdams</small>
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </article>
               </div>
@@ -234,3 +363,4 @@
 </body>
 
 </html>
+
