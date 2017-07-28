@@ -55,14 +55,12 @@ describe('with children', function() {
     expectHasChildren(wc);
   });
 
-  it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', function(done) {
+  it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', async function() {
     let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    setTimeout(function() {
-      expectHasChildren(wc);
-      expect(wc.textContent.includes('2')).toEqual(true);
-      done();
-    }, 1000);
+    await Promise.resolve();
+    expectHasChildren(wc);
+    expect(wc.textContent.includes('2')).toEqual(true);
   });
 
   it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {

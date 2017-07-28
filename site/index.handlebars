@@ -57,62 +57,69 @@
   </section>
 
   {{#each libraries}}
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <div class="columns">
-            <div class="column">
-              <div class="level">
-                <div class="level-left">
-                  <div class="level-item">
-                    <h2 class="title is-2">{{name}}</h2>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="columns">
+              <div class="column">
+                <div class="level">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <h2 class="title is-2">{{name}}</h2>
+                    </div>
                   </div>
-                </div>
-                <div class="level-right">
-                  <div class="level-item">
-                    <div>
-                      <p class="heading has-text-centered">Score</p>
-                      <p class="title">{{results.success}}/{{results.total}}</p>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <div>
+                        <p class="heading has-text-centered">Score</p>
+                        <p class="title">{{results.success}}/{{results.total}}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <progress class="progress is-primary" value="{{results.percent}}" max="100">{{results.percent}}%</progress>
+                <div class="content">
+                  {{{summary.content}}}
+                </div>
+                <div class="content">
+                  <a class="button is-info is-outlined" href="/libraries/{{name}}/results.html">
+                    View the tests
+                  </a>
+                </div>
               </div>
-              <progress class="progress is-primary" value="{{results.percent}}" max="100">{{results.percent}}%</progress>
-              <div class="content">
-                 {{{summary.content}}}
-              </div>
-              <div class="content">
-                <a class="button is-info is-outlined" href="/libraries/{{name}}/results.html">
-                  View the tests
-                </a>
-              </div>
-            </div>
-            <div class="column is-offset-1">
-              <div class="box">
-                <h3 class="title is-3">Related Issues</h3>
-                {{#each issues}}
-                <article class="media">
-                  <div class="media-content">
-                    <a href="{{link}}">
-                      <div class="content">
-                        <p>
-                          <strong>{{title}}</strong>
-                          <br>
-                          <small>{{meta}}</small>
-                        </p>
+              <div class="column is-offset-1">
+                <div class="box">
+                  <h3 class="title is-3">Related Issues</h3>
+                  {{#if issues}}
+                    {{#each issues}}
+                      <article class="media">
+                        <div class="media-content">
+                          <a href="{{link}}">
+                            <div class="content">
+                              <p>
+                                <strong>{{title}}</strong>
+                                <br>
+                                <small>{{meta}}</small>
+                              </p>
+                            </div>
+                          </a>
+                        </div>
+                      </article>
+                    {{/each}}
+                    {{else}}
+                      <div class="has-text-centered">
+                        <img src="/images/smiley.svg" alt="" width="256">
+                        <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
                       </div>
-                    </a>
-                  </div>
-                </article>
-                {{/each}}
+                  {{/if}}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   {{/each}}
 </body>
 
