@@ -79,15 +79,17 @@
                 </div>
                 <progress class="progress is-primary" value="100" max="100">100%</progress>
                 <div class="content">
-                  <p>React passes all data to Custom Elements in the form of HTML attributes. For
-primitive data this is fine, but the system breaks down when passing rich data
-like objects or arrays. In these instances you end up with an attribute values
-of <code>&quot;[object Object]&quot;</code> which is not useable.</p>
-<p>Because React implements its own synthetic event system, it cannot listen for
-DOM events coming from Custom Elements without the use of a workaround.
-Developers will need to reference their Custom Elements using a <code>ref</code>
-and manually attach event listeners with <code>addEventListener</code>. This
-makes working with Custom Elements cumbersome.</p>
+                  <h4 id="handling-data">Handling data</h4>
+<p>Angular&#39;s default binding syntax will always set properties on an element. This
+works well for rich data, like objects and arrays, and also works well for
+primitive values so long as the Custom Element author has mapped any exposed
+attributes to corresponding properties. For example:</p>
+<pre><code>&lt;my-element [foo]=&quot;bar&quot;&gt;&lt;/my-element&gt;
+</code></pre><p>will set the <code>foo</code> property of  <code>my-element</code> equal to the Angular component&#39;s
+<code>bar</code> property.</p>
+<p>Angular also provides binding syntax specifically for setting an attribute, if a
+developer would prefer to communicate with an element that way.</p>
+<h4 id="handling-events">Handling events</h4>
 
                 </div>
                 <div class="content">
@@ -135,12 +137,12 @@ makes working with Custom Elements cumbersome.</p>
                     <div class="level-item">
                       <div>
                         <p class="heading has-text-centered">Score</p>
-                        <p class="title">20/20</p>
+                        <p class="title">18/20</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <progress class="progress is-primary" value="100" max="100">100%</progress>
+                <progress class="progress is-primary" value="90" max="100">90%</progress>
                 <div class="content">
                   <p>React passes all data to Custom Elements in the form of HTML attributes. For
 primitive data this is fine, but the system breaks down when passing rich data
