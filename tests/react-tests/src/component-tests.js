@@ -151,12 +151,53 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
-  it('can listen to a DOM event dispatched by a Custom Element', function() {
+  it('can listen to a lowercase DOM event dispatched by a Custom Element', function() {
     let root = ReactDOM.render(<ComponentWithEvent />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let toggle = ReactDOM.findDOMNode(root.refs.toggle);
-    expect(toggle.textContent).toEqual('false');
+    let handled = ReactDOM.findDOMNode(root.refs.lowercase);
+    expect(handled.textContent).toEqual('false');
     wc.click();
-    expect(toggle.textContent).toEqual('true');
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a kebab-case DOM event dispatched by a Custom Element', function() {
+    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
+    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let handled = ReactDOM.findDOMNode(root.refs.kebab);
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a camelCase DOM event dispatched by a Custom Element', function() {
+    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
+    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let handled = ReactDOM.findDOMNode(root.refs.camel);
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a CAPScase DOM event dispatched by a Custom Element', function() {
+    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
+    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let handled = ReactDOM.findDOMNode(root.refs.caps);
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a PascalCase DOM event dispatched by a Custom Element', function() {
+    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
+    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let handled = ReactDOM.findDOMNode(root.refs.pascal);
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
   });
 });

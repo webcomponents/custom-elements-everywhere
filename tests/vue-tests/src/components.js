@@ -108,18 +108,44 @@ export const ComponentWithUnregistered = Vue.extend({
 export const ComponentWithEvent = Vue.extend({
   template: `
     <div>
-      <div id="toggle">{{wasClicked}}</div>
-      <ce-with-event id="wc" v-on:test-event="handleTestEvent"></ce-with-event>
+      <div id="lowercase">{{lowercaseHandled}}</div>
+      <div id="kebab">{{kebabHandled}}</div>
+      <div id="camel">{{camelHandled}}</div>
+      <div id="caps">{{capsHandled}}</div>
+      <div id="pascal">{{pascalHandled}}</div>
+      <ce-with-event id="wc"
+        v-on:lowercaseevent="handleLowercaseEvent"
+        v-on:kebab-event="handleKebabEvent"
+        v-on:camelEvent="handleCamelEvent"
+        v-on:CAPSevent="handleCapsEvent"
+        v-on:PascalEvent="handlePascalEvent"
+      ></ce-with-event>
     </div>
   `,
   data: function() {
     return {
-      wasClicked: false
+      lowercaseHandled: false,
+      kebabHandled: false,
+      camelHandled: false,
+      capsHandled: false,
+      pascalHandled: false
     }
   },
   methods: {
-    handleTestEvent: function(event) {
-      this.wasClicked = !this.wasClicked;
+    handleLowercaseEvent: function() {
+      this.lowercaseHandled = true;
+    },
+    handleKebabEvent: function() {
+      this.kebabHandled = true;
+    },
+    handleCamelEvent: function() {
+      this.camelHandled = true;
+    },
+    handleCapsEvent: function() {
+      this.capsHandled = true;
+    },
+    handlePascalEvent: function() {
+      this.pascalHandled = true;
     }
   }
 });

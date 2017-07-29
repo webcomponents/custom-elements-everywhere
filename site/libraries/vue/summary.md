@@ -1,10 +1,10 @@
-React passes all data to Custom Elements in the form of HTML attributes. For
-primitive data this is fine, but the system breaks down when passing rich data
-like objects or arrays. In these instances you end up with an attribute values
-of <code>\"[object Object]\"</code> which is not useable.
+#### Handling data
 
-Because React implements its own synthetic event system, it cannot listen for
-DOM events coming from Custom Elements without the use of a workaround.
-Developers will need to reference their Custom Elements using a <code>ref</code>
-and manually attach event listeners with <code>addEventListener</code>. This
-makes working with Custom Elements cumbersome.
+By default, Vue passes all data to Custom Elements as attributes. However, Vue
+also provides syntax to instruct its bindings to use properties instead. To bind
+to a Custom Element property use <code>:foo.prop="bar"</code>.
+
+#### Handling events
+
+Vue can listen to native DOM events dispatched from Custom Elements. It supports
+all styles of events (lowercase, camelCase, kebab-case, etc).

@@ -105,14 +105,40 @@ export class ComponentWithUnregistered {
 @Component({
   template: `
     <div>
-      <div id="toggle">{{wasClicked}}</div>
-      <ce-with-event id="wc" (test-event)="handleTestEvent()"></ce-with-event>
+      <div id="lowercase">{{lowercaseHandled}}</div>
+      <div id="kebab">{{kebabHandled}}</div>
+      <div id="camel">{{camelHandled}}</div>
+      <div id="caps">{{capsHandled}}</div>
+      <div id="pascal">{{pascalHandled}}</div>
+      <ce-with-event id="wc"
+        (lowercaseevent)="handleLowercaseEvent()"
+        (kebab-event)="handleKebabEvent()"
+        (camelEvent)="handleCamelEvent()"
+        (CAPSevent)="handleCapsEvent()"
+        (PascalEvent)="handlePascalEvent()"
+      ></ce-with-event>
     </div>
   `
 })
 export class ComponentWithEvent {
-  wasClicked = false;
-  handleTestEvent() {
-    this.wasClicked = !this.wasClicked;
+  lowercaseHandled = false;
+  kebabHandled = false;
+  camelHandled = false;
+  capsHandled = false;
+  pascalHandled = false;
+  handleLowercaseEvent() {
+    this.lowercaseHandled = true;
+  }
+  handleKebabEvent() {
+    this.kebabHandled = true;
+  }
+  handleCamelEvent() {
+    this.camelHandled = true;
+  }
+  handleCapsEvent() {
+    this.capsHandled = true;
+  }
+  handlePascalEvent() {
+    this.pascalHandled = true;
   }
 }

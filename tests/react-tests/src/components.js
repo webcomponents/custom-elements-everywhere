@@ -119,17 +119,50 @@ export class ComponentWithUnregistered extends Component {
 export class ComponentWithEvent extends Component {
   constructor() {
     super();
-    this.state = { wasClicked: false };
-    this.handleTestEvent = this.handleTestEvent.bind(this);
+    this.state = {
+      lowercaseHandled: false,
+      kebabHandled: false,
+      camelHandled: false,
+      capsHandled: false,
+      pascalHandled: false
+    };
+    this.handleLowercaseEvent = this.handleLowercaseEvent.bind(this);
+    this.handleKebabEvent = this.handleKebabEvent.bind(this);
+    this.handleCamelEvent = this.handleCamelEvent.bind(this);
+    this.handleCapsEvent = this.handleCapsEvent.bind(this);
+    this.handlePascalEvent = this.handlePascalEvent.bind(this);
   }
-  handleTestEvent(e) {
-    this.setState({ wasClicked: !this.state.wasClicked });
+  handleLowercaseEvent(e) {
+    this.setState({ lowercaseHandled: true });
+  }
+  handleKebabEvent(e) {
+    this.setState({ kebabHandled: true });
+  }
+  handleCamelEvent(e) {
+    this.setState({ camelHandled: true });
+  }
+  handleCapsEvent(e) {
+    this.setState({ capsHandled: true });
+  }
+  handlePascalEvent(e) {
+    this.setState({ pascalHandled: true });
   }
   render() {
+    let state = this.state;
     return (
       <div>
-        <div ref="toggle">{this.state.wasClicked.toString()}</div>
-        <ce-with-event ref="wc" ontest-event={this.handleTestEvent}></ce-with-event>
+        <div ref="lowercase">{state.lowercaseHandled.toString()}</div>
+         <div ref="kebab">{state.kebabHandled.toString()}</div>
+        <div ref="camel">{state.camelHandled.toString()}</div>
+        <div ref="caps">{state.capsHandled.toString()}</div>
+        <div ref="pascal">{state.pascalHandled.toString()}</div>
+        <ce-with-event id="wc"
+          onlowercaseevent={this.handleLowercaseEvent}
+          onkebab-event={this.handleKebabEvent}
+          oncamelEvent={this.handleCamelEvent}
+          onCAPSEvent={this.handleCapsEvent}
+          onPascalEvent={this.handlePascalEvent}
+        ></ce-with-event> 
       </div>
     );
   }

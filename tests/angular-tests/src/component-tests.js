@@ -137,15 +137,63 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
-  it('can listen to a DOM event dispatched by a Custom Element', function() {
+  it('can listen to a lowercase DOM event dispatched by a Custom Element', function() {
     let fixture = TestBed.createComponent(ComponentWithEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
-    let toggle = root.querySelector('#toggle');
-    expect(toggle.textContent).toEqual('false');
+    let handled = root.querySelector('#lowercase');
+    expect(handled.textContent).toEqual('false');
     wc.click();
     fixture.detectChanges();
-    expect(toggle.textContent).toEqual('true');
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a kebab-case DOM event dispatched by a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#kebab');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a camelCase DOM event dispatched by a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#camel');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a CAPScase DOM event dispatched by a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#caps');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can listen to a PascalCase DOM event dispatched by a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#pascal');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(handled.textContent).toEqual('true');
   });
 });

@@ -10,13 +10,13 @@
     <section>
       <header class="overview">
         <div class="browser">Browser: HeadlessChrome 0.0.0 (Mac OS X 10.12.5)</div>
-        <div class="timestamp">Timestamp: 7/28/2017, 2:23:43 PM</div>
+        <div class="timestamp">Timestamp: 7/28/2017, 7:18:42 PM</div>
         <p class="results">
-          10 tests / 
+          14 tests / 
           0 errors / 
-          3 failures / 
+          7 failures / 
           0 skipped / 
-          runtime: 0.06s
+          runtime: 0.043s
         </p>
       </header>
       <div class="spec spec--group">
@@ -28,7 +28,7 @@
             <p class="spec__suite hidden">no children</p>
             <em class="spec__descrip">can display a Custom Element with no children</em>
           </div>
-          <div class="spec__status">Passed in 0.012s</div>
+          <div class="spec__status">Passed in 0.021s</div>
         </h3>
       </div>
       <div class="spec spec--group">
@@ -40,7 +40,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
           </div>
-          <div class="spec__status">Passed in 0.003s</div>
+          <div class="spec__status">Passed in 0.002s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -49,7 +49,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
           </div>
-          <div class="spec__status">Passed in 0.008s</div>
+          <div class="spec__status">Passed in 0.006s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -58,7 +58,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
           </div>
-          <div class="spec__status">Passed in 0.011s</div>
+          <div class="spec__status">Passed in 0.005s</div>
         </h3>
       </div>
       <div class="spec spec--group">
@@ -70,7 +70,7 @@
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
           </div>
-          <div class="spec__status">Passed in 0.002s</div>
+          <div class="spec__status">Passed in 0.001s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -118,23 +118,63 @@
         <h3 class="spec__header">
           <div class="spec__title">
             <p class="spec__suite hidden">events</p>
-            <em class="spec__descrip">can listen to a DOM event dispatched by a Custom Element</em>
+            <em class="spec__descrip">can listen to a lowercase DOM event dispatched by a Custom Element</em>
           </div>
           <div class="spec__status">Failed</div>
         </h3>
-        <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (tests.webpack.js:4711:9)<br />    at Expectation.toEqual (tests.webpack.js:6692:30)<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12350:47)<br /></p>
+        <p class="spec__log">TypeError: Cannot read property 'click' of null<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12349:7)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a kebab-case DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">TypeError: Cannot read property 'click' of null<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12359:7)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a camelCase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">TypeError: Cannot read property 'click' of null<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12369:7)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a CAPScase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">TypeError: Cannot read property 'click' of null<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12379:7)<br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a PascalCase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">TypeError: Cannot read property 'click' of null<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:12389:7)<br /></p>
       </div>
     </section>
     <section>
       <header class="overview">
         <div class="browser">Browser: Firefox 54.0.0 (Mac OS X 10.12.0)</div>
-        <div class="timestamp">Timestamp: 7/28/2017, 2:23:46 PM</div>
+        <div class="timestamp">Timestamp: 7/28/2017, 7:18:44 PM</div>
         <p class="results">
-          10 tests / 
+          14 tests / 
           0 errors / 
-          3 failures / 
+          7 failures / 
           0 skipped / 
-          runtime: 0.079s
+          runtime: 0.101s
         </p>
       </header>
       <div class="spec spec--group">
@@ -146,7 +186,7 @@
             <p class="spec__suite hidden">no children</p>
             <em class="spec__descrip">can display a Custom Element with no children</em>
           </div>
-          <div class="spec__status">Passed in 0.01s</div>
+          <div class="spec__status">Passed in 0.021s</div>
         </h3>
       </div>
       <div class="spec spec--group">
@@ -167,7 +207,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
           </div>
-          <div class="spec__status">Passed in 0.017s</div>
+          <div class="spec__status">Passed in 0.01s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -176,7 +216,7 @@
             <p class="spec__suite hidden">with children</p>
             <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
           </div>
-          <div class="spec__status">Passed in 0.025s</div>
+          <div class="spec__status">Passed in 0.019s</div>
         </h3>
       </div>
       <div class="spec spec--group">
@@ -188,7 +228,7 @@
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
           </div>
-          <div class="spec__status">Passed in 0.003s</div>
+          <div class="spec__status">Passed in 0.008s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -197,7 +237,7 @@
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
           </div>
-          <div class="spec__status">Passed in 0.007s</div>
+          <div class="spec__status">Passed in 0.01s</div>
         </h3>
       </div>
       <div class="spec spec--pass" style="margin-left:0px;">
@@ -206,7 +246,7 @@
             <p class="spec__suite hidden">attributes and properties</p>
             <em class="spec__descrip">will pass string data as either an attribute or a property</em>
           </div>
-          <div class="spec__status">Passed in 0.001s</div>
+          <div class="spec__status">Passed in 0.003s</div>
         </h3>
       </div>
       <div class="spec spec--fail" style="margin-left:0px;">
@@ -236,11 +276,51 @@
         <h3 class="spec__header">
           <div class="spec__title">
             <p class="spec__suite hidden">events</p>
-            <em class="spec__descrip">can listen to a DOM event dispatched by a Custom Element</em>
+            <em class="spec__descrip">can listen to a lowercase DOM event dispatched by a Custom Element</em>
           </div>
           <div class="spec__status">Failed</div>
         </h3>
-        <p class="spec__log">Expected 'false' to equal 'true'<br />assert@tests.webpack.js:4711:9<br />toEqual@tests.webpack.js:6692:10<br />@tests.webpack.js:12350:6<br /><br /></p>
+        <p class="spec__log">wc is null<br />@tests.webpack.js:12349:5<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a kebab-case DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">wc is null<br />@tests.webpack.js:12359:5<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a camelCase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">wc is null<br />@tests.webpack.js:12369:5<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a CAPScase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">wc is null<br />@tests.webpack.js:12379:5<br /><br /></p>
+      </div>
+      <div class="spec spec--fail" style="margin-left:0px;">
+        <h3 class="spec__header">
+          <div class="spec__title">
+            <p class="spec__suite hidden">events</p>
+            <em class="spec__descrip">can listen to a PascalCase DOM event dispatched by a Custom Element</em>
+          </div>
+          <div class="spec__status">Failed</div>
+        </h3>
+        <p class="spec__log">wc is null<br />@tests.webpack.js:12389:5<br /><br /></p>
       </div>
     </section>
   </body>

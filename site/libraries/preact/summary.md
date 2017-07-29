@@ -1,10 +1,16 @@
-React passes all data to Custom Elements in the form of HTML attributes. For
-primitive data this is fine, but the system breaks down when passing rich data
-like objects or arrays. In these instances you end up with an attribute values
-of <code>\"[object Object]\"</code> which is not useable.
+#### Handling data
 
-Because React implements its own synthetic event system, it cannot listen for
-DOM events coming from Custom Elements without the use of a workaround.
-Developers will need to reference their Custom Elements using a <code>ref</code>
-and manually attach event listeners with <code>addEventListener</code>. This
-makes working with Custom Elements cumbersome.
+Preact uses a runtime heuristic to determine if it should pass data to Custom
+Elements as either properties or attributes. If a property is already defined
+on the element instance, Preact will use properties, otherwise it will fallback
+to attributes. The exception to this rule is when it tries to pass rich data,
+like objects or arrays. In those instances it will always use a property.
+
+#### Handling events
+
+Preact can listen to native DOM events dispatched from Custom Elements. However,
+it uses a heuristic to convert JSX event binding syntax into event names, and
+always lowercases the events. For example <code>onFooUpdated={handleFoo}</code>
+tells Preact to listen for an event called <code>'fooupdated'</code>. This means
+Preact can support events with lowercase and kebab-case names, but not
+camelCase, PascalCase, or CAPScase events (e.g. <code>'URLchanged'</code>).
