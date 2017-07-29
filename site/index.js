@@ -4,6 +4,10 @@ const fs = require('fs');
 const marked = require('marked');
 const libraries = ['angular', 'preact', 'react', 'vue'];
 
+hbs.registerHelper('capitalize', function(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+});
+
 const tmpl = fs.readFileSync(path.join(__dirname, 'index.handlebars'), 'utf8');
 const render = hbs.compile(tmpl);
 const out = render({
@@ -12,17 +16,12 @@ const out = render({
 
 function buildContext(libraries) {
   return libraries.map(library => {
-    return Object.assign({ name: capitalize(library) }, {
+    return Object.assign({ name: library }, {
       results: getTestResults(library),
       issues: getIssues(library),
       summary: getSummary(library)
     });
   });
-}
-
-// Heloper to capitalize a string
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // Collect important test data like number of successes, fails, totals, etc.
