@@ -126,7 +126,7 @@ describe('attributes and properties', function() {
     expect(data).toEqual(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
   });
 
-  it('will set object properties on a Custom Element that has already been defined and upgraded', function() {
+  it('will pass object data as a property', function() {
     let fixture = TestBed.createComponent(ComponentWithProperties);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
