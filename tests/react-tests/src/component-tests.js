@@ -9,7 +9,8 @@ import {
   ComponentWithDifferentViews,
   ComponentWithProperties,
   ComponentWithUnregistered,
-  ComponentWithEvent
+  ComponentWithImperativeEvent,
+  ComponentWithDeclarativeEvent
 } from './components';
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -151,6 +152,16 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
+  it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
+    let root = ReactDOM.render(<ComponentWithImperativeEvent />, scratch);
+    let wc = root.customEl;
+    let handled = ReactDOM.findDOMNode(root.refs.handled);
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    root.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
   it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
     let root = ReactDOM.render(<ComponentWithEvent />, scratch);
     let wc = ReactDOM.findDOMNode(root.refs.wc);

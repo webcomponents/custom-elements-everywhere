@@ -9,7 +9,8 @@ import {
   ComponentWithDifferentViews,
   ComponentWithProperties,
   ComponentWithUnregistered,
-  ComponentWithEvent
+  ComponentWithImperativeEvent,
+  ComponentWithDeclarativeEvent
 } from './components';
 
 beforeEach(function() {
@@ -21,7 +22,8 @@ beforeEach(function() {
       ComponentWithDifferentViews,
       ComponentWithProperties,
       ComponentWithUnregistered,
-      ComponentWithEvent
+      ComponentWithImperativeEvent,
+      ComponentWithDeclarativeEvent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   });
@@ -137,8 +139,20 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
+  it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
+    let fixture = TestBed.createComponent(ComponentWithImperativeEvent);
+    fixture.detectChanges();
+    let root = fixture.debugElement.nativeElement;
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#handled');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    fixture.detectChanges();
+    expect(handled.textContent).toEqual('true');
+  });
+
   it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
-    let fixture = TestBed.createComponent(ComponentWithEvent);
+    let fixture = TestBed.createComponent(ComponentWithDeclarativeEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
@@ -150,7 +164,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
-    let fixture = TestBed.createComponent(ComponentWithEvent);
+    let fixture = TestBed.createComponent(ComponentWithDeclarativeEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
@@ -162,7 +176,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
-    let fixture = TestBed.createComponent(ComponentWithEvent);
+    let fixture = TestBed.createComponent(ComponentWithDeclarativeEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
@@ -174,7 +188,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
-    let fixture = TestBed.createComponent(ComponentWithEvent);
+    let fixture = TestBed.createComponent(ComponentWithDeclarativeEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');
@@ -186,7 +200,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
-    let fixture = TestBed.createComponent(ComponentWithEvent);
+    let fixture = TestBed.createComponent(ComponentWithDeclarativeEvent);
     fixture.detectChanges();
     let root = fixture.debugElement.nativeElement;
     let wc = root.querySelector('#wc');

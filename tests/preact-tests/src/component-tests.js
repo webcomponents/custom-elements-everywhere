@@ -7,7 +7,8 @@ import {
   ComponentWithDifferentViews,
   ComponentWithProperties,
   ComponentWithUnregistered,
-  ComponentWithEvent
+  ComponentWithImperativeEvent,
+  ComponentWithDeclarativeEvent
 } from './components';
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -151,8 +152,20 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
+  it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
+    let root = render(<ComponentWithImperativeEvent />, scratch);
+    let component = root._component;
+    let wc = root.querySelector('#wc');
+    expect(wc).toExist();
+    let handled = root.querySelector('#handled');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    component.forceUpdate();
+    expect(handled.textContent).toEqual('true');
+  });
+
   it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
-    let root = render(<ComponentWithEvent />, scratch);
+    let root = render(<ComponentWithDeclarativeEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
     expect(wc).toExist();
@@ -164,7 +177,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
-    let root = render(<ComponentWithEvent />, scratch);
+    let root = render(<ComponentWithDeclarativeEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#kebab');
@@ -175,7 +188,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
-    let root = render(<ComponentWithEvent />, scratch);
+    let root = render(<ComponentWithDeclarativeEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#camel');
@@ -186,7 +199,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
-    let root = render(<ComponentWithEvent />, scratch);
+    let root = render(<ComponentWithDeclarativeEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#caps');
@@ -197,7 +210,7 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
-    let root = render(<ComponentWithEvent />, scratch);
+    let root = render(<ComponentWithDeclarativeEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#pascal');

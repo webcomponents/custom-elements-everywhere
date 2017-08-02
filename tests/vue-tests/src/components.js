@@ -105,7 +105,29 @@ export const ComponentWithUnregistered = Vue.extend({
   }
 });
 
-export const ComponentWithEvent = Vue.extend({
+export const ComponentWithImperativeEvent = Vue.extend({
+  template: `
+    <div>
+      <div id="handled">{{eventHandled}}</div>
+      <ce-with-event ref="customElement" id="wc"></ce-with-event>
+    </div>
+  `,
+  data: function() {
+    return {
+      eventHandled: false
+    }
+  },
+  methods: {
+    handleEvent: function() {
+      this.eventHandled = true;
+    }
+  },
+  mounted: function() {
+    this.$refs.customElement.addEventListener('camelEvent', this.handleEvent);
+  }
+});
+
+export const ComponentWithDeclarativeEvent = Vue.extend({
   template: `
     <div>
       <div id="lowercase">{{lowercaseHandled}}</div>

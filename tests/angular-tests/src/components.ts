@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
@@ -105,6 +111,26 @@ export class ComponentWithUnregistered {
 @Component({
   template: `
     <div>
+      <div id="handled">{{eventHandled}}</div>
+      <ce-with-event #customEl id="wc"></ce-with-event>
+    </div>
+  `
+})
+export class ComponentWithImperativeEvent implements OnInit {
+  @ViewChild('customEl') customEl:ElementRef;
+  eventHandled = false;
+  ngOnInit() {
+    this.handleEvent = this.handleEvent.bind(this);
+    this.customEl.nativeElement.addEventListener('camelEvent', this.handleEvent);
+  }
+  handleEvent() {
+    this.eventHandled = true;
+  }
+}
+
+@Component({
+  template: `
+    <div>
       <div id="lowercase">{{lowercaseHandled}}</div>
       <div id="kebab">{{kebabHandled}}</div>
       <div id="camel">{{camelHandled}}</div>
@@ -120,7 +146,7 @@ export class ComponentWithUnregistered {
     </div>
   `
 })
-export class ComponentWithEvent {
+export class ComponentWithDeclarativeEvent {
   lowercaseHandled = false;
   kebabHandled = false;
   camelHandled = false;

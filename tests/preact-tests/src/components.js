@@ -115,7 +115,31 @@ export class ComponentWithUnregistered extends Component {
   }
 }
 
-export class ComponentWithEvent extends Component {
+export class ComponentWithImperativeEvent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      eventHandled: false
+    };
+    this.handleEvent = this.handleEvent.bind(this);
+  }
+  componentDidMount() {
+    this.customEl.addEventListener('camelEvent', this.handleEvent);
+  }
+  handleEvent(e) {
+    this.setState({ eventHandled: true });
+  }
+  render(props, state) {
+    return (
+      <div>
+        <div id="handled">{state.eventHandled.toString()}</div>
+        <ce-with-event id="wc" ref={(el) => this.customEl = el}></ce-with-event> 
+      </div>
+    );
+  }
+}
+
+export class ComponentWithDeclarativeEvent extends Component {
   constructor() {
     super();
     this.state = {

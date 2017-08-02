@@ -10,7 +10,8 @@ import {
   ComponentWithDifferentViews,
   ComponentWithProperties,
   ComponentWithUnregistered,
-  ComponentWithEvent
+  ComponentWithImperativeEvent,
+  ComponentWithDeclarativeEvent
 } from './components';
 
 @NgModule({
@@ -26,7 +27,8 @@ import {
     ComponentWithDifferentViews,
     ComponentWithProperties,
     ComponentWithUnregistered,
-    ComponentWithEvent
+    ComponentWithImperativeEvent,
+    ComponentWithDeclarativeEvent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
