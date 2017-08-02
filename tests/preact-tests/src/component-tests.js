@@ -151,7 +151,7 @@ describe('attributes and properties', function() {
 });
 
 describe('events', function() {
-  it('can listen to a lowercase DOM event dispatched by a Custom Element', function() {
+  it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
@@ -163,7 +163,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('true');
   });
 
-  it('can listen to a kebab-case DOM event dispatched by a Custom Element', function() {
+  it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
@@ -174,7 +174,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('true');
   });
 
-  it('can listen to a camelCase DOM event dispatched by a Custom Element', function() {
+  it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
@@ -185,7 +185,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('true');
   });
 
-  it('can listen to a CAPScase DOM event dispatched by a Custom Element', function() {
+  it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
@@ -196,7 +196,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('true');
   });
 
-  it('can listen to a PascalCase DOM event dispatched by a Custom Element', function() {
+  it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
     let root = render(<ComponentWithEvent />, scratch);
     let component = root._component;
     let wc = root.querySelector('#wc');
