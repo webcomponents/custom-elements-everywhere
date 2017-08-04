@@ -8,6 +8,10 @@ hbs.registerHelper('capitalize', function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
+hbs.registerPartial('octocat',
+  fs.readFileSync(path.join(__dirname, '/partials/octocat.handlebars'),
+  'utf8'));
+
 const tmpl = fs.readFileSync(path.join(__dirname, 'index.handlebars'), 'utf8');
 const render = hbs.compile(tmpl);
 const out = render({
