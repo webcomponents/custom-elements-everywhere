@@ -8,7 +8,7 @@
     "install-preact": "cd tests/preact-tests && npm install",
     "install-react": "cd tests/react-tests && npm install",
     "install-vue": "cd tests/vue-tests && npm install",
-    "test": "rm -rf site/results && npm run test-angular & npm run test-preact & npm run test-react & npm run test-vue & wait; kill $(jobs -p)",
+    "test": "rm -rf docs/results && npm run test-angular & npm run test-preact & npm run test-react & npm run test-vue & wait; kill $(jobs -p)",
     "test-angular": "cd tests/angular-tests && npm test",
     "test-preact": "cd tests/preact-tests && npm test",
     "test-react": "cd tests/react-tests && npm test",

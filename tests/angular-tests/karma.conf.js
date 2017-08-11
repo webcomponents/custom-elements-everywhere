@@ -23,13 +23,13 @@ module.exports = function (config) {
     },
     reporters: [ 'dots', 'html', 'json-result' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, '../../site/libraries/angular/results.html'),
+      outputFile: path.resolve(__dirname, '../../docs/libraries/angular/results.html'),
       pageTitle: 'Angular + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
     },
     jsonResultReporter: {
-      outputFile: path.resolve(__dirname, '../../site/libraries/angular/results.json')
+      outputFile: path.resolve(__dirname, '../../docs/libraries/angular/results.json')
     },
     webpack: { // kind of a copy of your webpack config
       devtool: 'inline-source-map', // just do inline source maps instead of the default

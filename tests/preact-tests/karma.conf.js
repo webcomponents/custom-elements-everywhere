@@ -16,13 +16,13 @@ module.exports = function (config) {
     },
     reporters: [ 'dots', 'html', 'json-result' ], // report results in these formats
     htmlReporter: {
-      outputFile: path.resolve(__dirname, '../../site/libraries/preact/results.html'),
+      outputFile: path.resolve(__dirname, '../../docs/libraries/preact/results.html'),
       pageTitle: 'Preact + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
     },
     jsonResultReporter: {
-      outputFile: path.resolve(__dirname, '../../site/libraries/preact/results.json')
+      outputFile: path.resolve(__dirname, '../../docs/libraries/preact/results.json')
     },
     webpack: { // kind of a copy of your webpack config
       devtool: 'inline-source-map', // just do inline source maps instead of the default
