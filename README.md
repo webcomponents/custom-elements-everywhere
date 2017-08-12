@@ -12,9 +12,8 @@ npm test
 To build the site run:
 
 ```
-cd site
 npm run build
-// start a local server :)
+npm start
 ```
 
 ## What is this?
