@@ -1,25 +1,25 @@
 {
     "summary": {
-        "success": 30,
-        "failed": 0,
+        "success": 16,
+        "failed": 14,
         "error": false,
         "disconnected": false,
-        "exitCode": 0
+        "exitCode": 1
     },
     "browsers": [
         {
             "browser": {
-                "id": "90928249",
+                "id": "71962386",
                 "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/60.0.3112.90 Safari/537.36",
                 "name": "HeadlessChrome 0.0.0 (Mac OS X 10.12.6)",
                 "state": 5,
                 "lastResult": {
-                    "success": 15,
-                    "failed": 0,
+                    "success": 8,
+                    "failed": 7,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 243,
-                    "netTime": 95,
+                    "totalTime": 299,
+                    "netTime": 196,
                     "error": false,
                     "disconnected": false
                 },
@@ -35,11 +35,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 21,
+                    "time": 74,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441396,
-                    "endTime": 1502567441422
+                    "startTime": 1502569596797,
+                    "endTime": 1502569596874
                 },
                 {
                     "id": "",
@@ -49,11 +49,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 4,
+                    "time": 81,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441427,
-                    "endTime": 1502567441433
+                    "startTime": 1502569596878,
+                    "endTime": 1502569596960
                 },
                 {
                     "id": "",
@@ -63,11 +63,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 8,
+                    "time": 7,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441434,
-                    "endTime": 1502567441443
+                    "startTime": 1502569596989,
+                    "endTime": 1502569596997
                 },
                 {
                     "id": "",
@@ -77,11 +77,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 8,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441484,
-                    "endTime": 1502567441498
+                    "startTime": 1502569596999,
+                    "endTime": 1502569597008
                 },
                 {
                     "id": "",
@@ -91,11 +91,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 4,
+                    "time": 5,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441501,
-                    "endTime": 1502567441506
+                    "startTime": 1502569597008,
+                    "endTime": 1502569597013
                 },
                 {
                     "id": "",
@@ -108,8 +108,8 @@
                     "time": 1,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441510,
-                    "endTime": 1502567441511
+                    "startTime": 1502569597014,
+                    "endTime": 1502569597015
                 },
                 {
                     "id": "",
@@ -119,11 +119,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441511,
-                    "endTime": 1502567441512
+                    "startTime": 1502569597015,
+                    "endTime": 1502569597017
                 },
                 {
                     "id": "",
@@ -131,13 +131,26 @@
                     "suite": [
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1502567441513,
-                    "endTime": 1502567441515
+                    "time": 6,
+                    "log": [
+                        "Error: Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]",
+                        "    at assert (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:4709:9)",
+                        "    at Expectation.toEqual (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:6690:30)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12459:33)"
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "Error",
+                            "message": "Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "[\n  \"R\"\n  \"e\"\n  \"a\"\n  \"c\"\n  \"t\"\n]"
+                        }
+                    ],
+                    "startTime": 1502569597017,
+                    "endTime": 1502569597029
                 },
                 {
                     "id": "",
@@ -145,13 +158,26 @@
                     "suite": [
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
                     "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1502567441515,
-                    "endTime": 1502567441517
+                    "log": [
+                        "Error: Expected undefined to equal { org: 'facebook', repo: 'react' }",
+                        "    at assert (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:4709:9)",
+                        "    at Expectation.toEqual (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:6690:30)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12466:33)"
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "Error",
+                            "message": "Expected undefined to equal { org: 'facebook', repo: 'react' }",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "{\n  \"org\": \"facebook\"\n  \"repo\": \"react\"\n}"
+                        }
+                    ],
+                    "startTime": 1502569597029,
+                    "endTime": 1502569597033
                 },
                 {
                     "id": "",
@@ -161,11 +187,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 18,
+                    "time": 10,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567441517,
-                    "endTime": 1502567441535
+                    "startTime": 1502569597034,
+                    "endTime": 1502569597044
                 },
                 {
                     "id": "",
@@ -173,13 +199,16 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 9,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ReferenceError: ComponentWithEvent is not defined",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12518:72)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567441566,
-                    "endTime": 1502567441575
+                    "startTime": 1502569597044,
+                    "endTime": 1502569597045
                 },
                 {
                     "id": "",
@@ -187,13 +216,16 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ReferenceError: ComponentWithEvent is not defined",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12528:72)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567441582,
-                    "endTime": 1502567441584
+                    "startTime": 1502569597045,
+                    "endTime": 1502569597046
                 },
                 {
                     "id": "",
@@ -201,13 +233,16 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 3,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ReferenceError: ComponentWithEvent is not defined",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12538:72)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567441589,
-                    "endTime": 1502567441592
+                    "startTime": 1502569597046,
+                    "endTime": 1502569597046
                 },
                 {
                     "id": "",
@@ -215,13 +250,16 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 3,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ReferenceError: ComponentWithEvent is not defined",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12548:72)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567441598,
-                    "endTime": 1502567441601
+                    "startTime": 1502569597047,
+                    "endTime": 1502569597049
                 },
                 {
                     "id": "",
@@ -229,29 +267,32 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 3,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ReferenceError: ComponentWithEvent is not defined",
+                        "    at Context.<anonymous> (base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12558:72)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567441607,
-                    "endTime": 1502567441610
+                    "startTime": 1502569597049,
+                    "endTime": 1502569597050
                 }
             ]
         },
         {
             "browser": {
-                "id": "94292967",
+                "id": "73460944",
                 "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:54.0) Gecko/20100101 Firefox/54.0",
                 "name": "Firefox 54.0.0 (Mac OS X 10.12.0)",
                 "state": 5,
                 "lastResult": {
-                    "success": 15,
-                    "failed": 0,
+                    "success": 8,
+                    "failed": 7,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 451,
-                    "netTime": 174,
+                    "totalTime": 102,
+                    "netTime": 91,
                     "error": false,
                     "disconnected": false
                 },
@@ -270,8 +311,8 @@
                     "time": 19,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567445895,
-                    "endTime": 1502567445917
+                    "startTime": 1502569600211,
+                    "endTime": 1502569600233
                 },
                 {
                     "id": "",
@@ -281,11 +322,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 12,
+                    "time": 8,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567445919,
-                    "endTime": 1502567445932
+                    "startTime": 1502569600234,
+                    "endTime": 1502569600243
                 },
                 {
                     "id": "",
@@ -295,11 +336,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 17,
+                    "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567445934,
-                    "endTime": 1502567445951
+                    "startTime": 1502569600245,
+                    "endTime": 1502569600259
                 },
                 {
                     "id": "",
@@ -309,11 +350,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 25,
+                    "time": 24,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567446030,
-                    "endTime": 1502567446055
+                    "startTime": 1502569600283,
+                    "endTime": 1502569600307
                 },
                 {
                     "id": "",
@@ -323,11 +364,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 10,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567446076,
-                    "endTime": 1502567446087
+                    "startTime": 1502569600309,
+                    "endTime": 1502569600314
                 },
                 {
                     "id": "",
@@ -337,11 +378,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 4,
+                    "time": 3,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567446089,
-                    "endTime": 1502567446094
+                    "startTime": 1502569600314,
+                    "endTime": 1502569600318
                 },
                 {
                     "id": "",
@@ -351,11 +392,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 3,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567446095,
-                    "endTime": 1502567446098
+                    "startTime": 1502569600319,
+                    "endTime": 1502569600322
                 },
                 {
                     "id": "",
@@ -363,13 +404,27 @@
                     "suite": [
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
                     "time": 4,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1502567446100,
-                    "endTime": 1502567446104
+                    "log": [
+                        "Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]",
+                        "assert@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:4709:9",
+                        "toEqual@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:6690:10",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12459:6",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "Error",
+                            "message": "Expected undefined to equal [ 'R', 'e', 'a', 'c', 't' ]",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "[\n  \"R\"\n  \"e\"\n  \"a\"\n  \"c\"\n  \"t\"\n]"
+                        }
+                    ],
+                    "startTime": 1502569600323,
+                    "endTime": 1502569600330
                 },
                 {
                     "id": "",
@@ -377,13 +432,27 @@
                     "suite": [
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 5,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1502567446106,
-                    "endTime": 1502567446112
+                    "time": 4,
+                    "log": [
+                        "Expected undefined to equal { org: 'facebook', repo: 'react' }",
+                        "assert@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:4709:9",
+                        "toEqual@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:6690:10",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12466:6",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "Error",
+                            "message": "Expected undefined to equal { org: 'facebook', repo: 'react' }",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "{\n  \"org\": \"facebook\"\n  \"repo\": \"react\"\n}"
+                        }
+                    ],
+                    "startTime": 1502569600331,
+                    "endTime": 1502569600336
                 },
                 {
                     "id": "",
@@ -393,11 +462,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 9,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1502567446114,
-                    "endTime": 1502567446128
+                    "startTime": 1502569600338,
+                    "endTime": 1502569600347
                 },
                 {
                     "id": "",
@@ -405,13 +474,17 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 24,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ComponentWithEvent is not defined",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12518:9",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567446149,
-                    "endTime": 1502567446174
+                    "startTime": 1502569600349,
+                    "endTime": 1502569600350
                 },
                 {
                     "id": "",
@@ -419,13 +492,17 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 8,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ComponentWithEvent is not defined",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12528:9",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567446189,
-                    "endTime": 1502567446197
+                    "startTime": 1502569600351,
+                    "endTime": 1502569600352
                 },
                 {
                     "id": "",
@@ -433,13 +510,17 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 13,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ComponentWithEvent is not defined",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12538:9",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567446245,
-                    "endTime": 1502567446258
+                    "startTime": 1502569600352,
+                    "endTime": 1502569600352
                 },
                 {
                     "id": "",
@@ -447,13 +528,17 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 6,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ComponentWithEvent is not defined",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12548:9",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567446268,
-                    "endTime": 1502567446275
+                    "startTime": 1502569600353,
+                    "endTime": 1502569600354
                 },
                 {
                     "id": "",
@@ -461,13 +546,17 @@
                     "suite": [
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 10,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "ComponentWithEvent is not defined",
+                        "@base/tests.webpack.js?bfb5f367480caaf07ae2b8216ae13e91a5eb174c:12558:9",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1502567446289,
-                    "endTime": 1502567446299
+                    "startTime": 1502569600354,
+                    "endTime": 1502569600354
                 }
             ]
         }

@@ -11,12 +11,11 @@
     "install-vue": "cd libraries/vue && npm install",
     "install-karma-plugins": "cd libraries/__shared__/karma-plugins/karma-custom-html-reporter && npm install",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm install",
-    "test": "rm -rf docs/libraries && npm run test-angular & npm run test-preact & npm run test-react & npm run test-vue & wait; kill $(jobs -p)",
-    "test-angular": "cd libraries/angular && npm test",
-    "test-preact": "cd libraries/preact && npm test",
-    "test-react": "cd libraries/react && npm test",
-    "test-vue": "cd libraries/vue && npm test",
-    "build": "npm run test; cd docs && npm run build",
+    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-preact & npm run build-react & npm run build-vue & wait; kill $(jobs -p); cd docs && npm run build",
+    "build-angular": "cd libraries/angular && npm run build",
+    "build-preact": "cd libraries/preact && npm run build",
+    "build-react": "cd libraries/react && npm run build",
+    "build-vue": "cd libraries/vue && npm run build",
     "start": "cd docs && http-server -o"
   },
   "devDependencies": {

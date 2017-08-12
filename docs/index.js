@@ -31,7 +31,7 @@ function buildContext(libraries) {
 // Collect important test data like number of successes, fails, totals, etc.
 function getTestResults(library) {
   const json = require(
-    path.resolve(__dirname, 'libraries', library, 'results.json'));
+    path.resolve(__dirname, 'libraries', library, 'results/results.json'));
   const success = json.summary.success;
   const failed = json.summary.failed;
   const total = success + failed

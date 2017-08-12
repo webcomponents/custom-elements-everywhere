@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "DIST=../../docs/libraries/preact && mkdir -p $DIST && cp -r ./meta $DIST/meta && karma start"
+    "test": "karma start",
+    "build": "npm run test; DIST=../../docs/libraries/preact && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
