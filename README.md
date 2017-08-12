@@ -6,6 +6,10 @@ To install all dependencies and build the site:
 
 ```
 npm run install-all
+# You'll see errors during this step because some of the framework tests
+# fail. That's be design, so don't worry :) At the end it should print the
+# message "Site built successfully!". If you don't see that then something
+# actually did break :P
 npm run build
 npm start
 ```
