@@ -125,7 +125,7 @@ export class ComponentWithImperativeEvent extends Component {
     this.handleEvent = this.handleEvent.bind(this);
   }
   componentDidMount() {
-    this.customEl.addEventListener('camelEvent', this.handleEvent);
+    this.wc.addEventListener('camelEvent', this.handleEvent);
   }
   handleEvent(e) {
     this.setState({ eventHandled: true });
@@ -134,8 +134,8 @@ export class ComponentWithImperativeEvent extends Component {
     let state = this.state;
     return (
       <div>
-        <div ref="handled">{state.eventHandled.toString()}</div>
-        <ce-with-event id="wc" ref={(el) => this.customEl = el}></ce-with-event> 
+        <div ref={(el) => this.handled = el}>{state.eventHandled.toString()}</div>
+        <ce-with-event id="wc" ref={(el) => this.wc = el}></ce-with-event> 
       </div>
     );
   }
@@ -177,7 +177,7 @@ export class ComponentWithDeclarativeEvent extends Component {
     return (
       <div>
         <div ref="lowercase">{state.lowercaseHandled.toString()}</div>
-         <div ref="kebab">{state.kebabHandled.toString()}</div>
+        <div ref="kebab">{state.kebabHandled.toString()}</div>
         <div ref="camel">{state.camelHandled.toString()}</div>
         <div ref="caps">{state.capsHandled.toString()}</div>
         <div ref="pascal">{state.pascalHandled.toString()}</div>

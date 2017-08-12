@@ -154,8 +154,8 @@ describe('attributes and properties', function() {
 describe('events', function() {
   it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
     let root = ReactDOM.render(<ComponentWithImperativeEvent />, scratch);
-    let wc = root.customEl;
-    let handled = ReactDOM.findDOMNode(root.refs.handled);
+    let wc = root.wc;
+    let handled = root.handled;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
