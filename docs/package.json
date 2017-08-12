@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js > index.html"
+    "build": "npm run build-html && npm run build-css",
+    "build-html": "node index.js > index.html",
+    "build-css": "cat ./styles/bulma.css ./styles/site.css | cleancss -o ./styles/bundle.css"
   },
   "author": "Rob Dodson",
   "license": "MIT",
   "devDependencies": {
+    "clean-css-cli": "^4.1.6",
     "handlebars": "^4.0.10"
   }
 }

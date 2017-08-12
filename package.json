@@ -2,6 +2,7 @@
   "name": "custom-elements-everywhere",
   "version": "1.0.0",
   "description": "Compare how different frameworks handle Web Components.",
+  "license": "MIT",
   "scripts": {
     "install-all": "npm run install-angular && npm run install-preact && npm run install-react && npm run install-vue",
     "install-angular": "cd tests/angular-tests && npm install",
@@ -12,18 +13,9 @@
     "test-angular": "cd tests/angular-tests && npm test",
     "test-preact": "cd tests/preact-tests && npm test",
     "test-react": "cd tests/react-tests && npm test",
-    "test-vue": "cd tests/vue-tests && npm test"
+    "test-vue": "cd tests/vue-tests && npm test",
+    "build": "cd docs && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/robdodson/custom-elements-everywhere.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/robdodson/custom-elements-everywhere/issues"
-  },
-  "homepage": "https://github.com/robdodson/custom-elements-everywhere#readme",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^1.0.1"
   },
