@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title></title>
+  <title>Custom Elements Everywhere</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico">
@@ -104,14 +104,16 @@
                 </div>
                 <progress class="progress is-primary" value="100" max="100">100%</progress>
                 <div class="content">
-                  <h4 id="handling-data">Handling data</h4>
+                  <h4 id="angular-handling-data">Handling data</h4>
+
 <p>Angular&#39;s default binding syntax will always set properties on an element. This
 works well for rich data, like objects and arrays, and also works well for
 primitive values so long as the Custom Element author has mapped any exposed
 attributes to corresponding properties. </p>
 <p>Angular also provides binding syntax specifically for setting an attribute, if a
 developer would prefer to communicate with an element that way.</p>
-<h4 id="handling-events">Handling events</h4>
+<h4 id="angular-handling-events">Handling events</h4>
+
 <p>Angular components can listen to native DOM events dispatched from Custom
 Elements. It supports all styles of events (lowercase, camelCase, kebab-case,
 etc).</p>
@@ -160,13 +162,15 @@ etc).</p>
                 </div>
                 <progress class="progress is-primary" value="80" max="100">80%</progress>
                 <div class="content">
-                  <h4 id="handling-data">Handling data</h4>
+                  <h4 id="preact-handling-data">Handling data</h4>
+
 <p>Preact uses a runtime heuristic to determine if it should pass data to Custom
 Elements as either properties or attributes. If a property is already defined
 on the element instance, Preact will use properties, otherwise it will fallback
 to attributes. The exception to this rule is when it tries to pass rich data,
 like objects or arrays. In those instances it will always use a property.</p>
-<h4 id="handling-events">Handling events</h4>
+<h4 id="preact-handling-events">Handling events</h4>
+
 <p>Preact can listen to native DOM events dispatched from Custom Elements. However,
 it uses a heuristic to convert JSX event binding syntax into event names, and
 always lowercases the events. For example <code>onFooUpdated={handleFoo}</code>
@@ -279,12 +283,14 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code
                 </div>
                 <progress class="progress is-primary" value="53.333333333333336" max="100">53.333333333333336%</progress>
                 <div class="content">
-                  <h4 id="handling-data">Handling data</h4>
+                  <h4 id="react-handling-data">Handling data</h4>
+
 <p>React passes all data to Custom Elements in the form of HTML attributes. For
 primitive data this is fine, but the system breaks down when passing rich data,
 like objects or arrays. In these instances you end up with stringified values
 like <code>some-attr=&quot;[object Object]&quot;</code> which can&#39;t actually be used.</p>
-<h4 id="handling-events">Handling events</h4>
+<h4 id="react-handling-events">Handling events</h4>
+
 <p>Because React implements its own synthetic event system, it cannot listen for
 DOM events coming from Custom Elements without the use of a workaround.
 Developers will need to reference their Custom Elements using a <code>ref</code>
@@ -396,11 +402,13 @@ makes working with Custom Elements cumbersome.</p>
                 </div>
                 <progress class="progress is-primary" value="100" max="100">100%</progress>
                 <div class="content">
-                  <h4 id="handling-data">Handling data</h4>
+                  <h4 id="vue-handling-data">Handling data</h4>
+
 <p>By default, Vue passes all data to Custom Elements as attributes. However, Vue
 also provides syntax to instruct its bindings to use properties instead. To bind
 to a Custom Element property use <code>:foo.prop=&quot;bar&quot;</code>.</p>
-<h4 id="handling-events">Handling events</h4>
+<h4 id="vue-handling-events">Handling events</h4>
+
 <p>Vue can listen to native DOM events dispatched from Custom Elements. It supports
 all styles of events (lowercase, camelCase, kebab-case, etc).</p>
 
