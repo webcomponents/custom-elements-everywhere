@@ -3,6 +3,15 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-mocha',
+      'karma-sourcemap-loader',
+      'karma-structured-json-reporter',
+      'karma-webpack',
+      require(path.resolve(__dirname, '../karma-plugins/karma-custom-html-reporter'))
+    ],
     browsers: [ 'ChromeHeadless', 'Firefox' ], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
     frameworks: [ 'mocha' ], // use the mocha test framework
@@ -21,7 +30,7 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: [ 'dots', 'html', 'json-result' ], // report results in these formats
+    reporters: [ 'dots', 'custom-html', 'json-result' ], // report results in these formats
     htmlReporter: {
       outputFile: path.resolve(__dirname, '../../docs/libraries/angular/results.html'),
       pageTitle: 'Angular + Custom Elements',
