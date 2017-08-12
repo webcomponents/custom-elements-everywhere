@@ -9,7 +9,7 @@ export class ComponentWithoutChildren extends Component {
   render() {
     return (
       <div>
-        <ce-without-children ref="wc"></ce-without-children>
+        <ce-without-children ref={(el) => this.wc = el}></ce-without-children>
       </div>
     );
   }
@@ -19,7 +19,7 @@ export class ComponentWithChildren extends Component {
   render() {
     return (
       <div>
-        <ce-with-children ref="wc"></ce-with-children>
+        <ce-with-children ref={(el) => this.wc = el}></ce-with-children>
       </div>
     );
   }
@@ -40,7 +40,7 @@ export class ComponentWithChildrenRerender extends Component {
     const { count } = this.state;
     return (
       <div>
-        <ce-with-children ref="wc">{count}</ce-with-children>
+        <ce-with-children ref={(el) => this.wc = el}>{count}</ce-with-children>
       </div>
     );
   }
@@ -59,7 +59,7 @@ export class ComponentWithDifferentViews extends Component {
     return (
       <div>
         {showWC ? (
-          <ce-with-children ref="wc"></ce-with-children>
+          <ce-with-children ref={(el) => this.wc = el}></ce-with-children>
         ) : (
           <div ref="dummy">Dummy view</div>
         )}
@@ -79,7 +79,7 @@ export class ComponentWithProperties extends Component {
     };
     return (
       <div>
-        <ce-with-properties ref="wc"
+        <ce-with-properties ref={(el) => this.wc = el}
           bool={data.bool}
           num={data.num}
           str={data.str}
@@ -104,7 +104,7 @@ export class ComponentWithUnregistered extends Component {
       <div>
         {/* This element doesn't actually exist.
         It's used to test unupgraded behavior. */}
-        <ce-unregistered ref="wc"
+        <ce-unregistered ref={(el) => this.wc = el}
           bool={data.bool}
           num={data.num}
           str={data.str}
@@ -176,12 +176,12 @@ export class ComponentWithDeclarativeEvent extends Component {
     let state = this.state;
     return (
       <div>
-        <div ref="lowercase">{state.lowercaseHandled.toString()}</div>
-        <div ref="kebab">{state.kebabHandled.toString()}</div>
-        <div ref="camel">{state.camelHandled.toString()}</div>
-        <div ref="caps">{state.capsHandled.toString()}</div>
-        <div ref="pascal">{state.pascalHandled.toString()}</div>
-        <ce-with-event id="wc"
+        <div ref={(el) => this.lowercase = el}>{state.lowercaseHandled.toString()}</div>
+        <div ref={(el) => this.kebab = el}>{state.kebabHandled.toString()}</div>
+        <div ref={(el) => this.camel = el}>{state.camelHandled.toString()}</div>
+        <div ref={(el) => this.caps = el}>{state.capsHandled.toString()}</div>
+        <div ref={(el) => this.pascal = el}>{state.pascalHandled.toString()}</div>
+        <ce-with-event id="wc" ref={(el) => this.wc = el}
           onlowercaseevent={this.handleLowercaseEvent}
           onkebab-event={this.handleKebabEvent}
           oncamelEvent={this.handleCamelEvent}

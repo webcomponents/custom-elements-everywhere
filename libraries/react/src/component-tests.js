@@ -33,7 +33,7 @@ afterEach(function() {
 describe('no children', function() {
   it('can display a Custom Element with no children', function() {
     let root = ReactDOM.render(<ComponentWithoutChildren />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     expect(wc).toExist();
   });
 });
@@ -52,13 +52,13 @@ describe('with children', function() {
 
   it('can display a Custom Element with children in a Shadow Root', function() {
     let root = ReactDOM.render(<ComponentWithChildren />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     expectHasChildren(wc);
   });
 
   it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', async function() {
     let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     await Promise.resolve();
     expectHasChildren(wc);
     expect(wc.textContent.includes('2')).toEqual(true);
@@ -66,14 +66,14 @@ describe('with children', function() {
 
   it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {
     let root = ReactDOM.render(<ComponentWithDifferentViews />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     expectHasChildren(wc);
     root.toggle();
     let dummy = ReactDOM.findDOMNode(root.refs.dummy);
     expect(dummy).toExist();
     expect(dummy.textContent).toEqual('Dummy view');
     root.toggle();
-    wc = ReactDOM.findDOMNode(root.refs.wc);
+    wc = root.wc;
     expectHasChildren(wc);
   });
 });
@@ -81,35 +81,35 @@ describe('with children', function() {
 describe('attributes and properties', function() {
   it('will pass boolean data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     let data = wc.bool || wc.hasAttribute('bool');
     expect(data).toBe(true);
   });
 
   it('will pass numeric data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     let data = wc.num || wc.getAttribute('num');
     expect(data).toEqual(42);
   });
 
   it('will pass string data as either an attribute or a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     let data = wc.str || wc.getAttribute('str');
     expect(data).toEqual('React');
   });
 
   it('will pass array data as a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     let data = wc.arr;
     expect(data).toEqual(['R', 'e', 'a', 'c', 't']);
   });
 
   it('will pass object data as a property', function() {
     let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
+    let wc = root.wc;
     let data = wc.obj;
     expect(data).toEqual({ org: 'facebook', repo: 'react' });
   });
@@ -163,9 +163,9 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
-    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let handled = ReactDOM.findDOMNode(root.refs.lowercase);
+    let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
+    let wc = root.wc;
+    let handled = root.lowercase;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
@@ -173,9 +173,9 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
-    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let handled = ReactDOM.findDOMNode(root.refs.kebab);
+    let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
+    let wc = root.wc;
+    let handled = root.kebab;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
@@ -183,9 +183,9 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
-    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let handled = ReactDOM.findDOMNode(root.refs.camel);
+    let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
+    let wc = root.wc;
+    let handled = root.camel;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
@@ -193,9 +193,9 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
-    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let handled = ReactDOM.findDOMNode(root.refs.caps);
+    let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
+    let wc = root.wc;
+    let handled = root.caps;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
@@ -203,9 +203,9 @@ describe('events', function() {
   });
 
   it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
-    let root = ReactDOM.render(<ComponentWithEvent />, scratch);
-    let wc = ReactDOM.findDOMNode(root.refs.wc);
-    let handled = ReactDOM.findDOMNode(root.refs.pascal);
+    let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
+    let wc = root.wc;
+    let handled = root.pascal;
     expect(handled.textContent).toEqual('false');
     wc.click();
     root.forceUpdate();
