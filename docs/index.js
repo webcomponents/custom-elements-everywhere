@@ -42,13 +42,13 @@ function getTestResults(library) {
 
 // Collect any relevant GitHub issues
 function getIssues(library) {
-  return require(path.resolve(__dirname, 'libraries', library, 'issues.json'));
+  return require(path.resolve(__dirname, 'libraries', library, 'meta/issues.json'));
 }
 
 // Collect markdown summary of library, process markdown, and return as string.
 function getSummary(library) {
   const md = fs.readFileSync(
-    path.resolve(__dirname, 'libraries', library, 'summary.md'), 'utf8');
+    path.resolve(__dirname, 'libraries', library, 'meta/summary.md'), 'utf8');
   const content = marked(md);
 
   return {content};

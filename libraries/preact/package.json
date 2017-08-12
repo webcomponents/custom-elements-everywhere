@@ -1,17 +1,13 @@
 {
-  "name": "vue-tests",
-  "version": "1.0.0",
-  "description": "",
-  "main": "karma.conf.js",
   "scripts": {
-    "test": "karma start"
+    "test": "DIST=../../docs/libraries/preact && mkdir -p $DIST && cp -r ./meta $DIST/meta && karma start"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "expect": "^1.20.2",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -21,10 +17,10 @@
     "karma-structured-json-reporter": "^1.0.1",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.4.2",
-    "vue-template-compiler": "^2.3.4",
     "webpack": "^2.0.0"
   },
   "dependencies": {
-    "vue": "^2.3.3"
+    "preact": "^8.1.0",
+    "@webcomponents/webcomponentsjs": "^1.0.1"
   }
 }

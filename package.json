@@ -5,23 +5,21 @@
   "license": "MIT",
   "scripts": {
     "install-all": "npm run install-angular && npm run install-preact && npm run install-react && npm run install-vue && npm run install-karma-plugins && npm run install-webcomponents",
-    "install-angular": "cd tests/angular-tests && npm install",
-    "install-preact": "cd tests/preact-tests && npm install",
-    "install-react": "cd tests/react-tests && npm install",
-    "install-vue": "cd tests/vue-tests && npm install",
-    "install-karma-plugins": "cd tests/karma-plugins/karma-custom-html-reporter && npm install",
-    "install-webcomponents": "cd tests/webcomponents && npm install",
-    "test": "rm -rf docs/results && npm run test-angular & npm run test-preact & npm run test-react & npm run test-vue & wait; kill $(jobs -p)",
-    "test-angular": "cd tests/angular-tests && npm test",
-    "test-preact": "cd tests/preact-tests && npm test",
-    "test-react": "cd tests/react-tests && npm test",
-    "test-vue": "cd tests/vue-tests && npm test",
-    "build": "cd docs && npm run build"
-  },
-  "dependencies": {
-    "@webcomponents/webcomponentsjs": "^1.0.1"
+    "install-angular": "cd libraries/angular && npm install",
+    "install-preact": "cd libraries/preact && npm install",
+    "install-react": "cd libraries/react && npm install",
+    "install-vue": "cd libraries/vue && npm install",
+    "install-karma-plugins": "cd libraries/__shared__/karma-plugins/karma-custom-html-reporter && npm install",
+    "install-webcomponents": "cd libraries/__shared__/webcomponents && npm install",
+    "test": "rm -rf docs/libraries && npm run test-angular & npm run test-preact & npm run test-react & npm run test-vue & wait; kill $(jobs -p)",
+    "test-angular": "cd libraries/angular && npm test",
+    "test-preact": "cd libraries/preact && npm test",
+    "test-react": "cd libraries/react && npm test",
+    "test-vue": "cd libraries/vue && npm test",
+    "build": "npm run test; cd docs && npm run build",
+    "start": "cd docs && http-server -o"
   },
   "devDependencies": {
-    "marked": "^0.3.6"
+    "http-server": "^0.10.0"
   }
 }
