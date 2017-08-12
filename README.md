@@ -2,16 +2,10 @@
 
 ## Installation
 
-To install all dependencies and run the tests for each framework just use:
+To install all dependencies and build the site:
 
 ```
 npm run install-all
-npm test
-```
-
-To build the site run:
-
-```
 npm run build
 npm start
 ```
