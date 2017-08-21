@@ -67,6 +67,7 @@ var HTMLReporter = function(baseReporterDecorator, config, emitter, logger, help
     createHead: function() {
       var head = html.ele('head');
       head.ele('meta', { charset: 'utf-8' });
+      head.ele('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' });
       head.ele('title', {}, pageTitle + (subPageTitle ? ' - ' + subPageTitle : ''));
       head.ele('link', { rel: 'icon', href: '/images/favicon.ico' });
       // Inject CSS library
