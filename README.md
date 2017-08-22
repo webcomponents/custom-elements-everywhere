@@ -22,6 +22,14 @@ npm run build
 npm start
 ```
 
+## How does it work?
+
+Tests for each framework live in the `libraries/` directory.
+All frameworks use the Custom Elements in the
+`/libraries/__shared__/webcomponents/` directory for tests.
+Each `karma.conf.js` file also uses `karma-webpack` to configure the webpack
+module loader.
+
 ## License
 
 Copyright 2017 Google, Inc.
