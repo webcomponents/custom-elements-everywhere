@@ -19,11 +19,8 @@ const hbs = require('handlebars');
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');
-const libraries = ['angular', 'preact', 'react', 'vue'];
-
-hbs.registerHelper('capitalize', function(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-});
+const libraryMap = {'angular': 'Angular', 'canjs': 'CanJS', 'preact': 'Preact', 'react': 'React', 'vue': 'Vue'};
+const libraries = Object.keys(libraryMap);
 
 hbs.registerPartial('octocat',
   fs.readFileSync(path.join(__dirname, '/partials/octocat.handlebars'),
@@ -37,7 +34,7 @@ const out = render({
 
 function buildContext(libraries) {
   return libraries.map(library => {
-    return Object.assign({ name: library }, {
+    return Object.assign({ name: library, fullName: libraryMap[library] }, {
       results: getTestResults(library),
       issues: getIssues(library),
       summary: getSummary(library)
