@@ -38,9 +38,7 @@ export const ComponentWithChildrenRerender = Moon.component('ComponentWithChildr
   },
   hooks: {
     mounted: function() {
-      Moon.nextTick(function() {
-        this.set('count', this.get('count') + 1);
-      }.bind(this));
+      this.set('count', this.get('count') + 1);
     }
   }
 });

@@ -45,6 +45,24 @@ afterEach(function() {
   scratch = null;
 });
 
+// Perform tests after DOM is updated
+const wait = (cb) => {
+  return new Promise((resolve, reject) => {
+    Moon.nextTick(() => {
+      try {
+        if(cb.toString().indexOf("done") !== -1) {
+          cb(resolve);
+        } else {
+          cb();
+          resolve();
+        }
+      } catch(err) {
+        reject(err);
+      }
+    });
+  });
+}
+
 describe('no children', function() {
   it('can display a Custom Element with no children', function() {
     let app = new ComponentWithoutChildren();
@@ -81,7 +99,7 @@ describe('with children', function() {
     let root = app.el;
     let wc = root.querySelector('#wc');
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expectHasChildren(wc);
       expect(wc.textContent.includes('2')).toEqual(true);
     });
@@ -95,7 +113,7 @@ describe('with children', function() {
     expectHasChildren(wc);
     app.callMethod("toggle");
 
-    Moon.nextTick(() => {
+    return wait((done) => {
       let dummy = root.querySelector('#dummy');
       expect(dummy).toExist();
       expect(dummy.textContent).toEqual('Dummy view');
@@ -104,6 +122,7 @@ describe('with children', function() {
       Moon.nextTick(() => {
         wc = root.querySelector('#wc');
         expectHasChildren(wc);
+        done();
       });
     });
   });
@@ -206,7 +225,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
@@ -220,7 +239,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
@@ -234,7 +253,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
@@ -248,7 +267,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
@@ -262,7 +281,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
@@ -276,7 +295,7 @@ describe('events', function() {
     expect(handled.textContent).toEqual('false');
     wc.click();
 
-    Moon.nextTick(() => {
+    return wait(() => {
       expect(handled.textContent).toEqual('true');
     });
   });
