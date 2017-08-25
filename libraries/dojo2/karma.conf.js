@@ -54,32 +54,32 @@ module.exports = function(config) {
       outputFile: path.resolve(__dirname, './results/results.json')
     },
     webpack: {
-	  resolve: {
+      resolve: {
         extensions: ['.js', '.ts'],
-		modules: [
-		  path.resolve(__dirname, '../__shared__/webcomponents/src'),
-		  path.resolve(__dirname, './node_modules')
-		]
-	  },
+        modules: [
+          path.resolve(__dirname, '../__shared__/webcomponents/src'),
+          path.resolve(__dirname, './node_modules')
+        ]
+      },
       module: {
         rules: [
-			{
-				test: /\.js$/,
-				loaders: ['babel-loader'],
-				exclude: /node_modules/
-			},
-			{ test: /\.js?$/, loader: 'umd-compat-loader' },
-			{
-				test: /.*\.ts(x)?$/, use: [
-					'umd-compat-loader',
-					{
-						loader: 'ts-loader',
-						options: {
-							transpileOnly: true
-						}
-					}
-				]
-			}
+          {
+            test: /\.js$/,
+            loaders: ['babel-loader'],
+            exclude: /node_modules/
+          },
+          { test: /\.js?$/, loader: 'umd-compat-loader' },
+          {
+            test: /.*\.ts(x)?$/, use: [
+              'umd-compat-loader',
+              {
+                loader: 'ts-loader',
+                options: {
+                  transpileOnly: true
+                }
+              }
+            ]
+          }
         ]
       }
     },

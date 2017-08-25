@@ -46,7 +46,7 @@ export class ComponentWithChildrenRerender extends WidgetBase {
 			this._count++;
 		});
 	}
-	render () {
+	render() {
 		return v('div', [
 			v('ce-with-children', [ `${this._count}` ])
 		]);
@@ -60,14 +60,14 @@ export class ComponentWithDifferentViews extends WidgetBase {
 		this._showWC = !this._showWC;
 		this.invalidate();
 	}
-	render () {
+	render() {
 		const child = this._showWC ? v('ce-with-children', {}) : v('div', [ 'Dummy view' ]);
 		return v('div', [ child ]);
 	}
 }
 
 export class ComponentWithProperties extends WidgetBase {
-	render () {
+	render() {
 		const data = {
 			bool: true,
 			num: 42,
@@ -80,7 +80,7 @@ export class ComponentWithProperties extends WidgetBase {
 }
 
 export class ComponentWithUnregistered extends WidgetBase {
-	render () {
+	render() {
 		const data = {
 			bool: true,
 			num: 42,
