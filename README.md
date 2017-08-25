@@ -24,6 +24,8 @@ npm start
 
 ## How do I add a library/framework to the project?
 
+### Step 1. Copy an existing example
+
 Tests for each library/framework live in the `libraries/` directory. The easiest
 way to start is by copying the test directory from a project that is similar to
 your own. For example, if the library you use is similar to React/Preact, you
@@ -44,7 +46,7 @@ Your library structure should look like this:
 └── tests.webpack.js
 ```
 
-### karma.conf.js
+#### karma.conf.js
 
 Your [Karma](https://karma-runner.github.io/1.0/index.html) configuration.
 Ideally you shouldn't need to change much in here. The config file uses
@@ -52,14 +54,14 @@ Ideally you shouldn't need to change much in here. The config file uses
 a `webpack` property where you can essentially write your `webpack.config.js`.
 You'll need to change this property to tell it how to bundle your library.
 
-### meta/
+#### meta/
 
 This directory contains `issues.json` where you list any open GitHub issues
 related to custom element support in your library. There is also a `summary.md`
 where you write a short description of how the library interacts with custom
 elements and any known quirks or gotchas.
 
-### src/
+#### src/
 
 This directory contains `components.js` where you create library/framework
 components which try to communicate with custom elements. You then test these
@@ -70,10 +72,21 @@ library's testing tools and components.
 Note that all frameworks use the custom elements in the
 `/libraries/__shared__/webcomponents/` directory for tests.
 
-### tests.webpack.js
+#### tests.webpack.js
 
 This file is consumed by the test runner and tells it to import any files ending
 in `-test`. You probably won't need to change this file.
+
+### Step 2. Add `npm` scripts
+
+In the root of the project you'll need to add a couple of `npm` scripts to make
+sure your library builds with the rest of the site. You should be able to copy
+an example from one of the other libraries.
+
+- In the root of the project, Add an `install-*` script to `package.json`.
+- In the root of the project, Add an `build-*` script to `package.json`.
+- In the `libraries/[your library]/` director, update the `build` script in
+  `package.json` to include your library's name.
 
 ## What kind of behavior do the tests assume?
 
