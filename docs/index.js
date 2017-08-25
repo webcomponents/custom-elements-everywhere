@@ -19,7 +19,7 @@ const hbs = require('handlebars');
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');
-const libraries = ['angular', 'preact', 'react', 'vue'];
+const libraries = ['angular', 'preact', 'react', 'vue', 'moon'];
 
 hbs.registerHelper('capitalize', function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
