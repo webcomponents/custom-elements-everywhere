@@ -20,7 +20,7 @@ describe('no children', () => {
   });
 });
 
-describe('with children', function() {
+describe('with children', () => {
   const prep = (el) => {
     return compile(el)(scope)[0];
   };
@@ -35,13 +35,13 @@ describe('with children', function() {
     expect(paragraph.textContent).toEqual('Test p');
   }
 
-  it('can display a Custom Element with children in a Shadow Root', function() {
+  it('can display a Custom Element with children in a Shadow Root', () => {
     const root = prep('<comp-with-children>');
     let wc = root.querySelector('#wc');
     expectHasChildren(wc);
   });
 
-  it.only('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', () => {
+  it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', () => {
     const root = prep('<comp-with-children-rerender>');
     interval.flush(1000);
     let wc = root.querySelector('#wc');
@@ -49,7 +49,7 @@ describe('with children', function() {
     expect(wc.textContent.includes('2')).toEqual(true);
   });
 
-  it.only('can display a Custom Element with children in a Shadow Root and handle hiding and showing the element', () => {
+  it('can display a Custom Element with children in a Shadow Root and handle hiding and showing the element', () => {
     scope.showWc = true;
     const root = prep(`<comp-with-different-views show-wc="showWc">`);
     scope.$apply();
@@ -68,5 +68,104 @@ describe('with children', function() {
 
     wc = root.querySelector('#wc');
     expectHasChildren(wc);
+  });
+});
+
+describe('attributes and properties', () => {
+  let wc;
+  beforeEach(() => {
+    const comp = compile('<comp-with-props>')(scope);
+    wc = comp[0].querySelector('#wc');
+  });
+  it('will pass boolean data as either an attribute or a property', () => {
+    let data = wc.bool || wc.hasAttribute('bool');
+    expect(data).toBe(true);
+  });
+
+  it('will pass numeric data as either an attribute or a property', () => {
+    let data = wc.num || wc.getAttribute('num');
+    expect(data).toEqual(42);
+  });
+
+  it('will pass string data as either an attribute or a property', () => {
+    let data = wc.str || wc.getAttribute('str');
+    expect(data).toEqual('Angular');
+  });
+
+  it('will pass array data as a property', () => {
+    let data = wc.arr;
+    expect(data).toEqual(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
+  });
+
+  it('will pass object data as a property', () => {
+    let data = wc.obj;
+    expect(data).toEqual({ org: 'angular', repo: 'angular' });
+  });
+});
+describe('events', () => {
+  it('can imperatively listen to a DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-imperative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#handled');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-declarative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#lowercase');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-declarative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#kebab');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-declarative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#camel');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-declarative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#caps');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
+  });
+
+  it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', () => {
+    const root = compile('<comp-with-declarative-event>')(scope)[0];
+    scope.$digest();
+    let wc = root.querySelector('#wc');
+    let handled = root.querySelector('#pascal');
+    expect(handled.textContent).toEqual('false');
+    wc.click();
+    scope.$digest();
+    expect(handled.textContent).toEqual('true');
   });
 });

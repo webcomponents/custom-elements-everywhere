@@ -53,9 +53,104 @@ const ComponentWithDifferentViews = {
   }
 }
 
+const ComponentWithProps = {
+  template: `
+    <div>
+      <ce-with-properties id="wc"
+        bool="{{$ctrl.bool}}"
+        num="{{$ctrl.num}}"
+        str="{{$ctrl.str}}"
+        arr="{{$ctrl.arr}}"
+        obj="{{$ctrl.obj}}"
+      ></ce-with-properties>
+    </div>
+  `,
+  controller: class {
+    constructor() {}
+    $onInit() {
+      this.data = {
+        bool: true,
+        num: 42,
+        str: 'Angular',
+        arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
+        obj: { org: 'angular', repo: 'angular' }
+      };
+    }
+  }
+};
+
+const ComponentWithImperativeEvent = {
+  template: `
+    <div>
+      <div id="handled">{{$ctrl.eventHandled}}</div>
+      <ce-with-event id="wc"></ce-with-event>
+    </div>
+  `,
+  controller: class {
+    constructor($element) {
+      angular.extend(this, { $element });
+    }
+    $onInit() {
+      this.eventHandled = false;
+      this.handleEvent = this.handleEvent.bind(this);
+      this.$element.find('ce-with-event').on('camelEvent', this.handleEvent);
+    }
+    handleEvent() {
+      this.eventHandled = true;
+    }
+  }
+};
+
+const ComponentWithDeclarativeEvent = {
+  template: `
+    <div>
+      <div id="lowercase">{{$ctrl.lowercaseHandled}}</div>
+      <div id="kebab">{{$ctrl.kebabHandled}}</div>
+      <div id="camel">{{$ctrl.camelHandled}}</div>
+      <div id="caps">{{$ctrl.capsHandled}}</div>
+      <div id="pascal">{{$ctrl.pascalHandled}}</div>
+      <ce-with-event id="wc"
+        on-lowercaseevent="$ctrl.handleLowercaseEvent()"
+        on-kebab-event="$ctrl.handleKebabEvent()"
+        on-camelEvent="$ctrl.handleCamelEvent()"
+        on-CAPSevent="$ctrl.handleCapsEvent()"
+        on-PascalEvent="$ctrl.handlePascalEvent()"
+      ></ce-with-event>
+    </div>
+  `,
+  controller: class {
+    constructor() {}
+    $onInit() {
+      this.lowercaseHandled = false;
+      this.kebabHandled = false;
+      this.camelHandled = false;
+      this.capsHandled = false;
+      this.pascalHandled = false;
+    }
+    handleLowercaseEvent() {
+      this.lowercaseHandled = true;
+    }
+    handleKebabEvent() {
+      this.kebabHandled = true;
+    }
+    handleCamelEvent() {
+      this.camelHandled = true;
+    }
+    handleCapsEvent() {
+      this.capsHandled = true;
+    }
+    handlePascalEvent() {
+      this.pascalHandled = true;
+    }
+  }
+};
+
 export {
   ComponentWithoutChildren,
   ComponentWithChildren,
   ComponentWithChildrenRerender,
-  ComponentWithDifferentViews
+  ComponentWithDifferentViews,
+  ComponentWithProps,
+  ComponentWithImperativeEvent,
+  ComponentWithDeclarativeEvent
 }
