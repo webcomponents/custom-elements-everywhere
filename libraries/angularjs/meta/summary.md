@@ -1,15 +1,13 @@
 <h4 id="angular-handling-data">Handling data</h4>
 
-Angular's default binding syntax will always set properties on an element. This
-works well for rich data, like objects and arrays, and also works well for
-primitive values so long as the Custom Element author has mapped any exposed
-attributes to corresponding properties. 
+AngularJS cannot bind to a custom element's attributes or properties without custom directives.
 
-Angular also provides binding syntax specifically for setting an attribute, if a
-developer would prefer to communicate with an element that way.
+Helper libraries are available to manage these directives, such as [angular-custom-events][angular-custon-events].
 
 <h4 id="angular-handling-events">Handling events</h4>
 
-Angular components can listen to native DOM events dispatched from Custom
-Elements. It supports all styles of events (lowercase, camelCase, kebab-case,
-etc).
+AngularJS can listen to native DOM events imperatively, by selecting the element and adding an `.on()` event handler. Declarative event handling is not supported.
+
+Libraries such as [angular-custom-events][angular-custom-events] can set event listeners declarative, based on particular event naming conventions.
+
+[angular-custom-events]: https://github.com/robdodson/angular-custom-elements
