@@ -15,7 +15,7 @@
     "install-dojo2": "cd libraries/dojo2 && npm i",
     "install-karma-plugins": "cd libraries/__shared__/karma-plugins/karma-custom-html-reporter && npm i",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm i",
-    "build": "rm -rf docs/libraries; npm run build-angular & npm run build angularjs & npm run build-canjs & npm run build-preact & npm run build-react & npm run build-vue & npm run build-dojo2 & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!'",
+    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-canjs & npm run build-preact & npm run build-react & npm run build-vue & npm run build-dojo2 & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!'",
     "build-angular": "cd libraries/angular && npm run build",
     "build-angularjs": "cd libraries/angularjs && npm run build",
     "build-canjs": "cd libraries/canjs && npm run build",

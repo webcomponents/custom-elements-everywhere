@@ -19,7 +19,7 @@ const hbs = require('handlebars');
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');
-const libraryMap = {'angular': 'Angular', 'canjs': 'CanJS', 'dojo2': 'Dojo 2', 'preact': 'Preact', 'react': 'React', 'vue': 'Vue'};
+const libraryMap = {'angular': 'Angular', 'angularjs': 'AngularJS (1.x)', 'canjs': 'CanJS', 'dojo2': 'Dojo 2', 'preact': 'Preact', 'react': 'React', 'vue': 'Vue'};
 const libraries = Object.keys(libraryMap);
 
 hbs.registerPartial('octocat',
