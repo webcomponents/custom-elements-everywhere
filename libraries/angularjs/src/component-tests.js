@@ -80,6 +80,12 @@ describe('attributes and properties', () => {
   it('will pass boolean data as either an attribute or a property', () => {
     let data = wc.bool || wc.hasAttribute('bool');
     expect(data).toBe(true);
+    // Extra test to see if AngularJS just left its binding syntax on
+    // the attribute and didn't actually set anything :P
+    if (!wc.bool) {
+      data = wc.getAttribute('bool');
+      expect(data.includes('{{')).toBe(false);
+    }
   });
 
   it('will pass numeric data as either an attribute or a property', () => {
