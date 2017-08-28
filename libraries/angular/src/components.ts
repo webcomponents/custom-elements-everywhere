@@ -137,8 +137,7 @@ export class ComponentWithImperativeEvent implements OnInit {
   @ViewChild('customEl') customEl:ElementRef;
   eventHandled = false;
   ngOnInit() {
-    this.handleEvent = this.handleEvent.bind(this);
-    this.customEl.nativeElement.addEventListener('camelEvent', this.handleEvent);
+    this.customEl.nativeElement.addEventListener('camelEvent', this);
   }
   handleEvent() {
     this.eventHandled = true;

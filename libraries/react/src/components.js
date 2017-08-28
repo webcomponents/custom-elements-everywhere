@@ -139,10 +139,9 @@ export class ComponentWithImperativeEvent extends Component {
     this.state = {
       eventHandled: false
     };
-    this.handleEvent = this.handleEvent.bind(this);
   }
   componentDidMount() {
-    this.wc.addEventListener('camelEvent', this.handleEvent);
+    this.wc.addEventListener('camelEvent', this);
   }
   handleEvent(e) {
     this.setState({ eventHandled: true });
