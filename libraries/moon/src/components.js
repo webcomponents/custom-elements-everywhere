@@ -21,16 +21,35 @@ import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-export const ComponentWithoutChildren = Moon.component('ComponentWithoutChildren', {
-  template: `<div><ce-without-children id='wc'></ce-without-children></div>`
+// A note about Moon templates...
+// It seems like there can't be any white space in the template string,
+// otherwise it will fail to construct the element :(
+// Adding a .trim() to the end of each so they're readable.
+export const ComponentWithoutChildren =
+Moon.component('ComponentWithoutChildren', {
+  template: `
+    <div>
+      <ce-without-children id='wc'></ce-without-children>
+    </div>
+  `.trim()
 });
 
-export const ComponentWithChildren = Moon.component('ComponentWithChildren', {
-  template: `<div><ce-with-children id='wc'></ce-with-children></div>`
+export const ComponentWithChildren =
+Moon.component('ComponentWithChildren', {
+  template: `
+    <div>
+      <ce-with-children id='wc'></ce-with-children>
+    </div>
+  `.trim()
 });
 
-export const ComponentWithChildrenRerender = Moon.component('ComponentWithChildrenRerender', {
-  template: `<div><ce-with-children id='wc'>{{count}}</ce-with-children></div>`,
+export const ComponentWithChildrenRerender =
+Moon.component('ComponentWithChildrenRerender', {
+  template: `
+    <div>
+      <ce-with-children id='wc'>{{count}}</ce-with-children>
+    </div>
+  `.trim(),
   data: function() {
     return {
       count: 1
@@ -43,8 +62,14 @@ export const ComponentWithChildrenRerender = Moon.component('ComponentWithChildr
   }
 });
 
-export const ComponentWithDifferentViews = Moon.component('ComponentWithDifferentViews', {
-  template: `<div><ce-with-children id='wc' m-if='showWC'></ce-with-children><div id='dummy' m-if='!showWC'>Dummy view</div></div>`,
+export const ComponentWithDifferentViews =
+Moon.component('ComponentWithDifferentViews', {
+  template: `
+    <div>
+      <ce-with-children id='wc' m-if='showWC'></ce-with-children>
+      <div id='dummy' m-if='!showWC'>Dummy view</div>
+    </div>
+  `.trim(),
   data: function() {
     return {
       showWC: true
@@ -57,8 +82,13 @@ export const ComponentWithDifferentViews = Moon.component('ComponentWithDifferen
   }
 });
 
-export const ComponentWithProperties = Moon.component('ComponentWithProperties', {
-  template: `<div><ce-with-properties id='wc' m-literal:bool='bool' m-literal:num='num' m-literal:str='str' m-literal:arr.dom='arr' m-literal:obj.dom='obj'></ce-with-properties></div>`,
+export const ComponentWithProperties =
+Moon.component('ComponentWithProperties', {
+  template: `
+    <div>
+      <ce-with-properties id='wc' m-literal:bool='bool' m-literal:num='num' m-literal:str='str' m-literal:arr.dom='arr' m-literal:obj.dom='obj'></ce-with-properties>
+    </div>
+  `.trim(),
   data: function() {
     return {
       bool: true,
@@ -70,8 +100,13 @@ export const ComponentWithProperties = Moon.component('ComponentWithProperties',
   }
 });
 
-export const ComponentWithUnregistered = Moon.component('ComponentWithUnregistered', {
-  template: `<div><ce-unregistered id='wc' m-literal:bool='bool' m-literal:num='num' m-literal:str='str' m-literal:arr.dom='arr' m-literal:obj.dom='obj'></ce-unregistered></div>`,
+export const ComponentWithUnregistered =
+Moon.component('ComponentWithUnregistered', {
+  template: `
+    <div>
+      <ce-unregistered id='wc' m-literal:bool='bool' m-literal:num='num' m-literal:str='str' m-literal:arr.dom='arr' m-literal:obj.dom='obj'></ce-unregistered>
+    </div>
+  `.trim(),
   data: function() {
     return {
       bool: true,
@@ -84,7 +119,12 @@ export const ComponentWithUnregistered = Moon.component('ComponentWithUnregister
 });
 
 export const ComponentWithImperativeEvent = Moon.component('ComponentWithImperativeEvent', {
-  template: `<div><div id='handled'>{{eventHandled}}</div><ce-with-event id='wc'></ce-with-event></div>`,
+  template: `
+    <div>
+      <div id='handled'>{{eventHandled}}</div>
+      <ce-with-event id='wc'></ce-with-event>
+    </div>
+  `.trim(),
   data: function() {
     return {
       eventHandled: false
@@ -97,13 +137,24 @@ export const ComponentWithImperativeEvent = Moon.component('ComponentWithImperat
   },
   hooks: {
     mounted: function() {
-      this.el.firstChild.nextSibling.addEventListener('camelEvent', this.get('handleEvent'));
+      this.root.firstElementChild.nextElementSibling
+        .addEventListener('camelEvent', this.get('handleEvent'));
     }
   }
 });
 
-export const ComponentWithDeclarativeEvent = Moon.component('ComponentWithDeclarativeEvent', {
-  template: `<div><div id='lowercase'>{{lowercaseHandled}}</div><div id='kebab'>{{kebabHandled}}</div><div id='camel'>{{camelHandled}}</div><div id='caps'>{{capsHandled}}</div><div id='pascal'>{{pascalHandled}}</div><ce-with-event id='wc' m-on:lowercaseevent='handleLowercaseEvent' m-on:kebab-event='handleKebabEvent' m-on:camelEvent='handleCamelEvent' m-on:CAPSevent='handleCapsEvent' m-on:PascalEvent='handlePascalEvent'></ce-with-event></div>`,
+export const ComponentWithDeclarativeEvent =
+Moon.component('ComponentWithDeclarativeEvent', {
+  template: `
+    <div>
+      <div id='lowercase'>{{lowercaseHandled}}</div>
+      <div id='kebab'>{{kebabHandled}}</div>
+      <div id='camel'>{{camelHandled}}</div>
+      <div id='caps'>{{capsHandled}}</div>
+      <div id='pascal'>{{pascalHandled}}</div>
+      <ce-with-event id='wc' m-on:lowercaseevent='handleLowercaseEvent' m-on:kebab-event='handleKebabEvent' m-on:camelEvent='handleCamelEvent' m-on:CAPSevent='handleCapsEvent' m-on:PascalEvent='handlePascalEvent'></ce-with-event>
+    </div>
+  `.trim(),
   data: function() {
     return {
       lowercaseHandled: false,

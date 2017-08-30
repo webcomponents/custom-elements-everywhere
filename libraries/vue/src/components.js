@@ -135,12 +135,13 @@ export const ComponentWithImperativeEvent = Vue.extend({
     }
   },
   methods: {
-    handleEvent: function() {
+    handleTestEvent: function() {
       this.eventHandled = true;
     }
   },
   mounted: function() {
-    this.$refs.customElement.addEventListener('camelEvent', this.handleEvent);
+    this.$refs.customElement
+      .addEventListener('camelEvent', this.handleTestEvent);
   }
 });
 

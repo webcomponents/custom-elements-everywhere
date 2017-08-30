@@ -67,7 +67,7 @@ describe('no children', function() {
   it('can display a Custom Element with no children', function() {
     let app = new ComponentWithoutChildren();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     expect(wc).toExist();
   });
@@ -88,7 +88,7 @@ describe('with children', function() {
   it('can display a Custom Element with children in a Shadow Root', function() {
     let app = new ComponentWithChildren();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     expectHasChildren(wc);
   });
@@ -96,7 +96,7 @@ describe('with children', function() {
   it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', function() {
     let app = new ComponentWithChildrenRerender();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
 
     return wait(() => {
@@ -108,7 +108,7 @@ describe('with children', function() {
   it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {
     let app = new ComponentWithDifferentViews();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     expectHasChildren(wc);
     app.callMethod("toggle");
@@ -132,7 +132,7 @@ describe('attributes and properties', function() {
   it('will pass boolean data as either an attribute or a property', function() {
     let app = new ComponentWithProperties();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let data = wc.bool || wc.hasAttribute('bool');
     expect(data).toBe(true);
@@ -141,7 +141,7 @@ describe('attributes and properties', function() {
   it('will pass numeric data as either an attribute or a property', function() {
     let app = new ComponentWithProperties();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let data = wc.num || wc.getAttribute('num');
     expect(data).toEqual(42);
@@ -150,7 +150,7 @@ describe('attributes and properties', function() {
   it('will pass string data as either an attribute or a property', function() {
     let app = new ComponentWithProperties();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let data = wc.str || wc.getAttribute('str');
     expect(data).toEqual('Moon');
@@ -159,7 +159,7 @@ describe('attributes and properties', function() {
   it('will pass array data as a property', function() {
     let app = new ComponentWithProperties();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let data = wc.arr;
     expect(data).toEqual(['M', 'o', 'o', 'n']);
@@ -168,7 +168,7 @@ describe('attributes and properties', function() {
   it('will pass object data as a property', function() {
     let app = new ComponentWithProperties();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let data = wc.obj;
     expect(data).toEqual({ org: 'kbrsh', repo: 'moon' });
@@ -177,7 +177,7 @@ describe('attributes and properties', function() {
   // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
   //   let app = new ComponentWithUnregistered();
   //   app.mount(scratch);
-  //   let root = app.el;
+  //   let root = app.root;
   //   let wc = root.querySelector('#wc');
   //   expect(wc.hasAttribute('bool')).toBe(true);
   // });
@@ -185,7 +185,7 @@ describe('attributes and properties', function() {
   // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
   //   let app = new ComponentWithUnregistered();
   //   app.mount(scratch);
-  //   let root = app.el;
+  //   let root = app.root;
   //   let wc = root.querySelector('#wc');
   //   expect(wc.getAttribute('num')).toEqual('42');
   // });
@@ -193,7 +193,7 @@ describe('attributes and properties', function() {
   // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
   //   let app = new ComponentWithUnregistered();
   //   app.mount(scratch);
-  //   let root = app.el;
+  //   let root = app.root;
   //   let wc = root.querySelector('#wc');
   //   expect(wc.getAttribute('str')).toEqual('Moon');
   // });
@@ -201,7 +201,7 @@ describe('attributes and properties', function() {
   // it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
   //   let app = new ComponentWithUnregistered();
   //   app.mount(scratch);
-  //   let root = app.el;
+  //   let root = app.root;
   //   let wc = root.querySelector('#wc');
   //   expect(wc.arr).toEqual(['M', 'o', 'o', 'n']);
   // });
@@ -209,7 +209,7 @@ describe('attributes and properties', function() {
   // it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
   //   let app = new ComponentWithUnregistered();
   //   app.mount(scratch);
-  //   let root = app.el;
+  //   let root = app.root;
   //   let wc = root.querySelector('#wc');
   //   expect(wc.obj).toEqual({ org: 'kbrsh', repo: 'moon' });
   // });
@@ -219,7 +219,7 @@ describe('events', function() {
   it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithImperativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#handled');
     expect(handled.textContent).toEqual('false');
@@ -233,7 +233,7 @@ describe('events', function() {
   it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithDeclarativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#lowercase');
     expect(handled.textContent).toEqual('false');
@@ -247,7 +247,7 @@ describe('events', function() {
   it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithDeclarativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#kebab');
     expect(handled.textContent).toEqual('false');
@@ -261,7 +261,7 @@ describe('events', function() {
   it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithDeclarativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#camel');
     expect(handled.textContent).toEqual('false');
@@ -275,7 +275,7 @@ describe('events', function() {
   it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithDeclarativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#caps');
     expect(handled.textContent).toEqual('false');
@@ -289,7 +289,7 @@ describe('events', function() {
   it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
     let app = new ComponentWithDeclarativeEvent();
     app.mount(scratch);
-    let root = app.el;
+    let root = app.root;
     let wc = root.querySelector('#wc');
     let handled = root.querySelector('#pascal');
     expect(handled.textContent).toEqual('false');

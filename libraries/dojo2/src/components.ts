@@ -96,13 +96,13 @@ export class ComponentWithUnregistered extends WidgetBase {
 
 export class ComponentWithImperativeEvent extends WidgetBase {
 	public eventHandled = false
-	_handleEvent(e: any) {
+	handleTestEvent(e: any) {
 		this.eventHandled = true;
 		this.invalidate();
 	}
 	render() {
 		return v('div', [
-			v('ce-with-event', { id: 'wc', oncamelEvent: this._handleEvent })
+			v('ce-with-event', { id: 'wc', oncamelEvent: this.handleTestEvent })
 		]);
 	}
 }
