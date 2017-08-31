@@ -92,10 +92,11 @@ const ComponentWithImperativeEvent = {
     }
     $onInit() {
       this.eventHandled = false;
-      this.handleEvent = this.handleEvent.bind(this);
-      this.$element.find('ce-with-event').on('camelEvent', this.handleEvent);
+      this.handleTestEvent = this.handleTestEvent.bind(this);
+      this.$element.find('ce-with-event')
+        .on('camelEvent', this.handleTestEvent);
     }
-    handleEvent() {
+    handleTestEvent() {
       this.eventHandled = true;
     }
   }

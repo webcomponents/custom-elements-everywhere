@@ -144,18 +144,20 @@ Component.extend({
   `),
   ViewModel: DefineMap.extend({
     eventHandled: {type: 'boolean', value: false},
-    handleEvent: function() {
+    handleTestEvent: function() {
       this.eventHandled = true;
     }
   }),
   events: {
     inserted: function() {
       let wc = this.element.querySelector('#wc');
-      wc.addEventListener('camelEvent', this.viewModel.handleEvent.bind(this.viewModel));
+      wc.addEventListener('camelEvent',
+        this.viewModel.handleTestEvent.bind(this.viewModel));
     },
     removed: function() {
       let wc = this.element.querySelector('#wc');
-      wc.removeEventListener('camelEvent', this.viewModel.handleEvent.bind(this.viewModel));
+      wc.removeEventListener('camelEvent',
+        this.viewModel.handleTestEvent.bind(this.viewModel));
     }
   }
 });
