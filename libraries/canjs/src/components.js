@@ -103,8 +103,12 @@ Component.extend({
     bool: {type: 'boolean', value: true},
     num: {type: 'number', value: 42},
     str: {type: 'string', value: 'CanJS'},
-    arr: {type: 'any', value: ['C', 'a', 'n', 'j', 's']},
-    obj: {type: 'any', value: { org: 'canjs', repo: 'canjs' }}
+    arr: {type: 'any', value: function() {
+      return ['C', 'a', 'n', 'j', 's'];
+    }},
+    obj: {type: 'any', value: function() {
+      return { org: 'canjs', repo: 'canjs' }
+    }}
   })
 });
 
@@ -128,8 +132,12 @@ Component.extend({
     bool: {type: 'boolean', value: true},
     num: {type: 'number', value: 42},
     str: {type: 'string', value: 'CanJS'},
-    arr: {type: 'any', value: ['C', 'a', 'n', 'j', 's']},
-    obj: {type: 'any', value: { org: 'canjs', repo: 'canjs' }}
+    arr: {type: 'any', value: function() {
+      return ['C', 'a', 'n', 'j', 's'];
+    }},
+    obj: {type: 'any', value: function() {
+      return { org: 'canjs', repo: 'canjs' }
+    }}
   })
 });
 
