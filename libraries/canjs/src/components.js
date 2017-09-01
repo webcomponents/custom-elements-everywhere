@@ -158,14 +158,14 @@ Component.extend({
   }),
   events: {
     inserted: function() {
+      let viewModel = this.viewModel;
       let wc = this.element.querySelector('#wc');
-      wc.addEventListener('camelEvent',
-        this.viewModel.handleTestEvent.bind(this.viewModel));
+      this.handleTestEventListener = viewModel.handleTestEvent.bind(viewModel);
+      wc.addEventListener('camelEvent', this.handleTestEventListener);
     },
     removed: function() {
       let wc = this.element.querySelector('#wc');
-      wc.removeEventListener('camelEvent',
-        this.viewModel.handleTestEvent.bind(this.viewModel));
+      wc.removeEventListener('camelEvent', this.handleTestEventListener);
     }
   }
 });
