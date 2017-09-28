@@ -101,34 +101,34 @@ describe('with children', function() {
 
 describe('attributes and properties', function() {
   it('will pass boolean data as either an attribute or a property', function() {
-    root.appendChild(ComponentWithProperties());
+    ComponentWithProperties(root);
     let wc = root.querySelector('#wc');
     let data = wc.bool || wc.hasAttribute('bool');
     expect(data).toBe(true);
   });
 
   it('will pass numeric data as either an attribute or a property', function() {
-    root.appendChild(ComponentWithProperties());
+    ComponentWithProperties(root);
     let wc = root.querySelector('#wc');
     let data = wc.num || wc.getAttribute('num');
     expect(data).toEqual(42);
   });
 
   it('will pass string data as either an attribute or a property', function() {
-    root.appendChild(ComponentWithProperties());
+    ComponentWithProperties(root);
     let wc = root.querySelector('#wc');
     let data = wc.str || wc.getAttribute('str');
     expect(data).toEqual('hyperHTML');
   });
 
   it('will pass array data as a property', function() {
-    root.appendChild(ComponentWithProperties());
+    ComponentWithProperties(root);
     let wc = root.querySelector('#wc');
     expect(wc.arr).toEqual(['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']);
   });
 
   it('will pass object data as a property', function() {
-    root.appendChild(ComponentWithProperties());
+    ComponentWithProperties(root);
     let wc = root.querySelector('#wc');
     expect(wc.obj).toEqual({org: 'viperHTML', repo: 'hyperHTML'});
   });
