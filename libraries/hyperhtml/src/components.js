@@ -67,7 +67,7 @@ export class ComponentWithDifferentViews extends HyperHTMLELement {
 }
 ComponentWithDifferentViews.define('with-children-diff-views');
 
-export const ComponentWithProperties = () => hyper`
+export const ComponentWithProperties = (root) => hyper(root)`
   <div>
     <ce-with-properties id="wc"
       bool=${true}
