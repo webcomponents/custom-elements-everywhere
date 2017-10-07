@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "karma start",
+    "test": "cross-env LIBRARY_NAME=@dojo/core karma start",
     "build": "npm run test; DIST=../../docs/libraries/dojo2 && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "devDependencies": {
@@ -9,25 +9,25 @@
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
     "babel-preset-es2015": "6.24.1",
+    "cross-env": "5.0.5",
     "expect": "1.20.2",
     "karma": "1.7.1",
     "karma-chrome-launcher": "2.2.0",
     "karma-firefox-launcher": "1.0.1",
     "karma-mocha": "1.3.0",
     "karma-sourcemap-loader": "0.3.7",
-    "karma-structured-json-reporter": "1.0.1",
     "karma-webpack": "2.0.4",
-    "mocha": "3.5.3",
+    "mocha": "4.0.1",
     "ts-loader": "2.3.7",
     "typescript": "2.5.3",
     "umd-compat-loader": "2.1.1",
     "webpack": "3.6.0"
   },
   "dependencies": {
-    "@dojo/core": "2.0.0-beta2.4",
-    "@dojo/has": "2.0.0-beta2.3",
-    "@dojo/interfaces": "2.0.0-beta2.4",
-    "@dojo/shim": "2.0.0-beta2.4",
+    "@dojo/core": "2.0.0-beta3.1",
+    "@dojo/has": "2.0.0-beta3.1",
+    "@dojo/interfaces": "2.0.0-beta3.1",
+    "@dojo/shim": "2.0.0-beta3.1",
     "@dojo/widget-core": "2.0.0-beta3.2",
     "@webcomponents/webcomponentsjs": "1.0.14"
   }
