@@ -5,6 +5,9 @@
 Karma tests for each of the major frameworks to see how they handle working
 with Custom Elements.
 
+[![Build Status](https://travis-ci.org/webcomponents/custom-elements-everywhere.svg?branch=master)](https://travis-ci.org/webcomponents/custom-elements-everywhere)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
+
 ## Installation
 
 To install all dependencies and build the site:
