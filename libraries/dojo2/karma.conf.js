@@ -25,9 +25,9 @@ module.exports = function(config) {
       'karma-firefox-launcher',
       'karma-mocha',
       'karma-sourcemap-loader',
-      'karma-structured-json-reporter',
       'karma-webpack',
-      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter'))
+      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
+      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
     ],
     browsers: ['ChromeHeadless', 'Firefox'], // run in Chrome and Firefox
     singleRun: true, // set this to false to leave the browser open
@@ -43,7 +43,7 @@ module.exports = function(config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: ['dots', 'custom-html', 'json-result'], // report results in these formats
+    reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
     htmlReporter: {
       outputFile: path.resolve(__dirname, './results/results.html'),
       pageTitle: 'Dojo 2 + Custom Elements',

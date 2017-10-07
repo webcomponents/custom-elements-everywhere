@@ -28,9 +28,7 @@ hbs.registerPartial('octocat',
 
 const tmpl = fs.readFileSync(path.join(__dirname, 'index.handlebars'), 'utf8');
 const render = hbs.compile(tmpl);
-const out = render({
-  libraries: buildContext(libraries)
-});
+const out = render({ libraries: buildContext(libraries) });
 
 function buildContext(libraries) {
   return libraries.map(library => {
@@ -46,12 +44,13 @@ function buildContext(libraries) {
 function getTestResults(library) {
   const json = require(
     path.resolve(__dirname, 'libraries', library, 'results/results.json'));
+  const libraryVersion = json.library.version;
   const success = json.summary.success;
   const failed = json.summary.failed;
   const total = success + failed
   const percent = success / total * 100;
 
-  return {success, failed, total, percent};
+  return {libraryVersion, success, failed, total, percent};
 }
 
 // Collect any relevant GitHub issues
