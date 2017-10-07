@@ -44,6 +44,7 @@ function buildContext(libraries) {
 function getTestResults(library) {
   const json = require(
     path.resolve(__dirname, 'libraries', library, 'results/results.json'));
+  throw new Error();
   const libraryVersion = json.library.version;
   const success = json.summary.success;
   const failed = json.summary.failed;
