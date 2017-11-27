@@ -110,9 +110,7 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
 
     for (var browserId in self.browsers) {
       var browser = self.browsers[browserId];
-
       browser.errors = browser.errors.map(logMessageFormater);
-
       browserResults.push(browser);
     }
 
@@ -121,6 +119,8 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
       browsers: browserResults
     };
 
+    output = addendumOutput(output);
+
     writeOutput(config, output, helper, logger);
 
     self.clear();
@@ -128,6 +128,29 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
 
   self.clear();
 };
+
+// Cram extra stuff onto the output object to summarize and score the results
+function addendumOutput(output) {
+  var newOutput = Object.assign({}, output);
+  newOutput.summary.basicSupport = sumResults('basic support', newOutput);
+  newOutput.summary.advancedSupport = sumResults('advanced support', newOutput);
+  return newOutput;
+}
+
+function sumResults(type, results) {
+  var sum = {
+    total: 0,
+    failed: 0,
+    passed: 0
+  };
+  results.browsers.forEach(browser => {
+    var tests = browser.results.filter(result => result.suite.includes(type));
+    sum.total = sum.total + tests.length;
+    sum.failed = sum.failed + tests.filter(test => test.success === false).length;
+    sum.passed = sum.passed + tests.filter(test => test.success === true).length;
+  });
+  return sum;
+}
 
 JsonResultReporter.$inject = ['baseReporterDecorator', 'formatError', 'config.jsonResultReporter', 'helper', 'logger'];
 
