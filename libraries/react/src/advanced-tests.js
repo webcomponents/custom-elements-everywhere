@@ -51,6 +51,7 @@ describe("advanced support", function() {
 
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
+      this.weight = 2;
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.lowercase;
@@ -61,6 +62,7 @@ describe("advanced support", function() {
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.kebab;
@@ -71,6 +73,7 @@ describe("advanced support", function() {
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.camel;
@@ -81,6 +84,7 @@ describe("advanced support", function() {
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.caps;
@@ -91,6 +95,7 @@ describe("advanced support", function() {
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.pascal;

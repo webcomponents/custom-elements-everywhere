@@ -132,9 +132,30 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
 // Cram extra stuff onto the output object to summarize and score the results
 function addendumOutput(output) {
   var newOutput = Object.assign({}, output);
-  newOutput.summary.basicSupport = sumResults('basic support', newOutput);
-  newOutput.summary.advancedSupport = sumResults('advanced support', newOutput);
+  newOutput.summary.score = scoreResults(output);
+  newOutput.summary.basicSupport = sumResults('basic support', output);
+  newOutput.summary.advancedSupport = sumResults('advanced support', output);
   return newOutput;
+}
+
+function scoreResults(results) {
+  // sumTests = (score x weight) + (score x weight) + ...
+  // sumWeights = weight + weight ...
+  // sumTests / sumWeights
+  var tests = [];
+  results.browsers.forEach(browser => {
+    tests = tests.concat(browser.results);
+  });
+
+  var sumTests = 0;
+  var sumWeights = 0;
+  tests.forEach(test => {
+    var score = test.success ? 100 : 0;
+    var weight = test.weight;
+    sumTests = sumTests + (score * weight);
+    sumWeights = sumWeights + weight;
+  });
+  return sumTests / sumWeights;
 }
 
 function sumResults(type, results) {

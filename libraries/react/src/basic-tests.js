@@ -51,6 +51,7 @@ describe("basic support", function() {
 
   describe("no children", function() {
     it("can display a Custom Element with no children", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithoutChildren />, scratch);
       let wc = root.wc;
       expect(wc).toExist();
@@ -70,12 +71,14 @@ describe("basic support", function() {
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithChildren />, scratch);
       let wc = root.wc;
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
       let wc = root.wc;
       await Promise.resolve();
@@ -84,6 +87,7 @@ describe("basic support", function() {
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithDifferentViews />, scratch);
       let wc = root.wc;
       expectHasChildren(wc);
@@ -99,6 +103,7 @@ describe("basic support", function() {
 
   describe("attributes and properties", function() {
     it("will pass boolean data as either an attribute or a property", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.bool || wc.hasAttribute("bool");
@@ -106,6 +111,7 @@ describe("basic support", function() {
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.num || wc.getAttribute("num");
@@ -113,6 +119,7 @@ describe("basic support", function() {
     });
 
     it("will pass string data as either an attribute or a property", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.str || wc.getAttribute("str");
@@ -120,6 +127,7 @@ describe("basic support", function() {
     });
 
     it("will pass array data as a property", function() {
+      this.weight = 2;
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.arr;
@@ -127,6 +135,7 @@ describe("basic support", function() {
     });
 
     it("will pass object data as a property", function() {
+      this.weight = 2;
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.obj;
@@ -172,6 +181,7 @@ describe("basic support", function() {
 
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
+      this.weight = 3;
       let root = ReactDOM.render(<ComponentWithImperativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.handled;
