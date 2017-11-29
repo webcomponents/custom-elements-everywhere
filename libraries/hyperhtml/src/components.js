@@ -20,8 +20,8 @@ import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-import {hyper} from 'hyperhtml';
-import * as HyperHTMLELement from 'hyperhtml-element';
+import HyperHTMLELement from 'hyperhtml-element';
+const { hyper } = HyperHTMLELement;
 
 export const ComponentWithoutChildren = () => hyper`
   <div>

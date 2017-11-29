@@ -16,7 +16,10 @@
  */
 
 import expect from 'expect';
-import hyper from 'hyperhtml';
+
+import HyperHTMLELement from 'hyperhtml-element';
+const { hyper } = HyperHTMLELement;
+
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -123,14 +126,12 @@ describe('attributes and properties', function() {
 
   it('will pass array data as a property', async function() {
     ComponentWithProperties(root);
-    await Promise.resolve();
     let wc = root.querySelector('#wc');
     expect(wc.arr).toEqual(['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']);
   });
 
   it('will pass object data as a property', async function() {
     ComponentWithProperties(root);
-    await Promise.resolve();
     let wc = root.querySelector('#wc');
     expect(wc.obj).toEqual({org: 'viperHTML', repo: 'hyperHTML'});
   });
