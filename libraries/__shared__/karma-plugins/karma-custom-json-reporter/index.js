@@ -152,10 +152,14 @@ function scoreResults(results) {
   tests.forEach(test => {
     var score = test.success ? 100 : 0;
     var weight = test.weight;
+    console.log(test.description, test.success, test.weight);
+    if (typeof weight === 'undefined') {
+      throw new Error(`Missing weight! Test: ${test.description}`);
+    }
     sumTests = sumTests + (score * weight);
     sumWeights = sumWeights + weight;
   });
-  return sumTests / sumWeights;
+  return Math.round(sumTests / sumWeights);
 }
 
 function sumResults(type, results) {

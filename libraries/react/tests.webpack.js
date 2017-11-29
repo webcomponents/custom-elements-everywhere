@@ -15,6 +15,6 @@
  * limitations under the License.
  */
 
-// Find all files that end in -tests.js and run them through karma
+// Run basic and advanced tests through Karma
 require('./src/basic-tests.js');
 require('./src/advanced-tests.js');
