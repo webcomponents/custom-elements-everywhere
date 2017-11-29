@@ -1,26 +1,37 @@
 {
     "summary": {
-        "success": 30,
-        "failed": 0,
-        "error": false,
+        "success": 0,
+        "failed": 30,
+        "error": true,
         "disconnected": false,
-        "exitCode": 0
+        "exitCode": 1,
+        "score": 0,
+        "basicSupport": {
+            "total": 20,
+            "failed": 20,
+            "passed": 0
+        },
+        "advancedSupport": {
+            "total": 10,
+            "failed": 10,
+            "passed": 0
+        }
     },
     "browsers": [
         {
             "browser": {
-                "id": "20718580",
-                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:57.0) Gecko/20100101 Firefox/57.0",
-                "name": "Firefox 57.0.0 (Mac OS X 10.12.0)",
+                "id": "446013",
+                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
+                "name": "HeadlessChrome 0.0.0 (Mac OS X 10.12.6)",
                 "state": 5,
                 "lastResult": {
-                    "success": 15,
-                    "failed": 0,
+                    "success": 0,
+                    "failed": 15,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 1778,
-                    "netTime": 1150,
-                    "error": false,
+                    "totalTime": 90,
+                    "netTime": null,
+                    "error": true,
                     "disconnected": false
                 },
                 "disconnectsCount": 0
@@ -31,228 +42,302 @@
                     "id": "",
                     "description": "can display a Custom Element with no children",
                     "suite": [
+                        "basic support",
                         "no children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 5,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "TypeError: __WEBPACK_IMPORTED_MODULE_4_hyperhtml__.hyper is not a function",
+                        "    at ComponentWithoutChildren (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1166:88)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1391:109)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152990615,
-                    "endTime": 1511152990623
+                    "startTime": 1511951084922,
+                    "endTime": 1511951084930,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in a Shadow Root",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 8,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "TypeError: __WEBPACK_IMPORTED_MODULE_4_hyperhtml__.hyper is not a function",
+                        "    at ComponentWithChildren (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1173:85)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1411:106)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152990630,
-                    "endTime": 1511152990640
+                    "startTime": 1511951084934,
+                    "endTime": 1511951084935,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 225,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1418:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152990643,
-                    "endTime": 1511152990868
+                    "startTime": 1511951084936,
+                    "endTime": 1511951084937,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 129,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1429:21)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152990874,
-                    "endTime": 1511152991005
+                    "startTime": 1511951084938,
+                    "endTime": 1511951084939,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass boolean data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 4,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "TypeError: Object(...) is not a function",
+                        "    at ComponentWithProperties (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:97)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1450:91)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991325,
-                    "endTime": 1511152991330
+                    "startTime": 1511951084939,
+                    "endTime": 1511951084940,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass numeric data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 1,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "TypeError: Object(...) is not a function",
+                        "    at ComponentWithProperties (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:97)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1458:91)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991331,
-                    "endTime": 1511152991333
+                    "startTime": 1511951084940,
+                    "endTime": 1511951084941,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass string data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 3,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "TypeError: Object(...) is not a function",
+                        "    at ComponentWithProperties (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:97)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1466:91)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991334,
-                    "endTime": 1511152991337
+                    "startTime": 1511951084941,
+                    "endTime": 1511951084941,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass array data as a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 13,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "TypeError: Object(...) is not a function",
+                        "    at ComponentWithProperties (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:97)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1474:91)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991339,
-                    "endTime": 1511152991403
+                    "startTime": 1511951084941,
+                    "endTime": 1511951084942,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "will pass object data as a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 100,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "TypeError: Object(...) is not a function",
+                        "    at ComponentWithProperties (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:97)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1482:91)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991420,
-                    "endTime": 1511152991523
+                    "startTime": 1511951084943,
+                    "endTime": 1511951084944,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
                     "suite": [
+                        "basic support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 16,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1492:21)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991539,
-                    "endTime": 1511152991555
+                    "startTime": 1511951084949,
+                    "endTime": 1511951084949,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 57,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5417:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991587,
-                    "endTime": 1511152991645
+                    "startTime": 1511951084950,
+                    "endTime": 1511951084951,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 241,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5431:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991685,
-                    "endTime": 1511152991927
+                    "startTime": 1511951084951,
+                    "endTime": 1511951084952,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 39,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5444:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152991964,
-                    "endTime": 1511152992003
+                    "startTime": 1511951084952,
+                    "endTime": 1511951084953,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 105,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5457:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152992018,
-                    "endTime": 1511152992123
+                    "startTime": 1511951084954,
+                    "endTime": 1511951084955,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 204,
-                    "log": [],
+                    "log": [
+                        "Error: Uncaught TypeError: hyperHTML.bind is not a function (http://localhost:9877/base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5470:12)"
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152992136,
-                    "endTime": 1511152992340
+                    "startTime": 1511951084956,
+                    "endTime": 1511951084956,
+                    "weight": 1
                 }
             ]
         },
         {
             "browser": {
-                "id": "45121983",
-                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
-                "name": "HeadlessChrome 0.0.0 (Mac OS X 10.12.6)",
+                "id": "79017819",
+                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:57.0) Gecko/20100101 Firefox/57.0",
+                "name": "Firefox 57.0.0 (Mac OS X 10.12.0)",
                 "state": 5,
                 "lastResult": {
-                    "success": 15,
-                    "failed": 0,
+                    "success": 0,
+                    "failed": 15,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 404,
-                    "netTime": 253,
-                    "error": false,
+                    "totalTime": 528,
+                    "netTime": 86,
+                    "error": true,
                     "disconnected": false
                 },
                 "disconnectsCount": 0
@@ -263,211 +348,364 @@
                     "id": "",
                     "description": "can display a Custom Element with no children",
                     "suite": [
+                        "basic support",
                         "no children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 6,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "__WEBPACK_IMPORTED_MODULE_4_hyperhtml__.hyper is not a function",
+                        "ComponentWithoutChildren@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1166:40",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1391:24",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986378,
-                    "endTime": 1511152986385
+                    "startTime": 1511951088453,
+                    "endTime": 1511951088466,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in a Shadow Root",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 43,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "__WEBPACK_IMPORTED_MODULE_4_hyperhtml__.hyper is not a function",
+                        "ComponentWithChildren@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1173:37",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1411:24",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986387,
-                    "endTime": 1511152986430
+                    "startTime": 1511951088477,
+                    "endTime": 1511951088478,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 58,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1192:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1185:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1418:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986431,
-                    "endTime": 1511152986489
+                    "startTime": 1511951088480,
+                    "endTime": 1511951088483,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
                     "suite": [
+                        "basic support",
                         "with children"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 21,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1213:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1207:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1429:16",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986494,
-                    "endTime": 1511152986515
+                    "startTime": 1511951088486,
+                    "endTime": 1511951088488,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass boolean data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "Object(...) is not a function",
+                        "ComponentWithProperties@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:41",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1450:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986522,
-                    "endTime": 1511152986524
+                    "startTime": 1511951088489,
+                    "endTime": 1511951088491,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass numeric data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
                     "time": 0,
-                    "log": [],
+                    "log": [
+                        "Object(...) is not a function",
+                        "ComponentWithProperties@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:41",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1458:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986526,
-                    "endTime": 1511152986526
+                    "startTime": 1511951088492,
+                    "endTime": 1511951088492,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass string data as either an attribute or a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 1,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "Object(...) is not a function",
+                        "ComponentWithProperties@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:41",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1466:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986527,
-                    "endTime": 1511152986528
+                    "startTime": 1511951088494,
+                    "endTime": 1511951088494,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "will pass array data as a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
+                    "time": 80,
+                    "log": [
+                        "Object(...) is not a function",
+                        "ComponentWithProperties@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:41",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1474:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986528,
-                    "endTime": 1511152986531
+                    "startTime": 1511951088495,
+                    "endTime": 1511951088575,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "will pass object data as a property",
                     "suite": [
+                        "basic support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "Object(...) is not a function",
+                        "ComponentWithProperties@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1226:41",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1482:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986536,
-                    "endTime": 1511152986538
+                    "startTime": 1511951088647,
+                    "endTime": 1511951088649,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
                     "suite": [
+                        "basic support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 34,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1251:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1243:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1492:16",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986567,
-                    "endTime": 1511152986634
+                    "startTime": 1511951088809,
+                    "endTime": 1511951088810,
+                    "weight": 3
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 29,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1292:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1273:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5417:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986650,
-                    "endTime": 1511152986679
+                    "startTime": 1511951088812,
+                    "endTime": 1511951088814,
+                    "weight": 2
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 15,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1292:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1273:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5431:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986685,
-                    "endTime": 1511152986700
+                    "startTime": 1511951088815,
+                    "endTime": 1511951088816,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 12,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1292:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1273:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5444:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986713,
-                    "endTime": 1511152986725
+                    "startTime": 1511951088816,
+                    "endTime": 1511951088817,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 15,
-                    "log": [],
+                    "time": 0,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1292:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1273:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5457:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986729,
-                    "endTime": 1511152986744
+                    "startTime": 1511951088818,
+                    "endTime": 1511951088825,
+                    "weight": 1
                 },
                 {
                     "id": "",
                     "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
                     "suite": [
+                        "advanced support",
                         "events"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 13,
-                    "log": [],
+                    "time": 1,
+                    "log": [
+                        "hyperHTML.bind is not a function",
+                        "get html@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5296:42",
+                        "render@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1292:5",
+                        "created@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:1273:5",
+                        "value@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5216:17",
+                        "Cd.prototype.connectedCallback@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:134:194",
+                        "M@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:129:908",
+                        "ue/<@base/node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js?62d2afd474309cf25ca123eb3dd62141683f3155:145:382",
+                        "@base/tests.webpack.js?7aaeaa59ba1451491951ca3c0b6837fecf38fadc:5470:7",
+                        ""
+                    ],
                     "assertionErrors": [],
-                    "startTime": 1511152986751,
-                    "endTime": 1511152986764
+                    "startTime": 1511951088891,
+                    "endTime": 1511951088892,
+                    "weight": 1
                 }
             ]
         }

@@ -105,24 +105,33 @@ limitations under the License.
             <div class="columns">
               <div class="column">
                 <div class="level">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <h2 id="{{name}}" class="title is-2">
-                        {{fullName}}
-                        <span class="library-version">{{results.libraryVersion}}</span>
-                      </h2>
+                  <div class="level-item level-left has-text-centered">
+                    <div>
+                      <p class="heading">Library</p>
+                      <p class="title" id="{{name}}">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
                     </div>
                   </div>
-                  <div class="level-right">
-                    <div class="level-item">
-                      <div>
-                        <p class="heading has-text-centered">Score</p>
-                        <p class="title">{{results.success}}/{{results.total}}</p>
-                      </div>
+                  <div class="level-item level-left has-text-centered">
+                    <div>
+                      <p class="heading">Score</p>
+                      <p class="title">{{results.summary.score}}%</p>
+                    </div>
+                  </div>
+                  <div class="level-item level-left has-text-centered">
+                    <div>
+                      <p class="heading">Basic Tests</p>
+                      <p class="title">{{results.summary.basicSupport.passed}}/{{results.summary.basicSupport.total}}</p><div></div>
+                    
+                    </div>
+                  </div>
+                  <div class="level-item level-left has-text-centered">
+                    <div>
+                      <p class="heading">Advanced Tests</p>
+                      <p class="title">{{results.summary.advancedSupport.passed}}/{{results.summary.advancedSupport.total}}</p>
                     </div>
                   </div>
                 </div>
-                <progress class="progress is-primary" value="{{results.percent}}" max="100">{{results.percent}}%</progress>
+                <progress class="progress {{{warning-level results.summary.score}}}" value="{{results.summary.score}}" max="100">{{results.summary.score}}%</progress>
                 <div class="content">
                   {{{summary.content}}}
                 </div>
