@@ -109,9 +109,10 @@ limitations under the License.
               Custom Elements and Shadow DOM don't come with a pre-defined set
               of best practices. The tests in this project are a best guess as
               to how things should work, but they're by no means final. This
-              project is also about driving discussion and finding consensus,
-              so don't be afraid to open a GitHub issue to discuss places where
-              the tests could be improved. ✌️
+              project is also about driving discussion and finding consensus, so
+              don't be afraid to
+              <a href="https://github.com/webcomponents/custom-elements-everywhere">open a GitHub issue</a>
+              to discuss places where the tests could be improved. ✌️
             </p>
           </div>
         </div>
@@ -820,6 +821,107 @@ all styles of events (lowercase, camelCase, kebab-case, etc).</p>
         </div>
       </div>
     </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <div class="content">
+            <h2 class="title is-2">Frequently Asked Questions</h2>
+            <div class="question">
+              <div class="title is-4">
+                Are you testing that libraries let you author custom elements?
+              </div>
+              <p>
+                No. These tests just check that a library/framework supports the
+                <em>usage</em> of custom elements. Essentially we're trying to
+                answer the question: "If you're building an app in framework X,
+                and you'd like to include a few custom elements on the page, are
+                you going to have a bad time?"
+              </p>
+              <p>
+                The tests check that the library/framework will let you do
+                things like display a custom element, bind data to it, pass in
+                children, and listen for events.
+              </p>
+            </div>
+            <div class="question">
+              <div class="title is-4">
+                How are the libraries scored?
+              </div>
+              <p>
+                Each test has an associated weight, based on how critical it is.
+                The final tally of pass/fails is combined with these weights to
+                create a weighted average score.
+              </p>
+            </div>
+            <div class="question">
+              <div class="title is-4">
+                How are basic and advanced tests different?
+              </div>
+              <p>
+                Basic tests cover things which are fundamental to a
+                library/framework's ability to display a custom element. For
+                example, can it display a custom element that contains shadow
+                DOM? Can it handle setting attributes on the custom element? Can
+                it listen for DOM events from the element? Failing any of these
+                tests is a pretty critical issue.
+              </p>
+              <p>
+                Advanced tests cover more opinionated framework features. For
+                example, does the framework provide declarative syntax for
+                listening to events with different casing styles (kebab-case,
+                camelCase, etc). These are more like "nice to haves" that may
+                improve the developer experience.
+              </p>
+            </div>
+            <div class="question">
+              <div class="title is-4">
+                Why don't you have tests for _____ library?
+              </div>
+              <p>
+                We'd like to have as much test coverage as possible, but it's
+                a fair bit of work building each test suite (especially because
+                we are not experts in every library). If a framework or library
+                is not represented it's just because we haven't had a chance to
+                write tests for it yet.
+              </p>
+            </div>
+            <div class="question">
+              <div class="title is-4">
+                I want to write some tests for _____ library. Do you accept pull
+                requests?
+              </div>
+              <p>
+                Yes! In fact, >50% of the tests on this site are from external
+                contributors.
+              </p>
+              <p>
+                If you'd like to contribute, please first
+                <a href="https://github.com/webcomponents/custom-elements-everywhere/issues">open an issue</a>
+                saying you'd like to write some tests for a specific
+                library/framework. This helps ensure that there's not more than
+                one person writing tests for the same library.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-info">
+    <div class="hero-body">
+      <p class="has-text-centered">
+        <strong>Custom Elements Everywhere</strong> by <a href="https://twitter.com/rob_dodson">Rob Dodson</a>.
+        Licensed under <strong><a href="https://github.com/webcomponents/custom-elements-everywhere/blob/master/LICENSE">Apache 2.0</a></strong>.
+      </p>
+      <div class="has-text-centered fork-me-footer">
+        <a href="https://github.com/webcomponents/custom-elements-everywhere">
+          <img width="24" src="/images/octocat-white.svg" alt="GitHub Octocat">
+        </a>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
