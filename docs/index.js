@@ -26,6 +26,18 @@ hbs.registerPartial('octocat',
   fs.readFileSync(path.join(__dirname, '/partials/octocat.handlebars'),
   'utf8'));
 
+// Helper to color progress bar based on test scores
+// https://bulma.io/documentation/elements/progress/#colors
+hbs.registerHelper('warning-level', function(score) {
+  if (score > 75) {
+    return 'is-primary'
+  } else if (score > 50) {
+    return 'is-warning'
+  } else {
+    return 'is-danger'
+  }
+});
+
 const tmpl = fs.readFileSync(path.join(__dirname, 'index.handlebars'), 'utf8');
 const render = hbs.compile(tmpl);
 const out = render({ libraries: buildContext(libraries) });
@@ -45,12 +57,9 @@ function getTestResults(library) {
   const json = require(
     path.resolve(__dirname, 'libraries', library, 'results/results.json'));
   const libraryVersion = json.library.version;
-  const success = json.summary.success;
-  const failed = json.summary.failed;
-  const total = success + failed
-  const percent = success / total * 100;
+  const summary = json.summary;
 
-  return {libraryVersion, success, failed, total, percent};
+  return {libraryVersion, summary};
 }
 
 // Collect any relevant GitHub issues

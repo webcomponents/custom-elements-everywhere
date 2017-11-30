@@ -110,9 +110,7 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
 
     for (var browserId in self.browsers) {
       var browser = self.browsers[browserId];
-
       browser.errors = browser.errors.map(logMessageFormater);
-
       browserResults.push(browser);
     }
 
@@ -121,6 +119,8 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
       browsers: browserResults
     };
 
+    output = addendumOutput(output);
+
     writeOutput(config, output, helper, logger);
 
     self.clear();
@@ -128,6 +128,53 @@ var JsonResultReporter = function(baseReporterDecorator, formatError, config, he
 
   self.clear();
 };
+
+// Cram extra stuff onto the output object to summarize and score the results
+function addendumOutput(output) {
+  var newOutput = Object.assign({}, output);
+  newOutput.summary.score = scoreResults(output);
+  newOutput.summary.basicSupport = sumResults('basic support', output);
+  newOutput.summary.advancedSupport = sumResults('advanced support', output);
+  return newOutput;
+}
+
+function scoreResults(results) {
+  // sumTests = (score x weight) + (score x weight) + ...
+  // sumWeights = weight + weight ...
+  // sumTests / sumWeights
+  var tests = [];
+  results.browsers.forEach(browser => {
+    tests = tests.concat(browser.results);
+  });
+
+  var sumTests = 0;
+  var sumWeights = 0;
+  tests.forEach(test => {
+    var score = test.success ? 100 : 0;
+    var weight = test.weight;
+    if (typeof weight === 'undefined') {
+      throw new Error(`Missing weight! Test: ${test.description}`);
+    }
+    sumTests = sumTests + (score * weight);
+    sumWeights = sumWeights + weight;
+  });
+  return Math.round(sumTests / sumWeights);
+}
+
+function sumResults(type, results) {
+  var sum = {
+    total: 0,
+    failed: 0,
+    passed: 0
+  };
+  results.browsers.forEach(browser => {
+    var tests = browser.results.filter(result => result.suite.includes(type));
+    sum.total = sum.total + tests.length;
+    sum.failed = sum.failed + tests.filter(test => test.success === false).length;
+    sum.passed = sum.passed + tests.filter(test => test.success === true).length;
+  });
+  return sum;
+}
 
 JsonResultReporter.$inject = ['baseReporterDecorator', 'formatError', 'config.jsonResultReporter', 'helper', 'logger'];
 
