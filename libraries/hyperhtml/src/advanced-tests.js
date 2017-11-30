@@ -65,6 +65,20 @@ describe("advanced support", function() {
   });
 
   describe("events", function() {
+    it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function(done) {
+      this.weight = 2;
+      root.appendChild(new ComponentWithDeclarativeEvent);
+      setTimeout(function () {
+        let wc = root.querySelector('#wc');
+        expect(wc).toExist();
+        let handled = root.querySelector('#lowercase');
+        expect(handled.textContent).toEqual('false');
+        wc.click();
+        expect(handled.textContent).toEqual('true');
+        done();
+      }, 10);
+    });
+
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function(done) {
       this.weight = 1;
       root.appendChild(new ComponentWithDeclarativeEvent());
