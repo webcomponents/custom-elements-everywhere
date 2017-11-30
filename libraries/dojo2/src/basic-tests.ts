@@ -125,26 +125,6 @@ describe("basic support", function() {
       const data = wc.getAttribute("str");
       expect(data).toEqual("Dojo2");
     });
-
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
-      const wc: any = document.querySelector("ce-with-properties");
-      const data = wc.arr;
-      expect(data).toEqual(["d", "o", "j", "o", "2"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
-      const wc: any = document.querySelector("ce-with-properties");
-      const data = wc.obj;
-      expect(data).toEqual({ org: "dojo", repo: "dojo2" });
-    });
   });
 
   describe("events", function() {

@@ -126,22 +126,6 @@ describe("basic support", function() {
       expect(data).toEqual("React");
     });
 
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-      let wc = root.wc;
-      let data = wc.arr;
-      expect(data).toEqual(["R", "e", "a", "c", "t"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
-      let wc = root.wc;
-      let data = wc.obj;
-      expect(data).toEqual({ org: "facebook", repo: "react" });
-    });
-
     // TODO: Is it the framework's responsibility to check if the underlying
     // property is defined? Or should it just always assume it is and do its
     // usual default behavior? Preact will actually check if it's defined and

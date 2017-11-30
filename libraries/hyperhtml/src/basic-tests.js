@@ -131,20 +131,6 @@ describe("basic support", function() {
       let data = wc.str || wc.getAttribute("str");
       expect(data).toEqual("hyperHTML");
     });
-
-    it("will pass array data as a property", async function() {
-      this.weight = 2;
-      ComponentWithProperties(root);
-      let wc = root.querySelector("#wc");
-      expect(wc.arr).toEqual(["h", "y", "p", "e", "r", "H", "T", "M", "L"]);
-    });
-
-    it("will pass object data as a property", async function() {
-      this.weight = 2;
-      ComponentWithProperties(root);
-      let wc = root.querySelector("#wc");
-      expect(wc.obj).toEqual({ org: "viperHTML", repo: "hyperHTML" });
-    });
   });
 
   describe("events", function() {

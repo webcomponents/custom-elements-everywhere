@@ -49,6 +49,24 @@ afterEach(function() {
 
 describe("advanced support", function() {
 
+  describe("attributes and properties", function() {
+    it("will pass array data as a property", function() {
+      this.weight = 2;
+      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let wc = root.wc;
+      let data = wc.arr;
+      expect(data).toEqual(["R", "e", "a", "c", "t"]);
+    });
+
+    it("will pass object data as a property", function() {
+      this.weight = 2;
+      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let wc = root.wc;
+      let data = wc.obj;
+      expect(data).toEqual({ org: "facebook", repo: "react" });
+    });
+  });
+
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
       this.weight = 2;

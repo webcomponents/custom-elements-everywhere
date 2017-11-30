@@ -146,26 +146,6 @@ describe("basic support", function() {
       let data = wc.str || wc.getAttribute("str");
       expect(data).toEqual("Angular");
     });
-
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let fixture = TestBed.createComponent(ComponentWithProperties);
-      fixture.detectChanges();
-      let root = fixture.debugElement.nativeElement;
-      let wc = root.querySelector("#wc");
-      let data = wc.arr;
-      expect(data).toEqual(["A", "n", "g", "u", "l", "a", "r"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let fixture = TestBed.createComponent(ComponentWithProperties);
-      fixture.detectChanges();
-      let root = fixture.debugElement.nativeElement;
-      let wc = root.querySelector("#wc");
-      let data = wc.obj;
-      expect(data).toEqual({ org: "angular", repo: "angular" });
-    });
   });
 
   describe("events", function() {

@@ -47,6 +47,24 @@ afterEach(function() {
 
 describe("advanced support", function() {
 
+  describe("attributes and properties", function() {
+    it("will pass array data as a property", function() {
+      this.weight = 2;
+      let root = new ComponentWithProperties().$mount(scratch).$el;
+      let wc = root.querySelector("#wc");
+      let data = wc.arr;
+      expect(data).toEqual(["V", "u", "e"]);
+    });
+
+    it("will pass object data as a property", function() {
+      this.weight = 2;
+      let root = new ComponentWithProperties().$mount(scratch).$el;
+      let wc = root.querySelector("#wc");
+      let data = wc.obj;
+      expect(data).toEqual({ org: "vuejs", repo: "vue" });
+    });
+  });
+
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
       this.weight = 2;

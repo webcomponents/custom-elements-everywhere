@@ -47,6 +47,28 @@ afterEach(function() {
 
 describe("advanced support", function() {
 
+  describe("attributes and properties", function() {
+    it("will pass array data as a property", function() {
+      this.weight = 2;
+      const Component = ProjectorMixin(ComponentWithProperties);
+      const component = new Component();
+      component.append(scratch);
+      const wc: any = document.querySelector("ce-with-properties");
+      const data = wc.arr;
+      expect(data).toEqual(["d", "o", "j", "o", "2"]);
+    });
+
+    it("will pass object data as a property", function() {
+      this.weight = 2;
+      const Component = ProjectorMixin(ComponentWithProperties);
+      const component = new Component();
+      component.append(scratch);
+      const wc: any = document.querySelector("ce-with-properties");
+      const data = wc.obj;
+      expect(data).toEqual({ org: "dojo", repo: "dojo2" });
+    });
+  });
+
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
       this.weight = 2;

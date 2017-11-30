@@ -129,22 +129,6 @@ describe("basic support", function() {
       expect(data).toEqual("Preact");
     });
 
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let root = render(<ComponentWithProperties />, scratch);
-      let wc = root.querySelector("#wc");
-      let data = wc.arr;
-      expect(data).toEqual(["P", "r", "e", "a", "c", "t"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let root = render(<ComponentWithProperties />, scratch);
-      let wc = root.querySelector("#wc");
-      let data = wc.obj;
-      expect(data).toEqual({ org: "developit", repo: "preact" });
-    });
-
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');

@@ -129,22 +129,6 @@ describe("basic support", function() {
       expect(data).toEqual("CanJS");
     });
 
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      root.appendChild(stache(`<${ComponentWithProperties} />`)());
-      let wc = root.querySelector("#wc");
-      let data = wc.arr;
-      expect(data).toEqual(["C", "a", "n", "j", "s"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      root.appendChild(stache(`<${ComponentWithProperties} />`)());
-      let wc = root.querySelector("#wc");
-      let data = wc.obj;
-      expect(data).toEqual({ org: "canjs", repo: "CanJS" });
-    });
-
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   root.appendChild(stache(`<${ComponentWithUnregistered} />`)());
     //   let wc = root.querySelector('#wc');

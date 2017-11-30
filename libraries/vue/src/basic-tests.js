@@ -128,22 +128,6 @@ describe("basic support", function() {
       expect(data).toEqual("Vue");
     });
 
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
-      let data = wc.arr;
-      expect(data).toEqual(["V", "u", "e"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
-      let data = wc.obj;
-      expect(data).toEqual({ org: "vuejs", repo: "vue" });
-    });
-
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = new ComponentWithUnregistered().$mount(scratch).$el;
     //   let wc = root.querySelector('#wc');

@@ -48,6 +48,22 @@ afterEach(function() {
 
 describe("advanced support", function() {
 
+  describe("attributes and properties", function() {
+    it("will pass array data as a property", async function() {
+      this.weight = 2;
+      ComponentWithProperties(root);
+      let wc = root.querySelector("#wc");
+      expect(wc.arr).toEqual(["h", "y", "p", "e", "r", "H", "T", "M", "L"]);
+    });
+
+    it("will pass object data as a property", async function() {
+      this.weight = 2;
+      ComponentWithProperties(root);
+      let wc = root.querySelector("#wc");
+      expect(wc.obj).toEqual({ org: "viperHTML", repo: "hyperHTML" });
+    });
+  });
+
   describe("events", function() {
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function(done) {
       this.weight = 1;

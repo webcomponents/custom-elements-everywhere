@@ -24,13 +24,13 @@
       <section>
         <header class="overview">
           <div class="browser title is-6">Browser: HeadlessChrome 0.0.0 (Mac OS X 10.12.6)</div>
-          <div class="timestamp title is-6">Timestamp: 11/30/2017, 3:33:59 PM</div>
+          <div class="timestamp title is-6">Timestamp: 11/30/2017, 6:11:09 PM</div>
           <p class="results title is-6">
             15 tests / 
             0 errors / 
             10 failures / 
             0 skipped / 
-            runtime: 0.38s
+            runtime: 0.527s
           </p>
         </header>
         <div class="spec spec--group">
@@ -42,7 +42,7 @@
               <p class="spec__suite">no children</p>
               <em class="spec__descrip">can display a CE with no children</em>
             </div>
-            <div class="spec__status">Passed in 0.009s</div>
+            <div class="spec__status">Passed in 0.114s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -51,7 +51,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
             </div>
-            <div class="spec__status">Passed in 0.004s</div>
+            <div class="spec__status">Passed in 0.002s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -60,7 +60,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
             </div>
-            <div class="spec__status">Passed in 0.028s</div>
+            <div class="spec__status">Passed in 0.094s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -69,7 +69,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and handle hiding and showing the element</em>
             </div>
-            <div class="spec__status">Passed in 0.024s</div>
+            <div class="spec__status">Passed in 0.098s</div>
           </h3>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
@@ -102,6 +102,18 @@
           </h3>
           <p class="spec__log">Error: Expected '{{$ctrl.str}}' to equal 'Angular'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/basic-tests.js:110:19 &lt;- tests.webpack.js:38624:60)<br /></p>
         </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.005s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
             <div class="spec__title">
@@ -110,7 +122,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected undefined to equal [ 'A', 'n', 'g', 'u', 'l', 'a', 'r' ]<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/basic-tests.js:116:19 &lt;- tests.webpack.js:38630:60)<br /></p>
+          <p class="spec__log">ReferenceError: wc is not defined<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:22:17 &lt;- tests.webpack.js:42459:18)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -120,19 +132,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected undefined to equal { org: 'angular', repo: 'angular' }<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/basic-tests.js:122:19 &lt;- tests.webpack.js:38636:60)<br /></p>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.064s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
+          <p class="spec__log">ReferenceError: wc is not defined<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:28:17 &lt;- tests.webpack.js:42465:18)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -142,7 +142,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:29:34 &lt;- tests.webpack.js:42478:75)<br /></p>
+          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:43:34 &lt;- tests.webpack.js:42480:75)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -152,7 +152,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:41:34 &lt;- tests.webpack.js:42490:75)<br /></p>
+          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:55:34 &lt;- tests.webpack.js:42492:75)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -162,7 +162,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:53:34 &lt;- tests.webpack.js:42502:75)<br /></p>
+          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:67:34 &lt;- tests.webpack.js:42504:75)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -172,7 +172,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:65:34 &lt;- tests.webpack.js:42514:75)<br /></p>
+          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:79:34 &lt;- tests.webpack.js:42516:75)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -182,19 +182,19 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:77:34 &lt;- tests.webpack.js:42526:75)<br /></p>
+          <p class="spec__log">Error: Expected 'false' to equal 'true'<br />    at assert (webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9)<br />    at Expectation.toEqual (webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:30)<br />    at Context.&lt;anonymous&gt; (webpack:///src/advanced-tests.js:91:34 &lt;- tests.webpack.js:42528:75)<br /></p>
         </div>
       </section>
       <section>
         <header class="overview">
           <div class="browser title is-6">Browser: Firefox 57.0.0 (Mac OS X 10.12.0)</div>
-          <div class="timestamp title is-6">Timestamp: 11/30/2017, 3:34:02 PM</div>
+          <div class="timestamp title is-6">Timestamp: 11/30/2017, 6:11:14 PM</div>
           <p class="results title is-6">
             15 tests / 
             0 errors / 
             10 failures / 
             0 skipped / 
-            runtime: 0.269s
+            runtime: 0.401s
           </p>
         </header>
         <div class="spec spec--group">
@@ -206,7 +206,7 @@
               <p class="spec__suite">no children</p>
               <em class="spec__descrip">can display a CE with no children</em>
             </div>
-            <div class="spec__status">Passed in 0.015s</div>
+            <div class="spec__status">Passed in 0.02s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -215,7 +215,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
             </div>
-            <div class="spec__status">Passed in 0.009s</div>
+            <div class="spec__status">Passed in 0.01s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -224,7 +224,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
             </div>
-            <div class="spec__status">Passed in 0.098s</div>
+            <div class="spec__status">Passed in 0.071s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -233,7 +233,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and handle hiding and showing the element</em>
             </div>
-            <div class="spec__status">Passed in 0.064s</div>
+            <div class="spec__status">Passed in 0.047s</div>
           </h3>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
@@ -266,6 +266,18 @@
           </h3>
           <p class="spec__log">Expected '{{$ctrl.str}}' to equal 'Angular'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/basic-tests.js:110:6 &lt;- tests.webpack.js:38624:7<br /><br /></p>
         </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.012s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
             <div class="spec__title">
@@ -274,7 +286,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected undefined to equal [ 'A', 'n', 'g', 'u', 'l', 'a', 'r' ]<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/basic-tests.js:116:6 &lt;- tests.webpack.js:38630:7<br /><br /></p>
+          <p class="spec__log">wc is not defined<br />@webpack:///src/advanced-tests.js:22:10 &lt;- tests.webpack.js:42459:11<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -284,19 +296,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected undefined to equal { org: 'angular', repo: 'angular' }<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/basic-tests.js:122:6 &lt;- tests.webpack.js:38636:7<br /><br /></p>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.009s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
+          <p class="spec__log">wc is not defined<br />@webpack:///src/advanced-tests.js:28:10 &lt;- tests.webpack.js:42465:11<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -306,7 +306,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:29:6 &lt;- tests.webpack.js:42478:7<br /><br /></p>
+          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:43:6 &lt;- tests.webpack.js:42480:7<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -316,7 +316,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:41:6 &lt;- tests.webpack.js:42490:7<br /><br /></p>
+          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:55:6 &lt;- tests.webpack.js:42492:7<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -326,7 +326,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:53:6 &lt;- tests.webpack.js:42502:7<br /><br /></p>
+          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:67:6 &lt;- tests.webpack.js:42504:7<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -336,7 +336,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:65:6 &lt;- tests.webpack.js:42514:7<br /><br /></p>
+          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:79:6 &lt;- tests.webpack.js:42516:7<br /><br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -346,7 +346,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:77:6 &lt;- tests.webpack.js:42526:7<br /><br /></p>
+          <p class="spec__log">Expected 'false' to equal 'true'<br />assert@webpack:///node_modules/expect/lib/assert.js:29:0 &lt;- tests.webpack.js:108:9<br />toEqual@webpack:///node_modules/expect/lib/Expectation.js:81:0 &lt;- tests.webpack.js:242:10<br />@webpack:///src/advanced-tests.js:91:6 &lt;- tests.webpack.js:42528:7<br /><br /></p>
         </div>
       </section>
     </div>

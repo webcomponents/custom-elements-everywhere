@@ -16,6 +16,20 @@ describe("advanced support", () => {
     })
   );
 
+  describe("attributes and properties", () => {
+    it("will pass array data as a property", function() {
+      this.weight = 2;
+      let data = wc.arr;
+      expect(data).toEqual(["A", "n", "g", "u", "l", "a", "r"]);
+    });
+
+    it("will pass object data as a property", function() {
+      this.weight = 2;
+      let data = wc.obj;
+      expect(data).toEqual({ org: "angular", repo: "angular" });
+    });
+  });
+
   describe("events", () => {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
       this.weight = 2;
