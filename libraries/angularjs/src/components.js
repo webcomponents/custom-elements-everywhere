@@ -57,24 +57,24 @@ const ComponentWithProps = {
   template: `
     <div>
       <ce-with-properties id="wc"
-        bool="{{$ctrl.bool}}"
-        num="{{$ctrl.num}}"
-        str="{{$ctrl.str}}"
-        arr="{{$ctrl.arr}}"
-        obj="{{$ctrl.obj}}"
+        ng-attr-bool="{{$ctrl.bool}}"
+        ng-attr-num="{{$ctrl.num}}"
+        ng-attr-str="{{$ctrl.str}}"
+        ng-attr-arr="{{$ctrl.arr}}"
+        ng-attr-obj="{{$ctrl.obj}}"
       ></ce-with-properties>
     </div>
   `,
   controller: class {
     constructor() {}
     $onInit() {
-      this.data = {
+      angular.extend(this, {
         bool: true,
         num: 42,
         str: 'Angular',
         arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
         obj: { org: 'angular', repo: 'angular' }
-      };
+      });
     }
   }
 };
