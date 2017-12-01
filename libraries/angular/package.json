@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "cross-env LIBRARY_NAME=@angular/core karma start",
-    "build": "npm run test; DIST=../../docs/libraries/angular && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
+    "build": "npm run test; cross-env DIST=../../docs/libraries/angular && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "devDependencies": {
     "@types/mocha": "2.2.44",
