@@ -15,4 +15,6 @@
  * limitations under the License.
  */
 
-import './src/component-tests';
+// Run basic and advanced tests through Karma
+require('./src/basic-tests.ts');
+require('./src/advanced-tests.ts');

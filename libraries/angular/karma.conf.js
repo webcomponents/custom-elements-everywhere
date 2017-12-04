@@ -23,7 +23,7 @@ module.exports = function(config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-mocha',
+      require(path.resolve(__dirname, '../__shared__/karma-mocha')),
       'karma-sourcemap-loader',
       'karma-webpack',
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
