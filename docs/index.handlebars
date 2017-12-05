@@ -51,13 +51,17 @@ limitations under the License.
   <section class="hero is-info is-large">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title is-1">
-          Custom Elements Everywhere
-        </h1>
-        <h2 class="subtitle is-4">
-          Making sure frameworks and custom elements can be BFFs
-          <span class="cheers">🍻</span>
-        </h2>
+        <div class="columns">
+          <div class="column">
+            <h1 class="title is-1">
+              Custom Elements Everywhere
+            </h1>
+            <h2 class="subtitle is-4">
+              Making sure frameworks and custom elements can be BFFs
+              <span class="cheers">🍻</span>
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
     {{>octocat}}
@@ -65,7 +69,7 @@ limitations under the License.
   <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-two-thirds">
+        <div class="column is-10-tablet is-offset-1-tablet is-7-widescreen is-offset-0-widescreen">
           <div class="content">
             <h2 class="title is-2">What's this?</h2>
             <p>
@@ -101,74 +105,70 @@ limitations under the License.
   {{#each libraries}}
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column">
-            <div class="columns">
-              <div class="column">
-                <div class="level">
-                  <div class="level-item level-left has-text-centered">
-                    <div>
-                      <p class="heading">Library</p>
-                      <p class="title" id="{{name}}">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
-                    </div>
-                  </div>
-                  <div class="level-item level-left has-text-centered">
-                    <div>
-                      <p class="heading">Score</p>
-                      <p class="title">{{results.summary.score}}%</p>
-                    </div>
-                  </div>
-                  <div class="level-item level-left has-text-centered">
-                    <div>
-                      <p class="heading">Basic Tests</p>
-                      <p class="title">{{results.summary.basicSupport.passed}}/{{results.summary.basicSupport.total}}</p><div></div>
-                    
-                    </div>
-                  </div>
-                  <div class="level-item level-left has-text-centered">
-                    <div>
-                      <p class="heading">Advanced Tests</p>
-                      <p class="title">{{results.summary.advancedSupport.passed}}/{{results.summary.advancedSupport.total}}</p>
-                    </div>
-                  </div>
-                </div>
-                <progress class="progress {{{warning-level results.summary.score}}}" value="{{results.summary.score}}" max="100">{{results.summary.score}}%</progress>
-                <div class="content">
-                  {{{summary.content}}}
-                </div>
-                <div class="content">
-                  <a class="button is-info is-outlined" href="libraries/{{name}}/results/results.html">
-                    View the tests
-                  </a>
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
+                  <p class="title" id="{{name}}">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
                 </div>
               </div>
-              <div class="column is-offset-1">
-                <div class="box">
-                  <h3 class="title is-3">Related Issues</h3>
-                  {{#if issues}}
-                    {{#each issues}}
-                      <article class="media">
-                        <div class="media-content">
-                          <a href="{{link}}">
-                            <div class="content">
-                              <p>
-                                <strong>{{title}}</strong>
-                                <br>
-                                <small>{{meta}}</small>
-                              </p>
-                            </div>
-                          </a>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">{{results.summary.score}}%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">{{results.summary.basicSupport.passed}}/{{results.summary.basicSupport.total}}</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">{{results.summary.advancedSupport.passed}}/{{results.summary.advancedSupport.total}}</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress {{{warning-level results.summary.score}}}" value="{{results.summary.score}}" max="100">{{results.summary.score}}%</progress>
+            <div class="content">
+              {{{summary.content}}}
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/{{name}}/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h3 class="title is-3">Related Issues</h3>
+              {{#if issues}}
+                {{#each issues}}
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="{{link}}">
+                        <div class="content">
+                          <p>
+                            <strong>{{title}}</strong>
+                            <br>
+                            <small>{{meta}}</small>
+                          </p>
                         </div>
-                      </article>
-                    {{/each}}
-                    {{else}}
-                      <div class="has-text-centered">
-                        <img src="images/smiley.svg" alt="" width="256">
-                        <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
-                      </div>
-                  {{/if}}
-                </div>
-              </div>
+                      </a>
+                    </div>
+                  </article>
+                {{/each}}
+                {{else}}
+                  <div class="has-text-centered">
+                    <img src="images/smiley.svg" alt="" width="256">
+                    <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
+                  </div>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -177,8 +177,8 @@ limitations under the License.
   {{/each}}
   <section class="section">
     <div class="container">
-      <div class="columns">
-        <div class="column is-two-thirds">
+      <div class="columns is-desktop">
+        <div class="column is-10-tablet is-offset-1-tablet is-7-widescreen is-offset-0-widescreen">
           <div class="content">
             <h2 class="title is-2">Frequently Asked Questions</h2>
             <div class="question">
