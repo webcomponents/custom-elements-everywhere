@@ -1,10 +1,10 @@
-## karma-mocha
+## karma-plugins
+
+### karma-mocha
 
 This is a fork of the Mocha adapter for Karma. The primary change is to add
 the ability for a test to define a weight on its context and report those
 values to Karma. This lets us do weighted averages for basic and advanced tests.
-
-## karma-plugins
 
 ### karma-custom-html-reporter
 

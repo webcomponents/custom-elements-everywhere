@@ -11,7 +11,7 @@ describe("basic support", () => {
   beforeEach(
     inject(($compile, $rootScope, $interval) => {
       compile = $compile;
-      scope = $rootScope.$new();
+      scope = $rootScope;
       interval = $interval;
     })
   );
@@ -83,6 +83,8 @@ describe("basic support", () => {
     let wc;
     beforeEach(() => {
       const comp = compile("<comp-with-props>")(scope);
+      scope.$digest();
+
       wc = comp[0].querySelector("#wc");
     });
 
@@ -124,5 +126,5 @@ describe("basic support", () => {
       expect(handled.textContent).toEqual("true");
     });
   });
-  
+
 });
