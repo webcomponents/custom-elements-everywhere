@@ -8,6 +8,9 @@ var createPattern = function (path) {
 
 var initMocha = function (files, config) {
   var mochaPath = path.dirname(require.resolve('mocha'))
+  console.log('dirname', __dirname);
+  console.log('cwd', process.cwd());
+  console.log('mochaPath', mochaPath);
   files.unshift(createPattern(path.join(__dirname, 'adapter.js')))
 
   config = config || {}
