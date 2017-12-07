@@ -29,7 +29,14 @@ module.exports = function(config) {
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
     ],
-    browsers: ['ChromeHeadless', 'Firefox'], // run in Chrome and Firefox
+    browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
+    customLaunchers: {
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: [ '-headless' ],
+        displayName: 'FirefoxHeadless'
+      },
+    },
     singleRun: true, // set this to false to leave the browser open
     frameworks: ['mocha'], // use the mocha test framework
     files: [
