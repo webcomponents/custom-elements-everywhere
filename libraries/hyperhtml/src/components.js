@@ -20,7 +20,7 @@ import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-import HyperHTMLELement from 'hyperhtml-element';
+import HyperHTMLELement from 'hyperhtml-element/esm';
 const { hyper } = HyperHTMLELement;
 
 export const ComponentWithoutChildren = () => hyper`
