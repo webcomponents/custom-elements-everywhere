@@ -199,6 +199,19 @@ limitations under the License.
               </p>
             </div>
             <div class="question">
+              <h3 class="title is-4" id="faq-counted-twice">
+                Why is each test counted twice?
+              </h3>
+              <p>
+                Each test is run on a browser with native support for all of the
+                web components standards (template, shadow DOM, custom elements)
+                and on a browser with polyfilled support. It's possible that a
+                test may work in the native setting and not in the polyfilled
+                one, or vice versa. To account for this, we count both
+                environments as unique tests.
+              </p>
+            </div>
+            <div class="question">
               <h3 class="title is-4" id="faq-libraries-scored">
                 How are the libraries scored?
               </h3>
