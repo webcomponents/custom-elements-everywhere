@@ -296,14 +296,14 @@ supported.</p>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">16/16</p><div></div>
+                  <p class="title">8/8</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">10/14</p>
+                  <p class="title">5/7</p>
                 </div>
               </div>
             </div>
@@ -425,24 +425,24 @@ Other than that, Dojo 2 supports all kinds of event names.</p>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Score</p>
-                  <p class="title">%</p>
+                  <p class="title">100%</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">0/0</p><div></div>
+                  <p class="title">16/16</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">0/0</p>
+                  <p class="title">14/14</p>
                 </div>
               </div>
             </div>
-            <progress class="progress is-danger" value="" max="100">%</progress>
+            <progress class="progress is-primary" value="100" max="100">100%</progress>
             <div class="content">
               <h4 id="hyperhtml-handling-data">Handling data</h4>
 
@@ -531,10 +531,19 @@ FAQ.</p>
           <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
             <div class="box">
               <h3 class="title is-3">Related Issues</h3>
-                  <div class="has-text-centered">
-                    <img src="images/smiley.svg" alt="" width="256">
-                    <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
-                  </div>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/Polymer/polymer/issues/4888">
+                        <div class="content">
+                          <p>
+                            <strong>Polymer&#x27;s declarative event listener names have issues with casing</strong>
+                            <br>
+                            <small>#4888 opened Oct 17 by sorvell</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
             </div>
           </div>
         </div>
@@ -651,19 +660,6 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code
                       </a>
                     </div>
                   </article>
-                  <article class="media">
-                    <div class="media-content">
-                      <a href="https://github.com/facebook/react/issues/9242">
-                        <div class="content">
-                          <p>
-                            <strong>Event Handler on React Component not invoked when React Component is rendered inside a Web Component</strong>
-                            <br>
-                            <small>#9242 opened on Mar 23 by nilshartmann</small>
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </article>
             </div>
           </div>
         </div>
@@ -689,14 +685,14 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">16/16</p><div></div>
+                  <p class="title">8/8</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">0/14</p>
+                  <p class="title">0/7</p>
                 </div>
               </div>
             </div>
@@ -786,6 +782,19 @@ makes working with Custom Elements cumbersome.</p>
                             <strong>Boolean attributes on Web Components</strong>
                             <br>
                             <small>#9230 opened Mar 21 by nickdima</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/facebook/react/issues/9242">
+                        <div class="content">
+                          <p>
+                            <strong>Event Handler on React Component not invoked when React Component is rendered inside a Web Component</strong>
+                            <br>
+                            <small>#9242 opened on Mar 23 by nilshartmann</small>
                           </p>
                         </div>
                       </a>
@@ -942,7 +951,7 @@ all styles of events (lowercase, camelCase, kebab-case, etc).</p>
                 Libraries like Preact also fail these capitalization tests,
                 which points to a possible best practice of always making event
                 names lowercase. This is the style most DOM events already use:
-                <code>mousedown, popstate, beforeunload</code>.
+                <code>mousedown, popstate, beforeunload</code>, etc.
               </p>
             </div>
             <div class="question">
@@ -951,10 +960,10 @@ all styles of events (lowercase, camelCase, kebab-case, etc).</p>
                 property bindings, does it automatically fail those tests?
               </h3>
               <p>
-                Not necessarily. If a library omits a non-standard feature aimed
-                at developer ergonomics, e.g. declarative event/property
-                bindings, we would just omit those tests from the scoring
-                process.
+                Not necessarily. If a library omits a
+                <strong>non-standard</strong> feature aimed at developer
+                ergonomics, e.g. declarative event/property bindings, we would
+                just omit those tests from the scoring process.
               </p>
             </div>
             <div class="question">
