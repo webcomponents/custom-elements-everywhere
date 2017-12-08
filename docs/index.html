@@ -296,14 +296,14 @@ supported.</p>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">8/8</p><div></div>
+                  <p class="title">16/16</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">5/7</p>
+                  <p class="title">10/14</p>
                 </div>
               </div>
             </div>
@@ -685,14 +685,14 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">8/8</p><div></div>
+                  <p class="title">16/16</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">0/7</p>
+                  <p class="title">0/14</p>
                 </div>
               </div>
             </div>
@@ -888,6 +888,19 @@ all styles of events (lowercase, camelCase, kebab-case, etc).</p>
                 The tests check that the library/framework will let you do
                 things like display a custom element, bind data to it, pass in
                 children, and listen for events.
+              </p>
+            </div>
+            <div class="question">
+              <h3 class="title is-4" id="faq-counted-twice">
+                Why is each test counted twice?
+              </h3>
+              <p>
+                Each test is run on a browser with native support for all of the
+                web components standards (template, shadow DOM, custom elements)
+                and on a browser with polyfilled support. It's possible that a
+                test may work in the native setting and not in the polyfilled
+                one, or vice versa. To account for this, we count both
+                environments as unique tests.
               </p>
             </div>
             <div class="question">
