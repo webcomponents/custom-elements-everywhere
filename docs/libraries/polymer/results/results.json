@@ -1,11 +1,11 @@
 {
     "summary": {
-        "success": 16,
-        "failed": 14,
+        "success": 24,
+        "failed": 6,
         "error": false,
         "disconnected": false,
         "exitCode": 1,
-        "score": 71,
+        "score": 91,
         "basicSupport": {
             "total": 16,
             "failed": 0,
@@ -13,24 +13,24 @@
         },
         "advancedSupport": {
             "total": 14,
-            "failed": 14,
-            "passed": 0
+            "failed": 6,
+            "passed": 8
         }
     },
     "browsers": [
         {
             "browser": {
-                "id": "4570008",
+                "id": "29114390",
                 "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:57.0) Gecko/20100101 Firefox/57.0",
                 "name": "Firefox 57.0.0 (Mac OS X 10.12.0)",
                 "state": 5,
                 "lastResult": {
-                    "success": 8,
-                    "failed": 7,
+                    "success": 12,
+                    "failed": 3,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 6171,
-                    "netTime": 596,
+                    "totalTime": 532,
+                    "netTime": 67,
                     "error": false,
                     "disconnected": false
                 },
@@ -40,18 +40,18 @@
             "results": [
                 {
                     "id": "",
-                    "description": "can display a CE with no children",
+                    "description": "can display a Custom Element with no children",
                     "suite": [
                         "basic support",
                         "no children"
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 19,
+                    "time": 6,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589749887,
-                    "endTime": 1512589750268,
+                    "startTime": 1512738627563,
+                    "endTime": 1512738627571,
                     "weight": 3
                 },
                 {
@@ -63,11 +63,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 95,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589750286,
-                    "endTime": 1512589750438,
+                    "startTime": 1512738627573,
+                    "endTime": 1512738627578,
                     "weight": 3
                 },
                 {
@@ -79,27 +79,27 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 45,
+                    "time": 8,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589750502,
-                    "endTime": 1512589750611,
+                    "startTime": 1512738627579,
+                    "endTime": 1512738627589,
                     "weight": 3
                 },
                 {
                     "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root and handle hiding and showing the element",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
                     "suite": [
                         "basic support",
                         "with children"
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 49,
+                    "time": 17,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589751131,
-                    "endTime": 1512589751224,
+                    "startTime": 1512738627603,
+                    "endTime": 1512738627620,
                     "weight": 3
                 },
                 {
@@ -114,8 +114,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589751456,
-                    "endTime": 1512589751522,
+                    "startTime": 1512738627712,
+                    "endTime": 1512738627716,
                     "weight": 3
                 },
                 {
@@ -123,6 +123,54 @@
                     "description": "will pass numeric data as either an attribute or a property",
                     "suite": [
                         "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738627716,
+                    "endTime": 1512738627719,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738627720,
+                    "endTime": 1512738627721,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 5,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738627722,
+                    "endTime": 1512738627727,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
                         "attributes and properties"
                     ],
                     "success": true,
@@ -130,60 +178,8 @@
                     "time": 1,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589751523,
-                    "endTime": 1512589751560,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass string data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 0,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1512589751821,
-                    "endTime": 1512589751994,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "basic support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 74,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1512589752144,
-                    "endTime": 1512589752232,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass array data as a property",
-                    "suite": [
-                        "advanced support",
-                        "attributes and properties"
-                    ],
-                    "success": false,
-                    "skipped": false,
-                    "time": 0,
-                    "log": [
-                        "wc is not defined",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42764:11",
-                        ""
-                    ],
-                    "assertionErrors": [],
-                    "startTime": 1512589752237,
-                    "endTime": 1512589752457,
+                    "startTime": 1512738627748,
+                    "endTime": 1512738627750,
                     "weight": 2
                 },
                 {
@@ -193,17 +189,13 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
                     "time": 0,
-                    "log": [
-                        "wc is not defined",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42770:11",
-                        ""
-                    ],
+                    "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589752789,
-                    "endTime": 1512589752797,
+                    "startTime": 1512738627751,
+                    "endTime": 1512738627754,
                     "weight": 2
                 },
                 {
@@ -213,27 +205,13 @@
                         "advanced support",
                         "events"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 140,
-                    "log": [
-                        "Expected 'false' to equal 'true'",
-                        "assert@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9",
-                        "toEqual@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:10",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42785:7",
-                        ""
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "Error",
-                            "message": "Expected 'false' to equal 'true'",
-                            "showDiff": true,
-                            "actual": "\"false\"",
-                            "expected": "\"true\""
-                        }
-                    ],
-                    "startTime": 1512589752803,
-                    "endTime": 1512589752975,
+                    "time": 10,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738627755,
+                    "endTime": 1512738627766,
                     "weight": 2
                 },
                 {
@@ -243,27 +221,13 @@
                         "advanced support",
                         "events"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 32,
-                    "log": [
-                        "Expected 'false' to equal 'true'",
-                        "assert@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9",
-                        "toEqual@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:10",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42797:7",
-                        ""
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "Error",
-                            "message": "Expected 'false' to equal 'true'",
-                            "showDiff": true,
-                            "actual": "\"false\"",
-                            "expected": "\"true\""
-                        }
-                    ],
-                    "startTime": 1512589753478,
-                    "endTime": 1512589753523,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738627863,
+                    "endTime": 1512738627865,
                     "weight": 1
                 },
                 {
@@ -275,12 +239,12 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 47,
+                    "time": 4,
                     "log": [
                         "Expected 'false' to equal 'true'",
-                        "assert@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9",
-                        "toEqual@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:10",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42809:7",
+                        "assert@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9",
+                        "toEqual@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:10",
+                        "@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13320:8",
                         ""
                     ],
                     "assertionErrors": [
@@ -292,8 +256,8 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589753524,
-                    "endTime": 1512589753591,
+                    "startTime": 1512738627889,
+                    "endTime": 1512738627895,
                     "weight": 1
                 },
                 {
@@ -305,12 +269,12 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 40,
+                    "time": 5,
                     "log": [
                         "Expected 'false' to equal 'true'",
-                        "assert@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9",
-                        "toEqual@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:10",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42821:7",
+                        "assert@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9",
+                        "toEqual@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:10",
+                        "@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13332:8",
                         ""
                     ],
                     "assertionErrors": [
@@ -322,8 +286,8 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589753960,
-                    "endTime": 1512589754042,
+                    "startTime": 1512738627941,
+                    "endTime": 1512738627947,
                     "weight": 1
                 },
                 {
@@ -335,12 +299,12 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 54,
+                    "time": 5,
                     "log": [
                         "Expected 'false' to equal 'true'",
-                        "assert@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9",
-                        "toEqual@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:10",
-                        "@base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42833:7",
+                        "assert@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9",
+                        "toEqual@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:10",
+                        "@base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13344:8",
                         ""
                     ],
                     "assertionErrors": [
@@ -352,25 +316,25 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589754045,
-                    "endTime": 1512589754414,
+                    "startTime": 1512738628022,
+                    "endTime": 1512738628031,
                     "weight": 1
                 }
             ]
         },
         {
             "browser": {
-                "id": "94703263",
+                "id": "94856692",
                 "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
                 "name": "HeadlessChrome 0.0.0 (Mac OS X 10.12.6)",
                 "state": 5,
                 "lastResult": {
-                    "success": 8,
-                    "failed": 7,
+                    "success": 12,
+                    "failed": 3,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 2729,
-                    "netTime": 359,
+                    "totalTime": 115,
+                    "netTime": 30,
                     "error": false,
                     "disconnected": false
                 },
@@ -380,18 +344,18 @@
             "results": [
                 {
                     "id": "",
-                    "description": "can display a CE with no children",
+                    "description": "can display a Custom Element with no children",
                     "suite": [
                         "basic support",
                         "no children"
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 65,
+                    "time": 7,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589734748,
-                    "endTime": 1512589735490,
+                    "startTime": 1512738625443,
+                    "endTime": 1512738625451,
                     "weight": 3
                 },
                 {
@@ -403,11 +367,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 15,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589735561,
-                    "endTime": 1512589735729,
+                    "startTime": 1512738625453,
+                    "endTime": 1512738625455,
                     "weight": 3
                 },
                 {
@@ -419,27 +383,27 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 23,
+                    "time": 3,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589735732,
-                    "endTime": 1512589735764,
+                    "startTime": 1512738625455,
+                    "endTime": 1512738625458,
                     "weight": 3
                 },
                 {
                     "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root and handle hiding and showing the element",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
                     "suite": [
                         "basic support",
                         "with children"
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 26,
+                    "time": 9,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589735954,
-                    "endTime": 1512589736000,
+                    "startTime": 1512738625467,
+                    "endTime": 1512738625476,
                     "weight": 3
                 },
                 {
@@ -454,8 +418,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736003,
-                    "endTime": 1512589736180,
+                    "startTime": 1512738625478,
+                    "endTime": 1512738625481,
                     "weight": 3
                 },
                 {
@@ -470,8 +434,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736323,
-                    "endTime": 1512589736394,
+                    "startTime": 1512738625481,
+                    "endTime": 1512738625482,
                     "weight": 3
                 },
                 {
@@ -486,8 +450,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736507,
-                    "endTime": 1512589736515,
+                    "startTime": 1512738625483,
+                    "endTime": 1512738625484,
                     "weight": 3
                 },
                 {
@@ -499,11 +463,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 8,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736557,
-                    "endTime": 1512589736570,
+                    "startTime": 1512738625485,
+                    "endTime": 1512738625487,
                     "weight": 3
                 },
                 {
@@ -513,16 +477,13 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 0,
-                    "log": [
-                        "ReferenceError: wc is not defined",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42764:18)"
-                    ],
+                    "time": 2,
+                    "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736571,
-                    "endTime": 1512589736642,
+                    "startTime": 1512738625490,
+                    "endTime": 1512738625492,
                     "weight": 2
                 },
                 {
@@ -532,16 +493,13 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 0,
-                    "log": [
-                        "ReferenceError: wc is not defined",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42770:18)"
-                    ],
+                    "time": 1,
+                    "log": [],
                     "assertionErrors": [],
-                    "startTime": 1512589736642,
-                    "endTime": 1512589736651,
+                    "startTime": 1512738625492,
+                    "endTime": 1512738625493,
                     "weight": 2
                 },
                 {
@@ -551,26 +509,13 @@
                         "advanced support",
                         "events"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 184,
-                    "log": [
-                        "Error: Expected 'false' to equal 'true'",
-                        "    at assert (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9)",
-                        "    at Expectation.toEqual (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:30)",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42785:75)"
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "Error",
-                            "message": "Expected 'false' to equal 'true'",
-                            "showDiff": true,
-                            "actual": "\"false\"",
-                            "expected": "\"true\""
-                        }
-                    ],
-                    "startTime": 1512589736653,
-                    "endTime": 1512589736841,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738625493,
+                    "endTime": 1512738625494,
                     "weight": 2
                 },
                 {
@@ -580,26 +525,13 @@
                         "advanced support",
                         "events"
                     ],
-                    "success": false,
+                    "success": true,
                     "skipped": false,
-                    "time": 4,
-                    "log": [
-                        "Error: Expected 'false' to equal 'true'",
-                        "    at assert (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9)",
-                        "    at Expectation.toEqual (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:30)",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42797:75)"
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "Error",
-                            "message": "Expected 'false' to equal 'true'",
-                            "showDiff": true,
-                            "actual": "\"false\"",
-                            "expected": "\"true\""
-                        }
-                    ],
-                    "startTime": 1512589736847,
-                    "endTime": 1512589736855,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1512738625502,
+                    "endTime": 1512738625503,
                     "weight": 1
                 },
                 {
@@ -611,12 +543,13 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 4,
+                    "time": 1,
                     "log": [
                         "Error: Expected 'false' to equal 'true'",
-                        "    at assert (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9)",
-                        "    at Expectation.toEqual (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:30)",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42809:75)"
+                        "    at assert (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9)",
+                        "    at Expectation.toEqual (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:30)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13320:50)",
+                        "    at <anonymous>"
                     ],
                     "assertionErrors": [
                         {
@@ -627,8 +560,8 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589736856,
-                    "endTime": 1512589736865,
+                    "startTime": 1512738625508,
+                    "endTime": 1512738625512,
                     "weight": 1
                 },
                 {
@@ -640,12 +573,13 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 24,
+                    "time": 1,
                     "log": [
                         "Error: Expected 'false' to equal 'true'",
-                        "    at assert (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9)",
-                        "    at Expectation.toEqual (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:30)",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42821:75)"
+                        "    at assert (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9)",
+                        "    at Expectation.toEqual (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:30)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13332:50)",
+                        "    at <anonymous>"
                     ],
                     "assertionErrors": [
                         {
@@ -656,8 +590,8 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589736866,
-                    "endTime": 1512589737053,
+                    "startTime": 1512738625517,
+                    "endTime": 1512738625519,
                     "weight": 1
                 },
                 {
@@ -669,12 +603,13 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 6,
+                    "time": 0,
                     "log": [
                         "Error: Expected 'false' to equal 'true'",
-                        "    at assert (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:108:9)",
-                        "    at Expectation.toEqual (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:242:30)",
-                        "    at Context.<anonymous> (base/tests.webpack.js?ec8661c533499894653ec87b5b23b3b7d6300524:42833:75)"
+                        "    at assert (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:398:9)",
+                        "    at Expectation.toEqual (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:4039:30)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?90bff8e82c124878df8ef512cc13f2c9d542e6af:13344:50)",
+                        "    at <anonymous>"
                     ],
                     "assertionErrors": [
                         {
@@ -685,15 +620,15 @@
                             "expected": "\"true\""
                         }
                     ],
-                    "startTime": 1512589737055,
-                    "endTime": 1512589737099,
+                    "startTime": 1512738625525,
+                    "endTime": 1512738625525,
                     "weight": 1
                 }
             ]
         }
     ],
     "library": {
-        "name": "angular",
-        "version": "1.6.7"
+        "name": "@polymer/polymer",
+        "version": "2.3.0"
     }
 }

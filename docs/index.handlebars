@@ -180,11 +180,11 @@ limitations under the License.
       <div class="columns is-desktop">
         <div class="column is-10-tablet is-offset-1-tablet is-7-widescreen is-offset-0-widescreen">
           <div class="content">
-            <h2 class="title is-2">Frequently Asked Questions</h2>
+            <h2 class="title is-2" id="faq">Frequently Asked Questions</h2>
             <div class="question">
-              <div class="title is-4">
+              <h3 class="title is-4" id="faq-authoring-elements">
                 Are you testing that libraries let you author custom elements?
-              </div>
+              </h3>
               <p>
                 No. These tests just check that a library/framework supports the
                 <em>usage</em> of custom elements. Essentially we're trying to
@@ -199,9 +199,9 @@ limitations under the License.
               </p>
             </div>
             <div class="question">
-              <div class="title is-4">
+              <h3 class="title is-4" id="faq-libraries-scored">
                 How are the libraries scored?
-              </div>
+              </h3>
               <p>
                 Each test has an associated weight, based on how critical it is.
                 The final tally of pass/fails is combined with these weights to
@@ -209,9 +209,9 @@ limitations under the License.
               </p>
             </div>
             <div class="question">
-              <div class="title is-4">
+              <h3 class="title is-4" id="faq-basic-advanced-different">
                 How are basic and advanced tests different?
-              </div>
+              </h3>
               <p>
                 Basic tests cover things which are fundamental to a
                 library/framework's ability to display a custom element. For
@@ -229,9 +229,55 @@ limitations under the License.
               </p>
             </div>
             <div class="question">
-              <div class="title is-4">
+              <h3 class="title is-4" id="faq-polymer">
+                I thought the whole point of Polymer was to write custom
+                elements. Why doesn't it get a 100%?
+              </h3>
+              <p>
+                Polymer supports a non-standard feature called declarative event
+                binding, which lets you use attributes to wire up event
+                listeners. E.g. <code>&lt;my-element
+                on-foo="handleFoo"&gt;</code>. Because DOM events are just
+                strings, there are no rules governing how they should be
+                formatted or capitalized—"my-event" is just as reasonable as
+                "myEvent" or "myevent". Even the web platform has a few examples
+                of oddly cased events like <code>DOMContentLoaded</code>.
+                Because Polymer's implementation of declarative event bindings
+                relies on pulling the event name from the <code>on-*</code>
+                attribute, and the HTML parser will <em>always lowercase
+                attribute names</em>, it is unable to listen for events with
+                capital letters in their names.
+              </p>
+              <p>
+                Since it is entirely possible to write a vanilla custom element
+                that dispatches an event with a capital letter in its name, and
+                because there is prior art in the platform that actually uses
+                this technique for event names with acronyms ("DOM"), we feel it
+                is imporant to test this.
+              </p>
+              <p>
+                Libraries like Preact also fail these capitalization tests,
+                which points to a possible best practice of always making event
+                names lowercase. This is the style most DOM events already use:
+                <code>mousedown, popstate, beforeunload</code>, etc.
+              </p>
+            </div>
+            <div class="question">
+              <h3 class="title is-4" id="faq-missing-feature">
+                If a library is missing a feature, like declarative event or
+                property bindings, does it automatically fail those tests?
+              </h3>
+              <p>
+                Not necessarily. If a library omits a
+                <strong>non-standard</strong> feature aimed at developer
+                ergonomics, e.g. declarative event/property bindings, we would
+                just omit those tests from the scoring process.
+              </p>
+            </div>
+            <div class="question">
+              <h3 class="title is-4" id="faq-tests-for-library">
                 Why don't you have tests for _____ library?
-              </div>
+              </h3>
               <p>
                 We'd like to have as much test coverage as possible, but it's
                 a fair bit of work building each test suite (especially because
@@ -241,10 +287,10 @@ limitations under the License.
               </p>
             </div>
             <div class="question">
-              <div class="title is-4">
+              <h3 class="title is-4" id="faq-accept-prs">
                 I want to write some tests for _____ library. Do you accept pull
                 requests?
-              </div>
+              </h3>
               <p>
                 Yes! In fact, >50% of the tests on this site are from external
                 contributors.
