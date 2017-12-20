@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "stencil": "stencil build",
+    "test": "npm run stencil; cross-env LIBRARY_NAME=@stencil/core karma start",
+    "build": "npm run test; DIST=../../docs/libraries/stencil && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
+  },
+  "main": "src/built-components/components.js",
+  "types": "src/built-components/types/index.d.ts",
+  "collection": "src/built-components/collection/collection-manifest.json",
+  "files": [
+    "src/built-components/"
+  ],
+  "browser": "src/built-components/components.js",
+  "devDependencies": {
+    "@stencil/webpack": "0.0.5",
+    "awesome-typescript-loader": "3.4.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",
+    "cross-env": "5.1.1",
+    "expect": "1.20.2",
+    "karma": "1.7.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-firefox-launcher": "1.1.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "2.0.9",
+    "ts-helpers": "1.1.2",
+    "typescript": "2.6.2",
+    "webpack": "3.10.0"
+  },
+  "dependencies": {
+    "@stencil/core": "next",
+    "@webcomponents/webcomponentsjs": "1.0.19"
+  }
+}
