@@ -46,11 +46,10 @@ afterEach(function() {
 });
 
 describe("basic support", function() {
-
   describe("no children", function() {
     it("can display a Custom Element with no children", async function() {
       this.weight = 3;
-      let root = document.createElement('component-without-children');
+      let root = document.createElement("component-without-children");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -72,7 +71,7 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root", async function() {
       this.weight = 3;
-      let root = document.createElement('component-with-children');
+      let root = document.createElement("component-with-children");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -81,7 +80,7 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
-      let root = document.createElement('component-with-children-rerender');
+      let root = document.createElement("component-with-children-rerender");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -92,7 +91,7 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", async function() {
       this.weight = 3;
-      let root = document.createElement('component-with-different-views');
+      let root = document.createElement("component-with-different-views");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -110,12 +109,11 @@ describe("basic support", function() {
   });
 
   describe("attributes and properties", function() {
-
     let root;
     let wc;
 
     beforeEach(async function() {
-      root = document.createElement('component-with-properties');
+      root = document.createElement("component-with-properties");
       scratch.appendChild(root);
       await Promise.resolve();
       wc = root.shadowRoot.querySelector("#wc");
@@ -143,7 +141,7 @@ describe("basic support", function() {
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
       this.weight = 3;
-      let root = document.createElement('component-with-imperative-event');
+      let root = document.createElement("component-with-imperative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -155,5 +153,4 @@ describe("basic support", function() {
       expect(handled.textContent).toEqual("true");
     });
   });
-
 });

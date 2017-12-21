@@ -17,45 +17,50 @@
 
 // @jsx h
 
-import { props, withComponent } from 'skatejs';
-import withPreact from '@skatejs/renderer-preact';
-import { h } from 'preact';
-import 'ce-without-children';
-import 'ce-with-children';
-import 'ce-with-properties';
-import 'ce-with-event';
+import { props, withComponent } from "skatejs";
+import withPreact from "@skatejs/renderer-preact";
+import { h } from "preact";
+import "ce-without-children";
+import "ce-with-children";
+import "ce-with-properties";
+import "ce-with-event";
 
 export class ComponentWithoutChildren extends withComponent(withPreact()) {
   render() {
     return (
       <div>
-        <ce-without-children id="wc"></ce-without-children>
+        <ce-without-children id="wc" />
       </div>
     );
   }
 }
-customElements.define('component-without-children', ComponentWithoutChildren);
+customElements.define("component-without-children", ComponentWithoutChildren);
 
 export class ComponentWithChildren extends withComponent(withPreact()) {
   render() {
     return (
       <div>
-        <ce-with-children id="wc"></ce-with-children>
+        <ce-with-children id="wc" />
       </div>
     );
   }
 }
-customElements.define('component-with-children', ComponentWithChildren);
+customElements.define("component-with-children", ComponentWithChildren);
 
 export class ComponentWithChildrenRerender extends withComponent(withPreact()) {
-  constructor () {
+  constructor() {
     super();
     this.state = { count: 1 };
   }
-  connected () {
-    Promise.resolve().then(_ => this.state = Object.assign({}, this.state, {count: this.state.count += 1}));
+  connected() {
+    Promise.resolve().then(
+      _ =>
+        (this.state = Object.assign({}, this.state, {
+          count: (this.state.count += 1)
+        }))
+    );
   }
-  disconnected () {
+  disconnected() {
     clearInterval(this.interval);
   }
   render({ state }) {
@@ -66,21 +71,24 @@ export class ComponentWithChildrenRerender extends withComponent(withPreact()) {
     );
   }
 }
-customElements.define('component-with-children-rerender', ComponentWithChildrenRerender);
+customElements.define(
+  "component-with-children-rerender",
+  ComponentWithChildrenRerender
+);
 
 export class ComponentWithDifferentViews extends withComponent(withPreact()) {
-  constructor () {
+  constructor() {
     super();
     this.state = { showWC: true };
   }
   toggle() {
-    this.state = Object.assign({}, this.state, {showWC: !this.state.showWC});
+    this.state = Object.assign({}, this.state, { showWC: !this.state.showWC });
   }
   render({ state }) {
     return (
       <div>
         {state.showWC ? (
-          <ce-with-children id="wc"></ce-with-children>
+          <ce-with-children id="wc" />
         ) : (
           <div id="dummy">Dummy view</div>
         )}
@@ -88,57 +96,62 @@ export class ComponentWithDifferentViews extends withComponent(withPreact()) {
     );
   }
 }
-customElements.define('component-with-different-views', ComponentWithDifferentViews);
+customElements.define(
+  "component-with-different-views",
+  ComponentWithDifferentViews
+);
 
 export class ComponentWithProperties extends withComponent(withPreact()) {
-  render () {
+  render() {
     const data = {
       bool: true,
       num: 42,
-      str: 'Skate',
-      arr: ['S', 'k', 'a', 't', 'e'],
-      obj: { org: 'skatejs', repo: 'skatejs' }
+      str: "Skate",
+      arr: ["S", "k", "a", "t", "e"],
+      obj: { org: "skatejs", repo: "skatejs" }
     };
     return (
       <div>
-        <ce-with-properties id="wc"
+        <ce-with-properties
+          id="wc"
           bool={data.bool}
           num={data.num}
           str={data.str}
           arr={data.arr}
           obj={data.obj}
-        ></ce-with-properties>
+        />
       </div>
     );
   }
 }
-customElements.define('component-with-properties', ComponentWithProperties);
+customElements.define("component-with-properties", ComponentWithProperties);
 
 export class ComponentWithUnregistered extends withComponent(withPreact()) {
-  render () {
+  render() {
     const data = {
       bool: true,
       num: 42,
-      str: 'Skate',
-      arr: ['S', 'k', 'a', 't', 'e'],
-      obj: { org: 'skatejs', repo: 'skatejs' }
+      str: "Skate",
+      arr: ["S", "k", "a", "t", "e"],
+      obj: { org: "skatejs", repo: "skatejs" }
     };
     return (
       <div>
         {/* This element doesn't actually exist.
         It's used to test unupgraded behavior. */}
-        <ce-unregistered id="wc"
+        <ce-unregistered
+          id="wc"
           bool={data.bool}
           num={data.num}
           str={data.str}
           arr={data.arr}
           obj={data.obj}
-        ></ce-unregistered>
+        />
       </div>
     );
   }
 }
-customElements.define('component-with-unregistered', ComponentWithUnregistered);
+customElements.define("component-with-unregistered", ComponentWithUnregistered);
 
 export class ComponentWithImperativeEvent extends withComponent(withPreact()) {
   constructor() {
@@ -149,22 +162,25 @@ export class ComponentWithImperativeEvent extends withComponent(withPreact()) {
   }
   handleRef(el) {
     if (el) {
-      el.addEventListener('camelEvent', this.handleTestEvent);
+      el.addEventListener("camelEvent", this.handleTestEvent);
     }
   }
   handleTestEvent(e) {
-    this.state = Object.assign({}, this.state, {eventHandled: true});
+    this.state = Object.assign({}, this.state, { eventHandled: true });
   }
   render({ state }) {
     return (
       <div>
         <div id="handled">{state.eventHandled.toString()}</div>
-        <ce-with-event id="wc" ref={this.handleRef}></ce-with-event>
+        <ce-with-event id="wc" ref={this.handleRef} />
       </div>
     );
   }
 }
-customElements.define('component-with-imperative-event', ComponentWithImperativeEvent);
+customElements.define(
+  "component-with-imperative-event",
+  ComponentWithImperativeEvent
+);
 
 class ComponentWithDeclarativeEvent extends withComponent(withPreact()) {
   constructor() {
@@ -201,19 +217,23 @@ class ComponentWithDeclarativeEvent extends withComponent(withPreact()) {
     return (
       <div>
         <div id="lowercase">{state.lowercaseHandled.toString()}</div>
-         <div id="kebab">{state.kebabHandled.toString()}</div>
+        <div id="kebab">{state.kebabHandled.toString()}</div>
         <div id="camel">{state.camelHandled.toString()}</div>
         <div id="caps">{state.capsHandled.toString()}</div>
         <div id="pascal">{state.pascalHandled.toString()}</div>
-        <ce-with-event id="wc"
+        <ce-with-event
+          id="wc"
           onlowercaseevent={this.handleLowercaseEvent}
           onkebab-event={this.handleKebabEvent}
           oncamelEvent={this.handleCamelEvent}
           onCAPSEvent={this.handleCapsEvent}
           onPascalEvent={this.handlePascalEvent}
-        ></ce-with-event> 
+        />
       </div>
     );
   }
 }
-customElements.define('component-with-declarative-event', ComponentWithDeclarativeEvent);
+customElements.define(
+  "component-with-declarative-event",
+  ComponentWithDeclarativeEvent
+);

@@ -16,5 +16,5 @@
  */
 
 // Run basic and advanced tests through Karma
-require('./src/basic-tests.js');
-require('./src/advanced-tests.js');
+require("./src/basic-tests.js");
+require("./src/advanced-tests.js");

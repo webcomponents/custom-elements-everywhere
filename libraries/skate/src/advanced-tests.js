@@ -46,11 +46,10 @@ afterEach(function() {
 });
 
 describe("advanced support", function() {
-
   describe("attributes and properties", function() {
     it("will pass array data as a property", async function() {
       this.weight = 2;
-      let root = document.createElement('component-with-properties');
+      let root = document.createElement("component-with-properties");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -60,7 +59,7 @@ describe("advanced support", function() {
 
     it("will pass object data as a property", async function() {
       this.weight = 2;
-      let root = document.createElement('component-with-properties');
+      let root = document.createElement("component-with-properties");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -72,7 +71,7 @@ describe("advanced support", function() {
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
       this.weight = 2;
-      let root = document.createElement('component-with-declarative-event');
+      let root = document.createElement("component-with-declarative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -86,7 +85,7 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement('component-with-declarative-event');
+      let root = document.createElement("component-with-declarative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -100,7 +99,7 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement('component-with-declarative-event');
+      let root = document.createElement("component-with-declarative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -114,7 +113,7 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement('component-with-declarative-event');
+      let root = document.createElement("component-with-declarative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -128,7 +127,7 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement('component-with-declarative-event');
+      let root = document.createElement("component-with-declarative-event");
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
@@ -140,5 +139,4 @@ describe("advanced support", function() {
       expect(handled.textContent).toEqual("true");
     });
   });
-
 });
