@@ -357,6 +357,74 @@ It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
+                  <p class="title" id="dio">DIO <span class="library-version"></span></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">91%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">16/16</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">8/14</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress is-primary" value="91" max="100">91%</progress>
+            <div class="content">
+              <h4 id="dio-handling-data">Handling data</h4>
+
+<p>DIO uses a runtime heuristic to determine if it should pass data to Custom
+Elements as either properties or attributes. If a property is already defined
+on the element instance, DIO will use properties, otherwise it will fallback
+to attributes. The exception to this rule is when it tries to pass rich data,
+like objects or arrays. In those instances it will always use a property.</p>
+<h4 id="dio-handling-events">Handling events</h4>
+
+<p>DIO can listen to native DOM events dispatched from Custom Elements. However,
+it uses a heuristic to convert JSX event binding syntax into event names, and
+always lowercases the events. For example <code>onFooUpdated={handleFoo}</code>
+tells DIO to listen for an event called <code>&#39;fooupdated&#39;</code>. This means
+DIO can support events with lowercase and kebab-case names, but not
+camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code>).</p>
+
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/dio/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h3 class="title is-3">Related Issues</h3>
+                  <div class="has-text-centered">
+                    <img src="images/smiley.svg" alt="" width="256">
+                    <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
                   <p class="title" id="dojo2">Dojo 2 <span class="library-version">2.0.0-beta3.1</span></p>
                 </div>
               </div>
@@ -938,14 +1006,14 @@ kebab-case names, but not camelCase, PascalCase, or CAPScase events (e.g.
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">16/16</p><div></div>
+                  <p class="title">8/8</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">14/14</p>
+                  <p class="title">7/7</p>
                 </div>
               </div>
             </div>
