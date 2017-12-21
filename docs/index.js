@@ -29,6 +29,7 @@ const libraryMap = {
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
+  skate: "Skate w/ Preact",
   vue: "Vue"
 };
 const libraries = Object.keys(libraryMap);

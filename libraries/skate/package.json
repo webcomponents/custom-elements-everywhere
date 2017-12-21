@@ -1,13 +1,13 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=react karma start",
-    "build": "npm run test; DIST=../../docs/libraries/react && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
+    "test": "cross-env LIBRARY_NAME=skatejs karma start",
+    "build": "npm run test; DIST=../../docs/libraries/skate && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
+    "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
     "cross-env": "5.1.1",
     "expect": "1.20.2",
     "karma": "1.7.1",
@@ -18,8 +18,9 @@
     "webpack": "3.10.0"
   },
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "1.0.19",
-    "react": "16.2.0",
-    "react-dom": "16.2.0"
+    "@skatejs/renderer-preact": "0.2.0",
+    "@webcomponents/webcomponentsjs": "1.0.20",
+    "preact": "8.2.7",
+    "skatejs": "5.1.1"
   }
 }
