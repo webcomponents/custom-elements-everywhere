@@ -23,6 +23,7 @@ const libraryMap = {
   angular: "Angular",
   angularjs: "AngularJS (1.x)",
   canjs: "CanJS",
+  dio: 'DIO',
   dojo2: "Dojo 2",
   hyperhtml: "hyperHTML",
   polymer: "Polymer",
