@@ -17,14 +17,24 @@ describe("advanced support", () => {
   );
 
   describe("attributes and properties", () => {
+    const prep = el => {
+      return compile(el)(scope)[0];
+    }
+
     it("will pass array data as a property", function() {
       this.weight = 2;
+      let root = prep("<comp-with-props>")
+      scope.$digest()
+      let wc = root.querySelector('#wc')
       let data = wc.arr;
-      expect(data).toEqual(["A", "n", "g", "u", "l", "a", "r"]);
+      expect(data).toEqual(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
+      let root = prep("<comp-with-props>")
+      scope.$digest()
+      let wc = root.querySelector('#wc')
       let data = wc.obj;
       expect(data).toEqual({ org: "angular", repo: "angular" });
     });
