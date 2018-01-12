@@ -83,7 +83,7 @@ describe("basic support", function() {
       await Promise.resolve();
       component.forceUpdate();
       expectHasChildren(wc);
-      expect(wc.textContent.includes("2")).to.equal(true);
+      expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
@@ -110,7 +110,7 @@ describe("basic support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).to.equal(true);
+      expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
