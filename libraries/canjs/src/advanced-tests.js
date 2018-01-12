@@ -18,7 +18,7 @@
 import DefineMap from "can-define/map/map";
 import stache from "can-stache";
 import canViewModel from "can-view-model";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -54,7 +54,7 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithProperties} />`)());
       let wc = root.querySelector("#wc");
       let data = wc.arr;
-      expect(data).toEqual(["C", "a", "n", "j", "s"]);
+      expect(data).to.eql(["C", "a", "n", "j", "s"]);
     });
 
     it("will pass object data as a property", function() {
@@ -62,7 +62,7 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithProperties} />`)());
       let wc = root.querySelector("#wc");
       let data = wc.obj;
-      expect(data).toEqual({ org: "canjs", repo: "CanJS" });
+      expect(data).to.eql({ org: "canjs", repo: "CanJS" });
     });
   });
 
@@ -71,11 +71,11 @@ describe("advanced support", function() {
       this.weight = 2;
       root.appendChild(stache(`<${ComponentWithDeclarativeEvent} />`)());
       let wc = root.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -83,9 +83,9 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithDeclarativeEvent} />`)());
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -93,9 +93,9 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithDeclarativeEvent} />`)());
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -103,9 +103,9 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithDeclarativeEvent} />`)());
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -113,9 +113,9 @@ describe("advanced support", function() {
       root.appendChild(stache(`<${ComponentWithDeclarativeEvent} />`)());
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
