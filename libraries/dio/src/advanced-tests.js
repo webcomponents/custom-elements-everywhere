@@ -16,7 +16,7 @@
  */
 
 import { h, render } from "dio.js";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -53,7 +53,7 @@ describe("advanced support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.arr;
-      expect(data).toEqual(["D", "I", "O"]);
+      expect(data).to.eql(["D", "I", "O"]);
     });
 
     it("will pass object data as a property", function() {
@@ -61,7 +61,7 @@ describe("advanced support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.obj;
-      expect(data).toEqual({ org: "thysultan", repo: "dio.js" });
+      expect(data).to.eql({ org: "thysultan", repo: "dio.js" });
     });
   });
 
@@ -71,12 +71,12 @@ describe("advanced support", function() {
       let component;
       render(<ComponentWithDeclarativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = scratch.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -85,10 +85,10 @@ describe("advanced support", function() {
       render(<ComponentWithDeclarativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -97,10 +97,10 @@ describe("advanced support", function() {
       render(<ComponentWithDeclarativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -109,10 +109,10 @@ describe("advanced support", function() {
       render(<ComponentWithDeclarativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -121,10 +121,10 @@ describe("advanced support", function() {
       render(<ComponentWithDeclarativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
