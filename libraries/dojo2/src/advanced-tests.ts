@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import * as expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -55,7 +55,7 @@ describe("advanced support", function() {
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.arr;
-      expect(data).toEqual(["d", "o", "j", "o", "2"]);
+      expect(data).to.eql(["d", "o", "j", "o", "2"]);
     });
 
     it("will pass object data as a property", function() {
@@ -65,7 +65,7 @@ describe("advanced support", function() {
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.obj;
-      expect(data).toEqual({ org: "dojo", repo: "dojo2" });
+      expect(data).to.eql({ org: "dojo", repo: "dojo2" });
     });
   });
 
@@ -77,9 +77,9 @@ describe("advanced support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.lowerCaseHandled).toEqual(false);
+      expect(component.lowerCaseHandled).to.be.false;
       wc.click();
-      expect(component.lowerCaseHandled).toEqual(true);
+      expect(component.lowerCaseHandled).to.be.true;
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -89,9 +89,9 @@ describe("advanced support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.kebabHandled).toEqual(false);
+      expect(component.kebabHandled).to.be.false;
       wc.click();
-      expect(component.kebabHandled).toEqual(true);
+      expect(component.kebabHandled).to.be.true;
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -101,9 +101,9 @@ describe("advanced support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.camelHandled).toEqual(false);
+      expect(component.camelHandled).to.be.false;
       wc.click();
-      expect(component.camelHandled).toEqual(true);
+      expect(component.camelHandled).to.be.true;
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -113,9 +113,9 @@ describe("advanced support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.capsHandled).toEqual(false);
+      expect(component.capsHandled).to.be.false;
       wc.click();
-      expect(component.capsHandled).toEqual(true);
+      expect(component.capsHandled).to.be.true;
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -125,9 +125,9 @@ describe("advanced support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.pascalHandled).toEqual(false);
+      expect(component.pascalHandled).to.be.false;
       wc.click();
-      expect(component.pascalHandled).toEqual(true);
+      expect(component.pascalHandled).to.be.true;
     });
   });
 
