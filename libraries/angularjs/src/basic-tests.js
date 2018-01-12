@@ -1,4 +1,4 @@
-import expect from "expect";
+import { expect } from "chai";
 import prodApp from "./app.module";
 
 describe("basic support", () => {
@@ -21,7 +21,7 @@ describe("basic support", () => {
       this.weight = 3;
       const comp = compile("<comp-no-children>")(scope);
       const wc = comp[0].querySelector("ce-without-children");
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
@@ -30,14 +30,14 @@ describe("basic support", () => {
       return compile(el)(scope)[0];
     };
     function expectHasChildren(wc) {
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.equal("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.equal("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -53,7 +53,7 @@ describe("basic support", () => {
       interval.flush(1000);
       let wc = root.querySelector("#wc");
       expectHasChildren(wc);
-      expect(wc.textContent.includes("2")).toEqual(true);
+      expect(wc.textContent.includes("2")).to.equal(true);
     });
 
     it("can display a Custom Element with children in a Shadow Root and handle hiding and showing the element", function() {
@@ -68,8 +68,8 @@ describe("basic support", () => {
       scope.$apply();
 
       let dummy = root.querySelector("#dummy");
-      expect(dummy).toExist();
-      expect(dummy.textContent).toEqual("Dummy view");
+      expect(dummy).to.exist;
+      expect(dummy.textContent).to.equal("Dummy view");
 
       scope.showWc = true;
       scope.$apply();
@@ -91,25 +91,25 @@ describe("basic support", () => {
     it("will pass boolean data as either an attribute or a property", function() {
       this.weight = 3;
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).toBe(true);
+      expect(data).to.equal(true);
       // Extra test to see if AngularJS just left its binding syntax on
       // the attribute and didn't actually set anything :P
       if (!wc.bool) {
         data = wc.getAttribute("bool");
-        expect(data.includes("{{")).toBe(false);
+        expect(data.includes("{{")).to.equal(false);
       }
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
       this.weight = 3;
       let data = wc.num || wc.getAttribute("num");
-      expect(data).toEqual(42);
+      expect(data).to.equal(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
       let data = wc.str || wc.getAttribute("str");
-      expect(data).toEqual("Angular");
+      expect(data).to.equal("Angular");
     });
   });
 
@@ -120,10 +120,10 @@ describe("basic support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#handled");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
   });
 

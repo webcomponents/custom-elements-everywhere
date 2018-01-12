@@ -1,4 +1,4 @@
-import expect from "expect";
+import { expect } from "chai";
 import prodApp from "./app.module";
 
 describe("advanced support", () => {
@@ -20,13 +20,13 @@ describe("advanced support", () => {
     it("will pass array data as a property", function() {
       this.weight = 2;
       let data = wc.arr;
-      expect(data).toEqual(["A", "n", "g", "u", "l", "a", "r"]);
+      expect(data).to.eql(["A", "n", "g", "u", "l", "a", "r"]);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
       let data = wc.obj;
-      expect(data).toEqual({ org: "angular", repo: "angular" });
+      expect(data).to.eql({ org: "angular", repo: "angular" });
     });
   });
 
@@ -37,10 +37,10 @@ describe("advanced support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -49,10 +49,10 @@ describe("advanced support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -61,10 +61,10 @@ describe("advanced support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -73,10 +73,10 @@ describe("advanced support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -85,10 +85,10 @@ describe("advanced support", () => {
       scope.$digest();
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.equal("false");
       wc.click();
       scope.$digest();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.equal("true");
     });
   });
   
