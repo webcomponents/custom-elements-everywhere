@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import expect from "expect";
+import { expect } from "chai";
 
 import HyperHTMLELement from "hyperhtml-element";
 const { hyper } = HyperHTMLELement;
@@ -53,14 +53,14 @@ describe("advanced support", function() {
       this.weight = 2;
       ComponentWithProperties(root);
       let wc = root.querySelector("#wc");
-      expect(wc.arr).toEqual(["h", "y", "p", "e", "r", "H", "T", "M", "L"]);
+      expect(wc.arr).to.eql(["h", "y", "p", "e", "r", "H", "T", "M", "L"]);
     });
 
     it("will pass object data as a property", async function() {
       this.weight = 2;
       ComponentWithProperties(root);
       let wc = root.querySelector("#wc");
-      expect(wc.obj).toEqual({ org: "viperHTML", repo: "hyperHTML" });
+      expect(wc.obj).to.eql({ org: "viperHTML", repo: "hyperHTML" });
     });
   });
 
@@ -70,11 +70,11 @@ describe("advanced support", function() {
       root.appendChild(new ComponentWithDeclarativeEvent);
       setTimeout(function () {
         let wc = root.querySelector('#wc');
-        expect(wc).toExist();
+        expect(wc).to.exist;
         let handled = root.querySelector('#lowercase');
-        expect(handled.textContent).toEqual('false');
+        expect(handled.textContent).to.eql('false');
         wc.click();
-        expect(handled.textContent).toEqual('true');
+        expect(handled.textContent).to.eql('true');
         done();
       }, 10);
     });
@@ -85,9 +85,9 @@ describe("advanced support", function() {
       setTimeout(function() {
         let wc = root.querySelector("#wc");
         let handled = root.querySelector("#kebab");
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
         done();
       }, 10);
     });
@@ -98,9 +98,9 @@ describe("advanced support", function() {
       setTimeout(function() {
         let wc = root.querySelector("#wc");
         let handled = root.querySelector("#camel");
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
         done();
       }, 10);
     });
@@ -111,9 +111,9 @@ describe("advanced support", function() {
       setTimeout(function() {
         let wc = root.querySelector("#wc");
         let handled = root.querySelector("#caps");
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
         done();
       }, 10);
     });
@@ -124,9 +124,9 @@ describe("advanced support", function() {
       setTimeout(function() {
         let wc = root.querySelector("#wc");
         let handled = root.querySelector("#pascal");
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
         done();
       }, 10);
     });

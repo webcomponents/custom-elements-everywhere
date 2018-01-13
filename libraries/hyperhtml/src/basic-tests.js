@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import expect from "expect";
+import { expect } from "chai";
 
 import HyperHTMLELement from "hyperhtml-element";
 const { hyper } = HyperHTMLELement;
@@ -53,20 +53,20 @@ describe("basic support", function() {
       this.weight = 3;
       root.appendChild(ComponentWithoutChildren());
       let wc = root.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
   describe("with children", function() {
     function expectHasChildren(wc) {
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.eql("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -82,7 +82,7 @@ describe("basic support", function() {
       setTimeout(function() {
         let wc = root.querySelector("#wc");
         expectHasChildren(wc);
-        expect(wc.textContent.includes("2")).toEqual(true);
+        expect(wc.textContent.includes("2")).to.be.true;
         done();
       }, 10);
     });
@@ -95,13 +95,13 @@ describe("basic support", function() {
         expectHasChildren(wc);
         ce.toggle();
         let dummy = root.querySelector("#dummy");
-        expect(dummy).toExist();
-        expect(dummy.textContent).toEqual("Dummy view");
+        expect(dummy).to.exist;
+        expect(dummy.textContent).to.eql("Dummy view");
         ce.toggle();
-        expect(wc).toBe(root.querySelector("#wc"));
+        expect(wc).to.eql(root.querySelector("#wc"));
         expectHasChildren(wc);
         ce.toggle();
-        expect(dummy).toBe(root.querySelector("#dummy"));
+        expect(dummy).to.eql(root.querySelector("#dummy"));
         done();
       }, 10);
     });
@@ -113,7 +113,7 @@ describe("basic support", function() {
       ComponentWithProperties(root);
       let wc = root.querySelector("#wc");
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).toBe(true);
+      expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
@@ -121,7 +121,7 @@ describe("basic support", function() {
       ComponentWithProperties(root);
       let wc = root.querySelector("#wc");
       let data = wc.num || wc.getAttribute("num");
-      expect(data).toEqual(42);
+      expect(data).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
@@ -129,7 +129,7 @@ describe("basic support", function() {
       ComponentWithProperties(root);
       let wc = root.querySelector("#wc");
       let data = wc.str || wc.getAttribute("str");
-      expect(data).toEqual("hyperHTML");
+      expect(data).to.eql("hyperHTML");
     });
   });
 
@@ -139,12 +139,12 @@ describe("basic support", function() {
       let ce = root.appendChild(new ComponentWithImperativeEvent());
       setTimeout(function() {
         let wc = root.querySelector("#wc");
-        expect(wc).toExist();
+        expect(wc).to.exist;
         let handled = root.querySelector("#handled");
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
-        expect(ce.eventClicks).toEqual(1);
+        expect(handled.textContent).to.eql("true");
+        expect(ce.eventClicks).to.eql(1);
         done();
       }, 10);
     });
