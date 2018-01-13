@@ -26,7 +26,7 @@ import {
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
 } from "./components";
-import expect from "expect";
+import { expect } from "chai";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -53,7 +53,7 @@ describe("advanced support", function() {
       let root = new ComponentWithProperties().$mount(scratch).$el;
       let wc = root.querySelector("#wc");
       let data = wc.arr;
-      expect(data).toEqual(["V", "u", "e"]);
+      expect(data).to.eql(["V", "u", "e"]);
     });
 
     it("will pass object data as a property", function() {
@@ -61,7 +61,7 @@ describe("advanced support", function() {
       let root = new ComponentWithProperties().$mount(scratch).$el;
       let wc = root.querySelector("#wc");
       let data = wc.obj;
-      expect(data).toEqual({ org: "vuejs", repo: "vue" });
+      expect(data).to.eql({ org: "vuejs", repo: "vue" });
     });
   });
 
@@ -72,10 +72,10 @@ describe("advanced support", function() {
       let root = vm.$el;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await vm.$nextTick();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
@@ -84,10 +84,10 @@ describe("advanced support", function() {
       let root = vm.$el;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await vm.$nextTick();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
@@ -96,10 +96,10 @@ describe("advanced support", function() {
       let root = vm.$el;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await vm.$nextTick();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
@@ -108,10 +108,10 @@ describe("advanced support", function() {
       let root = vm.$el;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await vm.$nextTick();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
@@ -120,10 +120,10 @@ describe("advanced support", function() {
       let root = vm.$el;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await vm.$nextTick();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
