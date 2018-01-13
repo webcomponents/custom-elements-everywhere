@@ -16,7 +16,7 @@
  */
 
 import { h, render } from "preact";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -54,7 +54,7 @@ describe("advanced support", function() {
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
       let data = wc.arr;
-      expect(data).toEqual(["S", "k", "a", "t", "e"]);
+      expect(data).to.eql(["S", "k", "a", "t", "e"]);
     });
 
     it("will pass object data as a property", async function() {
@@ -64,7 +64,7 @@ describe("advanced support", function() {
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
       let data = wc.obj;
-      expect(data).toEqual({ org: "skatejs", repo: "skatejs" });
+      expect(data).to.eql({ org: "skatejs", repo: "skatejs" });
     });
   });
 
@@ -75,12 +75,12 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.shadowRoot.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
@@ -89,12 +89,12 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.shadowRoot.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
@@ -103,12 +103,12 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.shadowRoot.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
@@ -117,12 +117,12 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.shadowRoot.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
@@ -131,12 +131,12 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       await Promise.resolve();
       let wc = root.shadowRoot.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.shadowRoot.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 });
