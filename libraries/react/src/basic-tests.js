@@ -18,7 +18,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactTestUtils from "react-dom/test-utils";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -54,20 +54,20 @@ describe("basic support", function() {
       this.weight = 3;
       let root = ReactDOM.render(<ComponentWithoutChildren />, scratch);
       let wc = root.wc;
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
   describe("with children", function() {
     function expectHasChildren(wc) {
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.eql("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -83,7 +83,7 @@ describe("basic support", function() {
       let wc = root.wc;
       await Promise.resolve();
       expectHasChildren(wc);
-      expect(wc.textContent.includes("2")).toEqual(true);
+      expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
@@ -93,8 +93,8 @@ describe("basic support", function() {
       expectHasChildren(wc);
       root.toggle();
       let dummy = ReactDOM.findDOMNode(root.refs.dummy);
-      expect(dummy).toExist();
-      expect(dummy.textContent).toEqual("Dummy view");
+      expect(dummy).to.exist;
+      expect(dummy.textContent).to.eql("Dummy view");
       root.toggle();
       wc = root.wc;
       expectHasChildren(wc);
@@ -107,7 +107,7 @@ describe("basic support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).toBe(true);
+      expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
@@ -115,7 +115,7 @@ describe("basic support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.num || wc.getAttribute("num");
-      expect(data).toEqual(42);
+      expect(parseInt(data)).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
@@ -123,7 +123,7 @@ describe("basic support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.str || wc.getAttribute("str");
-      expect(data).toEqual("React");
+      expect(data).to.eql("React");
     });
 
     // TODO: Is it the framework's responsibility to check if the underlying
@@ -135,31 +135,31 @@ describe("basic support", function() {
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
     //   let wc = ReactDOM.findDOMNode(root.refs.wc);
-    //   expect(wc.hasAttribute('bool')).toBe(true);
+    //   expect(wc.hasAttribute('bool')).to.be.true;
     // });
 
     // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
     //   let wc = ReactDOM.findDOMNode(root.refs.wc);
-    //   expect(wc.getAttribute('num')).toEqual('42');
+    //   expect(wc.getAttribute('num')).to.eql('42');
     // });
 
     // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
     //   let wc = ReactDOM.findDOMNode(root.refs.wc);
-    //   expect(wc.getAttribute('str')).toEqual('React');
+    //   expect(wc.getAttribute('str')).to.eql('React');
     // });
 
     // it('will set array attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
     //   let wc = ReactDOM.findDOMNode(root.refs.wc);
-    //   expect(wc.getAttribute('arr')).toEqual(JSON.stringify(['R', 'e', 'a', 'c', 't']));
+    //   expect(wc.getAttribute('arr')).to.eql(JSON.stringify(['R', 'e', 'a', 'c', 't']));
     // });
 
     // it('will set object attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = ReactDOM.render(<ComponentWithUnregistered />, scratch);
     //   let wc = ReactDOM.findDOMNode(root.refs.wc);
-    //   expect(wc.getAttribute('obj')).toEqual(JSON.stringify({ org: 'facebook', repo: 'react' }));
+    //   expect(wc.getAttribute('obj')).to.eql(JSON.stringify({ org: 'facebook', repo: 'react' }));
     // });
   });
 
@@ -169,10 +169,10 @@ describe("basic support", function() {
       let root = ReactDOM.render(<ComponentWithImperativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.handled;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
