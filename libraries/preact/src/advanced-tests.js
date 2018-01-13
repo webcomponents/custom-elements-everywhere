@@ -16,7 +16,7 @@
  */
 
 import { h, render } from "preact";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -53,7 +53,7 @@ describe("advanced support", function() {
       let root = render(<ComponentWithProperties />, scratch);
       let wc = root.querySelector("#wc");
       let data = wc.arr;
-      expect(data).toEqual(["P", "r", "e", "a", "c", "t"]);
+      expect(data).to.eql(["P", "r", "e", "a", "c", "t"]);
     });
 
     it("will pass object data as a property", function() {
@@ -61,7 +61,7 @@ describe("advanced support", function() {
       let root = render(<ComponentWithProperties />, scratch);
       let wc = root.querySelector("#wc");
       let data = wc.obj;
-      expect(data).toEqual({ org: "developit", repo: "preact" });
+      expect(data).to.eql({ org: "developit", repo: "preact" });
     });
   });
 
@@ -71,12 +71,12 @@ describe("advanced support", function() {
       let root = render(<ComponentWithDeclarativeEvent />, scratch);
       let component = root._component;
       let wc = root.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -85,10 +85,10 @@ describe("advanced support", function() {
       let component = root._component;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -97,10 +97,10 @@ describe("advanced support", function() {
       let component = root._component;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -109,10 +109,10 @@ describe("advanced support", function() {
       let component = root._component;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -121,10 +121,10 @@ describe("advanced support", function() {
       let component = root._component;
       let wc = root.querySelector("#wc");
       let handled = root.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 

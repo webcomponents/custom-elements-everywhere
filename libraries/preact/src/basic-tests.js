@@ -16,7 +16,7 @@
  */
 
 import { h, render } from "preact";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -52,20 +52,20 @@ describe("basic support", function() {
       this.weight = 3;
       let root = render(<ComponentWithoutChildren />, scratch);
       let wc = root.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
   describe("with children", function() {
     function expectHasChildren(wc) {
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.eql("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -83,7 +83,7 @@ describe("basic support", function() {
       await Promise.resolve();
       component.forceUpdate();
       expectHasChildren(wc);
-      expect(wc.textContent.includes("2")).toEqual(true);
+      expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
@@ -95,8 +95,8 @@ describe("basic support", function() {
       component.toggle();
       component.forceUpdate();
       let dummy = root.querySelector("#dummy");
-      expect(dummy).toExist();
-      expect(dummy.textContent).toEqual("Dummy view");
+      expect(dummy).to.exist;
+      expect(dummy.textContent).to.eql("Dummy view");
       component.toggle();
       component.forceUpdate();
       wc = root.querySelector("#wc");
@@ -110,7 +110,7 @@ describe("basic support", function() {
       let root = render(<ComponentWithProperties />, scratch);
       let wc = root.querySelector("#wc");
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).toBe(true);
+      expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
@@ -118,7 +118,7 @@ describe("basic support", function() {
       let root = render(<ComponentWithProperties />, scratch);
       let wc = root.querySelector("#wc");
       let data = wc.num || wc.getAttribute("num");
-      expect(data).toEqual(42);
+      expect(data).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
@@ -126,25 +126,25 @@ describe("basic support", function() {
       let root = render(<ComponentWithProperties />, scratch);
       let wc = root.querySelector("#wc");
       let data = wc.str || wc.getAttribute("str");
-      expect(data).toEqual("Preact");
+      expect(data).to.eql("Preact");
     });
 
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');
-    //   expect(wc.hasAttribute('bool')).toBe(true);
+    //   expect(wc.hasAttribute('bool')).to.be.true;
     // });
 
     // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');
-    //   expect(wc.getAttribute('num')).toEqual('42');
+    //   expect(wc.getAttribute('num')).to.eql('42');
     // });
 
     // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');
-    //   expect(wc.getAttribute('str')).toEqual('Preact');
+    //   expect(wc.getAttribute('str')).to.eql('Preact');
     // });
 
     // // Related:
@@ -153,13 +153,13 @@ describe("basic support", function() {
     // it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');
-    //   expect(wc.arr).toEqual(['P', 'r', 'e', 'a', 'c', 't']);
+    //   expect(wc.arr).to.eql(['P', 'r', 'e', 'a', 'c', 't']);
     // });
 
     // it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<ComponentWithUnregistered />, scratch);
     //   let wc = root.querySelector('#wc');
-    //   expect(wc.obj).toEqual({ org: 'developit', repo: 'preact' });
+    //   expect(wc.obj).to.eql({ org: 'developit', repo: 'preact' });
     // });
   });
 
@@ -169,12 +169,12 @@ describe("basic support", function() {
       let root = render(<ComponentWithImperativeEvent />, scratch);
       let component = root._component;
       let wc = root.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = root.querySelector("#handled");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
