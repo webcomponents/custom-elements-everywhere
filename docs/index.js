@@ -30,6 +30,7 @@ const libraryMap = {
   preact: "Preact",
   react: "React",
   skate: "Skate w/ Preact",
+  surplus: "Surplus",
   vue: "Vue"
 };
 const libraries = Object.keys(libraryMap);
