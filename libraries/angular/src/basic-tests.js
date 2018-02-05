@@ -134,7 +134,7 @@ describe("basic support", function() {
       let root = fixture.debugElement.nativeElement;
       let wc = root.querySelector("#wc");
       let data = wc.num || wc.getAttribute("num");
-      expect(data).to.eql(42);
+      expect(parseInt(data, 10)).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {

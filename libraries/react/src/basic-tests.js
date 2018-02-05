@@ -115,7 +115,7 @@ describe("basic support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.num || wc.getAttribute("num");
-      expect(parseInt(data)).to.eql(42);
+      expect(parseInt(data, 10)).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
