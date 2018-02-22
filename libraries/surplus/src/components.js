@@ -36,7 +36,6 @@ export const ComponentWithChildren = () =>
 export const ComponentWithChildrenRerender = () => {
     const count = S.data(1);
     Promise.resolve().then(() => count(count() + 1));
-    //S.cleanup(() =>  clearInterval(this.interval)); // what does this do? where does .interval come from?
     return (
       <div>
         <ce-with-children ref={__.wc}>{count()}</ce-with-children>
