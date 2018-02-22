@@ -17,7 +17,7 @@
 
 import S from 's-js';
 import * as Surplus from "surplus";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -29,92 +29,88 @@ import {
   ComponentWithDeclarativeEvent
 } from "./components";
 
-
-//let _it = it;
-//it = function it(title, fn) { return _it.call(this, title, () => S.root(fn.bind(this))); }
-
 describe("advanced support", function() {
 
   describe("attributes and properties", function() {
     it("will pass array data as a property", function() {
+      this.weight = 2;
       S.root(() => {
-        this.weight = 2;
         let root = <ComponentWithProperties />;
         let wc = root.wc;
         let data = wc.arr;
-        expect(data).toEqual(["S", "u", "r", "p", "l", "u", "s"]);
+        expect(data).to.eql(["S", "u", "r", "p", "l", "u", "s"]);
       });
     });
 
     it("will pass object data as a property", function() {
+      this.weight = 2;
       S.root(() => {
-        this.weight = 2;
         let root = <ComponentWithProperties />;
         let wc = root.wc;
         let data = wc.obj;
-        expect(data).toEqual({ org: "adam.haile@gmail.com", repo: "surplus" });
+        expect(data).to.eql({ org: "adam.haile@gmail.com", repo: "surplus" });
       });
     });
   });
 
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
+      this.weight = 2;
       S.root(() => {
-        this.weight = 2;
         let root = <ComponentWithDeclarativeEvent />;
         let wc = root.wc;
         let handled = root.lowercase;
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
       });
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       S.root(() => {
-        this.weight = 1;
         let root = <ComponentWithDeclarativeEvent />;
         let wc = root.wc;
         let handled = root.kebab;
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
       });
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       S.root(() => {
-        this.weight = 1;
         let root = <ComponentWithDeclarativeEvent />;
         let wc = root.wc;
         let handled = root.camel;
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
       });
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       S.root(() => {
-        this.weight = 1;
         let root = <ComponentWithDeclarativeEvent />;
         let wc = root.wc;
         let handled = root.caps;
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
       });
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
+      this.weight = 1;
       S.root(async () => {
-        this.weight = 1;
         let root = <ComponentWithDeclarativeEvent />;
         let wc = root.wc;
         let handled = root.pascal;
-        expect(handled.textContent).toEqual("false");
+        expect(handled.textContent).to.eql("false");
         wc.click();
-        expect(handled.textContent).toEqual("true");
+        expect(handled.textContent).to.eql("true");
       });
     });
   });
