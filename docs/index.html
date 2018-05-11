@@ -1078,6 +1078,78 @@ known to be available only as an attribute (<code>aria-*</code>, some SVG attrib
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
+                  <p class="title" id="svelte">Svelte <span class="library-version">2.5.1</span></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">88%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">16/16</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">10/14</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress is-primary" value="88" max="100">88%</progress>
+            <div class="content">
+              <h4 id="svelte-handling-data">Handling data</h4>
+
+<p>Svelte passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data,
+like objects or arrays. In these instances you end up with stringified values
+like <code>some-attr=&quot;[object Object]&quot;</code> which can&#39;t actually be used.</p>
+<h4 id="svelte-handling-events">Handling events</h4>
+
+<p>Svelte can listen to native DOM events dispatched from Custom Elements.
+It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/svelte/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h3 class="title is-3">Related Issues</h3>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/sveltejs/svelte/issues/875">
+                        <div class="content">
+                          <p>
+                            <strong>Passing data to custom elements</strong>
+                            <br>
+                            <small>#875 opened on September 27 by Rich-Harris</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
                   <p class="title" id="vue">Vue <span class="library-version">2.5.13</span></p>
                 </div>
               </div>

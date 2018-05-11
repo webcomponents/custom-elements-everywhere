@@ -1,11 +1,11 @@
 {
     "summary": {
-        "success": 30,
-        "failed": 0,
+        "success": 26,
+        "failed": 4,
         "error": false,
         "disconnected": false,
-        "exitCode": 0,
-        "score": 100,
+        "exitCode": 1,
+        "score": 88,
         "basicSupport": {
             "total": 16,
             "failed": 0,
@@ -13,24 +13,24 @@
         },
         "advancedSupport": {
             "total": 14,
-            "failed": 0,
-            "passed": 14
+            "failed": 4,
+            "passed": 10
         }
     },
     "browsers": [
         {
             "browser": {
-                "id": "65052059",
+                "id": "35235605",
                 "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/66.0.3359.139 Safari/537.36",
                 "name": "HeadlessChrome 0.0.0 (Mac OS X 10.13.1)",
                 "state": 5,
                 "lastResult": {
-                    "success": 15,
-                    "failed": 0,
+                    "success": 13,
+                    "failed": 2,
                     "skipped": 0,
                     "total": 15,
-                    "totalTime": 21,
-                    "netTime": 180,
+                    "totalTime": 384,
+                    "netTime": 18,
                     "error": false,
                     "disconnected": false
                 },
@@ -47,11 +47,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650547,
-                    "endTime": 1526065650550,
+                    "startTime": 1526065650972,
+                    "endTime": 1526065650976,
                     "weight": 3
                 },
                 {
@@ -66,8 +66,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650551,
-                    "endTime": 1526065650552,
+                    "startTime": 1526065650977,
+                    "endTime": 1526065650978,
                     "weight": 3
                 },
                 {
@@ -79,11 +79,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 168,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650552,
-                    "endTime": 1526065650723,
+                    "startTime": 1526065650979,
+                    "endTime": 1526065650981,
                     "weight": 3
                 },
                 {
@@ -95,11 +95,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 3,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650735,
-                    "endTime": 1526065650736,
+                    "startTime": 1526065650990,
+                    "endTime": 1526065650993,
                     "weight": 3
                 },
                 {
@@ -114,8 +114,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650737,
-                    "endTime": 1526065650737,
+                    "startTime": 1526065650994,
+                    "endTime": 1526065650994,
                     "weight": 3
                 },
                 {
@@ -130,8 +130,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650737,
-                    "endTime": 1526065650737,
+                    "startTime": 1526065650994,
+                    "endTime": 1526065650994,
                     "weight": 3
                 },
                 {
@@ -143,11 +143,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650737,
-                    "endTime": 1526065650738,
+                    "startTime": 1526065650995,
+                    "endTime": 1526065650995,
                     "weight": 3
                 },
                 {
@@ -159,11 +159,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650738,
-                    "endTime": 1526065650739,
+                    "startTime": 1526065650995,
+                    "endTime": 1526065650997,
                     "weight": 3
                 },
                 {
@@ -173,13 +173,24 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
                     "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650739,
-                    "endTime": 1526065650741,
+                    "log": [
+                        "AssertionError: expected undefined to deeply equal [ 's', 'v', 'e', 'l', 't', 'e' ]",
+                        "    at Context.<anonymous> (base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:142:440)"
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal [ 's', 'v', 'e', 'l', 't', 'e' ]",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "[\n  \"s\"\n  \"v\"\n  \"e\"\n  \"l\"\n  \"t\"\n  \"e\"\n]"
+                        }
+                    ],
+                    "startTime": 1526065650997,
+                    "endTime": 1526065651140,
                     "weight": 2
                 },
                 {
@@ -189,13 +200,24 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650741,
-                    "endTime": 1526065650743,
+                    "time": 1,
+                    "log": [
+                        "AssertionError: expected undefined to deeply equal { org: 'sveltejs', repo: 'svelte' }",
+                        "    at Context.<anonymous> (base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:142:615)"
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal { org: 'sveltejs', repo: 'svelte' }",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "{\n  \"org\": \"sveltejs\"\n  \"repo\": \"svelte\"\n}"
+                        }
+                    ],
+                    "startTime": 1526065651174,
+                    "endTime": 1526065651177,
                     "weight": 2
                 },
                 {
@@ -207,11 +229,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 3,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065650743,
-                    "endTime": 1526065650744,
+                    "startTime": 1526065651178,
+                    "endTime": 1526065651181,
                     "weight": 2
                 },
                 {
@@ -220,100 +242,100 @@
                     "suite": [
                         "advanced support",
                         "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650744,
-                    "endTime": 1526065650745,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650745,
-                    "endTime": 1526065650746,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 0,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650746,
-                    "endTime": 1526065650746,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065650746,
-                    "endTime": 1526065650747,
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "browser": {
-                "id": "81545837",
-                "fullName": "FirefoxHeadless",
-                "name": "FirefoxHeadless",
-                "state": 5,
-                "lastResult": {
-                    "success": 15,
-                    "failed": 0,
-                    "skipped": 0,
-                    "total": 15,
-                    "totalTime": 386,
-                    "netTime": 106,
-                    "error": false,
-                    "disconnected": false
-                },
-                "disconnectsCount": 0
-            },
-            "errors": [],
-            "results": [
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with no children",
-                    "suite": [
-                        "basic support",
-                        "no children"
                     ],
                     "success": true,
                     "skipped": false,
                     "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652763,
-                    "endTime": 1526065652768,
+                    "startTime": 1526065651182,
+                    "endTime": 1526065651186,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1526065651186,
+                    "endTime": 1526065651187,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1526065651187,
+                    "endTime": 1526065651187,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1526065651188,
+                    "endTime": 1526065651188,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "53682098",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": 5,
+                "lastResult": {
+                    "success": 13,
+                    "failed": 2,
+                    "skipped": 0,
+                    "total": 15,
+                    "totalTime": 299,
+                    "netTime": 168,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1526065653254,
+                    "endTime": 1526065653258,
                     "weight": 3
                 },
                 {
@@ -325,11 +347,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 6,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652769,
-                    "endTime": 1526065652775,
+                    "startTime": 1526065653261,
+                    "endTime": 1526065653266,
                     "weight": 3
                 },
                 {
@@ -341,11 +363,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 5,
+                    "time": 76,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652776,
-                    "endTime": 1526065652782,
+                    "startTime": 1526065653268,
+                    "endTime": 1526065653344,
                     "weight": 3
                 },
                 {
@@ -357,11 +379,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 7,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652926,
-                    "endTime": 1526065652933,
+                    "startTime": 1526065653355,
+                    "endTime": 1526065653359,
                     "weight": 3
                 },
                 {
@@ -373,11 +395,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 3,
+                    "time": 1,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652935,
-                    "endTime": 1526065652938,
+                    "startTime": 1526065653361,
+                    "endTime": 1526065653362,
                     "weight": 3
                 },
                 {
@@ -389,11 +411,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652940,
-                    "endTime": 1526065652941,
+                    "startTime": 1526065653363,
+                    "endTime": 1526065653363,
                     "weight": 3
                 },
                 {
@@ -408,8 +430,8 @@
                     "time": 1,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652948,
-                    "endTime": 1526065652949,
+                    "startTime": 1526065653364,
+                    "endTime": 1526065653365,
                     "weight": 3
                 },
                 {
@@ -421,11 +443,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 6,
+                    "time": 3,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652950,
-                    "endTime": 1526065652956,
+                    "startTime": 1526065653366,
+                    "endTime": 1526065653370,
                     "weight": 3
                 },
                 {
@@ -435,13 +457,29 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 3,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065652958,
-                    "endTime": 1526065652961,
+                    "time": 40,
+                    "log": [
+                        "expected undefined to deeply equal [ 's', 'v', 'e', 'l', 't', 'e' ]",
+                        "o@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:110:475",
+                        "e.exports/i.prototype.assert@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:313:1366",
+                        "h@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:261:1956",
+                        "c@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:378:126",
+                        "@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:142:417",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal [ 's', 'v', 'e', 'l', 't', 'e' ]",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "[\n  \"s\"\n  \"v\"\n  \"e\"\n  \"l\"\n  \"t\"\n  \"e\"\n]"
+                        }
+                    ],
+                    "startTime": 1526065653371,
+                    "endTime": 1526065653414,
                     "weight": 2
                 },
                 {
@@ -451,13 +489,29 @@
                         "advanced support",
                         "attributes and properties"
                     ],
-                    "success": true,
+                    "success": false,
                     "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1526065652963,
-                    "endTime": 1526065652964,
+                    "time": 2,
+                    "log": [
+                        "expected undefined to deeply equal { org: 'sveltejs', repo: 'svelte' }",
+                        "o@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:110:475",
+                        "e.exports/i.prototype.assert@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:313:1366",
+                        "h@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:261:1956",
+                        "c@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:378:126",
+                        "@base/tests.webpack.js?69d52f8cf0a4834889bcdb671a037f801494d85e:142:592",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal { org: 'sveltejs', repo: 'svelte' }",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "{\n  \"org\": \"sveltejs\"\n  \"repo\": \"svelte\"\n}"
+                        }
+                    ],
+                    "startTime": 1526065653416,
+                    "endTime": 1526065653419,
                     "weight": 2
                 },
                 {
@@ -469,11 +523,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 60,
+                    "time": 15,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065652965,
-                    "endTime": 1526065653026,
+                    "startTime": 1526065653420,
+                    "endTime": 1526065653435,
                     "weight": 2
                 },
                 {
@@ -485,11 +539,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 3,
+                    "time": 9,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065653082,
-                    "endTime": 1526065653085,
+                    "startTime": 1526065653445,
+                    "endTime": 1526065653454,
                     "weight": 1
                 },
                 {
@@ -501,11 +555,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 2,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065653085,
-                    "endTime": 1526065653088,
+                    "startTime": 1526065653488,
+                    "endTime": 1526065653492,
                     "weight": 1
                 },
                 {
@@ -520,8 +574,8 @@
                     "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065653088,
-                    "endTime": 1526065653090,
+                    "startTime": 1526065653496,
+                    "endTime": 1526065653498,
                     "weight": 1
                 },
                 {
@@ -533,17 +587,18 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 2,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1526065653090,
-                    "endTime": 1526065653092,
+                    "startTime": 1526065653499,
+                    "endTime": 1526065653503,
                     "weight": 1
                 }
             ]
         }
     ],
     "library": {
-        "name": "surplus"
+        "name": "svelte",
+        "version": "2.5.1"
     }
 }

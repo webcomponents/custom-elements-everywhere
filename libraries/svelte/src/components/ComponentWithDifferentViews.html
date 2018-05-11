@@ -1,0 +1,21 @@
+{#if showWC}
+    <ce-with-children id="wc"></ce-with-children>
+{:else}
+    <div id="dummy">Dummy view</div>
+{/if}
+
+<script>
+    export default {
+        data() {
+            return {
+                showWC: true,
+            }
+        },
+
+        methods: {
+            toggle() {
+                this.set({ showWC: !this.get().showWC });
+            }
+        },
+    }
+</script>

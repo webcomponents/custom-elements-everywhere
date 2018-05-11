@@ -1,0 +1,18 @@
+<div id="handled">{eventHandled}</div>
+<ce-with-event id="wc" ref:customElement></ce-with-event>
+
+<script>
+    export default {
+        oncreate() {
+            this.refs.customElement.addEventListener('camelEvent', () => {
+                this.set({ eventHandled: true });
+            });
+        },
+
+        data() {
+            return {
+                eventHandled: false,
+            };
+        },
+    }
+</script>

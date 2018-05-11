@@ -1,0 +1,13 @@
+<ce-with-children id="wc">{count}</ce-with-children>
+
+<script>
+    export default {
+        data() {
+            return { count: 1 };
+        },
+
+        oncreate() {
+            Promise.resolve().then(_ => this.set({ count: this.get().count + 1 }));
+        }
+    }
+</script>
