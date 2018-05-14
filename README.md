@@ -1,4 +1,4 @@
-# ️Custom Elements Everywhere 🍻
+# Custom Elements Everywhere 🍻
 
 ## What is this?
 
