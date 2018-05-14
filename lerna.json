@@ -1,12 +1,24 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "libraries/*",
     "libraries/__shared__/karma-plugins/*",
     "libraries/__shared__/webcomponents",
+    "libraries/*",
     "docs"
   ],
-  "version": "0.0.0",
-  "npmClient": "npm",
-  "npmClientArgs": ["--ci", "--ignore-scripts"]
+  "version": "1.0.0",
+  "command": {
+    "bootstrap": {
+      "ci": true,
+      "ignoreScripts": true
+    },
+    "run": {
+      "ignore": [
+        "custom-elements-everywhere",
+        "libraries/__shared__/karma-plugins/*",
+        "libraries/__shared__/webcomponents",
+        "docs"
+      ]
+    }
+  }
 }
