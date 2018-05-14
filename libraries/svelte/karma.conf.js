@@ -40,7 +40,7 @@ module.exports = function(config) {
     singleRun: true, // set this to false to leave the browser open
     frameworks: ['mocha'], // use the mocha test framework
     files: [
-      // { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
+      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
       { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
       'tests.webpack.js' // just load this file
     ],
@@ -67,6 +67,13 @@ module.exports = function(config) {
       },
       module: {
         rules: [
+          {
+            test: /\.(html|js)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader'
+            }
+          },
           {
             test: /\.html$/,
             exclude: /node_modules/,
