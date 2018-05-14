@@ -4,9 +4,10 @@
   "description": "Compare how different frameworks handle Web Components.",
   "license": "Apache 2.0",
   "scripts": {
-    "install-all": "npm i && lerna bootstrap",
+    "bootstrap": "npm i && lerna bootstrap --hoist",
     "build": "rm -rf docs/libraries; lerna run build; cd docs && npm run build && echo 'Site built successfully!'",
-    "start": "cd docs && http-server -o"
+    "start": "cd docs && http-server -o",
+    "clean": "lerna clean"
   },
   "devDependencies": {
     "http-server": "0.11.1",
