@@ -1,0 +1,26 @@
+<div id="lowercase">{lowercaseHandled}</div>
+<div id="kebab">{kebabHandled}</div>
+<div id="camel">{camelHandled}</div>
+<div id="caps">{capsHandled}</div>
+<div id="pascal">{pascalHandled}</div>
+<ce-with-event id="wc"
+    on:lowercaseevent="set({ lowercaseHandled: true })"
+    on:kebab-event="set({ kebabHandled: true })"
+    on:camelEvent="set({ camelHandled: true })"
+    on:CAPSevent="set({ capsHandled: true })"
+    on:PascalEvent="set({ pascalHandled: true })">
+</ce-with-event> 
+
+<script>
+    export default {
+        data() {
+            return {
+                lowercaseHandled: false,
+                kebabHandled: false,
+                camelHandled: false,
+                capsHandled: false,
+                pascalHandled: false,
+            };
+        },
+    }
+</script>

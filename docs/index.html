@@ -132,7 +132,7 @@ limitations under the License.
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
-                  <p class="title" id="angular">Angular <span class="library-version">5.1.2</span></p>
+                  <p class="title" id="angular">Angular <span class="library-version">6.0.1</span></p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
@@ -266,6 +266,19 @@ supported.</p>
                             <strong>Support the (event) / on-event syntax in AngularJS</strong>
                             <br>
                             <small>#12197 opened Jun 23, 2015 by mhevery</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/angular/angular.js/issues/16428">
+                        <div class="content">
+                          <p>
+                            <strong>Request full support for the Web Components Custom Elements spec in version 1.7</strong>
+                            <br>
+                            <small>#16428 opened Jan 30, 2018 by raviolibhat</small>
                           </p>
                         </div>
                       </a>
@@ -762,14 +775,14 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>&#39;URLchanged&#39;</code
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">16/16</p><div></div>
+                  <p class="title">8/8</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">0/14</p>
+                  <p class="title">0/7</p>
                 </div>
               </div>
             </div>
@@ -902,14 +915,14 @@ makes working with Custom Elements cumbersome.</p>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Basic Tests</p>
-                  <p class="title">8/8</p><div></div>
+                  <p class="title">16/16</p><div></div>
                 
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Advanced Tests</p>
-                  <p class="title">4/7</p>
+                  <p class="title">8/14</p>
                 </div>
               </div>
             </div>
@@ -1003,7 +1016,7 @@ kebab-case names, but not camelCase, PascalCase, or CAPScase events (e.g.
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
-                  <p class="title" id="vue">Vue <span class="library-version">2.5.13</span></p>
+                  <p class="title" id="surplus">Surplus <span class="library-version"></span></p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
@@ -1023,6 +1036,140 @@ kebab-case names, but not camelCase, PascalCase, or CAPScase events (e.g.
                 <div>
                   <p class="heading">Advanced Tests</p>
                   <p class="title">14/14</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress is-primary" value="100" max="100">100%</progress>
+            <div class="content">
+              <h4 id="surplus-handling-data">Handling data</h4>
+
+<p>Surplus passes data to an element via properties unless the indicated field is 
+known to be available only as an attribute (<code>aria-*</code>, some SVG attributes). </p>
+<h4 id="surplus-handling-events">Handling events</h4>
+
+<p>By default, event handlers are registered in Surplus by setting the <code>node.on...</code> DOM properties: 
+<code>&lt;div onclick={...}&gt;&lt;/div&gt;</code>. For custom events, which don&#39;t have such properties, Surplus uses 
+<a href="https://github.com/adamhaile/surplus-mixin-on">surplus-mixin-on</a>: <code>&lt;div fn={on(&#39;my-custom-event&#39;, ...)}&gt;&lt;/div&gt;</code>.</p>
+
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/surplus/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h3 class="title is-3">Related Issues</h3>
+                  <div class="has-text-centered">
+                    <img src="images/smiley.svg" alt="" width="256">
+                    <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
+                  <p class="title" id="svelte">Svelte <span class="library-version">2.5.1</span></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">88%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">16/16</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">10/14</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress is-primary" value="88" max="100">88%</progress>
+            <div class="content">
+              <h4 id="svelte-handling-data">Handling data</h4>
+
+<p>Svelte passes all data to Custom Elements in the form of HTML attributes. For
+primitive data this is fine, but the system breaks down when passing rich data,
+like objects or arrays. In these instances you end up with stringified values
+like <code>some-attr=&quot;[object Object]&quot;</code> which can&#39;t actually be used.</p>
+<h4 id="svelte-handling-events">Handling events</h4>
+
+<p>Svelte can listen to native DOM events dispatched from Custom Elements.
+It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/svelte/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h3 class="title is-3">Related Issues</h3>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/sveltejs/svelte/issues/875">
+                        <div class="content">
+                          <p>
+                            <strong>Passing data to custom elements</strong>
+                            <br>
+                            <small>#875 opened on September 27 by Rich-Harris</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
+                  <p class="title" id="vue">Vue <span class="library-version">2.5.13</span></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">100%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">8/8</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">7/7</p>
                 </div>
               </div>
             </div>
@@ -1063,6 +1210,24 @@ all styles of events (lowercase, camelCase, kebab-case, etc).</p>
         <div class="column is-10-tablet is-offset-1-tablet is-7-widescreen is-offset-0-widescreen">
           <div class="content">
             <h2 class="title is-2" id="faq">Frequently Asked Questions</h2>
+            <div class="question">
+              <h3 class="title is-4" id="faq-authoring-elements">
+                What are these custom element things?
+              </h3>
+              <p>
+                Custom elements are a new web standard which let developers
+                create their own HTML Elements. Because they're based on web
+                standards, these elements should work on any page. This means,
+                you can write a component, like a datepicker, and share it
+                everywhere.
+              </p>
+              <p>
+                To learn more, check out the
+                <a href="https://developers.google.com/web/fundamentals/architecture/building-components/customelements">custom elements primer</a>
+                and
+                <a href="https://developers.google.com/web/fundamentals/architecture/building-components/best-practices">best practices guide</a>.
+              </p>
+            </div>
             <div class="question">
               <h3 class="title is-4" id="faq-authoring-elements">
                 Are you testing that libraries let you author custom elements?
