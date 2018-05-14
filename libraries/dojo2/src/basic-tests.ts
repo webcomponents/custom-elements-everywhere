@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import * as expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -54,7 +54,7 @@ describe("basic support", function() {
       const component = new Component();
       component.append(scratch);
       const wc = document.querySelector("ce-without-children");
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
@@ -62,11 +62,11 @@ describe("basic support", function() {
     function expectHasChildren(wc: any) {
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.eql("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -104,7 +104,7 @@ describe("basic support", function() {
       const component = new Component();
       component.append(scratch);
       const wc = document.querySelector("ce-with-properties");
-      expect((wc as any).bool).toBe(true);
+      expect((wc as any).bool).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
@@ -113,7 +113,7 @@ describe("basic support", function() {
       const component = new Component();
       component.append(scratch);
       const wc = document.querySelector("ce-with-properties");
-      expect((wc as any).num).toBe(42);
+      expect((wc as any).num).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
@@ -123,7 +123,7 @@ describe("basic support", function() {
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.getAttribute("str");
-      expect(data).toEqual("Dojo2");
+      expect(data).to.eql("Dojo2");
     });
   });
 
@@ -135,9 +135,9 @@ describe("basic support", function() {
       component.async = false;
       component.append(scratch);
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.eventHandled).toEqual(false);
+      expect(component.eventHandled).to.be.false;
       wc.click();
-      expect(component.eventHandled).toEqual(true);
+      expect(component.eventHandled).to.be.true;
     });
   });
 

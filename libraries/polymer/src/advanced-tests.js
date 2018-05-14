@@ -16,7 +16,7 @@
  */
 
 import "./components.html";
-import expect from "expect";
+import { expect } from "chai";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -49,13 +49,13 @@ describe("advanced support", function() {
     it("will pass array data as a property", function() {
       this.weight = 2;
       let data = wc.arr;
-      expect(data).toEqual(["P", "o", "l", "y", "m", "e", "r"]);
+      expect(data).to.eql(["P", "o", "l", "y", "m", "e", "r"]);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
       let data = wc.obj;
-      expect(data).toEqual({ org: "polymer", repo: "polymer" });
+      expect(data).to.eql({ org: "polymer", repo: "polymer" });
     });
   });
 
@@ -66,10 +66,10 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#lowercase");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
@@ -78,10 +78,10 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#kebab");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
@@ -90,10 +90,10 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#camel");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
@@ -102,10 +102,10 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#caps");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
@@ -114,10 +114,10 @@ describe("advanced support", function() {
       scratch.appendChild(root);
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#pascal");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       await Promise.resolve();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 });

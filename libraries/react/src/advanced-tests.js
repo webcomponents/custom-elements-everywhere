@@ -18,7 +18,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactTestUtils from "react-dom/test-utils";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -55,7 +55,7 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.arr;
-      expect(data).toEqual(["R", "e", "a", "c", "t"]);
+      expect(data).to.eql(["R", "e", "a", "c", "t"]);
     });
 
     it("will pass object data as a property", function() {
@@ -63,7 +63,7 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithProperties />, scratch);
       let wc = root.wc;
       let data = wc.obj;
-      expect(data).toEqual({ org: "facebook", repo: "react" });
+      expect(data).to.eql({ org: "facebook", repo: "react" });
     });
   });
 
@@ -73,10 +73,10 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.lowercase;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
@@ -84,10 +84,10 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.kebab;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
@@ -95,10 +95,10 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.camel;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
@@ -106,10 +106,10 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.caps;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
@@ -117,10 +117,10 @@ describe("advanced support", function() {
       let root = ReactDOM.render(<ComponentWithDeclarativeEvent />, scratch);
       let wc = root.wc;
       let handled = root.pascal;
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       root.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 

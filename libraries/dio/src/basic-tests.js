@@ -16,7 +16,7 @@
  */
 
 import { h, render } from "dio.js";
-import expect from "expect";
+import { expect } from "chai";
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -52,20 +52,20 @@ describe("basic support", function() {
       this.weight = 3;
       render(<ComponentWithoutChildren />, scratch), scratch;
       let wc = scratch.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
     });
   });
 
   describe("with children", function() {
     function expectHasChildren(wc) {
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
       let heading = shadowRoot.querySelector("h1");
-      expect(heading).toExist();
-      expect(heading.textContent).toEqual("Test h1");
+      expect(heading).to.exist;
+      expect(heading.textContent).to.eql("Test h1");
       let paragraph = shadowRoot.querySelector("p");
-      expect(paragraph).toExist();
-      expect(paragraph.textContent).toEqual("Test p");
+      expect(paragraph).to.exist;
+      expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
@@ -83,7 +83,7 @@ describe("basic support", function() {
       await Promise.resolve();
       component.forceUpdate();
       expectHasChildren(wc);
-      expect(wc.textContent.includes("2")).toEqual(true);
+      expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
@@ -95,8 +95,8 @@ describe("basic support", function() {
       component.toggle();
       component.forceUpdate();
       let dummy = scratch.querySelector("#dummy");
-      expect(dummy).toExist();
-      expect(dummy.textContent).toEqual("Dummy view");
+      expect(dummy).to.exist;
+      expect(dummy.textContent).to.eql("Dummy view");
       component.toggle();
       component.forceUpdate();
       wc = scratch.querySelector("#wc");
@@ -110,7 +110,7 @@ describe("basic support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.bool || wc.hasAttribute("bool");
-      expect(data).toBe(true);
+      expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
@@ -118,7 +118,7 @@ describe("basic support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.num || wc.getAttribute("num");
-      expect(data).toEqual(42);
+      expect(parseInt(data, 10)).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
@@ -126,7 +126,7 @@ describe("basic support", function() {
       render(<ComponentWithProperties />, scratch);
       let wc = scratch.querySelector("#wc");
       let data = wc.str || wc.getAttribute("str");
-      expect(data).toEqual("DIO");
+      expect(data).to.eql("DIO");
     });
   });
 
@@ -136,12 +136,12 @@ describe("basic support", function() {
       let component
       render(<ComponentWithImperativeEvent ref={(instance) => {component = instance}} />, scratch);
       let wc = scratch.querySelector("#wc");
-      expect(wc).toExist();
+      expect(wc).to.exist;
       let handled = scratch.querySelector("#handled");
-      expect(handled.textContent).toEqual("false");
+      expect(handled.textContent).to.eql("false");
       wc.click();
       component.forceUpdate();
-      expect(handled.textContent).toEqual("true");
+      expect(handled.textContent).to.eql("true");
     });
   });
 
