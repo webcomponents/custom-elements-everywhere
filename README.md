@@ -25,6 +25,21 @@ npm run build
 npm start
 ```
 
+## Current List of [Libraries/Frameworks](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries)
+- [Angular](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angular)
+- [AngularJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angularjs)
+- [CanJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/canjs)
+- [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
+- [Dojo2](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo2)
+- [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
+- [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
+- [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
+- [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
+- [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
+- [Surplus](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/surplus)
+- [Svelte](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/svelte)
+- [Vue](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/vue)
+
 ## How do I add a library/framework to the project?
 
 ### Step 1. Copy an existing example
