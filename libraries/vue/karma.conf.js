@@ -23,9 +23,9 @@ module.exports = function(config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-mocha')),
       'karma-sourcemap-loader',
       'karma-webpack',
+      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-mocha')),
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
     ],
@@ -40,8 +40,8 @@ module.exports = function(config) {
     singleRun: true, // set this to false to leave the browser open
     frameworks: ['mocha'], // use the mocha test framework
     files: [
-      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
-      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
+      { pattern: '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js', watched: false },
+      { pattern: '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js', watched: false },
       'tests.webpack.js' // just load this file
     ],
     preprocessors: {

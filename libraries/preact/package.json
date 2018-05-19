@@ -4,9 +4,6 @@
     "test": "cross-env LIBRARY_NAME=preact karma start",
     "build": "npm run test; DIST=../../docs/libraries/preact && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
-  "devDependencies": {
-    "babel-plugin-transform-react-jsx": "6.24.1"
-  },
   "dependencies": {
     "preact": "8.2.7"
   }
