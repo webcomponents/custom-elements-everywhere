@@ -62,7 +62,8 @@ module.exports = function(config) {
       resolve: {
         modules: [
           path.resolve(__dirname, '../__shared__/webcomponents/src'),
-          path.resolve(__dirname, './node_modules')
+          path.resolve(__dirname, './node_modules'),
+          path.resolve(__dirname, '../../node_modules')
         ],
         alias: {
           'vue$': 'vue/dist/vue.esm.js' // include Vue's compiler so we don't have to use .vue files
