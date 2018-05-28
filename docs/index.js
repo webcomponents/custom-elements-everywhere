@@ -32,7 +32,8 @@ const libraryMap = {
   skate: "Skate w/ Preact",
   surplus: "Surplus",
   svelte: "Svelte",
-  vue: "Vue"
+  vue: "Vue",
+  powjs: "PowJS"
 };
 const libraries = Object.keys(libraryMap);
 
