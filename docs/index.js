@@ -25,6 +25,7 @@ const libraryMap = {
   canjs: "CanJS",
   dio: 'DIO',
   dojo2: "Dojo 2",
+  hybrids: "hybrids",
   hyperhtml: "hyperHTML",
   polymer: "Polymer",
   preact: "Preact",

@@ -31,6 +31,7 @@ npm start
 - [CanJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/canjs)
 - [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
 - [Dojo2](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo2)
+- [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
