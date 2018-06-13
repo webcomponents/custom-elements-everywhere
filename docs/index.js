@@ -22,7 +22,7 @@ const marked = require("marked");
 const libraryMap = {
   angular: "Angular",
   angularjs: "AngularJS (1.x)",
-  canjs: "CanJS",
+  // canjs: "CanJS",
   dio: 'DIO',
   dojo2: "Dojo 2",
   hybrids: "hybrids",

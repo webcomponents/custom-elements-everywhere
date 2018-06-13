@@ -25,7 +25,7 @@
     "install-karma-plugins": "npm run install-karma-custom-html-reporter && npm run install-karma-custom-json-reporter && npm run install-karma-mocha",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm i",
     "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm i",
-    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-canjs & npm run build-preact & npm run build-polymer & npm run build-react & npm run build-vue & npm run build-dojo2 & npm run build-hybrids & npm run build-hyperhtml & npm run build-dio & npm run build-skate & npm run build-surplus & npm run build-svelte & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!' && exit 0",
+    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-preact & npm run build-polymer & npm run build-react & npm run build-vue & npm run build-dojo2 & npm run build-hybrids & npm run build-hyperhtml & npm run build-dio & npm run build-skate & npm run build-surplus & npm run build-svelte & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!' && exit 0",
     "build-angular": "cd libraries/angular && npm run build",
     "build-angularjs": "cd libraries/angularjs && npm run build",
     "build-canjs": "cd libraries/canjs && npm run build",
