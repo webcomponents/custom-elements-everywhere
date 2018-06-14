@@ -1,0 +1,622 @@
+{
+    "summary": {
+        "success": 14,
+        "failed": 16,
+        "error": false,
+        "disconnected": false,
+        "exitCode": 1,
+        "score": 56,
+        "basicSupport": {
+            "total": 16,
+            "failed": 6,
+            "passed": 10
+        },
+        "advancedSupport": {
+            "total": 14,
+            "failed": 10,
+            "passed": 4
+        }
+    },
+    "browsers": [
+        {
+            "browser": {
+                "id": "1902322",
+                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/67.0.3396.87 Safari/537.36",
+                "name": "HeadlessChrome 67.0.3396 (Mac OS X 10.13.4)",
+                "state": 5,
+                "lastResult": {
+                    "success": 7,
+                    "failed": 8,
+                    "skipped": 0,
+                    "total": 15,
+                    "totalTime": 30,
+                    "netTime": 9,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328421,
+                    "endTime": 1528936328426,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328427,
+                    "endTime": 1528936328428,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithChildrenRerender (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2132:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2797:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328428,
+                    "endTime": 1528936328433,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDifferentViews (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2169:139)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2808:33)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328434,
+                    "endTime": 1528936328434,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328435,
+                    "endTime": 1528936328437,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328438,
+                    "endTime": 1528936328438,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328438,
+                    "endTime": 1528936328438,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithImperativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2213:141)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2855:33)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328439,
+                    "endTime": 1528936328439,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328439,
+                    "endTime": 1528936328440,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936328447,
+                    "endTime": 1528936328449,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDeclarativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13572:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328451,
+                    "endTime": 1528936328451,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDeclarativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13586:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328452,
+                    "endTime": 1528936328452,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDeclarativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13599:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328452,
+                    "endTime": 1528936328453,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDeclarativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13612:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328454,
+                    "endTime": 1528936328454,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Class constructor HyperHTMLElement cannot be invoked without 'new'",
+                        "    at new ComponentWithDeclarativeEvent (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:143)",
+                        "    at Context.<anonymous> (base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13625:24)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936328455,
+                    "endTime": 1528936328455,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "54740501",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": 5,
+                "lastResult": {
+                    "success": 7,
+                    "failed": 8,
+                    "skipped": 0,
+                    "total": 15,
+                    "totalTime": 76,
+                    "netTime": 17,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 4,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329873,
+                    "endTime": 1528936329878,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329880,
+                    "endTime": 1528936329884,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithChildrenRerender@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2132:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2797:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329885,
+                    "endTime": 1528936329886,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDifferentViews@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2169:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2808:33",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329887,
+                    "endTime": 1528936329888,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329888,
+                    "endTime": 1528936329891,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329892,
+                    "endTime": 1528936329892,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329893,
+                    "endTime": 1528936329893,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithImperativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2213:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2855:33",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329894,
+                    "endTime": 1528936329895,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 4,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329895,
+                    "endTime": 1528936329899,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1528936329918,
+                    "endTime": 1528936329921,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDeclarativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13572:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329929,
+                    "endTime": 1528936329930,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDeclarativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13586:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329930,
+                    "endTime": 1528936329932,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDeclarativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13599:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329932,
+                    "endTime": 1528936329932,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDeclarativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13612:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329932,
+                    "endTime": 1528936329933,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "class constructors must be invoked with |new|",
+                        "ComponentWithDeclarativeEvent@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:2248:46",
+                        "@base/tests.webpack.js?8b1069e6c7e40b10a58513e76f7b6a4614312309:13625:24",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528936329933,
+                    "endTime": 1528936329933,
+                    "weight": 1
+                }
+            ]
+        }
+    ],
+    "library": {
+        "name": "hyperhtml",
+        "version": "2.5.10"
+    }
+}

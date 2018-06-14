@@ -1,0 +1,925 @@
+{
+    "summary": {
+        "success": 0,
+        "failed": 30,
+        "error": true,
+        "disconnected": false,
+        "exitCode": 1,
+        "score": 0,
+        "basicSupport": {
+            "total": 16,
+            "failed": 16,
+            "passed": 0
+        },
+        "advancedSupport": {
+            "total": 14,
+            "failed": 14,
+            "passed": 0
+        }
+    },
+    "browsers": [
+        {
+            "browser": {
+                "id": "13852880",
+                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/67.0.3396.87 Safari/537.36",
+                "name": "HeadlessChrome 67.0.3396 (Mac OS X 10.13.4)",
+                "state": 5,
+                "lastResult": {
+                    "success": 0,
+                    "failed": 15,
+                    "skipped": 0,
+                    "total": 15,
+                    "totalTime": 50,
+                    "netTime": 16,
+                    "error": true,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21708:100)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937517997,
+                    "endTime": 1528937518007,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21728:97)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518009,
+                    "endTime": 1528937518012,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21735:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518012,
+                    "endTime": 1528937518013,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21744:103)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518014,
+                    "endTime": 1528937518016,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21762:99)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518016,
+                    "endTime": 1528937518021,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21770:99)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518021,
+                    "endTime": 1528937518023,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21778:99)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518024,
+                    "endTime": 1528937518025,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21818:104)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518025,
+                    "endTime": 1528937518026,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42181:99)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518027,
+                    "endTime": 1528937518029,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42189:99)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518029,
+                    "endTime": 1528937518030,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42199:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518030,
+                    "endTime": 1528937518031,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42210:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518031,
+                    "endTime": 1528937518032,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42220:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518032,
+                    "endTime": 1528937518033,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42230:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518033,
+                    "endTime": 1528937518034,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "TypeError: Cannot read property 'get' of undefined",
+                        "    at Object.tagHandler (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:43)",
+                        "    at HTMLElement.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:21)",
+                        "    at hydrateCallbacks (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:39)",
+                        "    at Object.hydrate (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4)",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:20",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:19",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "    at base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:18",
+                        "    at Context.<anonymous> (base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42240:105)"
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937518034,
+                    "endTime": 1528937518035,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "67716826",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": 5,
+                "lastResult": {
+                    "success": 0,
+                    "failed": 15,
+                    "skipped": 0,
+                    "total": 15,
+                    "totalTime": 174,
+                    "netTime": 13,
+                    "error": true,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21708:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519510,
+                    "endTime": 1528937519512,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21728:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519514,
+                    "endTime": 1528937519515,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21735:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519515,
+                    "endTime": 1528937519517,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21744:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519580,
+                    "endTime": 1528937519581,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21762:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519582,
+                    "endTime": 1528937519583,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21770:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519583,
+                    "endTime": 1528937519584,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21778:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519585,
+                    "endTime": 1528937519585,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:21818:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519586,
+                    "endTime": 1528937519587,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42181:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519600,
+                    "endTime": 1528937519601,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42189:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519602,
+                    "endTime": 1528937519605,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42199:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519606,
+                    "endTime": 1528937519610,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42210:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519611,
+                    "endTime": 1528937519611,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42220:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519612,
+                    "endTime": 1528937519613,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42230:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519614,
+                    "endTime": 1528937519614,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [
+                        "tagData.options is undefined",
+                        "tagHandler@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8697:7",
+                        "end/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8314:7",
+                        "hydrateCallbacks@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19279:4",
+                        "hydrate@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:19298:4",
+                        "compile/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24691:11",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "stache/scopifiedRenderer<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:8545:10",
+                        "HTMLSectionBuilder.scopify/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:24645:10",
+                        "ignore/<@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:1552:15",
+                        "@base/tests.webpack.js?7581fdda191c73dad7023400185702776f175af0:42240:25",
+                        ""
+                    ],
+                    "assertionErrors": [],
+                    "startTime": 1528937519614,
+                    "endTime": 1528937519616,
+                    "weight": 1
+                }
+            ]
+        }
+    ],
+    "library": {
+        "name": "can-component",
+        "version": "4.0.8"
+    }
+}

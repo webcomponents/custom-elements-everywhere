@@ -15,34 +15,17 @@
  * limitations under the License.
  */
 
-var webpack = require('webpack');
-var path = require('path');
+var init = require("../__shared__/karma-init");
 
 module.exports = function(config) {
+  init(config, { libraryName: "Dojo 2", libraryPath: __dirname });
+
+  // Overrides
   config.set({
-    plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-sourcemap-loader',
-      'karma-webpack',
-      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-mocha')),
-      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
-      require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
-    ],
-    browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
-    customLaunchers: {
-      FirefoxHeadless: {
-        base: 'Firefox',
-        flags: [ '-headless' ],
-        displayName: 'FirefoxHeadless'
-      },
-    },
-    singleRun: true, // set this to false to leave the browser open
-    frameworks: ['mocha'], // use the mocha test framework
     files: [
       { pattern: '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js', watched: false },
       { pattern: '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js', watched: false },
-      'tests.webpack.ts' // just load this file
+      'tests.webpack.ts'
     ],
     preprocessors: {
       'tests.webpack.ts': ['webpack', 'sourcemap'] // preprocess with webpack and our sourcemap loader
@@ -50,38 +33,23 @@ module.exports = function(config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
-    htmlReporter: {
-      outputFile: path.resolve(__dirname, './results/results.html'),
-      pageTitle: 'Dojo 2 + Custom Elements',
-      groupSuites: true,
-      useCompactStyle: true
-    },
-    jsonResultReporter: {
-      outputFile: path.resolve(__dirname, './results/results.json')
-    },
     webpack: {
       resolve: {
-        extensions: ['.js', '.ts'],
-        modules: [
-          path.resolve(__dirname, '../__shared__/webcomponents/src'),
-          path.resolve(__dirname, './node_modules'),
-          path.resolve(__dirname, '../../node_modules')
-        ]
+        extensions: [".js", ".ts"]
       },
       module: {
         rules: [
           {
             test: /\.js$/,
-            loaders: ['babel-loader'],
+            loaders: ["babel-loader"],
             exclude: /node_modules/
           },
-          { test: /\.js?$/, loader: 'umd-compat-loader' },
+          { test: /\.js?$/, loader: "umd-compat-loader" },
           {
             test: /.*\.ts(x)?$/, use: [
-              'umd-compat-loader',
+              "umd-compat-loader",
               {
-                loader: 'ts-loader',
+                loader: "ts-loader",
                 options: {
                   transpileOnly: true
                 }
@@ -90,9 +58,6 @@ module.exports = function(config) {
           }
         ]
       }
-    },
-    webpackServer: {
-      // noInfo: true // please don't spam the console when running in karma!
     }
   });
 };
