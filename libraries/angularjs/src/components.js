@@ -57,11 +57,11 @@ const ComponentWithProps = {
   template: `
     <div>
       <ce-with-properties id="wc"
-        ng-attr-bool="{{$ctrl.bool}}"
-        ng-attr-num="{{$ctrl.num}}"
-        ng-attr-str="{{$ctrl.str}}"
-        ng-attr-arr="{{$ctrl.arr}}"
-        ng-attr-obj="{{$ctrl.obj}}"
+        ng-prop-bool="$ctrl.bool"
+        ng-prop-num="$ctrl.num"
+        ng-prop-str="$ctrl.str"
+        ng-prop-arr="$ctrl.arr"
+        ng-prop-obj="$ctrl.obj"
       ></ce-with-properties>
     </div>
   `,
@@ -111,11 +111,11 @@ const ComponentWithDeclarativeEvent = {
       <div id="caps">{{$ctrl.capsHandled}}</div>
       <div id="pascal">{{$ctrl.pascalHandled}}</div>
       <ce-with-event id="wc"
-        on-lowercaseevent="$ctrl.handleLowercaseEvent()"
-        on-kebab-event="$ctrl.handleKebabEvent()"
-        on-camelEvent="$ctrl.handleCamelEvent()"
-        on-CAPSevent="$ctrl.handleCapsEvent()"
-        on-PascalEvent="$ctrl.handlePascalEvent()"
+        ng-on-lowercaseevent="$ctrl.handleLowercaseEvent()"
+        ng-on-kebab-event="$ctrl.handleKebabEvent()"
+        ng-on-camel_Event="$ctrl.handleCamelEvent()"
+        ng-on-_C_A_P_Sevent="$ctrl.handleCapsEvent()"
+        ng-on-_Pascal_Event="$ctrl.handlePascalEvent()"
       ></ce-with-event>
     </div>
   `,
