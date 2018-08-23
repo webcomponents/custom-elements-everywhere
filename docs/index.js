@@ -27,6 +27,7 @@ const libraryMap = {
   dojo2: "Dojo 2",
   hybrids: "hybrids",
   hyperhtml: "hyperHTML",
+  mithril: "Mithril",
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
