@@ -33,6 +33,7 @@ npm start
 - [Dojo2](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo2)
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
+- [Mithril](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/mithril)
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
