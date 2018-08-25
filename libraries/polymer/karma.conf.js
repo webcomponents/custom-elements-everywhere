@@ -41,7 +41,7 @@ module.exports = function(config) {
     frameworks: ['mocha'], // use the mocha test framework
     files: [
       { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
-      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
+      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js'), watched: false },
       'tests.webpack.js' // just load this file
     ],
     preprocessors: {
@@ -58,7 +58,7 @@ module.exports = function(config) {
       outputFile: path.resolve(__dirname, './results/results.json')
     },
     webpack: { // kind of a copy of your webpack config
-      devtool: 'inline-source-map', // just do inline source maps instead of the default
+      // devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
           path.resolve(__dirname, '../__shared__/webcomponents/src'),
@@ -68,15 +68,7 @@ module.exports = function(config) {
       module: {
         rules: [
           {
-            test: /\.html$/,
-            use: [
-              { loader: 'babel-loader' },
-              { loader: 'polymer-webpack-loader' }
-            ]
-          },
-          {
             test: /\.js$/,
-            exclude: /node_modules/,
             use: {
               loader: 'babel-loader'
             }

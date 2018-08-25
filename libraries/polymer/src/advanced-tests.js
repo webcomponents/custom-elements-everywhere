@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import "./components.html";
+import "./components.js";
 import { expect } from "chai";
 
 // Setup the test harness. This will get cleaned out with every test.
