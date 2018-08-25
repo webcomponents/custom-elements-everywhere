@@ -1,8 +1,10 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import 'ce-with-children';
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "ce-with-children";
 
 class ComponentWithChildrenRerender extends PolymerElement {
-  static get is() { return 'component-with-children-rerender'; }
+  static get is() {
+    return "component-with-children-rerender";
+  }
   static get properties() {
     return {
       count: {
@@ -13,9 +15,11 @@ class ComponentWithChildrenRerender extends PolymerElement {
   }
   connectedCallback() {
     super.connectedCallback();
-    Promise.resolve().then(function() {
-      this.count += 1;
-    }.bind(this));
+    Promise.resolve().then(
+      function() {
+        this.count += 1;
+      }.bind(this)
+    );
   }
 
   static get template() {
@@ -24,4 +28,7 @@ class ComponentWithChildrenRerender extends PolymerElement {
     `;
   }
 }
-window.customElements.define(ComponentWithChildrenRerender.is, ComponentWithChildrenRerender);
+window.customElements.define(
+  ComponentWithChildrenRerender.is,
+  ComponentWithChildrenRerender
+);

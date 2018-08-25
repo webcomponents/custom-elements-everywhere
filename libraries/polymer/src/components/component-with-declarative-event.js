@@ -1,8 +1,10 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import 'ce-with-event';
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "ce-with-event";
 
 class ComponentWithDeclarativeEvent extends PolymerElement {
-  static get is() { return 'component-with-declarative-event'; }
+  static get is() {
+    return "component-with-declarative-event";
+  }
   static get properties() {
     return {
       lowercaseHandled: {
@@ -25,7 +27,7 @@ class ComponentWithDeclarativeEvent extends PolymerElement {
         type: Boolean,
         value: false
       }
-    }
+    };
   }
   static get template() {
     return html`
@@ -61,4 +63,7 @@ class ComponentWithDeclarativeEvent extends PolymerElement {
     this.pascalHandled = true;
   }
 }
-window.customElements.define(ComponentWithDeclarativeEvent.is, ComponentWithDeclarativeEvent);
+window.customElements.define(
+  ComponentWithDeclarativeEvent.is,
+  ComponentWithDeclarativeEvent
+);

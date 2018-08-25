@@ -58,7 +58,7 @@ module.exports = function(config) {
       outputFile: path.resolve(__dirname, './results/results.json')
     },
     webpack: { // kind of a copy of your webpack config
-      devtool: 'inline-source-map', // just do inline source maps instead of the default
+      // devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
           path.resolve(__dirname, '../__shared__/webcomponents/src'),
@@ -69,7 +69,6 @@ module.exports = function(config) {
         rules: [
           {
             test: /\.js$/,
-            exclude: /node_modules/,
             use: {
               loader: 'babel-loader'
             }

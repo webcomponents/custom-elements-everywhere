@@ -1,9 +1,11 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/lib/elements/dom-if.js';
-import 'ce-with-children';
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "@polymer/polymer/lib/elements/dom-if.js";
+import "ce-with-children";
 
 class ComponentWithDifferentViews extends PolymerElement {
-  static get is() { return 'component-with-different-views'; }
+  static get is() {
+    return "component-with-different-views";
+  }
   static get properties() {
     return {
       showWC: {
@@ -30,4 +32,7 @@ class ComponentWithDifferentViews extends PolymerElement {
     this.showWC = !this.showWC;
   }
 }
-window.customElements.define(ComponentWithDifferentViews.is, ComponentWithDifferentViews);
+window.customElements.define(
+  ComponentWithDifferentViews.is,
+  ComponentWithDifferentViews
+);

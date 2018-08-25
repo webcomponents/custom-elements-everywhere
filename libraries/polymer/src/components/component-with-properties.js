@@ -1,8 +1,10 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import 'ce-with-properties';
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "ce-with-properties";
 
 class ComponentWithProperties extends PolymerElement {
-  static get is() { return 'component-with-properties'; }
+  static get is() {
+    return "component-with-properties";
+  }
   static get properties() {
     return {
       bool: {
@@ -15,18 +17,18 @@ class ComponentWithProperties extends PolymerElement {
       },
       str: {
         type: String,
-        value: 'Polymer'
+        value: "Polymer"
       },
       arr: {
         type: Array,
         value: function() {
-          return ['P', 'o', 'l', 'y', 'm', 'e', 'r'];
+          return ["P", "o", "l", "y", "m", "e", "r"];
         }
       },
       obj: {
         type: Object,
         value: function() {
-          return { org: 'polymer', repo: 'polymer' }
+          return { org: "polymer", repo: "polymer" };
         }
       }
     };
@@ -45,4 +47,7 @@ class ComponentWithProperties extends PolymerElement {
     `;
   }
 }
-window.customElements.define(ComponentWithProperties.is, ComponentWithProperties);
+window.customElements.define(
+  ComponentWithProperties.is,
+  ComponentWithProperties
+);
