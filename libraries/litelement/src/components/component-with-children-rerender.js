@@ -1,5 +1,5 @@
-import {LitElement, html} from '@polymer/lit-element';
-import 'ce-with-children';
+import { LitElement, html } from "@polymer/lit-element";
+import "ce-with-children";
 
 export default class ComponentWithChildrenRerender extends LitElement {
   static get properties() {
@@ -14,16 +14,20 @@ export default class ComponentWithChildrenRerender extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    Promise.resolve().then(function() {
-      this.count += 1;
-    }.bind(this));
+    Promise.resolve().then(
+      function() {
+        this.count += 1;
+      }.bind(this)
+    );
   }
 
-  _render({count}) {
+  _render({ count }) {
     return html`
       <ce-with-children id="wc">${count}</ce-with-children>
     `;
   }
 }
-window.customElements.define('component-with-children-rerender', ComponentWithChildrenRerender);
-
+window.customElements.define(
+  "component-with-children-rerender",
+  ComponentWithChildrenRerender
+);

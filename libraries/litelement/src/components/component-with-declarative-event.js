@@ -1,5 +1,5 @@
-import {LitElement, html} from '@polymer/lit-element';
-import 'ce-with-event';
+import { LitElement, html } from "@polymer/lit-element";
+import "ce-with-event";
 
 class ComponentWithDeclarativeEvent extends LitElement {
   static get properties() {
@@ -9,20 +9,25 @@ class ComponentWithDeclarativeEvent extends LitElement {
       camelHandled: Boolean,
       capsHandled: Boolean,
       pascalHandled: Boolean
-    }
-	}
+    };
+  }
 
-	constructor() {
-		super();
-		this.lowercaseHandled = false;
-		this.kebabHandled = false;
-		this.camelHandled = false;
-		this.capsHandled = false;
-		this.pascalHandled = false;
+  constructor() {
+    super();
+    this.lowercaseHandled = false;
+    this.kebabHandled = false;
+    this.camelHandled = false;
+    this.capsHandled = false;
+    this.pascalHandled = false;
+  }
 
-	}
-
-  _render({lowercaseHandled, kebabHandled, camelHandled, capsHandled, pascalHandled}) {
+  _render({
+    lowercaseHandled,
+    kebabHandled,
+    camelHandled,
+    capsHandled,
+    pascalHandled
+  }) {
     return html`
       <div>
         <div id="lowercase">${lowercaseHandled}</div>
@@ -31,11 +36,21 @@ class ComponentWithDeclarativeEvent extends LitElement {
         <div id="caps">${capsHandled}</div>
         <div id="pascal">${pascalHandled}</div>
         <ce-with-event id="wc"
-          on-lowercaseevent="${(e) => { this.handleLowercaseEvent(); }}"
-          on-kebab-event="${(e) => { this.handleKebabEvent(); }}"
-          on-camelEvent="${(e) => { this.handleCamelEvent(); }}"
-          on-CAPSevent="${(e) => { this.handleCapsEvent(); }}"
-          on-PascalEvent="${(e) => { this.handlePascalEvent(); }}"
+          on-lowercaseevent="${e => {
+            this.handleLowercaseEvent();
+          }}"
+          on-kebab-event="${e => {
+            this.handleKebabEvent();
+          }}"
+          on-camelEvent="${e => {
+            this.handleCamelEvent();
+          }}"
+          on-CAPSevent="${e => {
+            this.handleCapsEvent();
+          }}"
+          on-PascalEvent="${e => {
+            this.handlePascalEvent();
+          }}"
         ></ce-with-event>
       </div>
     `;
@@ -56,4 +71,7 @@ class ComponentWithDeclarativeEvent extends LitElement {
     this.pascalHandled = true;
   }
 }
-window.customElements.define('component-with-declarative-event', ComponentWithDeclarativeEvent);
+window.customElements.define(
+  "component-with-declarative-event",
+  ComponentWithDeclarativeEvent
+);

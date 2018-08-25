@@ -49,7 +49,19 @@ describe("advanced support", function() {
     it("will pass array data as a property", function() {
       this.weight = 2;
       let data = wc.arr;
-      expect(data).to.eql(['L', 'i', 't', '-', 'e', 'l', 'e', 'm', 'e', 'n', 't']);
+      expect(data).to.eql([
+        "L",
+        "i",
+        "t",
+        "-",
+        "e",
+        "l",
+        "e",
+        "m",
+        "e",
+        "n",
+        "t"
+      ]);
     });
 
     it("will pass object data as a property", function() {
