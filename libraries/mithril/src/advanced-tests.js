@@ -64,70 +64,60 @@ describe("advanced support", function() {
   });
 
   describe("events", function() {
-    it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function(done) {
+    it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', async function() {
       this.weight = 2;
       m.mount(root, ComponentWithDeclarativeEvent());
-      setTimeout(function () {
-        let wc = root.querySelector('#wc');
-        expect(wc).to.exist;
-        let handled = root.querySelector('#lowercase');
-        expect(handled.textContent).to.eql('false');
-        wc.click();
-        expect(handled.textContent).to.eql('true');
-        done();
-      }, 10);
+      let wc = root.querySelector('#wc');
+      expect(wc).to.exist;
+      let handled = root.querySelector('#lowercase');
+      expect(handled.textContent).to.eql('false');
+      wc.click();
+      await new Promise(requestAnimationFrame)
+      expect(handled.textContent).to.eql('true');
     });
 
-    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function(done) {
+    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       m.mount(root, ComponentWithDeclarativeEvent());
-      setTimeout(function() {
-        let wc = root.querySelector("#wc");
-        let handled = root.querySelector("#kebab");
-        expect(handled.textContent).to.eql("false");
-        wc.click();
-        expect(handled.textContent).to.eql("true");
-        done();
-      }, 10);
+      let wc = root.querySelector("#wc");
+      let handled = root.querySelector("#kebab");
+      expect(handled.textContent).to.eql("false");
+      wc.click();
+      await new Promise(requestAnimationFrame)
+      expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function(done) {
+    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       m.mount(root, ComponentWithDeclarativeEvent());
-      setTimeout(function() {
-        let wc = root.querySelector("#wc");
-        let handled = root.querySelector("#camel");
-        expect(handled.textContent).to.eql("false");
-        wc.click();
-        expect(handled.textContent).to.eql("true");
-        done();
-      }, 10);
+      let wc = root.querySelector("#wc");
+      let handled = root.querySelector("#camel");
+      expect(handled.textContent).to.eql("false");
+      wc.click();
+      await new Promise(requestAnimationFrame)
+      expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function(done) {
+    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       m.mount(root, ComponentWithDeclarativeEvent());
-      setTimeout(function() {
-        let wc = root.querySelector("#wc");
-        let handled = root.querySelector("#caps");
-        expect(handled.textContent).to.eql("false");
-        wc.click();
-        expect(handled.textContent).to.eql("true");
-        done();
-      }, 10);
+      let wc = root.querySelector("#wc");
+      let handled = root.querySelector("#caps");
+      expect(handled.textContent).to.eql("false");
+      wc.click();
+      await new Promise(requestAnimationFrame)
+      expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function(done) {
+    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       m.mount(root, ComponentWithDeclarativeEvent());
-      setTimeout(function() {
-        let wc = root.querySelector("#wc");
-        let handled = root.querySelector("#pascal");
-        expect(handled.textContent).to.eql("false");
-        wc.click();
-        expect(handled.textContent).to.eql("true");
-        done();
-      }, 10);
+      let wc = root.querySelector("#wc");
+      let handled = root.querySelector("#pascal");
+      expect(handled.textContent).to.eql("false");
+      wc.click();
+      await new Promise(requestAnimationFrame)
+      expect(handled.textContent).to.eql("true");
     });
   });
 
