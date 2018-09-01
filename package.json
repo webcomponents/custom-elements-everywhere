@@ -4,7 +4,7 @@
   "description": "Compare how different frameworks handle Web Components.",
   "license": "Apache 2.0",
   "scripts": {
-    "install-all": "npm i && npm run install-docs && npm run install-angular && npm run install-angularjs && npm run install-canjs && npm run install-preact && npm run install-polymer && npm run install-react && npm run install-vue && npm run install-dojo2 && npm run install-hybrids && npm run install-hyperhtml&& npm run install-litelement && npm run install-dio && npm run install-skate && npm run install-surplus && npm run install-svelte && npm run install-karma-plugins && npm run install-webcomponents && npm run install-karma-mocha",
+    "install-all": "npm i && npm run install-docs && npm run install-angular && npm run install-angularjs && npm run install-canjs && npm run install-preact && npm run install-polymer && npm run install-react && npm run install-vue && npm run install-dojo2 && npm run install-hybrids && npm run install-hyperhtml && npm run install-litelement && npm run install-dio && npm run install-skate && npm run install-surplus && npm run install-svelte && npm run install-mithril && npm run install-karma-plugins && npm run install-webcomponents && npm run install-karma-mocha",
     "install-docs": "cd docs && npm i",
     "install-angular": "cd libraries/angular && npm i",
     "install-angularjs": "cd libraries/angularjs && npm i",
@@ -21,12 +21,13 @@
     "install-skate": "cd libraries/skate && npm i",
     "install-surplus": "cd libraries/surplus && npm i",
     "install-svelte": "cd libraries/svelte && npm i",
+    "install-mithril": "cd libraries/mithril && npm i",
     "install-karma-custom-html-reporter": "cd libraries/__shared__/karma-plugins/karma-custom-html-reporter && npm i",
     "install-karma-custom-json-reporter": "cd libraries/__shared__/karma-plugins/karma-custom-json-reporter && npm i",
     "install-karma-plugins": "npm run install-karma-custom-html-reporter && npm run install-karma-custom-json-reporter && npm run install-karma-mocha",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm i",
     "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm i",
-    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-preact & npm run build-polymer & npm run build-react & npm run build-vue & npm run build-dojo2 & npm run build-hybrids & npm run build-hyperhtml & npm run build-litelement & npm run build-dio & npm run build-skate & npm run build-surplus & npm run build-svelte & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!' && exit 0",
+    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-preact & npm run build-polymer & npm run build-react & npm run build-vue & npm run build-dojo2 & npm run build-hybrids & npm run build-hyperhtml & npm run build-litelement & npm run build-dio & npm run build-skate & npm run build-surplus & npm run build-svelte & npm run build-mithril & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!' && exit 0",
     "build-angular": "cd libraries/angular && npm run build",
     "build-angularjs": "cd libraries/angularjs && npm run build",
     "build-canjs": "cd libraries/canjs && npm run build",
@@ -42,6 +43,7 @@
     "build-dio": "cd libraries/dio && npm run build",
     "build-surplus": "cd libraries/surplus && npm run build",
     "build-svelte": "cd libraries/svelte && npm run build",
+    "build-mithril": "cd libraries/mithril && npm run build",
     "start": "cd docs && http-server -o"
   },
   "devDependencies": {
