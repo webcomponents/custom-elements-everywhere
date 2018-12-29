@@ -4,7 +4,7 @@ import "ce-with-children";
 export default class ComponentWithDifferentViews extends LitElement {
   static get properties() {
     return {
-      showWC: Boolean
+      showWC: { type: Boolean }
     };
   }
 
@@ -13,10 +13,14 @@ export default class ComponentWithDifferentViews extends LitElement {
     this.showWC = true;
   }
 
-  _render({ showWC }) {
-    return showWC
-      ? html`<ce-with-children id="wc"></ce-with-children>`
-      : html`<div id="dummy">Dummy view</div>`;
+  render() {
+    return this.showWC
+      ? html`
+          <ce-with-children id="wc"></ce-with-children>
+        `
+      : html`
+          <div id="dummy">Dummy view</div>
+        `;
   }
 
   toggle() {

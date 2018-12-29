@@ -3,9 +3,7 @@ import "ce-with-children";
 
 export default class ComponentWithChildrenRerender extends LitElement {
   static get properties() {
-    return {
-      count: Number
-    };
+    return { count: { type: Number } };
   }
   constructor() {
     super();
@@ -21,9 +19,9 @@ export default class ComponentWithChildrenRerender extends LitElement {
     );
   }
 
-  _render({ count }) {
+  render() {
     return html`
-      <ce-with-children id="wc">${count}</ce-with-children>
+      <ce-with-children id="wc">${this.count}</ce-with-children>
     `;
   }
 }

@@ -40,9 +40,10 @@ describe("advanced support", function() {
     let root;
     let wc;
 
-    beforeEach(function() {
+    beforeEach(async function() {
       root = document.createElement("component-with-properties");
       scratch.appendChild(root);
+      await root.updateComplete;
       wc = root.shadowRoot.querySelector("#wc");
     });
 
@@ -72,11 +73,18 @@ describe("advanced support", function() {
   });
 
   describe("events", function() {
+    let root;
+    let wc;
+
+    beforeEach(async function() {
+      root = document.createElement("component-with-declarative-event");
+      scratch.appendChild(root);
+      await root.updateComplete;
+      wc = root.shadowRoot.querySelector("#wc");
+    });
+
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
       this.weight = 2;
-      let root = document.createElement("component-with-declarative-event");
-      scratch.appendChild(root);
-      let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#lowercase");
       expect(handled.textContent).to.eql("false");
       wc.click();
@@ -86,9 +94,6 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement("component-with-declarative-event");
-      scratch.appendChild(root);
-      let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#kebab");
       expect(handled.textContent).to.eql("false");
       wc.click();
@@ -98,9 +103,6 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement("component-with-declarative-event");
-      scratch.appendChild(root);
-      let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#camel");
       expect(handled.textContent).to.eql("false");
       wc.click();
@@ -110,9 +112,6 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement("component-with-declarative-event");
-      scratch.appendChild(root);
-      let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#caps");
       expect(handled.textContent).to.eql("false");
       wc.click();
@@ -122,9 +121,6 @@ describe("advanced support", function() {
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let root = document.createElement("component-with-declarative-event");
-      scratch.appendChild(root);
-      let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#pascal");
       expect(handled.textContent).to.eql("false");
       wc.click();

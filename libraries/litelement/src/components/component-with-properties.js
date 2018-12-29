@@ -4,11 +4,11 @@ import "ce-with-properties";
 class ComponentWithProperties extends LitElement {
   static get properties() {
     return {
-      bool: Boolean,
-      num: Number,
-      str: String,
-      arr: Array,
-      obj: Object
+      bool: { type: Boolean },
+      num: { type: Number },
+      str: { type: String },
+      arr: { type: Array },
+      obj: { type: Object }
     };
   }
 
@@ -21,15 +21,16 @@ class ComponentWithProperties extends LitElement {
     this.obj = { org: "polymer", repo: "lit-element" };
   }
 
-  _render({ bool, num, str, arr, obj }) {
+  render() {
     return html`
       <div>
-        <ce-with-properties id="wc"
-          bool="${bool}"
-          num="${num}"
-          str="${str}"
-          arr="${arr}"
-          obj="${obj}"
+        <ce-with-properties
+          id="wc"
+          bool="${this.bool}"
+          num="${this.num}"
+          str="${this.str}"
+          .arr="${this.arr}"
+          .obj="${this.obj}"
         ></ce-with-properties>
       </div>
     `;
