@@ -27,26 +27,13 @@
     "install-karma-plugins": "npm run install-karma-custom-html-reporter && npm run install-karma-custom-json-reporter && npm run install-karma-mocha",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm i",
     "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm i",
-    "build": "rm -rf docs/libraries; npm run build-angular & npm run build-angularjs & npm run build-preact & npm run build-polymer & npm run build-react & npm run build-vue & npm run build-dojo2 & npm run build-hybrids & npm run build-hyperhtml & npm run build-litelement & npm run build-dio & npm run build-skate & npm run build-surplus & npm run build-svelte & npm run build-mithril & wait; kill $(jobs -p); cd docs && npm run build && echo 'Site built successfully!' && exit 0",
-    "build-angular": "cd libraries/angular && npm run build",
-    "build-angularjs": "cd libraries/angularjs && npm run build",
-    "build-canjs": "cd libraries/canjs && npm run build",
-    "build-polymer": "cd libraries/polymer && npm run build",
-    "build-preact": "cd libraries/preact && npm run build",
-    "build-react": "cd libraries/react && npm run build",
-    "build-vue": "cd libraries/vue && npm run build",
-    "build-dojo2": "cd libraries/dojo2 && npm run build",
-    "build-hybrids": "cd libraries/hybrids && npm run build",
-    "build-hyperhtml": "cd libraries/hyperhtml && npm run build",
-    "build-litelement": "cd libraries/litelement && npm run build",
-    "build-skate": "cd libraries/skate && npm run build",
-    "build-dio": "cd libraries/dio && npm run build",
-    "build-surplus": "cd libraries/surplus && npm run build",
-    "build-svelte": "cd libraries/svelte && npm run build",
-    "build-mithril": "cd libraries/mithril && npm run build",
+    "build": "node index.js -e canjs",
     "start": "cd docs && http-server -o"
   },
   "devDependencies": {
-    "http-server": "0.11.1"
+    "fs-extra": "^7.0.1",
+    "http-server": "0.11.1",
+    "minimist": "^1.2.0",
+    "ora": "^3.0.0"
   }
 }

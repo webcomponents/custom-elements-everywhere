@@ -37,10 +37,11 @@ afterEach(function() {
 
 describe("basic support", function() {
   describe("no children", function() {
-    it("can display a Custom Element with no children", function() {
+    it("can display a Custom Element with no children", async function() {
       this.weight = 3;
       let root = document.createElement("component-without-children");
       scratch.appendChild(root);
+      await root.updateComplete;
       let wc = root.shadowRoot.querySelector("#wc");
       expect(wc).to.exist;
     });
@@ -58,10 +59,11 @@ describe("basic support", function() {
       expect(paragraph.textContent).to.eql("Test p");
     }
 
-    it("can display a Custom Element with children in a Shadow Root", function() {
+    it("can display a Custom Element with children in a Shadow Root", async function() {
       this.weight = 3;
       let root = document.createElement("component-with-children");
       scratch.appendChild(root);
+      await root.updateComplete;
       let wc = root.shadowRoot.querySelector("#wc");
       expectHasChildren(wc);
     });
@@ -70,8 +72,8 @@ describe("basic support", function() {
       this.weight = 3;
       let root = document.createElement("component-with-children-rerender");
       scratch.appendChild(root);
+      await root.updateComplete;
       let wc = root.shadowRoot.querySelector("#wc");
-      await Promise.resolve();
       expectHasChildren(wc);
       expect(wc.textContent.includes("2")).to.be.true;
     });
@@ -99,9 +101,10 @@ describe("basic support", function() {
     let root;
     let wc;
 
-    beforeEach(function() {
+    beforeEach(async function() {
       root = document.createElement("component-with-properties");
       scratch.appendChild(root);
+      await root.updateComplete;
       wc = root.shadowRoot.querySelector("#wc");
     });
 
@@ -129,6 +132,7 @@ describe("basic support", function() {
       this.weight = 3;
       let root = document.createElement("component-with-imperative-event");
       scratch.appendChild(root);
+      await root.updateComplete;
       let wc = root.shadowRoot.querySelector("#wc");
       let handled = root.shadowRoot.querySelector("#handled");
       expect(handled.textContent).to.eql("false");
