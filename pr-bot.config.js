@@ -6,6 +6,6 @@ module.exports = {
     owner: "webcomponents",
     repo: "custom-elements-everywhere"
   },
-  buildCommand: "echo 'Hello World'",
+  buildCommand: "npm run install-all && npm run build",
   plugins: [require("./plugins/compare-results.js")]
 };
