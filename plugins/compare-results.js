@@ -40,7 +40,7 @@ module.exports = {
         ## Angular
         *Before*: ${oldResults.summary.success}
         *After*: ${newResults.summary.success}
-      `;
+      `.trim();
     } else {
       pLog = mdLog = "✅ All checks passed!"
     }
