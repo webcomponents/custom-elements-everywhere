@@ -3,3 +3,6 @@ node_js:
   - "8"
 install: npm run install-all
 script: npm run build
+after_script:
+  - npm install -g pr-bot
+  - pr-bot
