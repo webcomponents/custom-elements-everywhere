@@ -55,8 +55,7 @@ describe("basic support", function() {
       fixture.detectChanges();
       let el = fixture.debugElement.nativeElement;
       let wc = el.querySelector("ce-without-children");
-      // expect(wc).to.exist;
-      expect(false).to.be.true;
+      expect(wc).to.exist;
     });
   });
 

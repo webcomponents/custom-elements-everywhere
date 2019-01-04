@@ -60,7 +60,8 @@ function compare(beforeResults, afterResults) {
 }
 
 function fail(msg) {
-  let prettyLog, markdownLog = msg;
+  let prettyLog,
+    markdownLog = msg;
   return Promise.resolve({
     failPR: true,
     prettyLog,
@@ -69,7 +70,8 @@ function fail(msg) {
 }
 
 function succeed(msg) {
-  let prettyLog, markdownLog = msg;
+  let prettyLog,
+    markdownLog = msg;
   return Promise.resolve({
     failPR: false,
     prettyLog,
@@ -78,7 +80,7 @@ function succeed(msg) {
 }
 
 module.exports = {
-  name: "Compare Results",
+  name: "Test verification",
   run: ({ beforePath, afterPath }) => {
     // When testing locally afterpath will be '.'
     // which resolves to this plugins directory.
@@ -93,7 +95,7 @@ module.exports = {
       console.dir("beforeResults", beforeResults);
       console.dir("afterResults", afterResults);
       return fail(
-        `⚠️ Wrong number of results found. Expected ${
+        `⚠️ Wrong number of tests found. Expected ${
           beforeResults.length
         } but got ${afterResults.length}`
       );
@@ -114,9 +116,9 @@ module.exports = {
       let msg = `⚠️ Found the following changes:\n`;
       failures.forEach(failure => {
         msg += `### ${failure.library}\n`;
-        msg += `*Before*: ${failure.beforeSuccess} | *After*: ${
-          failure.afterSuccess
-        }\n`;
+        msg += `*Tests passing before PR*: ${
+          failure.beforeSuccess
+        } | *Tests passing after PR*: ${failure.afterSuccess}\n`;
       });
       return fail(msg);
     }
