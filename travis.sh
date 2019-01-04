@@ -12,10 +12,9 @@ TARGET_BRANCH="gh-pages"
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
   echo "Skipping deploy; just doing a build."
   npm install -g pr-bot
-  pwd
+  chmod 777 ./pr-bot.config.js
   ls -lahG
-  chmod a+x ./pr-bot.config.js
-  pr-bot -c ./pr-bot.config.js
+  pr-bot
   exit 0
 fi
 
