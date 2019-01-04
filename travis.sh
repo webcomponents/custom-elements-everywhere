@@ -14,7 +14,8 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
   npm install -g pr-bot
   pwd
   ls -lahG
-  pr-bot
+  chmod a+x ./pr-bot.config.js
+  pr-bot -c ./pr-bot.config.js
   exit 0
 fi
 
