@@ -59,7 +59,8 @@ function compare(beforeResults, afterResults) {
   return failures;
 }
 
-function fail(prettyLog, markdownLog) {
+function fail(msg) {
+  let prettyLog, markdownLog = msg;
   return Promise.resolve({
     failPR: true,
     prettyLog,
@@ -67,7 +68,8 @@ function fail(prettyLog, markdownLog) {
   });
 }
 
-function succeed(prettyLog, markdownLog) {
+function succeed(msg) {
+  let prettyLog, markdownLog = msg;
   return Promise.resolve({
     failPR: false,
     prettyLog,
