@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ../out; mkdir -p ../out/styles; npm run build-html && npm run build-css",
+    "build": "npm run build-html && npm run build-css && npm run build-images",
     "build-html": "node index.js > ../out/index.html",
-    "build-css": "cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css"
+    "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
+    "build-images": "cp -r images ../out/images"
   },
   "author": "Rob Dodson",
   "license": "MIT",

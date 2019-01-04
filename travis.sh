@@ -12,8 +12,6 @@ TARGET_BRANCH="gh-pages"
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
   echo "Skipping deploy; just doing a build."
   npm install -g pr-bot
-  chmod 777 ./pr-bot.config.js
-  ls -lahG
   pr-bot
   exit 0
 fi
@@ -24,14 +22,13 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
+# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deploy)
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
-
 # Clean out existing contents
-rm -rf out/**/* || exit 0
+git rm -rf . && git clean -fxd || exit 0
+cd ..
 
 # Run our compile script
 npm run install-all
