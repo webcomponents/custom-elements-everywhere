@@ -1,54 +1,124 @@
+const fs = require("fs-extra");
 const { join } = require("path");
+
+/**
+ * Get the results for each library and return an object where each library's
+ * name is the key for its results.
+ * @param {*} dir Path to root of the project
+ */
+function getResults(dir) {
+  const results = {};
+  fs.readdirSync(join(dir, "libraries"))
+    .filter(name => name != "__shared__")
+    .forEach(name => {
+      const summary = require(join(
+        dir,
+        "libraries",
+        name,
+        "results",
+        "results.json"
+      )).summary;
+      results[name] = summary;
+    });
+  return results;
+}
+
+/**
+ * Verify there are the same number of libraries in each test results object.
+ * @param {*} beforeResults
+ * @param {*} afterResults
+ */
+function checkLengths(beforeResults, afterResults) {
+  return Object.keys(beforeResults).length === Object.keys(afterResults).length;
+}
+
+/**
+ * Verify there are the same library names in each test results object.
+ * @param {*} beforeResults
+ * @param {*} afterResults
+ */
+function checkKeys(beforeResults, afterResults) {
+  var beforeKeys = Object.keys(beforeResults).sort();
+  var afterKeys = Object.keys(afterResults).sort();
+  return JSON.stringify(beforeKeys) === JSON.stringify(afterKeys);
+}
+
+function compare(beforeResults, afterResults) {
+  const failures = [];
+  for (let library in beforeResults) {
+    const beforeSuccess = beforeResults[library].success;
+    const afterSuccess = afterResults[library].success;
+    if (beforeSuccess !== afterSuccess) {
+      failures.push({
+        library,
+        beforeSuccess,
+        afterSuccess
+      });
+    }
+  }
+  return failures;
+}
+
+function fail(prettyLog, markdownLog) {
+  return Promise.resolve({
+    failPR: true,
+    prettyLog,
+    markdownLog
+  });
+}
+
+function succeed(prettyLog, markdownLog) {
+  return Promise.resolve({
+    failPR: false,
+    prettyLog,
+    markdownLog
+  });
+}
 
 module.exports = {
   name: "Compare Results",
   run: ({ beforePath, afterPath }) => {
-
     // When testing locally afterpath will be '.'
     // which resolves to this plugins directory.
     // Change it to point to the root of the project.
-    if (afterPath === '.') {
-      afterPath = join(__dirname, '..');
+    if (afterPath === ".") {
+      afterPath = join(__dirname, "..");
     }
 
-    let shouldFailPR = false;
-    const oldResultsPath = join(
-      beforePath,
-      "libraries",
-      "angular",
-      "results",
-      "results.json"
-    );
-    const oldResults = require(oldResultsPath);
-
-    const newResultsPath = join(
-      afterPath,
-      "libraries",
-      "angular",
-      "results",
-      "results.json"
-    );
-    const newResults = require(newResultsPath);
-
-    let pLog;
-    let mdLog;
-    shouldFailPR = newResults.summary.success != oldResults.summary.success;
-    if (shouldFailPR) {
-      pLog = "Oh no, results were different!";
-      mdLog = `
-        #Oh no, results were different!
-        ## Angular
-        *Before*: ${oldResults.summary.success}
-        *After*: ${newResults.summary.success}
-      `.trim();
-    } else {
-      pLog = mdLog = "✅ All checks passed!"
+    const beforeResults = getResults(beforePath);
+    const afterResults = getResults(afterPath);
+    if (!checkLengths(beforeResults, afterResults)) {
+      console.dir("beforeResults", beforeResults);
+      console.dir("afterResults", afterResults);
+      return fail(
+        `⚠️ Wrong number of results found. Expected ${
+          beforeResults.length
+        } but got ${afterResults.length}`
+      );
     }
 
-    return Promise.resolve({
-      failPR: shouldFailPR,
-      prettyLog: pLog,
-      markdownLog: mdLog
-    });
+    if (!checkKeys(beforeResults, afterResults)) {
+      console.dir("beforeResults", beforeResults);
+      console.dir("afterResults", afterResults);
+      return fail(
+        `⚠️ Wrong library names found. Expected ${Object.keys(
+          beforeResults
+        )} but got ${Object.keys(afterResults)}`
+      );
+    }
+
+    const failures = compare(beforeResults, afterResults);
+    if (failures.length) {
+      const msg = `⚠️ Found the following changes:\n`;
+      failures.forEach(failure => {
+        msg += `### ${failure.library}\n`;
+        msg += `*Before*: ${failure.beforeSuccess} | *After*: ${
+          failure.afterSuccess
+        }\n`;
+      });
+      return fail(msg);
+    }
+
+    return succeed("✅ All checks passed!");
   }
 };
