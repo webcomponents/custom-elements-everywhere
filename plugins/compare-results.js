@@ -109,7 +109,7 @@ module.exports = {
 
     const failures = compare(beforeResults, afterResults);
     if (failures.length) {
-      const msg = `⚠️ Found the following changes:\n`;
+      let msg = `⚠️ Found the following changes:\n`;
       failures.forEach(failure => {
         msg += `### ${failure.library}\n`;
         msg += `*Before*: ${failure.beforeSuccess} | *After*: ${
