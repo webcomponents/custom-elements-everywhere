@@ -8,7 +8,6 @@
     "install-docs": "cd docs && npm i",
     "install-angular": "cd libraries/angular && npm i",
     "install-angularjs": "cd libraries/angularjs && npm i",
-    "install-canjs": "cd libraries/canjs && npm i",
     "install-polymer": "cd libraries/polymer && npm i",
     "install-preact": "cd libraries/preact && npm i",
     "install-react": "cd libraries/react && npm i",
@@ -27,7 +26,7 @@
     "install-karma-plugins": "npm run install-karma-custom-html-reporter && npm run install-karma-custom-json-reporter && npm run install-karma-mocha",
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm i",
     "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm i",
-    "build": "node index.js -e canjs",
+    "build": "node index.js",
     "start": "cd docs && http-server -o"
   },
   "devDependencies": {
