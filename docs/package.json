@@ -6,7 +6,7 @@
     "build": "npm run build-html && npm run build-css && npm run copy-images && npm run copy-cname",
     "build-html": "mkdir ../out; node index.js > ../out/index.html",
     "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
-    "copy-images": "cp -r images ../out/images",
+    "copy-images": "cp -r images ../out/images/",
     "copy-cname": "cp CNAME ../out/CNAME"
   },
   "author": "Rob Dodson",
