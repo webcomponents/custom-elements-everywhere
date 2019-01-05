@@ -28,8 +28,11 @@ git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 # Clean out existing contents
-git rm -rf . && git clean -fxd || exit 0
 cd ..
+# Removes everything except for the .git
+# Technically this will leave other dotfiles in place as well
+# but we don't have any of those so that's ok :)
+rm -rf out/**/* || exit 1
 
 # Run our compile script
 npm run install-all
@@ -47,8 +50,7 @@ if [[ ! `git status --porcelain` ]]; then
   exit 0
 fi
 
-# Commit the "changes", i.e. the new version.
-# The delta will show diffs between new and old versions.
+echo "Found changes; attempting to deploy to gh-pages."
 git add -A .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
