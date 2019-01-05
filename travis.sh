@@ -22,7 +22,8 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deploy)
+# Create a new empty branch if gh-pages doesn't exist yet
+# (should only happen on first deploy)
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
@@ -39,8 +40,9 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if git diff --quiet; then
+# If there are no changes to the compiled out/
+# (e.g. this is a README update) then just bail.
+if [[ ! `git status --porcelain` ]]; then
   echo "No changes to the output on this push; exiting."
   exit 0
 fi
@@ -50,7 +52,8 @@ fi
 git add -A .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
-# Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
+# Get the deploy key by using Travis's stored variables to
+# decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
