@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build-html && npm run build-css && npm run build-images",
-    "build-html": "node index.js > ../out/index.html",
+    "build-html": "mkdir ../out; node index.js > ../out/index.html",
     "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
     "build-images": "cp -r images ../out/images"
   },
