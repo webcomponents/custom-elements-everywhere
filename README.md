@@ -28,7 +28,6 @@ npm start
 ## Current List of [Libraries/Frameworks](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries)
 - [Angular](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angular)
 - [AngularJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angularjs)
-- [CanJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/canjs)
 - [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
 - [Dojo2](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo2)
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
@@ -54,6 +53,7 @@ might start by copying and renaming the `libraries/preact` directory.
 Your library structure should look like this:
 
 ```
+├── .babelrc
 ├── karma.conf.js
 ├── meta
 │   ├── issues.json
@@ -61,9 +61,26 @@ Your library structure should look like this:
 ├── package-lock.json
 ├── package.json
 ├── src
-│   ├── component-tests.js
+│   ├── advanced-tests.js
+|   ├── basic-tests.js
 │   └── components.js
 └── tests.webpack.js
+```
+
+#### package.json
+
+Your `package.json` should contain `build` and `test` npm scripts.
+The `test` script is in charge of actually running karma.
+The `test` script should set a variable, `LIBRARY_NAME`, that corresponds to
+your library's npm package name. This is used during the build process to
+grab the library's semver and publish it on the site.
+
+Example:
+```
+"scripts": {
+  "test": "cross-env LIBRARY_NAME=@angular/core karma start",
+  "build": "npm run test"
+},
 ```
 
 #### karma.conf.js
@@ -85,9 +102,9 @@ elements and any known quirks or gotchas.
 
 This directory contains `components.js` where you create library/framework
 components which try to communicate with custom elements. You then test these
-components in `component-tests.js`. You'll want to use all of the assertions
-in `component-tests.js` but update the actual test implementations to use your
-library's testing tools and components.
+components in `basic-tests.js` and `advanced-tests.js`. You'll want to use all
+of the assertions in the test files but update the actual test implementations
+to use your library's components.
 
 Note that all frameworks use the custom elements in the
 `/libraries/__shared__/webcomponents/` directory for tests.
@@ -104,9 +121,12 @@ sure your library builds with the rest of the site. You should be able to copy
 an example from one of the other libraries.
 
 - In the root of the project, Add an `install-*` script to `package.json`.
-- In the root of the project, Add an `build-*` script to `package.json`.
 - In the `libraries/[your library]/` director, update the `build` script in
   `package.json` to include your library's name.
+
+There's a test runner called `index.js` that lives in the root of the project.
+It will detect when you've added a new folder to `libraries/` and attempt to
+run that folder's build command.
 
 ## What kind of behavior do the tests assume?
 
@@ -118,6 +138,17 @@ an example from one of the other libraries.
   to a custom element using properties.
 - The library/framework should be able to listen to DOM events from a custom
   element. These DOM events could use any casing style.
+  
+## How does the site get deployed/maintained?
+
+Once a library is added to the repo, we use [Renovate](https://renovatebot.com/)
+to ensure both the library and its dependencies stay up to date. Renovate will
+automatically merge in updates, so long as they don't change the test scores
+for a library. In other words, if merging in an update would cause the library
+to start failing some tests, it will hault the PR and request a human intervene.
+
+Any PR landed to the master branch will trigger an automatic publish to GitHub
+pages.
 
 ## License
 
