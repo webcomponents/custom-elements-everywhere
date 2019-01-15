@@ -550,9 +550,7 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
             <div class="content">
               <h4 id="hyperhtml-handling-data">Handling data</h4>
 
-<p>LitElement will pass data to an element as properties, as long as the property
-is defined on the element&#39;s prototype. Otherwise it will fallback to passing
-data as attributes.</p>
+<p>By default, LitElement passes all data to Custom Elements as attributes. However, LitElement also provides syntax to instruct its bindings to use properties instead. To bind to a Custom Element property, prefix the property name with a <code>.</code> as in <code>&lt;input .value=${value}&gt;</code>.</p>
 <h4 id="hyperhtml-handling-events">Handling events</h4>
 
 <p>LitElement can listen to native DOM events dispatched from Custom Elements. It
