@@ -40,6 +40,9 @@ npm run build
 
 # Now let's go have some fun with the cloned repo
 cd out
+# Experimental: Deploy to Firebase
+firebase deploy --token "$FIREBASE_TOKEN"
+# Get ready to deploy to gh-pages
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 

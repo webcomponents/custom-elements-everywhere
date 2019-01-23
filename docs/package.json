@@ -6,7 +6,7 @@
     "build": "npm run build-html && npm run build-css && npm run copy",
     "build-html": "mkdir ../out; node index.js > ../out/index.html",
     "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
-    "copy": "cp -r ./{CNAME,images,libraries} ../out/"
+    "copy": "cp -r ./{.firebaserc,firebase.json,404.html,CNAME,images,libraries} ../out/"
   },
   "author": "Rob Dodson",
   "license": "MIT",
