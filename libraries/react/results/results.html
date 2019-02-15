@@ -24,13 +24,13 @@
       <section>
         <header class="overview">
           <div class="browser title is-6">Browser: HeadlessChrome 62.0.3202 (Linux 0.0.0)</div>
-          <div class="timestamp title is-6">Timestamp: 2/15/2019, 1:46:37 PM</div>
+          <div class="timestamp title is-6">Timestamp: 2/15/2019, 3:37:54 PM</div>
           <p class="results title is-6">
             15 tests / 
             0 errors / 
             7 failures / 
             0 skipped / 
-            runtime: 0.052s
+            runtime: 0.066s
           </p>
         </header>
         <div class="spec spec--group">
@@ -69,168 +69,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
             </div>
-            <div class="spec__status">Passed in 0.004s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.004s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38043:34)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38051:34)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38064:49)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38075:49)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38086:49)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38097:49)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38108:49)<br /></p>
-        </div>
-      </section>
-      <section>
-        <header class="overview">
-          <div class="browser title is-6">Browser: FirefoxHeadless</div>
-          <div class="timestamp title is-6">Timestamp: 2/15/2019, 1:46:38 PM</div>
-          <p class="results title is-6">
-            15 tests / 
-            0 errors / 
-            7 failures / 
-            0 skipped / 
-            runtime: 0.062s
-          </p>
-        </header>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">basic support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">no children</p>
-              <em class="spec__descrip">can display a Custom Element with no children</em>
-            </div>
-            <div class="spec__status">Passed in 0.014s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
-            </div>
-            <div class="spec__status">Passed in 0.003s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
-            </div>
-            <div class="spec__status">Passed in 0.007s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.006s</div>
+            <div class="spec__status">Passed in 0.008s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -257,7 +96,7 @@
               <p class="spec__suite">attributes and properties</p>
               <em class="spec__descrip">will pass string data as either an attribute or a property</em>
             </div>
-            <div class="spec__status">Passed in 0.001s</div>
+            <div class="spec__status">Passed in 0s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -266,7 +105,7 @@
               <p class="spec__suite">events</p>
               <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
             </div>
-            <div class="spec__status">Passed in 0.007s</div>
+            <div class="spec__status">Passed in 0.005s</div>
           </h3>
         </div>
         <div class="spec spec--group">
@@ -280,7 +119,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38043:34<br /><br /></p>
+          <p class="spec__log">AssertionError: expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38412:34)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -290,7 +129,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38051:34<br /><br /></p>
+          <p class="spec__log">AssertionError: expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38420:34)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -300,7 +139,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38064:49<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38433:49)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -310,7 +149,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38075:49<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38444:49)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -320,7 +159,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38086:49<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38455:49)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -330,7 +169,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38097:49<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38466:49)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -340,7 +179,168 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1968:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30504:13<br />assertEql@tests.webpack.js:31618:5<br />methodWrapper@tests.webpack.js:29634:18<br />@tests.webpack.js:38108:49<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.&lt;anonymous&gt; (tests.webpack.js:38477:49)<br /></p>
+        </div>
+      </section>
+      <section>
+        <header class="overview">
+          <div class="browser title is-6">Browser: FirefoxHeadless</div>
+          <div class="timestamp title is-6">Timestamp: 2/15/2019, 3:37:55 PM</div>
+          <p class="results title is-6">
+            15 tests / 
+            0 errors / 
+            7 failures / 
+            0 skipped / 
+            runtime: 0.078s
+          </p>
+        </header>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">basic support</h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">no children</p>
+              <em class="spec__descrip">can display a Custom Element with no children</em>
+            </div>
+            <div class="spec__status">Passed in 0.017s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
+            </div>
+            <div class="spec__status">Passed in 0.004s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
+            </div>
+            <div class="spec__status">Passed in 0.009s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
+            </div>
+            <div class="spec__status">Passed in 0.009s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.003s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.002s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.008s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass array data as a property</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38412:34<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass object data as a property</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38420:34<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38433:49<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38444:49<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38455:49<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38466:49<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@tests.webpack.js:1979:13<br />module.exports/Assertion.prototype.assert@tests.webpack.js:30873:13<br />assertEql@tests.webpack.js:31987:5<br />methodWrapper@tests.webpack.js:30003:18<br />@tests.webpack.js:38477:49<br /><br /></p>
         </div>
       </section>
     </div>
