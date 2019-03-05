@@ -103,7 +103,7 @@ limitations under the License.
   </section>
 
   {{#each libraries}}
-    <section class="section">
+    <section class="section" id="{{name}}">
       <div class="container">
         <div class="columns is-flex-widescreen is-block-tablet">
           <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
@@ -111,7 +111,7 @@ limitations under the License.
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
-                  <p class="title" id="{{name}}">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
+                  <p class="title">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
