@@ -36,6 +36,7 @@ npm start
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
 - [Riot.js](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/riot)
 - [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
+- [Solid](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/solid)
 - [Stencil](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/stencil)
 - [Surplus](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/surplus)
 - [Svelte](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/svelte)
