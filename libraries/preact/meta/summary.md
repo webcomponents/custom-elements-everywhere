@@ -6,6 +6,10 @@ on the element instance, Preact will use properties, otherwise it will fallback
 to attributes. The exception to this rule is when it tries to pass rich data,
 like objects or arrays. In those instances it will always use a property.
 
+Because of how JSX defines event listeners, Preact is unable to set properties
+or attributes that start with `on`. They will be interpreted as event listeners
+instead.
+
 <h4 id="preact-handling-events">Handling events</h4>
 
 Preact can listen to native DOM events dispatched from Custom Elements. However,
