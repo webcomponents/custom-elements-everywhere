@@ -17,16 +17,12 @@
 
 import { expect } from "chai";
 import {
-  ComponentWithoutChildren,
-  ComponentWithChildren,
-  ComponentWithChildrenRerender,
-  ComponentWithDifferentViews,
   ComponentWithProperties,
-  ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
 } from "./components";
 
-import { ProjectorMixin } from "@dojo/widget-core/mixins/Projector";
+import renderer from "@dojo/framework/widget-core/vdom";
+import { w } from "@dojo/framework/widget-core/d";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -50,84 +46,77 @@ describe("advanced support", function() {
   describe("attributes and properties", function() {
     it("will pass array data as a property", function() {
       this.weight = 2;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.arr;
-      expect(data).to.eql(["d", "o", "j", "o", "2"]);
+      expect(data).to.eql(["d", "o", "j", "o"]);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.obj;
-      expect(data).to.eql({ org: "dojo", repo: "dojo2" });
+      expect(data).to.eql({ org: "dojo", repo: "dojo" });
     });
   });
 
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
       this.weight = 2;
-      const Component = ProjectorMixin(ComponentWithDeclarativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDeclarativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.lowerCaseHandled).to.be.false;
+      let handledResult: any = document.querySelector("#lower");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.lowerCaseHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
       this.weight = 1;
-      const Component = ProjectorMixin(ComponentWithDeclarativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDeclarativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.kebabHandled).to.be.false;
+      let handledResult: any = document.querySelector("#kebab");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.kebabHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
       this.weight = 1;
-      const Component = ProjectorMixin(ComponentWithDeclarativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDeclarativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.camelHandled).to.be.false;
+      let handledResult: any = document.querySelector("#camel");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.camelHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
       this.weight = 1;
-      const Component = ProjectorMixin(ComponentWithDeclarativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDeclarativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.capsHandled).to.be.false;
+      let handledResult: any = document.querySelector("#caps");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.capsHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
       this.weight = 1;
-      const Component = ProjectorMixin(ComponentWithDeclarativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDeclarativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.pascalHandled).to.be.false;
+      let handledResult: any = document.querySelector("#pascal");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.pascalHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
   });
 

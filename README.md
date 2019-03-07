@@ -29,7 +29,7 @@ npm start
 - [Angular](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angular)
 - [AngularJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angularjs)
 - [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
-- [Dojo2](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo2)
+- [Dojo](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo)
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
 - [Mithril](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/mithril)

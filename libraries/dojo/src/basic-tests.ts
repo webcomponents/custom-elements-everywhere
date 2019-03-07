@@ -22,11 +22,11 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
-  ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithImperativeEvent
 } from "./components";
 
-import { ProjectorMixin } from "@dojo/widget-core/mixins/Projector";
+import renderer from "@dojo/framework/widget-core/vdom";
+import { w } from "@dojo/framework/widget-core/d";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -50,9 +50,8 @@ describe("basic support", function() {
   describe("no children", function() {
     it("can display a Custom Element with no children", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithoutChildren);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithoutChildren, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-without-children");
       expect(wc).to.exist;
     });
@@ -71,27 +70,24 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithChildren);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithChildren, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-with-children");
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithChildrenRerender);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithChildrenRerender, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-with-children");
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithDifferentViews);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithDifferentViews, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-with-children");
       expectHasChildren(wc);
     });
@@ -100,44 +96,40 @@ describe("basic support", function() {
   describe("attributes and properties", function() {
     it("will pass boolean data as either an attribute or a property", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-with-properties");
       expect((wc as any).bool).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc = document.querySelector("ce-with-properties");
       expect((wc as any).num).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithProperties);
-      const component = new Component();
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.getAttribute("str");
-      expect(data).to.eql("Dojo2");
+      expect(data).to.eql("Dojo");
     });
   });
 
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
       this.weight = 3;
-      const Component = ProjectorMixin(ComponentWithImperativeEvent);
-      const component = new Component();
-      component.async = false;
-      component.append(scratch);
+      const r = renderer(() => w(ComponentWithImperativeEvent, {}));
+      r.mount({ domNode: scratch, sync: true });
       const wc: any = document.querySelector("ce-with-event");
-      expect(component.eventHandled).to.be.false;
+      let handledResult: any = document.querySelector("#eventHandled");
+      expect(handledResult.handled).to.be.false;
       wc.click();
-      expect(component.eventHandled).to.be.true;
+      expect(handledResult.handled).to.be.true;
     });
   });
 
