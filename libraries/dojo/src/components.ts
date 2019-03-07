@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 
-import { WidgetBase } from '@dojo/widget-core/WidgetBase';
-import { v } from '@dojo/widget-core/d';
+import { WidgetBase } from '@dojo/framework/widget-core/WidgetBase';
+import { v } from '@dojo/framework/widget-core/d';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
@@ -71,9 +71,9 @@ export class ComponentWithProperties extends WidgetBase {
 		const data = {
 			bool: true,
 			num: 42,
-			str: 'Dojo2',
-			arr: ['d', 'o', 'j', 'o', '2'],
-			obj: { org: 'dojo', repo: 'dojo2' }
+			str: 'Dojo',
+			arr: ['d', 'o', 'j', 'o'],
+			obj: { org: 'dojo', repo: 'dojo' }
 		};
 		return v('ce-with-properties', data);
 	}
@@ -84,9 +84,9 @@ export class ComponentWithUnregistered extends WidgetBase {
 		const data = {
 			bool: true,
 			num: 42,
-			str: 'Dojo2',
-			arr: ['d', 'o', 'j', 'o', '2'],
-			obj: { org: 'dojo', repo: 'dojo2' }
+			str: 'Dojo',
+			arr: ['d', 'o', 'j', 'o'],
+			obj: { org: 'dojo', repo: 'dojo' }
 		};
 		return v('div', [
 			v('ce-unregistered', data)
@@ -102,7 +102,8 @@ export class ComponentWithImperativeEvent extends WidgetBase {
 	}
 	render() {
 		return v('div', [
-			v('ce-with-event', { id: 'wc', oncamelEvent: this.handleTestEvent })
+			v('ce-with-event', { id: 'wc', oncamelEvent: this.handleTestEvent }),
+			v('dom', { id: 'eventHandled', handled: this.eventHandled })
 		]);
 	}
 }
@@ -115,18 +116,23 @@ export class ComponentWithDeclarativeEvent extends WidgetBase {
 	public pascalHandled = false;
 	handleLowercaseEvent(e: any) {
 		this.lowerCaseHandled = true;
+		this.invalidate();
 	}
 	handleKebabEvent(e: any) {
 		this.kebabHandled = true;
+		this.invalidate();
 	}
 	handleCamelEvent(e: any) {
 		this.camelHandled = true;
+		this.invalidate();
 	}
 	handleCapsEvent(e: any) {
 		this.capsHandled = true;
+		this.invalidate();
 	}
 	handlePascalEvent(e: any) {
 		this.pascalHandled = true;
+		this.invalidate();
 	}
 	render() {
 		return v('div', [
@@ -137,7 +143,12 @@ export class ComponentWithDeclarativeEvent extends WidgetBase {
 				oncamelEvent: this.handleCamelEvent,
 				onCAPSevent: this.handleCapsEvent,
 				onPascalEvent: this.handlePascalEvent
-			})
+			}),
+			v('dom', { id: 'pascal', handled: this.pascalHandled }),
+			v('dom', { id: 'caps', handled: this.capsHandled }),
+			v('dom', { id: 'camel', handled: this.camelHandled }),
+			v('dom', { id: 'kebab', handled: this.kebabHandled }),
+			v('dom', { id: 'lower', handled: this.lowerCaseHandled })
 		]);
 	}
 }
