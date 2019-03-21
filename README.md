@@ -37,6 +37,7 @@ npm start
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
 - [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
+- [Smart HTML Elements](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/smart-elements)
 - [Surplus](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/surplus)
 - [Svelte](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/svelte)
 - [Vue](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/vue)
