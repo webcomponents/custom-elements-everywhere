@@ -20,18 +20,283 @@
     "browsers": [
         {
             "browser": {
-                "id": "18138200",
+                "id": "39057202",
                 "fullName": "FirefoxHeadless",
                 "name": "FirefoxHeadless",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1553255221195,
+                    "startTime": 1553266533209,
                     "total": 15,
                     "success": 15,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 1900,
-                    "netTime": 310,
+                    "totalTime": 822,
+                    "netTime": 439,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0,
+                "noActivityTimeout": 30000,
+                "disconnectDelay": 2000
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 108,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533249,
+                    "endTime": 1553266533358,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 6,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533427,
+                    "endTime": 1553266533435,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 44,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533465,
+                    "endTime": 1553266533509,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 43,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533531,
+                    "endTime": 1553266533574,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533584,
+                    "endTime": 1553266533589,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 42,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533614,
+                    "endTime": 1553266533657,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 16,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533674,
+                    "endTime": 1553266533690,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 25,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533713,
+                    "endTime": 1553266533738,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 23,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533764,
+                    "endTime": 1553266533787,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 31,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533817,
+                    "endTime": 1553266533848,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 5,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533858,
+                    "endTime": 1553266533865,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 31,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533877,
+                    "endTime": 1553266533909,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 29,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533936,
+                    "endTime": 1553266533965,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 13,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266533986,
+                    "endTime": 1553266533999,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 20,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553266534006,
+                    "endTime": 1553266534027,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "69464952",
+                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
+                "name": "HeadlessChrome 62.0.3202 (Linux 0.0.0)",
+                "state": "DISCONNECTED",
+                "lastResult": {
+                    "startTime": 1553266531762,
+                    "total": 15,
+                    "success": 15,
+                    "failed": 0,
+                    "skipped": 0,
+                    "totalTime": 306,
+                    "netTime": 234,
                     "error": false,
                     "disconnected": false
                 },
@@ -53,273 +318,8 @@
                     "time": 9,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255221207,
-                    "endTime": 1553255221217,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 5,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221348,
-                    "endTime": 1553255221354,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 51,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221408,
-                    "endTime": 1553255221459,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 69,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221481,
-                    "endTime": 1553255221550,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass boolean data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 17,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221567,
-                    "endTime": 1553255221584,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass numeric data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 31,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221596,
-                    "endTime": 1553255221628,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass string data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 5,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221681,
-                    "endTime": 1553255221687,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "basic support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 28,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221734,
-                    "endTime": 1553255221762,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass array data as a property",
-                    "suite": [
-                        "advanced support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 6,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221828,
-                    "endTime": 1553255221834,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "will pass object data as a property",
-                    "suite": [
-                        "advanced support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 10,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221864,
-                    "endTime": 1553255221875,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 58,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221901,
-                    "endTime": 1553255221962,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 8,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255221993,
-                    "endTime": 1553255222001,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 3,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255222016,
-                    "endTime": 1553255222020,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255222027,
-                    "endTime": 1553255222029,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 8,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255223055,
-                    "endTime": 1553255223064,
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "browser": {
-                "id": "90824654",
-                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
-                "name": "HeadlessChrome 62.0.3202 (Linux 0.0.0)",
-                "state": "DISCONNECTED",
-                "lastResult": {
-                    "startTime": 1553255219804,
-                    "total": 15,
-                    "success": 15,
-                    "failed": 0,
-                    "skipped": 0,
-                    "totalTime": 293,
-                    "netTime": 224,
-                    "error": false,
-                    "disconnected": false
-                },
-                "disconnectsCount": 0,
-                "noActivityTimeout": 30000,
-                "disconnectDelay": 2000
-            },
-            "errors": [],
-            "results": [
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with no children",
-                    "suite": [
-                        "basic support",
-                        "no children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 8,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553255219813,
-                    "endTime": 1553255219826,
+                    "startTime": 1553266531773,
+                    "endTime": 1553266531783,
                     "weight": 3
                 },
                 {
@@ -334,8 +334,8 @@
                     "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219831,
-                    "endTime": 1553255219834,
+                    "startTime": 1553266531792,
+                    "endTime": 1553266531794,
                     "weight": 3
                 },
                 {
@@ -347,11 +347,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 16,
+                    "time": 26,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219844,
-                    "endTime": 1553255219860,
+                    "startTime": 1553266531803,
+                    "endTime": 1553266531829,
                     "weight": 3
                 },
                 {
@@ -363,11 +363,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 45,
+                    "time": 50,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219865,
-                    "endTime": 1553255219910,
+                    "startTime": 1553266531832,
+                    "endTime": 1553266531882,
                     "weight": 3
                 },
                 {
@@ -379,11 +379,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 16,
+                    "time": 10,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219912,
-                    "endTime": 1553255219929,
+                    "startTime": 1553266531887,
+                    "endTime": 1553266531898,
                     "weight": 3
                 },
                 {
@@ -398,8 +398,8 @@
                     "time": 10,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219933,
-                    "endTime": 1553255219944,
+                    "startTime": 1553266531902,
+                    "endTime": 1553266531912,
                     "weight": 3
                 },
                 {
@@ -411,11 +411,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 15,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219946,
-                    "endTime": 1553255219960,
+                    "startTime": 1553266531914,
+                    "endTime": 1553266531929,
                     "weight": 3
                 },
                 {
@@ -427,11 +427,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 15,
+                    "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219963,
-                    "endTime": 1553255219978,
+                    "startTime": 1553266531933,
+                    "endTime": 1553266531947,
                     "weight": 3
                 },
                 {
@@ -446,8 +446,8 @@
                     "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219980,
-                    "endTime": 1553255219994,
+                    "startTime": 1553266531949,
+                    "endTime": 1553266531964,
                     "weight": 2
                 },
                 {
@@ -459,11 +459,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 13,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255219997,
-                    "endTime": 1553255220011,
+                    "startTime": 1553266531966,
+                    "endTime": 1553266531980,
                     "weight": 2
                 },
                 {
@@ -475,11 +475,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 13,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255220013,
-                    "endTime": 1553255220027,
+                    "startTime": 1553266531983,
+                    "endTime": 1553266531996,
                     "weight": 2
                 },
                 {
@@ -491,11 +491,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 13,
+                    "time": 15,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255220030,
-                    "endTime": 1553255220044,
+                    "startTime": 1553266531998,
+                    "endTime": 1553266532013,
                     "weight": 1
                 },
                 {
@@ -507,11 +507,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 13,
+                    "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255220047,
-                    "endTime": 1553255220060,
+                    "startTime": 1553266532014,
+                    "endTime": 1553266532029,
                     "weight": 1
                 },
                 {
@@ -523,11 +523,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 15,
+                    "time": 16,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255220062,
-                    "endTime": 1553255220077,
+                    "startTime": 1553266532031,
+                    "endTime": 1553266532047,
                     "weight": 1
                 },
                 {
@@ -539,11 +539,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 15,
+                    "time": 13,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553255220079,
-                    "endTime": 1553255220094,
+                    "startTime": 1553266532050,
+                    "endTime": 1553266532063,
                     "weight": 1
                 }
             ]
