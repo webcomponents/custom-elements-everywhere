@@ -20,315 +20,18 @@
     "browsers": [
         {
             "browser": {
-                "id": "1800440",
-                "fullName": "FirefoxHeadless",
-                "name": "FirefoxHeadless",
-                "state": "DISCONNECTED",
-                "lastResult": {
-                    "startTime": 1553279976593,
-                    "total": 15,
-                    "success": 13,
-                    "failed": 2,
-                    "skipped": 0,
-                    "totalTime": 532,
-                    "netTime": 190,
-                    "error": false,
-                    "disconnected": false
-                },
-                "disconnectsCount": 0,
-                "noActivityTimeout": 30000,
-                "disconnectDelay": 2000
-            },
-            "errors": [],
-            "results": [
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with no children",
-                    "suite": [
-                        "basic support",
-                        "no children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 4,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976564,
-                    "endTime": 1553279976569,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976571,
-                    "endTime": 1553279976573,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 15,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976573,
-                    "endTime": 1553279976589,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
-                    "suite": [
-                        "basic support",
-                        "with children"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 50,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976600,
-                    "endTime": 1553279976650,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass boolean data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 2,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976685,
-                    "endTime": 1553279976687,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass numeric data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976688,
-                    "endTime": 1553279976689,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass string data as either an attribute or a property",
-                    "suite": [
-                        "basic support",
-                        "attributes and properties"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 1,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976689,
-                    "endTime": 1553279976690,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "basic support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 11,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976691,
-                    "endTime": 1553279976702,
-                    "weight": 3
-                },
-                {
-                    "id": "",
-                    "description": "will pass array data as a property",
-                    "suite": [
-                        "advanced support",
-                        "attributes and properties"
-                    ],
-                    "success": false,
-                    "skipped": false,
-                    "time": 3,
-                    "log": [
-                        "expected undefined to deeply equal [ 'M', 'i', 't', 'h', 'r', 'i', 'l' ]",
-                        "AssertionError@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:2754:13",
-                        "module.exports/Assertion.prototype.assert@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:5437:13",
-                        "assertEql@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:6551:5",
-                        "methodWrapper@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:4567:18",
-                        "@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:13420:71",
-                        ""
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "AssertionError",
-                            "message": "expected undefined to deeply equal [ 'M', 'i', 't', 'h', 'r', 'i', 'l' ]",
-                            "showDiff": true,
-                            "actual": "[undefined]",
-                            "expected": "[\n  \"M\"\n  \"i\"\n  \"t\"\n  \"h\"\n  \"r\"\n  \"i\"\n  \"l\"\n]"
-                        }
-                    ],
-                    "startTime": 1553279976805,
-                    "endTime": 1553279976810,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "will pass object data as a property",
-                    "suite": [
-                        "advanced support",
-                        "attributes and properties"
-                    ],
-                    "success": false,
-                    "skipped": false,
-                    "time": 2,
-                    "log": [
-                        "expected undefined to deeply equal { Object (org, repo) }",
-                        "AssertionError@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:2754:13",
-                        "module.exports/Assertion.prototype.assert@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:5437:13",
-                        "assertEql@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:6551:5",
-                        "methodWrapper@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:4567:18",
-                        "@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:13427:71",
-                        ""
-                    ],
-                    "assertionErrors": [
-                        {
-                            "name": "AssertionError",
-                            "message": "expected undefined to deeply equal { Object (org, repo) }",
-                            "showDiff": true,
-                            "actual": "[undefined]",
-                            "expected": "{\n  \"org\": \"MithrilJS\"\n  \"repo\": \"mithril.js\"\n}"
-                        }
-                    ],
-                    "startTime": 1553279976864,
-                    "endTime": 1553279976867,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 13,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976875,
-                    "endTime": 1553279976889,
-                    "weight": 2
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 31,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976925,
-                    "endTime": 1553279976956,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 48,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279976969,
-                    "endTime": 1553279977017,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 3,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279977028,
-                    "endTime": 1553279977031,
-                    "weight": 1
-                },
-                {
-                    "id": "",
-                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
-                    "suite": [
-                        "advanced support",
-                        "events"
-                    ],
-                    "success": true,
-                    "skipped": false,
-                    "time": 4,
-                    "log": [],
-                    "assertionErrors": [],
-                    "startTime": 1553279977056,
-                    "endTime": 1553279977060,
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "browser": {
-                "id": "43764135",
+                "id": "61732045",
                 "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/62.0.3202.94 Safari/537.36",
                 "name": "HeadlessChrome 62.0.3202 (Linux 0.0.0)",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1553279975128,
+                    "startTime": 1553283569560,
                     "total": 15,
                     "success": 13,
                     "failed": 2,
                     "skipped": 0,
-                    "totalTime": 258,
-                    "netTime": 96,
+                    "totalTime": 202,
+                    "netTime": 100,
                     "error": false,
                     "disconnected": false
                 },
@@ -350,8 +53,8 @@
                     "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975153,
-                    "endTime": 1553279975168,
+                    "startTime": 1553283569562,
+                    "endTime": 1553283569577,
                     "weight": 3
                 },
                 {
@@ -363,11 +66,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 2,
+                    "time": 4,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975169,
-                    "endTime": 1553279975171,
+                    "startTime": 1553283569584,
+                    "endTime": 1553283569588,
                     "weight": 3
                 },
                 {
@@ -379,11 +82,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 3,
+                    "time": 2,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975171,
-                    "endTime": 1553279975174,
+                    "startTime": 1553283569588,
+                    "endTime": 1553283569590,
                     "weight": 3
                 },
                 {
@@ -395,11 +98,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 11,
+                    "time": 5,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975184,
-                    "endTime": 1553279975195,
+                    "startTime": 1553283569600,
+                    "endTime": 1553283569606,
                     "weight": 3
                 },
                 {
@@ -411,11 +114,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975201,
-                    "endTime": 1553279975202,
+                    "startTime": 1553283569607,
+                    "endTime": 1553283569608,
                     "weight": 3
                 },
                 {
@@ -430,8 +133,8 @@
                     "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975204,
-                    "endTime": 1553279975204,
+                    "startTime": 1553283569609,
+                    "endTime": 1553283569609,
                     "weight": 3
                 },
                 {
@@ -443,11 +146,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 1,
+                    "time": 0,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975204,
-                    "endTime": 1553279975205,
+                    "startTime": 1553283569610,
+                    "endTime": 1553283569610,
                     "weight": 3
                 },
                 {
@@ -459,11 +162,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 7,
+                    "time": 13,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975205,
-                    "endTime": 1553279975212,
+                    "startTime": 1553283569610,
+                    "endTime": 1553283569623,
                     "weight": 3
                 },
                 {
@@ -489,8 +192,8 @@
                             "expected": "[\n  \"M\"\n  \"i\"\n  \"t\"\n  \"h\"\n  \"r\"\n  \"i\"\n  \"l\"\n]"
                         }
                     ],
-                    "startTime": 1553279975215,
-                    "endTime": 1553279975222,
+                    "startTime": 1553283569626,
+                    "endTime": 1553283569632,
                     "weight": 2
                 },
                 {
@@ -502,7 +205,7 @@
                     ],
                     "success": false,
                     "skipped": false,
-                    "time": 5,
+                    "time": 1,
                     "log": [
                         "AssertionError: expected undefined to deeply equal { Object (org, repo) }",
                         "    at Context.<anonymous> (base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:13427:71)"
@@ -516,8 +219,8 @@
                             "expected": "{\n  \"org\": \"MithrilJS\"\n  \"repo\": \"mithril.js\"\n}"
                         }
                     ],
-                    "startTime": 1553279975242,
-                    "endTime": 1553279975248,
+                    "startTime": 1553283569634,
+                    "endTime": 1553283569635,
                     "weight": 2
                 },
                 {
@@ -529,11 +232,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 6,
+                    "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975256,
-                    "endTime": 1553279975262,
+                    "startTime": 1553283569643,
+                    "endTime": 1553283569657,
                     "weight": 2
                 },
                 {
@@ -545,11 +248,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 13,
+                    "time": 14,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975265,
-                    "endTime": 1553279975278,
+                    "startTime": 1553283569659,
+                    "endTime": 1553283569673,
                     "weight": 1
                 },
                 {
@@ -561,11 +264,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 13,
+                    "time": 15,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975282,
-                    "endTime": 1553279975295,
+                    "startTime": 1553283569678,
+                    "endTime": 1553283569693,
                     "weight": 1
                 },
                 {
@@ -577,11 +280,11 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 14,
+                    "time": 10,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975298,
-                    "endTime": 1553279975312,
+                    "startTime": 1553283569696,
+                    "endTime": 1553283569706,
                     "weight": 1
                 },
                 {
@@ -593,11 +296,308 @@
                     ],
                     "success": true,
                     "skipped": false,
-                    "time": 13,
+                    "time": 15,
                     "log": [],
                     "assertionErrors": [],
-                    "startTime": 1553279975315,
-                    "endTime": 1553279975328,
+                    "startTime": 1553283569710,
+                    "endTime": 1553283569725,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "72452740",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": "DISCONNECTED",
+                "lastResult": {
+                    "startTime": 1553283571143,
+                    "total": 15,
+                    "success": 13,
+                    "failed": 2,
+                    "skipped": 0,
+                    "totalTime": 625,
+                    "netTime": 161,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0,
+                "noActivityTimeout": 30000,
+                "disconnectDelay": 2000
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571175,
+                    "endTime": 1553283571180,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571182,
+                    "endTime": 1553283571185,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 10,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571186,
+                    "endTime": 1553283571196,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 59,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571333,
+                    "endTime": 1553283571392,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571419,
+                    "endTime": 1553283571420,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571421,
+                    "endTime": 1553283571422,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571423,
+                    "endTime": 1553283571423,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571424,
+                    "endTime": 1553283571427,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 4,
+                    "log": [
+                        "expected undefined to deeply equal [ 'M', 'i', 't', 'h', 'r', 'i', 'l' ]",
+                        "AssertionError@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:2754:13",
+                        "module.exports/Assertion.prototype.assert@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:5437:13",
+                        "assertEql@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:6551:5",
+                        "methodWrapper@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:4567:18",
+                        "@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:13420:71",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal [ 'M', 'i', 't', 'h', 'r', 'i', 'l' ]",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "[\n  \"M\"\n  \"i\"\n  \"t\"\n  \"h\"\n  \"r\"\n  \"i\"\n  \"l\"\n]"
+                        }
+                    ],
+                    "startTime": 1553283571453,
+                    "endTime": 1553283571459,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": false,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [
+                        "expected undefined to deeply equal { Object (org, repo) }",
+                        "AssertionError@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:2754:13",
+                        "module.exports/Assertion.prototype.assert@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:5437:13",
+                        "assertEql@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:6551:5",
+                        "methodWrapper@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:4567:18",
+                        "@http://localhost:9876/base/tests.webpack.js?816cb2910dfcc52d2600aedf71bad47c8f77df3c:13427:71",
+                        ""
+                    ],
+                    "assertionErrors": [
+                        {
+                            "name": "AssertionError",
+                            "message": "expected undefined to deeply equal { Object (org, repo) }",
+                            "showDiff": true,
+                            "actual": "[undefined]",
+                            "expected": "{\n  \"org\": \"MithrilJS\"\n  \"repo\": \"mithril.js\"\n}"
+                        }
+                    ],
+                    "startTime": 1553283571472,
+                    "endTime": 1553283571475,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 15,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571490,
+                    "endTime": 1553283571506,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 10,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571531,
+                    "endTime": 1553283571541,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 12,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571552,
+                    "endTime": 1553283571564,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 18,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571592,
+                    "endTime": 1553283571610,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 21,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1553283571669,
+                    "endTime": 1553283571691,
                     "weight": 1
                 }
             ]
