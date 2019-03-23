@@ -12,7 +12,16 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
   exit 0
 fi
 
-# Build the site and deploy to firebase
+# Build the site
 npm run build
+
+# Verify the build succeeded
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Uh oh! The build failed."
+  exit status
+fi
+
+echo "Build succeeded. Preparing to deploy to Firebase."
 npm install -g firebase-tools
 firebase deploy --token "$FIREBASE_TOKEN" --only hosting
