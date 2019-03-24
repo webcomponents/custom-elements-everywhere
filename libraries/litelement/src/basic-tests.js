@@ -72,7 +72,8 @@ describe("basic support", function() {
       this.weight = 3;
       let root = document.createElement("component-with-children-rerender");
       scratch.appendChild(root);
-      await root.updateComplete;
+      await root.updateComplete; // render once
+      await root.updateComplete; // render twice
       let wc = root.shadowRoot.querySelector("#wc");
       expectHasChildren(wc);
       expect(wc.textContent.includes("2")).to.be.true;

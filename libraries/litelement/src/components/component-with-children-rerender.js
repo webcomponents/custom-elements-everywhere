@@ -10,8 +10,11 @@ export default class ComponentWithChildrenRerender extends LitElement {
     this.count = 1;
   }
 
-  render() {
+  firstUpdated() {
     this.count += 1;
+  }
+
+  render() {
     return html`
       <ce-with-children id="wc">${this.count}</ce-with-children>
     `;
