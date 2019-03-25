@@ -58,6 +58,7 @@ module.exports = function(config) {
       outputFile: path.resolve(__dirname, './results/results.json')
     },
     webpack: { // kind of a copy of your webpack config
+      mode: 'development',
       // devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         modules: [
