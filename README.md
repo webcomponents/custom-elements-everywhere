@@ -13,15 +13,13 @@ with Custom Elements.
 To install all dependencies and build the site:
 
 ```bash
-npm run install-all
+# Install all the things!
+npm run ci
 
-# You'll see errors during this next step because some of the framework tests
-# fail. That's by design, so don't worry! At the end it should print the
-# message "Site built successfully!". If you don't see that then something
-# actually did break :P
-
+# Test all the things!
 npm run build
 
+# Preview the site.
 npm start
 ```
 

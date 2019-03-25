@@ -10,13 +10,8 @@ export default class ComponentWithChildrenRerender extends LitElement {
     this.count = 1;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    Promise.resolve().then(
-      function() {
-        this.count += 1;
-      }.bind(this)
-    );
+  firstUpdated() {
+    this.count += 1;
   }
 
   render() {

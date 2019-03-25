@@ -6,13 +6,13 @@
     "build": "npm run build-html && npm run build-css && npm run copy",
     "build-html": "mkdir ../out; node index.js > ../out/index.html",
     "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
-    "copy": "cp ./.firebaserc ../out && cp firebase.json ../out && cp 404.html ../out && cp CNAME ../out && cp -r images ../out && cp -r libraries ../out"
+    "copy": "cp 404.html ../out && cp CNAME ../out && cp -r images ../out && cp -r libraries ../out"
   },
   "author": "Rob Dodson",
   "license": "MIT",
   "devDependencies": {
     "clean-css-cli": "4.2.1",
-    "handlebars": "4.1.0",
+    "handlebars": "4.1.1",
     "marked": "0.6.1"
   }
 }
