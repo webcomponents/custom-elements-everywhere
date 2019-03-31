@@ -6,6 +6,6 @@ module.exports = {
     owner: "webcomponents",
     repo: "custom-elements-everywhere"
   },
-  buildCommand: "npm run install && npm run build",
+  buildCommand: "npm ci && npm run build",
   plugins: [require("./plugins/test-verification.js")]
 };

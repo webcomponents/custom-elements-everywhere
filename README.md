@@ -14,7 +14,7 @@ To install all dependencies and build the site:
 
 ```bash
 # Install all the things!
-npm run ci
+npm ci
 
 # Test all the things!
 npm run build
