@@ -50,7 +50,8 @@ describe("basic support", function() {
   describe("no children", function() {
     it("can display a Custom Element with no children", function() {
       this.weight = 3;
-      let root = render(<ComponentWithoutChildren />, scratch);
+      render(<ComponentWithoutChildren />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       expect(wc).to.exist;
     });
@@ -70,15 +71,17 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root", function() {
       this.weight = 3;
-      let root = render(<ComponentWithChildren />, scratch);
+      render(<ComponentWithChildren />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
-      let root = render(<ComponentWithChildrenRerender />, scratch);
-      let component = root._component;
+      let component;
+      render(<ComponentWithChildrenRerender ref={(ref) => { component = ref; }} />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       await Promise.resolve();
       component.forceUpdate();
@@ -88,8 +91,9 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
       this.weight = 3;
-      let root = render(<ComponentWithDifferentViews />, scratch);
-      let component = root._component;
+      let component
+      render(<ComponentWithDifferentViews ref={(ref) => { component = ref; }} />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       expectHasChildren(wc);
       component.toggle();
@@ -107,7 +111,8 @@ describe("basic support", function() {
   describe("attributes and properties", function() {
     it("will pass boolean data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = render(<ComponentWithProperties />, scratch);
+      render(<ComponentWithProperties />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       let data = wc.bool || wc.hasAttribute("bool");
       expect(data).to.be.true;
@@ -115,7 +120,8 @@ describe("basic support", function() {
 
     it("will pass numeric data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = render(<ComponentWithProperties />, scratch);
+      render(<ComponentWithProperties />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       let data = wc.num || wc.getAttribute("num");
       expect(parseInt(data, 10)).to.eql(42);
@@ -123,7 +129,8 @@ describe("basic support", function() {
 
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = render(<ComponentWithProperties />, scratch);
+      render(<ComponentWithProperties />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       let data = wc.str || wc.getAttribute("str");
       expect(data).to.eql("Preact");
@@ -166,8 +173,9 @@ describe("basic support", function() {
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
       this.weight = 3;
-      let root = render(<ComponentWithImperativeEvent />, scratch);
-      let component = root._component;
+      let component;
+      render(<ComponentWithImperativeEvent ref={(ref) => { component = ref; }} />, scratch);
+      let root = document.querySelector('#scratch');
       let wc = root.querySelector("#wc");
       expect(wc).to.exist;
       let handled = root.querySelector("#handled");
