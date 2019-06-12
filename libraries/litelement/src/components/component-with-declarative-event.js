@@ -31,31 +31,11 @@ class ComponentWithDeclarativeEvent extends LitElement {
         <div id="pascal">${this.pascalHandled}</div>
         <ce-with-event
           id="wc"
-          @lowercaseevent="${
-            e => {
-              this.handleLowercaseEvent();
-            }
-          }"
-          @kebab-event="${
-            e => {
-              this.handleKebabEvent();
-            }
-          }"
-          @camelEvent="${
-            e => {
-              this.handleCamelEvent();
-            }
-          }"
-          @CAPSevent="${
-            e => {
-              this.handleCapsEvent();
-            }
-          }"
-          @PascalEvent="${
-            e => {
-              this.handlePascalEvent();
-            }
-          }"
+          @lowercaseevent="${this.handleLowercaseEvent}"
+          @kebab-event="${this.handleKebabEvent}"
+          @camelEvent="${this.handleCamelEvent}"
+          @CAPSevent="${this.handleCapsEvent}"
+          @PascalEvent="${this.handlePascalEvent}"
         ></ce-with-event>
       </div>
     `;
