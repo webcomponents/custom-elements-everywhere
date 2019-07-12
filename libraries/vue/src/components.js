@@ -83,6 +83,7 @@ export const ComponentWithProperties = Vue.extend({
         :str.prop="str"
         :arr.prop="arr"
         :obj.prop="obj"
+        :value.prop="value"
       ></ce-with-properties>
     </div>
   `,
@@ -92,7 +93,8 @@ export const ComponentWithProperties = Vue.extend({
       num: 42,
       str: 'Vue',
       arr: ['V', 'u', 'e'],
-      obj: { org: 'vuejs', repo: 'vue' }
+      obj: { org: 'vuejs', repo: 'vue' },
+      value: new Date(1985, 9, 26, 9, 0)
     }
   }
 });

@@ -73,7 +73,8 @@ export class ComponentWithProperties extends WidgetBase {
 			num: 42,
 			str: 'Dojo',
 			arr: ['d', 'o', 'j', 'o'],
-			obj: { org: 'dojo', repo: 'dojo' }
+			obj: { org: 'dojo', repo: 'dojo' },
+			value: new Date(1985, 9, 26, 9, 0) as any
 		};
 		return v('ce-with-properties', data);
 	}

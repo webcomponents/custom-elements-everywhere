@@ -46,6 +46,12 @@ class CEWithProperties extends HTMLElement {
   get obj() {
     return this._obj;
   }
+  set value(value) {
+    this._value = value;
+  }
+  get value() {
+    return this._value;
+  }
 }
 
 customElements.define('ce-with-properties', CEWithProperties);

@@ -51,6 +51,16 @@ describe("advanced support", function() {
         expect(data).to.eql({ org: "adam.haile@gmail.com", repo: "surplus" });
       });
     });
+
+    it("will pass Date in the 'value' property", function() {
+      this.weight = 2;
+      S.root(() => {
+        let root = <ComponentWithProperties />;
+        let wc = root.wc;
+        let data = wc.value;
+        expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+      });
+    });
   });
 
   describe("events", function() {

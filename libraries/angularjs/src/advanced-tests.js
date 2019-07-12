@@ -38,6 +38,15 @@ describe("advanced support", () => {
       let data = wc.obj;
       expect(data).to.eql({ org: "angular", repo: "angular" });
     });
+
+    it("will pass Date in the 'value' property", function() {
+      this.weight = 2;
+      let root = prep("<comp-with-props>")
+      scope.$digest()
+      let wc = root.querySelector('#wc')
+      let data = wc.value;
+      expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", () => {

@@ -57,6 +57,7 @@ export const ComponentWithProperties = {
       str=${"hybrids"}
       arr=${["h", "y", "b", "r", "i", "d", "s"]}
       obj=${{ library: "hybrids" }}
+      value=${new Date(1985, 9, 26, 9, 0)}
     ></ce-with-properties>
   `,
 };

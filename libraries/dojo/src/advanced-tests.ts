@@ -61,6 +61,15 @@ describe("advanced support", function() {
       const data = wc.obj;
       expect(data).to.eql({ org: "dojo", repo: "dojo" });
     });
+
+    it("will pass Date in the 'value' property", function() {
+      this.weight = 2;
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
+      const wc: any = document.querySelector("ce-with-properties");
+      const data = wc.value;
+      expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", function() {

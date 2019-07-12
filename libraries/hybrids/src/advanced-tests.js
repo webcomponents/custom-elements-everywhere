@@ -67,6 +67,16 @@ describe("advanced support", function() {
         done();
       });
     });
+
+    it("will pass Date in the 'value' property", function(done) {
+      this.weight = 2;
+      requestAnimationFrame(() => {
+        const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
+        const data = wc.value || wc.getAttribute("value");
+        expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+        done();
+      });
+    });
   });
 
   describe("events", function() {

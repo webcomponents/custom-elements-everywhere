@@ -92,7 +92,8 @@ export class ComponentWithProperties extends Component {
       num: 42,
       str: 'React',
       arr: ['R', 'e', 'a', 'c', 't'],
-      obj: { org: 'facebook', repo: 'react' }
+      obj: { org: 'facebook', repo: 'react' },
+      value: new Date(1985, 9, 26, 9, 0)
     };
     return (
       <div>
@@ -102,6 +103,7 @@ export class ComponentWithProperties extends Component {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          value={data.value}
         ></ce-with-properties>
       </div>
     );

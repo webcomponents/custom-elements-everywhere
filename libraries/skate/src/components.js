@@ -108,7 +108,8 @@ export class ComponentWithProperties extends withComponent(withPreact()) {
       num: 42,
       str: "Skate",
       arr: ["S", "k", "a", "t", "e"],
-      obj: { org: "skatejs", repo: "skatejs" }
+      obj: { org: "skatejs", repo: "skatejs" },
+      value: new Date(1985, 9, 26, 9, 0)
     };
     return (
       <div>
@@ -119,6 +120,7 @@ export class ComponentWithProperties extends withComponent(withPreact()) {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          value={data.value}
         />
       </div>
     );

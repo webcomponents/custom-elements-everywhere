@@ -88,6 +88,7 @@ export class ComponentWithDifferentViews {
         [str]="data.str"
         [arr]="data.arr"
         [obj]="data.obj"
+        [value]="data.value"
       ></ce-with-properties>
     </div>
   `
@@ -98,7 +99,8 @@ export class ComponentWithProperties {
     num: 42,
     str: 'Angular',
     arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
-    obj: { org: 'angular', repo: 'angular' }
+    obj: { org: 'angular', repo: 'angular' },
+    value: new Date(1985, 9, 26, 9, 0)
   }
 }
 
@@ -134,7 +136,7 @@ export class ComponentWithUnregistered {
   `
 })
 export class ComponentWithImperativeEvent implements OnInit {
-  @ViewChild('customEl') customEl:ElementRef;
+  @ViewChild('customEl', { static: true }) customEl:ElementRef;
   eventHandled = false;
   ngOnInit() {
     this.handleTestEvent = this.handleTestEvent.bind(this);

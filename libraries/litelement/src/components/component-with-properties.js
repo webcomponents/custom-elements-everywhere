@@ -19,6 +19,7 @@ class ComponentWithProperties extends LitElement {
     this.str = "Lit element";
     this.arr = ["L", "i", "t", "-", "e", "l", "e", "m", "e", "n", "t"];
     this.obj = { org: "polymer", repo: "lit-element" };
+    this.value = new Date(1985, 9, 26, 9, 0);
   }
 
   render() {
@@ -31,6 +32,7 @@ class ComponentWithProperties extends LitElement {
           str="${this.str}"
           .arr="${this.arr}"
           .obj="${this.obj}"
+          .value="${this.value}"
         ></ce-with-properties>
       </div>
     `;

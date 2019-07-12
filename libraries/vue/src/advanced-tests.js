@@ -63,6 +63,14 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "vuejs", repo: "vue" });
     });
+
+    it("will pass Date in the 'value' property", function() {
+      this.weight = 2;
+      let root = new ComponentWithProperties().$mount(scratch).$el;
+      let wc = root.querySelector("#wc");
+      let data = wc.value;
+      expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", function() {
