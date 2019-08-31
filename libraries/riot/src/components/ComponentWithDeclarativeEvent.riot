@@ -1,0 +1,28 @@
+<component-with-event>
+  <ce-with-event
+    id="wc"
+    onlowercaseevent={ () => update({ lowercaseHandled: true }) }
+    onkebab-event={ () => update({ kebabHandled: true }) }
+    oncamelEvent={ () => update({ camelHandled: true }) }
+    onCAPSevent={ () => update({ capsHandled: true }) }
+    onPascalEvent={ () => update({ pascalHandled: true }) }>
+  </ce-with-event>
+
+  <div id="lowercase">{state.lowercaseHandled}</div>
+  <div id="kebab">{state.kebabHandled}</div>
+  <div id="camel">{state.camelHandled}</div>
+  <div id="caps">{state.capsHandled}</div>
+  <div id="pascal">{state.pascalHandled}</div>
+
+  <script>
+    export default {
+      state: {
+        lowercaseHandled: false,
+        kebabHandled: false,
+        camelHandled: false,
+        capsHandled: false,
+        pascalHandled: false
+      }
+    }
+  </script>
+</component-with-event>
