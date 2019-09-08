@@ -1,0 +1,28 @@
+{
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/stencil-elements-everywhere/stencil-elements-everywhere.js",
+  "scripts": {
+    "test": "cross-env LIBRARY_NAME=stencil karma start",
+    "build": "stencil build --docs && npm run test"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.0",
+    "babel-loader": "8.0.6",
+    "@babel/preset-env": "7.6.0",
+    "chai": "4.2.0",
+    "cross-env": "5.2.1",
+    "karma": "4.3.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-firefox-launcher": "1.2.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "4.0.2",
+    "webpack": "4.39.3",
+    "@stencil/core": "1.3.3"
+  }
+}

@@ -32,6 +32,7 @@ const libraryMap = {
   preact: "Preact",
   react: "React",
   skate: "Skate w/ Preact",
+  stencil: 'Stencil',
   surplus: "Surplus",
   svelte: "Svelte",
   vue: "Vue"
