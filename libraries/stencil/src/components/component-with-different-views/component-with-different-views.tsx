@@ -1,17 +1,16 @@
-import { Component, Host, h, Method, Prop } from '@stencil/core';
+import { Component, Host, h, Method, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'component-with-different-views',
+  tag: "component-with-different-views",
   shadow: true
 })
 export class ComponentWithDifferentViews {
-
   @Prop() showWC = true;
 
   @Method()
   async toggle() {
     this.showWC = !this.showWC;
-  } 
+  }
 
   render() {
     return (

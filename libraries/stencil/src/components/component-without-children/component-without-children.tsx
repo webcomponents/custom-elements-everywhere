@@ -1,11 +1,10 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from "@stencil/core";
 
 @Component({
-  tag: 'component-without-children',
+  tag: "component-without-children",
   shadow: true
 })
 export class ComponentWithoutChildren {
-
   render() {
     return (
       <Host>

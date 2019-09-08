@@ -1,7 +1,7 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from "@stencil/core";
 
 @Component({
-  tag: 'component-with-children',
+  tag: "component-with-children",
   shadow: true
 })
 export class ComponentWithChildren {

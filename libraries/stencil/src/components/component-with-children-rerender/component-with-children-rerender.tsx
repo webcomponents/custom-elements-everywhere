@@ -1,11 +1,10 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'component-with-children-rerender',
+  tag: "component-with-children-rerender",
   shadow: true
 })
 export class ComponentWithChildrenRerender {
-
   @Prop() count = 1;
 
   componentDidLoad() {

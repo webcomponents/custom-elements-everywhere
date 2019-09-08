@@ -1,21 +1,21 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'component-with-properties',
+  tag: "component-with-properties",
   shadow: true
 })
 export class ComponentWithProperties {
-
   @Prop() bool = true;
   @Prop() num = 42;
-  @Prop() str = 'Stencil'
-  @Prop() arr = ['S', 't', 'e', 'n', 'c', 'i', 'l']
-  @Prop() obj = { org: 'Ionic', repo: 'stencil' };
+  @Prop() str = "Stencil";
+  @Prop() arr = ["S", "t", "e", "n", "c", "i", "l"];
+  @Prop() obj = { org: "Ionic", repo: "stencil" };
 
-  render () {
+  render() {
     return (
       <Host>
-        <ce-with-properties id="wc"
+        <ce-with-properties
+          id="wc"
           bool={this.bool}
           num={this.num}
           str={this.str}
