@@ -122,6 +122,9 @@ describe('basic support', function() {
       expect(data).to.eql('riot')
     })
 
+    // Riot.js passes all the following tests but they must be commented out
+    // being consistent with the other frameworks ¯\_(ツ)_/¯
+    /*
     it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
       component(ComponentWithUnregistered)(scratch)
       let wc = scratch.querySelector('#wc')
@@ -151,6 +154,7 @@ describe('basic support', function() {
       let wc = scratch.querySelector('#wc')
       expect(wc.obj).to.eql({ org: 'riotjs', repo: 'riot' })
     })
+    */
   })
 
   describe('events', function() {
