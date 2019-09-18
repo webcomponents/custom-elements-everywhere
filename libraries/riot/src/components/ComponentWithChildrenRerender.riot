@@ -1,0 +1,15 @@
+<component-with-children>
+  <ce-with-children id="wc">{state.count}</ce-with-children>
+
+  <script>
+    export default {
+      state: {
+        count: 1
+      },
+      onMounted() {
+        this.update({ count: this.state.count + 1 })
+      }
+    }
+  </script>
+</component-with-children>
+
