@@ -1,0 +1,15 @@
+<component-with-different-views>
+  <ce-with-children if={state.showWC} id="wc"></ce-with-children>
+  <div if={!state.showWC} id="dummy">Dummy view</div>
+
+  <script>
+    export default {
+      state: {
+        showWC: true
+      },
+      toggle() {
+        this.update({ showWC: !this.state .showWC })
+      }
+    }
+  </script>
+</component-with-different-views>

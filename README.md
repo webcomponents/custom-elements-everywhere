@@ -34,6 +34,7 @@ npm start
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
+- [Riot.js](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/riot)
 - [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
 - [Stencil](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/stencil)
 - [Surplus](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/surplus)
@@ -137,7 +138,7 @@ run that folder's build command.
   to a custom element using properties.
 - The library/framework should be able to listen to DOM events from a custom
   element. These DOM events could use any casing style.
-  
+
 ## How does the site get deployed/maintained?
 
 Once a library is added to the repo, we use [Renovate](https://renovatebot.com/)

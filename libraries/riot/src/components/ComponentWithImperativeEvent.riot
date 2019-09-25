@@ -1,0 +1,17 @@
+<component-with-imperative-events>
+  <div id="handled">{state.eventHandled}</div>
+  <ce-with-event id="wc"></ce-with-event>
+
+  <script>
+    export default {
+      state: {
+        eventHandled: false
+      },
+      onMounted() {
+        this.$('#wc').addEventListener('camelEvent', () => {
+          this.update({ eventHandled: true })
+        })
+      }
+    }
+  </script>
+</component-with-imperative-events>
