@@ -21,11 +21,11 @@ export class ComponentWithDeclarativeEvent {
         <div id="pascal">{this.pascalHandled.toString()}</div>
         <ce-with-event
           id="wc"
-          onlowercaseevent={_ => (this.lowercaseHandled = true)}
-          onkebab-event={_ => (this.kebabHandled = true)}
-          oncamelEvent={_ => (this.camelHandled = true)}
-          onCAPSevent={_ => (this.capsHandled = true)}
-          onPascalEvent={_ => (this.pascalHandled = true)}
+          on-lowercaseevent={_ => (this.lowercaseHandled = true)}
+          on-kebab-event={_ => (this.kebabHandled = true)}
+          on-camelEvent={_ => (this.camelHandled = true)}
+          on-CAPSevent={_ => (this.capsHandled = true)}
+          on-PascalEvent={_ => (this.pascalHandled = true)}
         ></ce-with-event>
       </Host>
     );
