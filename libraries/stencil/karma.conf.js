@@ -57,7 +57,7 @@ module.exports = function(config) {
     reporters: ["dots", "custom-html", "custom-json"], // report results in these formats
     htmlReporter: {
       outputFile: path.resolve(__dirname, "./results/results.html"),
-      pageTitle: "Lit Element + Custom Elements",
+      pageTitle: "Stencil + Custom Elements",
       groupSuites: true,
       useCompactStyle: true
     },
