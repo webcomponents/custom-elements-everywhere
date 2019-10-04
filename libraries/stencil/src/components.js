@@ -18,20 +18,16 @@ customElements.define(
   "component-with-children-rerender",
   ComponentWithChildrenRerender
 );
-
 customElements.define(
   "component-with-different-views",
   ComponentWithDifferentViews
 );
-
 customElements.define(
   "component-with-imperative-event",
   ComponentWithImperativeEvent
 );
-
 customElements.define(
   "component-with-declarative-event",
   ComponentWithDeclarativeEvent
 );
-
 customElements.define("component-with-properties", ComponentWithProperties);
