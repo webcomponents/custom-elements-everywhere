@@ -4,7 +4,7 @@ export const config: Config = {
   namespace: 'stencil-elements-everywhere',
   outputTargets: [
     {
-      type: 'experimental-dist-module'
+      type: 'experimental-dist-module',
     }
   ]
 };
