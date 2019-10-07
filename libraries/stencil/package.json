@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "test": "cross-env LIBRARY_NAME=@stencil/core karma start",
+    "build": "stencil build && npm run test"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-es2015": "6.24.1",
+    "chai": "4.2.0",
+    "cross-env": "5.2.1",
+    "karma": "4.3.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-firefox-launcher": "1.2.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "3.0.5",
+    "webpack": "4.41.0"
+  },
+  "dependencies": {
+    "@stencil/core": "1.5.0",
+    "@webcomponents/webcomponentsjs": "2.0.4"
+  }
+}

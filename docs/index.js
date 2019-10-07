@@ -33,6 +33,7 @@ const libraryMap = {
   react: "React",
   riot: "Riot.js",
   skate: "Skate w/ Preact",
+  stencil: "Stencil",
   surplus: "Surplus",
   svelte: "Svelte",
   vue: "Vue"
