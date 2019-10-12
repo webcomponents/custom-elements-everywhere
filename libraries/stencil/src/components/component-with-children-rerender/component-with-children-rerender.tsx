@@ -5,7 +5,7 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true
 })
 export class ComponentWithChildrenRerender {
-  @Prop() count = 1;
+  @Prop({ mutable: true }) count = 1;
 
   componentDidLoad() {
     Promise.resolve().then(_ => this.count++);

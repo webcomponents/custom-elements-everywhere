@@ -50,7 +50,7 @@ module.exports = function(config) {
     frameworks: ["mocha"], // use the mocha test framework
     files: [
       { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
-      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
+      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js'), watched: false },
       "tests.webpack.js" // just load this file
     ],
     preprocessors: {
