@@ -36,21 +36,23 @@ export const ComponentWithChildren = factory(() => {
   ]);
 });
 
-export const ComponentWithChildrenRerender = factory(({ middleware: { icache }}) => {
+export const ComponentWithChildrenRerender = factory(({ middleware: { icache } }) => {
   const count = icache.getOrSet('count', async () => {
     return 2;
   }) || 1;
   return v('div', [
-    v('ce-with-children', [ `${count}` ])
+    v('ce-with-children', [`${count}`])
   ]);
 });
 
-export const ComponentWithDifferentViews = factory(({ middleware: { icache }}) => {
+export const ComponentWithDifferentViews = factory(({ middleware: { icache } }) => {
   const show = icache.getOrSet('show', true);
-  const child = show ? v('ce-with-children', {}) : v('div', { id: 'dummy' }, [ 'Dummy view' ]);
-  return v('div', [ v('div', [ child ]), v('button', { id: 'toggle', onclick: () => {
-    icache.set('show', !icache.get('show'));
-  }}) ]);
+  const child = show ? v('ce-with-children', {}) : v('div', { id: 'dummy' }, ['Dummy view']);
+  return v('div', [v('div', [child]), v('button', {
+    id: 'toggle', onclick: () => {
+      icache.set('show', !icache.get('show'));
+    }
+  })]);
 });
 
 export const ComponentWithProperties = factory(() => {
@@ -77,23 +79,25 @@ export const ComponentWithUnregistered = factory(() => {
   ]);
 });
 
-export const ComponentWithImperativeEvent = factory(({ middleware: { icache }}) => {
+export const ComponentWithImperativeEvent = factory(({ middleware: { icache } }) => {
   const handled = icache.getOrSet('handled', false);
   return v('div', [
-    v('ce-with-event', { id: 'wc', oncamelEvent: () => {
-      icache.set('handled', true);
-    } }),
+    v('ce-with-event', {
+      id: 'wc', oncamelEvent: () => {
+        icache.set('handled', true);
+      }
+    }),
     v('dom', { id: 'eventHandled', handled })
   ]);
 });
 
-export const ComponentWithDeclarativeEvent = factory(({ middleware: { icache }}) => {
-	const lowerCaseHandled = icache.getOrSet('lowerCaseHandled', false);
-	const kebabHandled = icache.getOrSet('kebabHandled', false);
-	const camelHandled = icache.getOrSet('camelHandled', false);
-	const capsHandled = icache.getOrSet('capsHandled', false);
+export const ComponentWithDeclarativeEvent = factory(({ middleware: { icache } }) => {
+  const lowerCaseHandled = icache.getOrSet('lowerCaseHandled', false);
+  const kebabHandled = icache.getOrSet('kebabHandled', false);
+  const camelHandled = icache.getOrSet('camelHandled', false);
+  const capsHandled = icache.getOrSet('capsHandled', false);
   const pascalHandled = icache.getOrSet('pascalHandled', false);
-  
+
   return v('div', [
     v('ce-with-event', {
       id: 'wc',
