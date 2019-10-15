@@ -15,140 +15,108 @@
  * limitations under the License.
  */
 
-import { WidgetBase } from '@dojo/framework/widget-core/WidgetBase';
-import { v } from '@dojo/framework/widget-core/d';
+import { v, create } from '@dojo/framework/core/vdom';
+import icache from '@dojo/framework/core/middleware/icache';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-export class ComponentWithoutChildren extends WidgetBase {
-	render() {
-		return v('div', [
-			v('ce-without-children', {})
-		]);
-	}
-}
+const factory = create({ icache });
 
-export class ComponentWithChildren extends WidgetBase {
-	render() {
-		return v('div', [
-			v('ce-with-children', {})
-		]);
-	}
-}
+export const ComponentWithoutChildren = factory(() => {
+  return v('div', [
+    v('ce-without-children', {})
+  ]);
+});
 
-export class ComponentWithChildrenRerender extends WidgetBase {
-	private _count = 1;
-	constructor () {
-		super();
-		Promise.resolve().then(() => {
-			this._count++;
-		});
-	}
-	render() {
-		return v('div', [
-			v('ce-with-children', [ `${this._count}` ])
-		]);
-	}
-}
+export const ComponentWithChildren = factory(() => {
+  return v('div', [
+    v('ce-with-children', {})
+  ]);
+});
 
-export class ComponentWithDifferentViews extends WidgetBase {
-	private _showWC = true
+export const ComponentWithChildrenRerender = factory(({ middleware: { icache }}) => {
+  const count = icache.getOrSet('count', async () => {
+    return 2;
+  }) || 1;
+  return v('div', [
+    v('ce-with-children', [ `${count}` ])
+  ]);
+});
 
-	toggle() {
-		this._showWC = !this._showWC;
-		this.invalidate();
-	}
-	render() {
-		const child = this._showWC ? v('ce-with-children', {}) : v('div', [ 'Dummy view' ]);
-		return v('div', [ child ]);
-	}
-}
+export const ComponentWithDifferentViews = factory(({ middleware: { icache }}) => {
+  const show = icache.getOrSet('show', true);
+  const child = show ? v('ce-with-children', {}) : v('div', { id: 'dummy' }, [ 'Dummy view' ]);
+  return v('div', [ v('div', [ child ]), v('button', { id: 'toggle', onclick: () => {
+    icache.set('show', !icache.get('show'));
+  }}) ]);
+});
 
-export class ComponentWithProperties extends WidgetBase {
-	render() {
-		const data = {
-			bool: true,
-			num: 42,
-			str: 'Dojo',
-			arr: ['d', 'o', 'j', 'o'],
-			obj: { org: 'dojo', repo: 'dojo' }
-		};
-		return v('ce-with-properties', data);
-	}
-}
+export const ComponentWithProperties = factory(() => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Dojo',
+    arr: ['d', 'o', 'j', 'o'],
+    obj: { org: 'dojo', repo: 'dojo' }
+  };
+  return v('ce-with-properties', data);
+});
 
-export class ComponentWithUnregistered extends WidgetBase {
-	render() {
-		const data = {
-			bool: true,
-			num: 42,
-			str: 'Dojo',
-			arr: ['d', 'o', 'j', 'o'],
-			obj: { org: 'dojo', repo: 'dojo' }
-		};
-		return v('div', [
-			v('ce-unregistered', data)
-		]);
-	}
-}
+export const ComponentWithUnregistered = factory(() => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Dojo',
+    arr: ['d', 'o', 'j', 'o'],
+    obj: { org: 'dojo', repo: 'dojo' }
+  };
+  return v('div', [
+    v('ce-unregistered', data)
+  ]);
+});
 
-export class ComponentWithImperativeEvent extends WidgetBase {
-	public eventHandled = false
-	handleTestEvent(e: any) {
-		this.eventHandled = true;
-		this.invalidate();
-	}
-	render() {
-		return v('div', [
-			v('ce-with-event', { id: 'wc', oncamelEvent: this.handleTestEvent }),
-			v('dom', { id: 'eventHandled', handled: this.eventHandled })
-		]);
-	}
-}
+export const ComponentWithImperativeEvent = factory(({ middleware: { icache }}) => {
+  const handled = icache.getOrSet('handled', false);
+  return v('div', [
+    v('ce-with-event', { id: 'wc', oncamelEvent: () => {
+      icache.set('handled', true);
+    } }),
+    v('dom', { id: 'eventHandled', handled })
+  ]);
+});
 
-export class ComponentWithDeclarativeEvent extends WidgetBase {
-	public lowerCaseHandled = false;
-	public kebabHandled = false;
-	public camelHandled = false;
-	public capsHandled = false;
-	public pascalHandled = false;
-	handleLowercaseEvent(e: any) {
-		this.lowerCaseHandled = true;
-		this.invalidate();
-	}
-	handleKebabEvent(e: any) {
-		this.kebabHandled = true;
-		this.invalidate();
-	}
-	handleCamelEvent(e: any) {
-		this.camelHandled = true;
-		this.invalidate();
-	}
-	handleCapsEvent(e: any) {
-		this.capsHandled = true;
-		this.invalidate();
-	}
-	handlePascalEvent(e: any) {
-		this.pascalHandled = true;
-		this.invalidate();
-	}
-	render() {
-		return v('div', [
-			v('ce-with-event', {
-				id: 'wc',
-				onlowercaseevent: this.handleLowercaseEvent,
-				'onkebab-event': this.handleKebabEvent,
-				oncamelEvent: this.handleCamelEvent,
-				onCAPSevent: this.handleCapsEvent,
-				onPascalEvent: this.handlePascalEvent
-			}),
-			v('dom', { id: 'pascal', handled: this.pascalHandled }),
-			v('dom', { id: 'caps', handled: this.capsHandled }),
-			v('dom', { id: 'camel', handled: this.camelHandled }),
-			v('dom', { id: 'kebab', handled: this.kebabHandled }),
-			v('dom', { id: 'lower', handled: this.lowerCaseHandled })
-		]);
-	}
-}
+export const ComponentWithDeclarativeEvent = factory(({ middleware: { icache }}) => {
+	const lowerCaseHandled = icache.getOrSet('lowerCaseHandled', false);
+	const kebabHandled = icache.getOrSet('kebabHandled', false);
+	const camelHandled = icache.getOrSet('camelHandled', false);
+	const capsHandled = icache.getOrSet('capsHandled', false);
+  const pascalHandled = icache.getOrSet('pascalHandled', false);
+  
+  return v('div', [
+    v('ce-with-event', {
+      id: 'wc',
+      onlowercaseevent: () => {
+        icache.set('lowerCaseHandled', true);
+      },
+      'onkebab-event': () => {
+        icache.set('kebabHandled', true);
+      },
+      oncamelEvent: () => {
+        icache.set('camelHandled', true);
+      },
+      onCAPSevent: () => {
+        icache.set('capsHandled', true);
+      },
+      onPascalEvent: () => {
+        icache.set('pascalHandled', true);
+      },
+    }),
+    v('dom', { id: 'pascal', handled: pascalHandled }),
+    v('dom', { id: 'caps', handled: capsHandled }),
+    v('dom', { id: 'camel', handled: camelHandled }),
+    v('dom', { id: 'kebab', handled: kebabHandled }),
+    v('dom', { id: 'lower', handled: lowerCaseHandled })
+  ]);
+});
