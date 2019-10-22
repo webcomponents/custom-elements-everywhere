@@ -8,9 +8,9 @@ like objects or arrays. In those instances it will always use a property.
 
 <h4 id="preact-handling-events">Handling events</h4>
 
-Preact can listen to native DOM events dispatched from Custom Elements. However,
-it uses a heuristic to convert JSX event binding syntax into event names, and
-always lowercases the events. For example <code>onFooUpdated={handleFoo}</code>
-tells Preact to listen for an event called <code>'fooupdated'</code>. This means
-Preact can support events with lowercase and kebab-case names, but not
-camelCase, PascalCase, or CAPScase events (e.g. <code>'URLchanged'</code>).
+Preact can listen to native DOM events dispatched from Custom Elements.
+It uses a heuristic to convert JSX event binding syntax into event names.
+For example <code>onFooUpdated={handleFoo}</code>
+tells Preact to check if <code>'onfooupdated'</code> property exists in custom element.
+If it does Preact listens for <code>'fooupdated'</code> event name, otherwise <code>'FooUpdated'</code>
+is used without changes.
