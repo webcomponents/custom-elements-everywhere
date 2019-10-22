@@ -226,7 +226,7 @@ class ComponentWithDeclarativeEvent extends withComponent(withPreact()) {
           onlowercaseevent={this.handleLowercaseEvent}
           onkebab-event={this.handleKebabEvent}
           oncamelEvent={this.handleCamelEvent}
-          onCAPSEvent={this.handleCapsEvent}
+          onCAPSevent={this.handleCapsEvent}
           onPascalEvent={this.handlePascalEvent}
         />
       </div>
