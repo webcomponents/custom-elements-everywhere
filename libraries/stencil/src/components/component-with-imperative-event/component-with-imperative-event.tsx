@@ -5,7 +5,7 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true
 })
 export class ComponentWithImperativeEvent {
-  @Prop() eventHandled = false;
+  @Prop({ mutable: true }) eventHandled = false;
 
   customEl!: HTMLElement;
 
