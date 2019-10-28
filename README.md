@@ -31,6 +31,7 @@ npm start
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
 - [Mithril](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/mithril)
+- [Omi](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/omi)
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
