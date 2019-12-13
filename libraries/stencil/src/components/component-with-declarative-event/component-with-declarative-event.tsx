@@ -5,11 +5,11 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true
 })
 export class ComponentWithDeclarativeEvent {
-  @Prop() lowercaseHandled = false;
-  @Prop() kebabHandled = false;
-  @Prop() camelHandled = false;
-  @Prop() capsHandled = false;
-  @Prop() pascalHandled = false;
+  @Prop({ mutable: true }) lowercaseHandled = false;
+  @Prop({ mutable: true }) kebabHandled = false;
+  @Prop({ mutable: true }) camelHandled = false;
+  @Prop({ mutable: true }) capsHandled = false;
+  @Prop({ mutable: true }) pascalHandled = false;
 
   render() {
     return (

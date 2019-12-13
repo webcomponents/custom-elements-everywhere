@@ -5,7 +5,7 @@ import { Component, Host, h, Method, Prop } from "@stencil/core";
   shadow: true
 })
 export class ComponentWithDifferentViews {
-  @Prop() showWC = true;
+  @Prop({ mutable: true }) showWC = true;
 
   @Method()
   async toggle() {
