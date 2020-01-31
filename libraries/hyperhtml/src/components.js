@@ -75,6 +75,7 @@ export const ComponentWithProperties = (root) => hyper(root)`
       str=${'hyperHTML'}
       arr=${['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']}
       obj=${{org: 'viperHTML', repo: 'hyperHTML'}}
+      value=${new Date(1985, 9, 26, 9, 0)}
     ></ce-with-properties>
   </div>`;
 

@@ -30,6 +30,12 @@ class ComponentWithProperties extends PolymerElement {
         value: function() {
           return { org: "polymer", repo: "polymer" };
         }
+      },
+      value: {
+        type: Date,
+        value: function() {
+          return new Date(1985, 9, 26, 9, 0);
+        }
       }
     };
   }
@@ -42,6 +48,7 @@ class ComponentWithProperties extends PolymerElement {
           str="[[str]]"
           arr="[[arr]]"
           obj="[[obj]]"
+          value="[[value]]"
         ></ce-with-properties>
       </div>
     `;

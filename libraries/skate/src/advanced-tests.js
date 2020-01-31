@@ -66,6 +66,16 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "skatejs", repo: "skatejs" });
     });
+
+    it("will pass Date in the 'value' property", async function() {
+      this.weight = 2;
+      let root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await Promise.resolve();
+      let wc = root.shadowRoot.querySelector("#wc");
+      let data = wc.value;
+      expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", function() {

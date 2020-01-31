@@ -1,4 +1,4 @@
-<ce-with-properties id="wc" {bool} {num} {str} {arr} {obj}></ce-with-properties>
+<ce-with-properties id="wc" {bool} {num} {str} {arr} {obj} {value}></ce-with-properties>
 
 <script>
     export default {
@@ -8,7 +8,8 @@
                 num: 42,
                 str: 'svelte',
                 arr: ['s', 'v', 'e', 'l', 't', 'e'],
-                obj: { org: 'sveltejs', repo: 'svelte' }
+                obj: { org: 'sveltejs', repo: 'svelte' },
+                value: new Date(1985, 9, 26, 9, 0)
             }
         }
     }

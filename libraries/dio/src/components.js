@@ -91,7 +91,8 @@ export class ComponentWithProperties extends Component {
       num: 42,
       str: 'DIO',
       arr: ['D', 'I', 'O'],
-      obj: { org: 'thysultan', repo: 'dio.js' }
+      obj: { org: 'thysultan', repo: 'dio.js' },
+      value: new Date(1985, 9, 26, 9, 0)
     };
     return (
       <div>
@@ -101,6 +102,7 @@ export class ComponentWithProperties extends Component {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          value={data.value}
         ></ce-with-properties>
       </div>
     );

@@ -62,7 +62,8 @@ export const ComponentWithProperties = () => {
       num: 42,
       str: 'Surplus',
       arr: ['S', 'u', 'r', 'p', 'l', 'u', 's'],
-      obj: { org: 'adam.haile@gmail.com', repo: 'surplus' }
+      obj: { org: 'adam.haile@gmail.com', repo: 'surplus' },
+      value: new Date(1985, 9, 26, 9, 0)
     };
     return (
       <div>
@@ -72,6 +73,7 @@ export const ComponentWithProperties = () => {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          value={data.value}
         ></ce-with-properties>
       </div>
     );

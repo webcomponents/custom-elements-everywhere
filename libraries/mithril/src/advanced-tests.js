@@ -61,6 +61,13 @@ describe("advanced support", function() {
       let wc = root.querySelector("#wc");
       expect(wc.obj).to.eql({ org: "MithrilJS", repo: "mithril.js" });
     });
+
+    it("will pass Date in the 'value' property", async function() {
+      this.weight = 2;
+      m.mount(root, ComponentWithProperties());
+      let wc = root.querySelector("#wc");
+      expect(wc.value).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", function() {

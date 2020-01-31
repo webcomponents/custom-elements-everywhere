@@ -65,6 +65,14 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "facebook", repo: "react" });
     });
+
+    it("will pass Date in the 'value' property", function() {
+      this.weight = 2;
+      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let wc = root.wc;
+      let data = wc.value;
+      expect(data).to.eql(new Date(1985, 9, 26, 9, 0));
+    });
   });
 
   describe("events", function() {
