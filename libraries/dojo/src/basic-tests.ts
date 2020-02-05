@@ -25,8 +25,7 @@ import {
   ComponentWithImperativeEvent
 } from "./components";
 
-import renderer from "@dojo/framework/widget-core/vdom";
-import { w } from "@dojo/framework/widget-core/d";
+import renderer, { w } from "@dojo/framework/core/vdom";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -76,11 +75,15 @@ describe("basic support", function() {
       expectHasChildren(wc);
     });
 
-    it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", function() {
+    it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
       const r = renderer(() => w(ComponentWithChildrenRerender, {}));
       r.mount({ domNode: scratch, sync: true });
-      const wc = document.querySelector("ce-with-children");
+      const wc = document.querySelector("ce-with-children") as HTMLElement;
+      expect(wc.innerHTML).to.eq('1');
+      expectHasChildren(wc);
+      await Promise.resolve();
+      expect(wc.innerHTML).to.eq('2');
       expectHasChildren(wc);
     });
 
@@ -88,7 +91,14 @@ describe("basic support", function() {
       this.weight = 3;
       const r = renderer(() => w(ComponentWithDifferentViews, {}));
       r.mount({ domNode: scratch, sync: true });
-      const wc = document.querySelector("ce-with-children");
+      let wc = document.querySelector("ce-with-children");
+      expectHasChildren(wc);
+      const toggle = document.querySelector("#toggle") as HTMLButtonElement;
+      toggle.click();
+      const dummy = document.querySelector("#dummy") as HTMLDivElement;
+      expect(dummy.innerHTML).to.eq('Dummy view');
+      toggle.click();
+      wc = document.querySelector("ce-with-children");
       expectHasChildren(wc);
     });
   });

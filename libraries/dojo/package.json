@@ -1,13 +1,14 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=@dojo/core karma start",
+    "test": "cross-env LIBRARY_NAME=@dojo/framework karma start",
     "build": "npm run test; DIST=../../docs/libraries/dojo && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "dependencies": {
-    "@dojo/framework": "5.0.4",
+    "@dojo/framework": "^6.0.0",
     "@webcomponents/webcomponentsjs": "1.2.6"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.3",
     "@types/expect": "1.20.4",
     "@types/mocha": "5.2.7",
     "babel-core": "6.26.3",
