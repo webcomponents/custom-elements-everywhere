@@ -26,7 +26,7 @@ import WCR from './WithChildrenRender.elm';
 import WDV from './WithDifferentViews.elm';
 import WP from './WithProperties.elm';
 import WIE from './WithImperativeEvent.elm';
-import WDE from './WithDeclartaiveEvent.elm';
+import WDE from './WithDeclarativeEvent.elm';
 
 export const componentWithoutChildren = (node) =>
   WoC.Elm.WithoutChildren.init({ node });
@@ -48,4 +48,4 @@ export const componentWithImperativeEvent = (node) =>
   WIE.Elm.WithImperativeEvent.init({ node });
 
 export const componentWithDeclarativeEvent = (node) =>
-  WDE.Elm.WithDeclartaiveEvent.init({ node });
+  WDE.Elm.WithDeclarativeEvent.init({ node });

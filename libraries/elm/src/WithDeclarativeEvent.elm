@@ -1,4 +1,4 @@
-module WithDeclartaiveEvent exposing (main)
+module WithDeclarativeEvent exposing (main)
 
 import Browser
 import Html exposing (Html)
