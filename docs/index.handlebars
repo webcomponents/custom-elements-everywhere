@@ -111,7 +111,7 @@ limitations under the License.
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Library</p>
-                  <p class="title">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></p>
+                  <h3 class="title">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></h3>
                 </div>
               </div>
               <div class="level-item has-text-centered">
@@ -146,7 +146,7 @@ limitations under the License.
           </div>
           <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
             <div class="box">
-              <h3 class="title is-3">Related Issues</h3>
+              <h4 class="title is-3">Related Issues</h4>
               {{#if issues}}
                 {{#each issues}}
                   <article class="media">
@@ -166,7 +166,7 @@ limitations under the License.
                 {{else}}
                   <div class="has-text-centered">
                     <img src="images/smiley.svg" alt="" width="256">
-                    <h4 class="title is-4 no-issues-caption">Yay! No open issues!</h4>
+                    <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
                   </div>
               {{/if}}
             </div>
