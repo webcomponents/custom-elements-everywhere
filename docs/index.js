@@ -27,6 +27,7 @@ const libraryMap = {
   hybrids: "hybrids",
 	hyperhtml: "hyperHTML",
 	litelement: "Lit Element",
+	lselement: "LS-Element",
   mithril: "Mithril",
   polymer: "Polymer",
   preact: "Preact",
