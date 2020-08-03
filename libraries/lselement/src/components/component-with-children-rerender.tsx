@@ -5,7 +5,7 @@ import 'ce-with-children';
 export class ComponentWithChildrenRerender extends HTMLElement implements LSCustomElement {
 	@Attribute() count = 1;
 
-	componentWillMount() {
+	componentDidMount() {
 		this.count++;
 	}
 

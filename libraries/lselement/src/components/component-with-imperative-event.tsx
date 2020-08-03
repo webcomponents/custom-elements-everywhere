@@ -6,7 +6,7 @@ export class ComponentWithImperativeEvent extends HTMLElement implements LSCusto
   @Attribute() eventHandled = false;
   @Child('wc') customEl: HTMLElement;
 
-  componentWillMount() {
+  componentDidMount() {
     this.customEl.addEventListener(
       "camelEvent",
       () => { this.eventHandled = true }
