@@ -25,6 +25,7 @@ import {
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
 } from "./components";
+import { tick } from "svelte";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -75,23 +76,25 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
-      let component = new ComponentWithChildrenRerender({ target: scratch });
+      new ComponentWithChildrenRerender({ target: scratch });
       let wc = scratch.querySelector("#wc");
-      await Promise.resolve();
+      await tick();
       expectHasChildren(wc);
       expect(wc.textContent.includes("2")).to.be.true;
     });
 
-    it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
+    it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", async function() {
       this.weight = 3;
       let component = new ComponentWithDifferentViews({ target: scratch });
       let wc = scratch.querySelector("#wc");
       expectHasChildren(wc);
       component.toggle();
+      await tick();
       let dummy = scratch.querySelector("#dummy");
       expect(dummy).to.exist;
       expect(dummy.textContent).to.eql("Dummy view");
       component.toggle();
+      await tick();
       wc = scratch.querySelector("#wc");
       expectHasChildren(wc);
     });
@@ -154,7 +157,7 @@ describe("basic support", function() {
   });
 
   describe("events", function() {
-    it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
+    it("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
       this.weight = 3;
       new ComponentWithImperativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
@@ -162,6 +165,7 @@ describe("basic support", function() {
       let handled = scratch.querySelector("#handled");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
   });

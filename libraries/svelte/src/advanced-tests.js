@@ -20,6 +20,7 @@ import {
   ComponentWithProperties,
   ComponentWithDeclarativeEvent
 } from "./components";
+import { tick } from "svelte";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -59,7 +60,7 @@ describe("advanced support", function() {
   });
 
   describe("events", function() {
-    it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
+    it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
       this.weight = 2;
       new ComponentWithDeclarativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
@@ -67,46 +68,51 @@ describe("advanced support", function() {
       let handled = scratch.querySelector("#lowercase");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
+    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       new ComponentWithDeclarativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#kebab");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
+    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       new ComponentWithDeclarativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#camel");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
+    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       new ComponentWithDeclarativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#caps");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
 
-    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
+    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
       new ComponentWithDeclarativeEvent({ target: scratch });
       let wc = scratch.querySelector("#wc");
       let handled = scratch.querySelector("#pascal");
       expect(handled.textContent).to.eql("false");
       wc.click();
+      await tick();
       expect(handled.textContent).to.eql("true");
     });
   });
