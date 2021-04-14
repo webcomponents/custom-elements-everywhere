@@ -20,7 +20,7 @@ import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-import {Component, register, createComponent, useButton, ButtonComponent, mixin, createButtonComponent} from 'lotusjs-components';
+import {Component, register, createComponent, useButton, ButtonComponent, mixin} from 'lotusjs-components';
 import compose from 'ramda/es/compose';
 
 // create component using compose, see build in button and image gallery for more interesting example

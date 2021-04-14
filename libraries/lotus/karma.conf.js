@@ -17,31 +17,33 @@
 
 var webpack = require('webpack');
 var path = require('path');
-
+// TODO install FF and comment in the FF headless stuff
 module.exports = function(config) {
   config.set({
     plugins: [
       'karma-chrome-launcher',
-      'karma-firefox-launcher',
+      //'karma-firefox-launcher',
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-mocha')),
       'karma-sourcemap-loader',
       'karma-webpack',
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
     ],
-    browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
-    customLaunchers: {
+    //browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
+    // browsers: ['ChromeHeadless'], // run in Chrome and Firefox
+    browsers: ['Chrome'], // run in Chrome
+    /*customLaunchers: {
       FirefoxHeadless: {
         base: 'Firefox',
         flags: [ '-headless' ],
         displayName: 'FirefoxHeadless'
       },
-    },
+    },*/
     singleRun: true, // set this to false to leave the browser open
-    frameworks: ['mocha'], // use the mocha test framework
+    frameworks: ['mocha'], // use the mocha test framework frameworks: ["jasmine", "webpack"]
     files: [
       { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'), watched: false },
-      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'), watched: false },
+      { pattern: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js'), watched: false },
       'tests.webpack.ts' // just load this file
     ],
     preprocessors: {
@@ -50,16 +52,16 @@ module.exports = function(config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
+    //reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
     htmlReporter: {
       outputFile: path.resolve(__dirname, './results/results.html'),
       pageTitle: 'LotusJS + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
     },
-    jsonResultReporter: {
+    /*jsonResultReporter: {
       outputFile: path.resolve(__dirname, './results/results.json')
-    },
+    },*/
     webpack: {
       mode: 'development',
       // devtool: 'inline-source-map', // just do inline source maps instead of the default
@@ -74,12 +76,20 @@ module.exports = function(config) {
         rules: [
           {
             test: /\.js$/,
-            loaders: ['babel-loader'],
+            use: {
+              loader: 'babel-loader',
+            },
             exclude: /node_modules/
           },
-          { test: /\.js?$/, loader: 'umd-compat-loader' },
           {
-            test: /.*\.ts(x)?$/, use: [
+            test: /\.js?$/,
+            use: {
+              loader: 'umd-compat-loader',
+            },
+          },
+          {
+            test: /.*\.ts(x)?$/,
+            use: [
               'umd-compat-loader',
               {
                 loader: 'ts-loader',
