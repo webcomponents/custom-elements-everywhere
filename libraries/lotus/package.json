@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=lotusjs-components karma start",
+    "test": "cross-env LIBRARY_NAME=lotus karma start",
     "build": "npm run test"
   },
   "dependencies": {
+    "@types/ramda": "^0.27.40",
     "@webcomponents/webcomponentsjs": "1.3.3",
     "lotusjs-components": "3.0.0"
   },
@@ -16,16 +17,16 @@
     "babel-preset-es2015": "6.24.1",
     "chai": "4.3.4",
     "cross-env": "7.0.2",
-    "karma": "5.2.3",
+    "karma": "^5.2.3",
     "karma-chrome-launcher": "3.1.0",
     "karma-firefox-launcher": "2.1.0",
     "karma-sourcemap-loader": "0.3.8",
-    "karma-webpack": "2.0.13",
+    "karma-webpack": "4.0.2",
     "mocha": "6.2.3",
     "ramda": "^0.27.1",
     "ts-loader": "6.2.2",
     "typescript": "3.9.9",
     "umd-compat-loader": "2.1.2",
-    "webpack": "5.0.0"
+    "webpack": "4.46.0"
   }
 }
