@@ -20,11 +20,12 @@ import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-import {Component, register, createComponent, useButton, ButtonComponent, mixin} from 'lotusjs-components';
+import {Component, register, createComponent, useButton, getTagDef, ButtonComponent, mixin} from 'lotusjs-components';
 import compose from 'ramda/es/compose';
 
 // create component using compose, see build in button and image gallery for more interesting example
 const useComponent: () => Component = compose(createComponent);
+// create a toggle component to test clicks
 export const createToggleComponent = (component: Component): ButtonComponent => {
     const clone =  mixin<ButtonComponent>(component,{});
     const onClick = clone.onClick;
@@ -39,6 +40,28 @@ export const createToggleComponent = (component: Component): ButtonComponent => 
     return clone;
 };
 const useToggleComponent: () => ButtonComponent = compose(createToggleComponent, useButton);
+// create a toggle component to test clicks
+export const createEventComponent = (component: Component): Component => {
+    const clone =  mixin<Component>(component,{});
+    clone.onSkinPartAdded = (part: string) => {
+        switch (part) {
+            case 'ceWithEvents':
+                console.log(`Lotus.ButtonComponent.prototype.onSkinPartAdded: part: ${part}`);
+                const handler = (event: Event) => {
+                    const events = clone.skinPartMap?.get(part)?.getAttribute('events') || '';
+                    clone.skinPartMap?.get(part)?.setAttribute('events', events.concat(`${event.type} `));
+                };
+                clone.skinPartMap?.get(part)?.addEventListener('lowercaseevent', handler);
+                clone.skinPartMap?.get(part)?.addEventListener('kebab-event', handler);
+                clone.skinPartMap?.get(part)?.addEventListener('camelEvent', handler);
+                clone.skinPartMap?.get(part)?.addEventListener('CAPSevent', handler);
+                clone.skinPartMap?.get(part)?.addEventListener('PascalEvent', handler);
+                break;
+        }
+    };
+    return clone;
+};
+const useEventComponent: () => Component = compose(createEventComponent, createComponent);
 const render = async (tagName: string, templateHtml: string, component: () => Component ) => {
     const template = document.createElement('div');
     template.innerHTML = templateHtml;
@@ -52,7 +75,10 @@ const render = async (tagName: string, templateHtml: string, component: () => Co
         },
         tagFunction: component,
     };
-    await register(tagDef);
+    if (!getTagDef(tagDef.tagName)) {
+        await register(tagDef);
+    }
+
     // create our component
     const element = document.createElement(tagName);
     document.body.append(element);
@@ -111,10 +137,30 @@ export const ComponentWithDifferentViews = async () => {
     );
 };
 
-export const ComponentWithProperties = undefined;
+export const ComponentWithProperties = async () => {
+    return await render(
+        'lotus-component-with-props',
+        '<template id="app">\n' +
+        '  <div data-component-root="root">\n' +
+        '    <ce-with-properties bool="true" num="42" str="lotus"/>\n' +
+        '  </div>\n' +
+        '</template>\n',
+        useComponent
+    );
+};
 
 export const ComponentWithUnregistered = undefined;
 
-export const ComponentWithImperativeEvent = undefined;
+export const ComponentWithImperativeEvent = async () => {
+    return await render(
+        'lotus-component-with-events',
+        '<template id="app">\n' +
+        '  <div data-component-root="root">\n' +
+        '    <ce-with-event data-skin-part="ceWithEvents"/>\n' +
+        '  </div>\n' +
+        '</template>\n',
+        useEventComponent
+    );
+};
 
 export const ComponentWithDeclarativeEvent = undefined;

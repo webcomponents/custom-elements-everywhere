@@ -21,8 +21,8 @@ import {
   ComponentWithChildren,
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
-  // ComponentWithProperties,
-  // ComponentWithImperativeEvent
+  ComponentWithProperties,
+  ComponentWithImperativeEvent
 } from "./components";
 
 
@@ -96,39 +96,42 @@ describe("basic support", function() {
     });
   });
 
-  xdescribe("attributes and properties", function() {
-    xit("will pass boolean data as either an attribute or a property", async function() {
+  describe("attributes and properties", function() {
+
+    it("will pass boolean data as either an attribute or a property", async function() {
       this.weight = 3;
-      // TODO
-      const wc = document.querySelector("ce-with-properties");
-      expect((wc as any).bool).to.be.true;
+      const element = await ComponentWithProperties();
+      const wc = element.shadowRoot?.querySelector("ce-with-properties");
+      const data = Boolean(wc?.getAttribute("bool"));
+      expect(data).equal(true);
     });
 
-    xit("will pass numeric data as either an attribute or a property", async function() {
+    it("will pass numeric data as either an attribute or a property", async function() {
       this.weight = 3;
-      // TODO
-      const wc = document.querySelector("ce-with-properties");
-      expect((wc as any).num).to.eql(42);
+      const element = await ComponentWithProperties();
+      const wc = element.shadowRoot?.querySelector("ce-with-properties");
+      const data = Number(wc?.getAttribute("num"));
+      expect(data).equal(42);
     });
 
-    xit("will pass string data as either an attribute or a property", async function() {
+    it("will pass string data as either an attribute or a property", async function() {
       this.weight = 3;
-      // TODO
-      const wc: any = document.querySelector("ce-with-properties");
-      const data = wc.getAttribute("str");
-      expect(data).to.eql("Dojo");
+      const element = await ComponentWithProperties();
+      const wc = element.shadowRoot?.querySelector("ce-with-properties");
+      const data = wc?.getAttribute("str");
+      expect(data).equal('lotus');
     });
   });
 
-  xdescribe("events", function() {
-    xit("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
+  describe("events", function() {
+    it("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
       this.weight = 3;
-      // TODO
-      const wc: any = document.querySelector("ce-with-event");
-      let handledResult: any = document.querySelector("#eventHandled");
-      expect(handledResult.handled).to.be.false;
+      const element = await ComponentWithImperativeEvent();
+      const wc = element.shadowRoot?.querySelector("ce-with-event");
+      // @ts-ignore
       wc.click();
-      expect(handledResult.handled).to.be.true;
+      const data = wc?.getAttribute('events');
+      expect(data).equal('lowercaseevent kebab-event camelEvent CAPSevent PascalEvent ');
     });
   });
 
