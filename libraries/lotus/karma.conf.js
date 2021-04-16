@@ -22,23 +22,21 @@ module.exports = function(config) {
   config.set({
     plugins: [
       'karma-chrome-launcher',
-      //'karma-firefox-launcher',
+      'karma-firefox-launcher',
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-mocha')),
       'karma-sourcemap-loader',
       'karma-webpack',
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-html-reporter')),
       require(path.resolve(__dirname, '../__shared__/karma-plugins/karma-custom-json-reporter'))
     ],
-    //browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
-    // browsers: ['ChromeHeadless'], // run in Chrome and Firefox
-    browsers: ['Chrome'], // run in Chrome
-    /*customLaunchers: {
+    browsers: ['ChromeHeadless', 'FirefoxHeadless'], // run in Chrome and Firefox
+    customLaunchers: {
       FirefoxHeadless: {
         base: 'Firefox',
         flags: [ '-headless' ],
         displayName: 'FirefoxHeadless'
       },
-    },*/
+    },
     singleRun: true, // set this to false to leave the browser open
     frameworks: ['mocha'], // use the mocha test framework frameworks: ["jasmine", "webpack"]
     files: [
@@ -52,19 +50,19 @@ module.exports = function(config) {
     mime: {
       'text/x-typescript': ['ts']
     },
-    //reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
+    reporters: ['dots', 'custom-html', 'custom-json'], // report results in these formats
     htmlReporter: {
       outputFile: path.resolve(__dirname, './results/results.html'),
       pageTitle: 'LotusJS + Custom Elements',
       groupSuites: true,
       useCompactStyle: true
     },
-    /*jsonResultReporter: {
+    jsonResultReporter: {
       outputFile: path.resolve(__dirname, './results/results.json')
-    },*/
+    },
     webpack: {
       mode: 'development',
-      // devtool: 'inline-source-map', // just do inline source maps instead of the default
+      devtool: 'inline-source-map', // just do inline source maps instead of the default
       resolve: {
         extensions: ['.js', '.ts'],
         modules: [

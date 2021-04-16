@@ -22,7 +22,7 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
-  ComponentWithImperativeEvent
+  ComponentWithImperativeEvent, CEWithProperties
 } from "./components";
 
 
@@ -127,8 +127,7 @@ describe("basic support", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
       this.weight = 3;
       const element = await ComponentWithImperativeEvent();
-      const wc = element.shadowRoot?.querySelector("ce-with-event");
-      // @ts-ignore
+      const wc: CEWithProperties = element.shadowRoot?.querySelector("ce-with-event") as CEWithProperties;
       wc.click();
       const data = wc?.getAttribute('events');
       expect(data).equal('lowercaseevent kebab-event camelEvent CAPSevent PascalEvent ');

@@ -62,7 +62,8 @@ export const createEventComponent = (component: Component): Component => {
     return clone;
 };
 const useEventComponent: () => Component = compose(createEventComponent, createComponent);
-const render = async (tagName: string, templateHtml: string, component: () => Component ) => {
+// simple util to render
+const render = async (tagName: string, templateHtml: string, component: () => Component, props?:(element: HTMLElement) => void ) => {
     const template = document.createElement('div');
     template.innerHTML = templateHtml;
     const tagDef = {
@@ -78,9 +79,12 @@ const render = async (tagName: string, templateHtml: string, component: () => Co
     if (!getTagDef(tagDef.tagName)) {
         await register(tagDef);
     }
-
     // create our component
     const element = document.createElement(tagName);
+    // transfer properties
+    if (props) {
+        props(element);
+    }
     document.body.append(element);
     return element;
 }
@@ -149,7 +153,22 @@ export const ComponentWithProperties = async () => {
     );
 };
 
-export const ComponentWithUnregistered = undefined;
+export const ComponentWithPropertiesAdvanced = async () => {
+    return await render(
+        'lotus-component-with-props-advanced',
+        '<template id="app">\n' +
+        '  <div data-component-root="root">\n' +
+        '    <ce-with-properties bool="true" num="42" str="lotus"/>\n' +
+        '  </div>\n' +
+        '</template>\n',
+        useComponent,
+        (element) => {
+            const ceWithProps = element.shadowRoot?.querySelector('ce-with-properties');
+            (ceWithProps as CEWithProperties).arr = ['l', 'o', 't', 'u', 's'];
+            (ceWithProps as CEWithProperties).obj = { org: "lotus", repo: "lotus" };
+        }
+    );
+};
 
 export const ComponentWithImperativeEvent = async () => {
     return await render(
@@ -163,4 +182,12 @@ export const ComponentWithImperativeEvent = async () => {
     );
 };
 
-export const ComponentWithDeclarativeEvent = undefined;
+export type CEWithProperties = HTMLDivElement & {
+    bool: boolean;
+    num: number;
+    str: string;
+    arr: string[];
+    obj: { [key: string]: string; };
+    click: () => void;
+};
+
