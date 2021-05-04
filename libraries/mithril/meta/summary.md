@@ -1,9 +1,6 @@
 <h4 id="mithril-handling-data">Handling data</h4>
 
-Mithril passes all data to Custom Elements in the form of HTML attributes. For
-primitive data this is fine, but the system breaks down when passing rich data,
-like objects or arrays. In these instances you end up with stringified values
-like <code>some-attr=&quot;[object Object]&quot;</code> which can&#39;t actually be used.
+Mithril performs a `key in element` check to determine whether to assign values as properties or attributes: if the element or any of its prototypes have a property definition for the key in question, the value will be assigned as a property. 
 
 <h4 id="mithril-handling-events">Handling events</h4>
 
