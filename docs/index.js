@@ -22,11 +22,12 @@ const marked = require("marked");
 const libraryMap = {
   angular: "Angular",
   angularjs: "AngularJS (1.x)",
-  dio: 'DIO',
+  dio: "DIO",
   dojo: "Dojo",
   hybrids: "hybrids",
-	hyperhtml: "hyperHTML",
-	litelement: "Lit Element",
+  hyperapp: "Hyperapp",
+  hyperhtml: "hyperHTML",
+  litelement: "Lit Element",
   mithril: "Mithril",
   polymer: "Polymer",
   preact: "Preact",
@@ -48,7 +49,7 @@ hbs.registerPartial(
 
 // Helper to color progress bar based on test scores
 // https://bulma.io/documentation/elements/progress/#colors
-hbs.registerHelper("warning-level", function(score) {
+hbs.registerHelper("warning-level", function (score) {
   if (score > 75) {
     return "is-primary";
   } else if (score > 50) {
