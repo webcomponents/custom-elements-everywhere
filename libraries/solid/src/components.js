@@ -15,7 +15,8 @@
  * limitations under the License.
  */
 
-import { createSignal, createState } from "solid-js";
+import { createSignal } from "solid-js";
+import { createStore } from "solid-js/store";
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
@@ -92,7 +93,7 @@ export const ComponentWithImperativeEvent = () => {
 };
 
 export const ComponentWithDeclarativeEvent = () => {
-  const [state, setState] = createState({
+  const [state, setState] = createStore({
       lowercaseHandled: false,
       kebabHandled: false,
       camelHandled: false,
