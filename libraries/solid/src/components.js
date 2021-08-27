@@ -15,100 +15,112 @@
  * limitations under the License.
  */
 
-import { createSignal, createState } from 'solid-js';
-import 'ce-without-children';
-import 'ce-with-children';
-import 'ce-with-properties';
-import 'ce-with-event';
+import { createSignal } from "solid-js";
+import { createStore } from "solid-js/store";
+import "ce-without-children";
+import "ce-with-children";
+import "ce-with-properties";
+import "ce-with-event";
 
-export const ComponentWithoutChildren = () => <ce-without-children />
+export const ComponentWithoutChildren = () => <ce-without-children />;
 
-export const ComponentWithChildren = () => <ce-with-children />
+export const ComponentWithChildren = () => <ce-with-children />;
 
 export const ComponentWithChildrenRerender = () => {
   const [count, setCount] = createSignal(1);
   Promise.resolve().then(() => setCount(count() + 1));
   return <ce-with-children>{count}</ce-with-children>;
-}
+};
 
 export const ComponentWithDifferentViews = ({ setToggle }) => {
-  const [show, setShow]  = createSignal(true);
+  const [show, setShow] = createSignal(true);
   setToggle(() => setShow(!show()));
-  return (<Show when={(show())} fallback={<div id='dummy'>Dummy view</div>}>
-    <ce-with-children id='wc' />
-  </Show>);
-}
+  return (
+    <Show when={show()} fallback={<div id="dummy">Dummy view</div>}>
+      <ce-with-children id="wc" />
+    </Show>
+  );
+};
 
 export const ComponentWithProperties = () => {
   const data = {
     bool: true,
     num: 42,
-    str: 'Solid',
-    arr: ['S', 'o', 'l', 'i', 'd'],
-    obj: { org: 'ryansolid', repo: 'solid' }
+    str: "Solid",
+    arr: ["S", "o", "l", "i", "d"],
+    obj: { org: "ryansolid", repo: "solid" },
   };
-  return (<ce-with-properties
-    bool={data.bool}
-    num={data.num}
-    str={data.str}
-    arr={data.arr}
-    obj={data.obj}
-  />);
-}
+  return (
+    <ce-with-properties
+      bool={data.bool}
+      num={data.num}
+      str={data.str}
+      arr={data.arr}
+      obj={data.obj}
+    />
+  );
+};
 
 export const ComponentWithUnregistered = () => {
   const data = {
     bool: true,
     num: 42,
-    str: 'Solid',
-    arr: ['S', 'o', 'l', 'i', 'd'],
-    obj: { org: 'ryansolid', repo: 'solid' }
+    str: "Solid",
+    arr: ["S", "o", "l", "i", "d"],
+    obj: { org: "ryansolid", repo: "solid" },
   };
-  return (<ce-unregistered
-    bool={data.bool}
-    num={data.num}
-    str={data.str}
-    arr={data.arr}
-    obj={data.obj}
-  />);
-}
+  return (
+    <ce-unregistered
+      bool={data.bool}
+      num={data.num}
+      str={data.str}
+      arr={data.arr}
+      obj={data.obj}
+    />
+  );
+};
 
 export const ComponentWithImperativeEvent = () => {
   const [eventHandled, setHandled] = createSignal(false),
     handleTestEvent = () => setHandled(true),
-    handleCamel = wc => wc.addEventListener('camelEvent', handleTestEvent);
-  return (<>
-    <div>{(eventHandled().toString())}</div>
-    <ce-with-event id="wc" forwardRef={handleCamel} />
-  </>);
-}
+    handleCamel = (wc) => wc.addEventListener("camelEvent", handleTestEvent);
+  return (
+    <>
+      <div>{eventHandled().toString()}</div>
+      <ce-with-event id="wc" ref={handleCamel} />
+    </>
+  );
+};
 
 export const ComponentWithDeclarativeEvent = () => {
-  const [state, setState] = createState({
+  const [state, setState] = createStore({
       lowercaseHandled: false,
       kebabHandled: false,
       camelHandled: false,
       capsHandled: false,
-      pascalHandled: false
+      pascalHandled: false,
     }),
-    handleLowercaseEvent = () => setState('lowercaseHandled', true),
-    handleKebabEvent = () => setState('kebabHandled', true),
-    handleCamelEvent = () => setState('camelHandled', true),
-    handleCapsEvent = () => setState('capsHandled', true),
-    handlePascalEvent = () => setState('pascalHandled', true);
+    handleLowercaseEvent = () => setState("lowercaseHandled", true),
+    handleKebabEvent = () => setState("kebabHandled", true),
+    handleCamelEvent = () => setState("camelHandled", true),
+    handleCapsEvent = () => setState("capsHandled", true),
+    handlePascalEvent = () => setState("pascalHandled", true);
 
-  return (<>
-    <div id="lowercase">{(state.lowercaseHandled.toString())}</div>
-    <div id="kebab">{(state.kebabHandled.toString())}</div>
-    <div id="camel">{(state.camelHandled.toString())}</div>
-    <div id="caps">{(state.capsHandled.toString())}</div>
-    <div id="pascal">{(state.pascalHandled.toString())}</div>
-    <ce-with-event id="wc" on={{
-      'lowercaseevent': handleLowercaseEvent,
-      'kebab-event': handleKebabEvent,
-      camelEvent: handleCamelEvent,
-      CAPSevent: handleCapsEvent,
-      PascalEvent: handlePascalEvent
-    }}/>
-  </>);
-}
+  return (
+    <>
+      <div id="lowercase">{state.lowercaseHandled.toString()}</div>
+      <div id="kebab">{state.kebabHandled.toString()}</div>
+      <div id="camel">{state.camelHandled.toString()}</div>
+      <div id="caps">{state.capsHandled.toString()}</div>
+      <div id="pascal">{state.pascalHandled.toString()}</div>
+      <ce-with-event
+        id="wc"
+        on:lowercaseevent={handleLowercaseEvent}
+        on:kebab-event={handleKebabEvent}
+        on:camelEvent={handleCamelEvent}
+        on:CAPSevent={handleCapsEvent}
+        on:PascalEvent={handlePascalEvent}
+      />
+    </>
+  );
+};

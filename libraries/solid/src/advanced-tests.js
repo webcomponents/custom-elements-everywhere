@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { render } from 'solid-js/dom';
+import { render } from 'solid-js/web';
 import { expect } from "chai";
 import {
   ComponentWithProperties,
