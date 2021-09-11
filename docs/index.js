@@ -26,6 +26,7 @@ const libraryMap = {
   dojo: "Dojo",
   hybrids: "hybrids",
 	hyperhtml: "hyperHTML",
+	ibta: "Ibyar Aurora",
 	litelement: "Lit Element",
   mithril: "Mithril",
   polymer: "Polymer",
