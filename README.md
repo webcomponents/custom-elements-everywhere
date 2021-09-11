@@ -30,6 +30,7 @@ npm start
 - [Dojo](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo)
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
+- [Ibyar](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/ibyar)
 - [Mithril](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/mithril)
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
