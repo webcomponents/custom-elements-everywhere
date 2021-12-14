@@ -20,7 +20,8 @@ import {
   OnInit,
   OnDestroy,
   ViewChild,
-  ElementRef
+  ElementRef,
+  AfterViewInit,
 } from '@angular/core';
 import 'ce-without-children';
 import 'ce-with-children';
@@ -133,10 +134,10 @@ export class ComponentWithUnregistered {
     </div>
   `
 })
-export class ComponentWithImperativeEvent implements OnInit {
-  @ViewChild('customEl') customEl:ElementRef;
+export class ComponentWithImperativeEvent implements AfterViewInit {
+  @ViewChild('customEl') customEl: ElementRef;
   eventHandled = false;
-  ngOnInit() {
+  ngAfterViewInit() {
     this.handleTestEvent = this.handleTestEvent.bind(this);
     this.customEl.nativeElement
       .addEventListener('camelEvent', this.handleTestEvent);
