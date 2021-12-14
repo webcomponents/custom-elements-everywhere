@@ -24,335 +24,72 @@
       <section>
         <header class="overview">
           <div class="browser title is-6">Browser: Chrome Headless 96.0.4664.93 (Linux x86_64)</div>
-          <div class="timestamp title is-6">Timestamp: 12/14/2021, 9:55:30 PM</div>
+          <div class="timestamp title is-6">Timestamp: 12/14/2021, 10:19:40 PM</div>
           <p class="results title is-6">
-            15 tests / 
-            0 errors / 
-            5 failures / 
+            0 tests / 
+            1 errors / 
+            0 failures / 
             0 skipped / 
-            runtime: 0.065s
+            runtime: 0s
           </p>
         </header>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">basic support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">no children</p>
-              <em class="spec__descrip">can display a Custom Element with no children</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.039s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.012s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">TypeError: Cannot read properties of null (reading 'textContent')<br />    at Context.eval (webpack:///./src/advanced-tests.js?:63:60)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">TypeError: Cannot read properties of null (reading 'textContent')<br />    at Context.eval (webpack:///./src/advanced-tests.js?:73:60)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">TypeError: Cannot read properties of null (reading 'textContent')<br />    at Context.eval (webpack:///./src/advanced-tests.js?:83:60)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">TypeError: Cannot read properties of null (reading 'textContent')<br />    at Context.eval (webpack:///./src/advanced-tests.js?:93:60)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">TypeError: Cannot read properties of null (reading 'textContent')<br />    at Context.eval (webpack:///./src/advanced-tests.js?:103:60)<br /></p>
-        </div>
         <div class="system-out"><strong>System output:</strong><br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />Chrome Headless 96.0.4664.93 (Linux x86_64) WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
+</div>
+        <div class="system-errors"><strong>Errors:</strong><br />Uncaught Error: Module build failed (from ./node_modules/elm-webpack-loader/index.js):
+Compiler process exited with error Compilation failed
+at webpack:///./src/WithChildren.elm?:1:1
+
+Error: Module build failed (from ./node_modules/elm-webpack-loader/index.js):
+Compiler process exited with error Compilation failed
+    at eval (webpack:///./src/WithChildren.elm?:1:7)
+    at Object../src/WithChildren.elm (/tmp/_karma_webpack_920991/commons.js:462:1)
+    at __webpack_require__ (/tmp/_karma_webpack_920991/runtime.js:31:42)
+    at eval (webpack:///./src/components.js?:21:75)
+    at Module../src/components.js (/tmp/_karma_webpack_920991/commons.js:90:1)
+    at __webpack_require__ (/tmp/_karma_webpack_920991/runtime.js:31:42)
+    at eval (webpack:///./src/basic-tests.js?:3:69)
+    at Module../src/basic-tests.js (/tmp/_karma_webpack_920991/commons.js:79:1)
+    at __webpack_require__ (/tmp/_karma_webpack_920991/runtime.js:31:42)
+    at eval (webpack:///./tests.webpack.js?:18:1)
 </div>
       </section>
       <section>
         <header class="overview">
           <div class="browser title is-6">Browser: FirefoxHeadless</div>
-          <div class="timestamp title is-6">Timestamp: 12/14/2021, 9:55:31 PM</div>
+          <div class="timestamp title is-6">Timestamp: 12/14/2021, 10:19:42 PM</div>
           <p class="results title is-6">
-            15 tests / 
-            0 errors / 
-            5 failures / 
+            0 tests / 
+            1 errors / 
+            0 failures / 
             0 skipped / 
-            runtime: 0.153s
+            runtime: 0s
           </p>
         </header>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">basic support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">no children</p>
-              <em class="spec__descrip">can display a Custom Element with no children</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
-            </div>
-            <div class="spec__status">Passed in 0.005s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.08s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.003s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.023s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.003s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">handled is null<br />@webpack:///./src/advanced-tests.js?:63:10<br /><br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">handled is null<br />@webpack:///./src/advanced-tests.js?:73:10<br /><br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">handled is null<br />@webpack:///./src/advanced-tests.js?:83:10<br /><br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">handled is null<br />@webpack:///./src/advanced-tests.js?:93:10<br /><br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">handled is null<br />@webpack:///./src/advanced-tests.js?:103:10<br /><br /></p>
-        </div>
         <div class="system-out"><strong>System output:</strong><br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
-<br />FirefoxHeadless WARN: 'Compiled in DEBUG mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.'
+</div>
+        <div class="system-errors"><strong>Errors:</strong><br />Error: Module build failed (from ./node_modules/elm-webpack-loader/index.js):
+Compiler process exited with error Compilation failed
+at /tmp/_karma_webpack_920991/commons.js line 462 > eval:1:7
+
+@webpack:///./src/WithChildren.elm?:1:7
+./src/WithChildren.elm@/tmp/_karma_webpack_920991/commons.js:462:1
+__webpack_require__@/tmp/_karma_webpack_920991/runtime.js:31:42
+@webpack:///./src/components.js?:21:94
+./src/components.js@/tmp/_karma_webpack_920991/commons.js:90:1
+__webpack_require__@/tmp/_karma_webpack_920991/runtime.js:31:42
+@webpack:///./src/basic-tests.js?:3:88
+./src/basic-tests.js@/tmp/_karma_webpack_920991/commons.js:79:1
+__webpack_require__@/tmp/_karma_webpack_920991/runtime.js:31:42
+@webpack:///./tests.webpack.js?:18:20
+./tests.webpack.js@/tmp/_karma_webpack_920991/commons.js:100:1
+__webpack_require__@/tmp/_karma_webpack_920991/runtime.js:31:42
+__webpack_exec__@tests.webpack.2513768876.js:12:67
+@tests.webpack.2513768876.js:13:71
+__webpack_require__.O@/tmp/_karma_webpack_920991/runtime.js:65:23
+@tests.webpack.2513768876.js:14:56
+webpackJsonpCallback@/tmp/_karma_webpack_920991/runtime.js:160:46
+@tests.webpack.2513768876.js:10:53
+
 </div>
       </section>
     </div>
