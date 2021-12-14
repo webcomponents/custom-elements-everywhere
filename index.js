@@ -84,14 +84,14 @@ async function runTests() {
   let failed = false;
   for (const library of libraries) {
     const spinner = ora(`Testing ${library.name}`).start();
-    let stderr, stdout;
+    let debugInfo = "";
     try {
       const results = await exec(`npm run build`, {
         cwd: library.testsPath
       });
-      stderr = results.stderr;
-      stdout = results.stdout;
+      debugInfo = `stdout: \n${stdout}\n\nstderr: \n${stderr}\n\n`;
     } catch (err) {
+      debugInfo = err;
       // It's ok, and even expected, that the test command will exit(1) since
       // we expect tests to fail for libraries that don't support custom elements.
       // In this instance we catch the error and ignore it.
@@ -104,7 +104,7 @@ async function runTests() {
     } catch (err) {
       spinner.fail(`${library.name}`);
       console.error(err);
-      console.error(`stdout: \n${stdout}\n\nstderr: \n${stderr}\n\n`);
+      console.error(`More info:\n`, debugInfo);
       failed = true;
     }
   }
