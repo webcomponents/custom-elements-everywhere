@@ -17,18 +17,46 @@ const opts = require("minimist")(process.argv.slice(2), {
 });
 
 /**
+ * A short term list of libraries that we don't test. If we can't
+ * fix it in a reasonable period of time, we should just remove it entirely.
+ */
+const knownBroken = [
+  /* 
+  Error:
+  +-------------------------------------------------------------------------------
+  |  Corrupt File: /home/runner/work/custom-elements-everywhere/custom-elements-everywhere/libraries/elm/elm-stuff/0.19.1/o.dat
+  |   Byte Offset: 331591
+  |       Message: not enough bytes
+  |
+  | Please report this to https://github.com/elm/compiler/issues
+  | Trying to continue anyway.
+  +-------------------------------------------------------------------------------
+  
+  -- CORRUPT CACHE ---------------------------------------------------------------
+  
+  It looks like some of the information cached in elm-stuff/ has been corrupted.
+  
+  Try deleting your elm-stuff/ directory to get unstuck.
+  
+  Note: This almost certainly means that a 3rd party tool (or editor plugin) is
+  causing problems your the elm-stuff/ directory. Try disabling 3rd party tools
+  one by one until you figure out which it is!
+  */
+  'elm'
+];
+
+/**
  * Build the list of directories to exclude from testing.
  * For example, if the user passed in -e angular we should test all libraries
  * except for angular.
  * Note, we always exclude the __shared__ directory which contains resources
  * the libraries use internally for testing.
  */
-let excludes = ["__shared__"];
-if (Array.isArray(opts.exclude)) {
-  excludes = [...excludes, ...opts.exclude];
-} else {
-  excludes.push(opts.exclude);
-}
+const excludes = [
+  "__shared__",
+  ...knownBroken,
+  ...(Array.isArray(opts.exclude) ? opts.exclude : [opts.exclude])
+];
 
 /**
  * Build a data object for each library containing the library's name,
