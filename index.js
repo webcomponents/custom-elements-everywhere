@@ -89,7 +89,7 @@ async function runTests() {
     const spinner = ora(`Testing ${library.name}`).start();
     let debugInfo = "";
     try {
-      const results = await exec(`npm run build`, {
+      const { stdout, stderr } = await exec(`npm run build`, {
         cwd: library.testsPath
       });
       debugInfo = `stdout: \n${stdout}\n\nstderr: \n${stderr}\n\n`;
