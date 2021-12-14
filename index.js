@@ -3,6 +3,7 @@ const { join } = require("path");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const ora = require("ora");
+const chai = require("chai");
 
 /**
  * Supported options:
@@ -10,9 +11,9 @@ const ora = require("ora");
  * -e, --exclude      Exclude a library from tests
  */
 const opts = require("minimist")(process.argv.slice(2), {
-  boolean: "verbose",
+  boolean: ["verbose", "update-goldens"],
   string: "exclude",
-  alias: { v: "verbose", e: "exclude" }
+  alias: { v: "verbose", e: "exclude", u: "update-goldens" }
 });
 
 /**
@@ -82,6 +83,8 @@ async function buildSite() {
  */
 async function runTests() {
   let failed = false;
+  const verb = opts['update-goldens'] ? "Updating test goldens" : "Testing";
+  console.log(`\n### ${verb}\n`);
   for (const library of libraries) {
     const spinner = ora(`Testing ${library.name}`).start();
     let debugInfo = "";
@@ -127,6 +130,28 @@ async function verifyResults(library) {
     throw new Error("Missing results.json");
   if (!fs.existsSync(join(resultsPath, "results.html")))
     throw new Error("missing results.html");
+  compareResultsAgainstGoldens(library);
+}
+
+async function compareResultsAgainstGoldens(library) {
+  let actual;
+  try {
+    actual = JSON.parse(fs.readFileSync(join(library.resultsPath, "results.json"))).summary;
+  } catch (err) {
+    throw new Error(`Could not read results.json for ${library.name}: ${err}`);
+  }
+  const goldensLocation = join(library.metaPath, "expectedResults.json");
+  if (opts['update-goldens']) {
+    fs.writeFileSync(goldensLocation, JSON.stringify(actual, null, 2));
+    return;
+  }
+  let expected;
+  try {
+    expected = JSON.parse(fs.readFileSync(join(library.metaPath, "expectedResults.json")));
+  } catch (err) {
+    throw new Error(`Could not read expectedResults.json for ${library.name}:\n    ${err}`);
+  }
+  chai.assert.deepEqual(actual, expected);
 }
 
 /**
