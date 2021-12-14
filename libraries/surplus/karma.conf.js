@@ -18,7 +18,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     plugins: [
       'karma-chrome-launcher',
@@ -33,7 +33,7 @@ module.exports = function(config) {
     customLaunchers: {
       FirefoxHeadless: {
         base: 'Firefox',
-        flags: [ '-headless' ],
+        flags: ['-headless'],
         displayName: 'FirefoxHeadless'
       },
     },
@@ -71,7 +71,7 @@ module.exports = function(config) {
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader!surplus-loader'
+            use: 'surplus-loader'
           }
         ]
       }
