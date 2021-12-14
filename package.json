@@ -33,12 +33,12 @@
     "build": "node index.js",
     "update-goldens": "node index.js --update-goldens",
     "test": "npm run build",
-    "start": "cd out && http-server -o"
+    "start": "cd out && http-server -o -c-1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
     "fs-extra": "9.1.0",
-    "http-server": "0.13.0",
+    "http-server": "14.0.0",
     "minimist": "1.2.5",
     "ora": "3.4.0",
     "pr-bot": "0.2.0"
