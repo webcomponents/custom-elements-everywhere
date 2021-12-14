@@ -133,7 +133,7 @@ async function verifyResults(library) {
   compareResultsAgainstGoldens(library);
 }
 
-async function compareResultsAgainstGoldens(library) {
+function compareResultsAgainstGoldens(library) {
   let actual;
   try {
     actual = JSON.parse(fs.readFileSync(join(library.resultsPath, "results.json"))).summary;
