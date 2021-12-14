@@ -10,7 +10,7 @@ import {
   ComponentWithImperativeEvent,
   ComponentWithProperties,
   ComponentWithoutChildren
-} from "../dist/module";
+} from "../dist/custom-elements/index";
 
 customElements.define("component-without-children", ComponentWithoutChildren);
 customElements.define("component-with-children", ComponentWithChildren);
