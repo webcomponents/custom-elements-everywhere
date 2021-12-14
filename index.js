@@ -58,13 +58,20 @@ libraries = libraries
  * Run all tests and rebuild the docs site.
  */
 async function buildSite() {
-  await runTests();
+  const failed = await runTests();
+  if (failed) {
+    process.exitCode = 1;
+    console.error('\n\nFailed to generate test results');
+    return;
+  }
+  const spinner = ora('Building site').start();
   try {
-    const spinner = ora('Building site').start();
     await exec("npm run build", { cwd: join(__dirname, "docs") });
     spinner.succeed("Site built successfully!");
   } catch (err) {
     console.error(err);
+    spinner.fail("Failed to build site");
+    process.exitCode = 1;
   }
 }
 
@@ -74,23 +81,21 @@ async function buildSite() {
  * each process that are important for karma to pick up on.
  */
 async function runTests() {
+  let failed = false;
   for (const library of libraries) {
     const spinner = ora(`Testing ${library.name}`).start();
-    // It's ok, and even expected, that the test command will exit(1) since
-    // we expect tests to fail for libraries that don't support custom elements.
-    // In this instance we catch the error and ignore it.
+    let debugInfo = "";
     try {
-      const { stdout, stderr } = await exec(`npm run build`, {
+      const results = await exec(`npm run build`, {
         cwd: library.testsPath
       });
-      if (opts.verbose) {
-        console.log("stdout:", stdout);
-        console.log("stderr:", stderr);
-      }
+      debugInfo = `stdout: \n${stdout}\n\nstderr: \n${stderr}\n\n`;
     } catch (err) {
-      // Safe to ignore.
+      debugInfo = err;
+      // It's ok, and even expected, that the test command will exit(1) since
+      // we expect tests to fail for libraries that don't support custom elements.
+      // In this instance we catch the error and ignore it.
     }
-
     try {
       await verifyResults(library);
       await cleanDocs(library);
@@ -99,8 +104,11 @@ async function runTests() {
     } catch (err) {
       spinner.fail(`${library.name}`);
       console.error(err);
+      console.error(`More info:\n`, debugInfo);
+      failed = true;
     }
   }
+  return failed;
 }
 
 /**
