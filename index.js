@@ -58,13 +58,20 @@ libraries = libraries
  * Run all tests and rebuild the docs site.
  */
 async function buildSite() {
-  await runTests();
+  const failed = await runTests();
+  if (failed) {
+    process.exitCode = 1;
+    console.error('\n\nFailed to generate test results');
+    return;
+  }
+  const spinner = ora('Building site').start();
   try {
-    const spinner = ora('Building site').start();
     await exec("npm run build", { cwd: join(__dirname, "docs") });
     spinner.succeed("Site built successfully!");
   } catch (err) {
     console.error(err);
+    spinner.fail("Failed to build site");
+    process.exitCode = 1;
   }
 }
 
@@ -74,11 +81,9 @@ async function buildSite() {
  * each process that are important for karma to pick up on.
  */
 async function runTests() {
+  let failed = false;
   for (const library of libraries) {
     const spinner = ora(`Testing ${library.name}`).start();
-    // It's ok, and even expected, that the test command will exit(1) since
-    // we expect tests to fail for libraries that don't support custom elements.
-    // In this instance we catch the error and ignore it.
     try {
       const { stdout, stderr } = await exec(`npm run build`, {
         cwd: library.testsPath
@@ -88,9 +93,10 @@ async function runTests() {
         console.log("stderr:", stderr);
       }
     } catch (err) {
-      // Safe to ignore.
+      // It's ok, and even expected, that the test command will exit(1) since
+      // we expect tests to fail for libraries that don't support custom elements.
+      // In this instance we catch the error and ignore it.
     }
-
     try {
       await verifyResults(library);
       await cleanDocs(library);
@@ -99,8 +105,10 @@ async function runTests() {
     } catch (err) {
       spinner.fail(`${library.name}`);
       console.error(err);
+      failed = true;
     }
   }
+  return failed;
 }
 
 /**
