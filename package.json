@@ -30,7 +30,8 @@
     "install-webcomponents": "cd libraries/__shared__/webcomponents && npm ci",
     "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm ci",
     "build": "node index.js",
-    "start": "cd out && http-server -o"
+    "start": "cd out && http-server -o",
+    "test": "npm run build"
   },
   "devDependencies": {
     "fs-extra": "9.1.0",
