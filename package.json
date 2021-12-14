@@ -31,10 +31,12 @@
     "install-riot": "cd libraries/riot && npm ci",
     "install-vue": "cd libraries/vue && npm ci",
     "build": "node index.js",
-    "start": "cd out && http-server -o",
-    "test": "npm run build"
+    "update-goldens": "node index.js --update-goldens",
+    "test": "npm run build",
+    "start": "cd out && http-server -o"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "fs-extra": "9.1.0",
     "http-server": "0.13.0",
     "minimist": "1.2.5",

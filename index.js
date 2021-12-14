@@ -3,6 +3,7 @@ const { join } = require("path");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const ora = require("ora");
+const chai = require("chai");
 
 /**
  * Supported options:
@@ -10,10 +11,39 @@ const ora = require("ora");
  * -e, --exclude      Exclude a library from tests
  */
 const opts = require("minimist")(process.argv.slice(2), {
-  boolean: "verbose",
+  boolean: ["verbose", "update-goldens"],
   string: "exclude",
-  alias: { v: "verbose", e: "exclude" }
+  alias: { v: "verbose", e: "exclude", u: "update-goldens" }
 });
+
+/**
+ * A short term list of libraries that we don't test. If we can't
+ * fix it in a reasonable period of time, we should just remove it entirely.
+ */
+const knownBroken = [
+  /* 
+  Error:
+  +-------------------------------------------------------------------------------
+  |  Corrupt File: /home/runner/work/custom-elements-everywhere/custom-elements-everywhere/libraries/elm/elm-stuff/0.19.1/o.dat
+  |   Byte Offset: 331591
+  |       Message: not enough bytes
+  |
+  | Please report this to https://github.com/elm/compiler/issues
+  | Trying to continue anyway.
+  +-------------------------------------------------------------------------------
+  
+  -- CORRUPT CACHE ---------------------------------------------------------------
+  
+  It looks like some of the information cached in elm-stuff/ has been corrupted.
+  
+  Try deleting your elm-stuff/ directory to get unstuck.
+  
+  Note: This almost certainly means that a 3rd party tool (or editor plugin) is
+  causing problems your the elm-stuff/ directory. Try disabling 3rd party tools
+  one by one until you figure out which it is!
+  */
+  'elm'
+];
 
 /**
  * Build the list of directories to exclude from testing.
@@ -22,12 +52,11 @@ const opts = require("minimist")(process.argv.slice(2), {
  * Note, we always exclude the __shared__ directory which contains resources
  * the libraries use internally for testing.
  */
-let excludes = ["__shared__"];
-if (Array.isArray(opts.exclude)) {
-  excludes = [...excludes, ...opts.exclude];
-} else {
-  excludes.push(opts.exclude);
-}
+const excludes = [
+  "__shared__",
+  ...knownBroken,
+  ...(Array.isArray(opts.exclude) ? opts.exclude : [opts.exclude])
+];
 
 /**
  * Build a data object for each library containing the library's name,
@@ -82,11 +111,13 @@ async function buildSite() {
  */
 async function runTests() {
   let failed = false;
+  const verb = opts['update-goldens'] ? "Updating test goldens" : "Testing";
+  console.log(`\n### ${verb}\n`);
   for (const library of libraries) {
     const spinner = ora(`Testing ${library.name}`).start();
     let debugInfo = "";
     try {
-      const results = await exec(`npm run build`, {
+      const { stdout, stderr } = await exec(`npm run build`, {
         cwd: library.testsPath
       });
       debugInfo = `stdout: \n${stdout}\n\nstderr: \n${stderr}\n\n`;
@@ -127,6 +158,28 @@ async function verifyResults(library) {
     throw new Error("Missing results.json");
   if (!fs.existsSync(join(resultsPath, "results.html")))
     throw new Error("missing results.html");
+  compareResultsAgainstGoldens(library);
+}
+
+function compareResultsAgainstGoldens(library) {
+  let actual;
+  try {
+    actual = JSON.parse(fs.readFileSync(join(library.resultsPath, "results.json"))).summary;
+  } catch (err) {
+    throw new Error(`Could not read results.json for ${library.name}: ${err}`);
+  }
+  const goldensLocation = join(library.metaPath, "expectedResults.json");
+  if (opts['update-goldens']) {
+    fs.writeFileSync(goldensLocation, JSON.stringify(actual, null, 2));
+    return;
+  }
+  let expected;
+  try {
+    expected = JSON.parse(fs.readFileSync(join(library.metaPath, "expectedResults.json")));
+  } catch (err) {
+    throw new Error(`Could not read expectedResults.json for ${library.name}:\n    ${err}`);
+  }
+  chai.assert.deepEqual(actual, expected);
 }
 
 /**
