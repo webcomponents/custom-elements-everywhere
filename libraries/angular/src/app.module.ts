@@ -17,7 +17,7 @@
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import {
@@ -34,7 +34,7 @@ import {
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule
   ],
   declarations: [
@@ -50,5 +50,5 @@ import {
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-  
+
 }
