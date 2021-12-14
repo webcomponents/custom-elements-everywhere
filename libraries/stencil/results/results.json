@@ -21,17 +21,17 @@
     "browsers": [
         {
             "browser": {
-                "id": "32788818",
-                "fullName": "FirefoxHeadless",
-                "name": "FirefoxHeadless",
+                "id": "65433880",
+                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/96.0.4664.93 Safari/537.36",
+                "name": "Chrome Headless 96.0.4664.93 (Linux x86_64)",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1639520452229,
+                    "startTime": 1639521467596,
                     "total": 0,
                     "success": 0,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 621,
+                    "totalTime": 373,
                     "netTime": 0,
                     "error": true,
                     "disconnected": false
@@ -41,23 +41,23 @@
                 "disconnectDelay": 2000
             },
             "errors": [
-                "Error: Cannot find module '../dist/module'\nat tests.webpack.js line 625 > eval:11:79\n\nwebpackMissingModule@webpack:///./src/components.js?:11:79\n@webpack:///./src/components.js?:11:168\n./src/components.js@tests.webpack.js:625:1\n__webpack_require__@tests.webpack.js:20:30\n@webpack:///./src/basic-tests.js?:3:20\n./src/basic-tests.js@tests.webpack.js:613:1\n__webpack_require__@tests.webpack.js:20:30\n@webpack:///./tests.webpack.js?:21:20\n./tests.webpack.js@tests.webpack.js:637:1\n__webpack_require__@tests.webpack.js:20:30\n@tests.webpack.js:84:18\n@tests.webpack.js:87:10\n\n"
+                "Uncaught Error: Cannot find module '../dist/custom-elements/index'\nat webpack:///./src/components.js?:10:144\n\nError: Cannot find module '../dist/custom-elements/index'\n    at webpackMissingModule (webpack:///./src/components.js?:10:50)\n    at eval (webpack:///./src/components.js?:10:154)\n    at Module../src/components.js (/tmp/_karma_webpack_657503/commons.js:90:1)\n    at __webpack_require__ (/tmp/_karma_webpack_657503/runtime.js:31:42)\n    at eval (webpack:///./src/basic-tests.js?:2:72)\n    at Module../src/basic-tests.js (/tmp/_karma_webpack_657503/commons.js:79:1)\n    at __webpack_require__ (/tmp/_karma_webpack_657503/runtime.js:31:42)\n    at eval (webpack:///./tests.webpack.js?:18:1)\n    at Object../tests.webpack.js (/tmp/_karma_webpack_657503/commons.js:111:1)\n    at __webpack_require__ (/tmp/_karma_webpack_657503/runtime.js:31:42)\n"
             ],
             "results": []
         },
         {
             "browser": {
-                "id": "93363745",
-                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/96.0.4664.93 Safari/537.36",
-                "name": "HeadlessChrome 96.0.4664 (Linux 0.0.0)",
+                "id": "75366925",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1639520451027,
+                    "startTime": 1639521469440,
                     "total": 0,
                     "success": 0,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 207,
+                    "totalTime": 683,
                     "netTime": 0,
                     "error": true,
                     "disconnected": false
@@ -67,13 +67,13 @@
                 "disconnectDelay": 2000
             },
             "errors": [
-                "Uncaught Error: Cannot find module '../dist/module'\nat webpack:///./src/components.js?:11:158\n\nError: Cannot find module '../dist/module'\n    at webpackMissingModule (webpack:///./src/components.js?:11:79)\n    at eval (webpack:///./src/components.js?:11:168)\n    at Object../src/components.js (tests.webpack.js:625:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n    at eval (webpack:///./src/basic-tests.js?:3:1)\n    at Object../src/basic-tests.js (tests.webpack.js:613:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n    at eval (webpack:///./tests.webpack.js?:21:1)\n    at Object../tests.webpack.js (tests.webpack.js:637:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n"
+                "Error: Cannot find module '../dist/custom-elements/index'\nat /tmp/_karma_webpack_657503/commons.js line 90 > eval:10:50\n\nwebpackMissingModule@webpack:///./src/components.js?:10:50\n@webpack:///./src/components.js?:10:154\n./src/components.js@/tmp/_karma_webpack_657503/commons.js:90:1\n__webpack_require__@/tmp/_karma_webpack_657503/runtime.js:31:42\n@webpack:///./src/basic-tests.js?:2:91\n./src/basic-tests.js@/tmp/_karma_webpack_657503/commons.js:79:1\n__webpack_require__@/tmp/_karma_webpack_657503/runtime.js:31:42\n@webpack:///./tests.webpack.js?:18:20\n./tests.webpack.js@/tmp/_karma_webpack_657503/commons.js:111:1\n__webpack_require__@/tmp/_karma_webpack_657503/runtime.js:31:42\n__webpack_exec__@tests.webpack.1093285933.js:12:67\n@tests.webpack.1093285933.js:13:71\n__webpack_require__.O@/tmp/_karma_webpack_657503/runtime.js:65:23\n@tests.webpack.1093285933.js:14:56\nwebpackJsonpCallback@/tmp/_karma_webpack_657503/runtime.js:160:46\n@tests.webpack.1093285933.js:10:53\n\n"
             ],
             "results": []
         }
     ],
     "library": {
         "name": "@stencil/core",
-        "version": "1.17.4"
+        "version": "2.12.0"
     }
 }
