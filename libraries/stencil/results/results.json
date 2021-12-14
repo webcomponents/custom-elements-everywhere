@@ -1,0 +1,79 @@
+{
+    "summary": {
+        "success": 0,
+        "failed": 0,
+        "skipped": 0,
+        "error": true,
+        "disconnected": false,
+        "exitCode": 1,
+        "score": null,
+        "basicSupport": {
+            "total": 0,
+            "failed": 0,
+            "passed": 0
+        },
+        "advancedSupport": {
+            "total": 0,
+            "failed": 0,
+            "passed": 0
+        }
+    },
+    "browsers": [
+        {
+            "browser": {
+                "id": "11245915",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": "DISCONNECTED",
+                "lastResult": {
+                    "startTime": 1639518998571,
+                    "total": 0,
+                    "success": 0,
+                    "failed": 0,
+                    "skipped": 0,
+                    "totalTime": 505,
+                    "netTime": 0,
+                    "error": true,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0,
+                "noActivityTimeout": 30000,
+                "disconnectDelay": 2000
+            },
+            "errors": [
+                "Error: Cannot find module '../dist/module'\nat tests.webpack.js line 625 > eval:11:79\n\nwebpackMissingModule@webpack:///./src/components.js?:11:79\n@webpack:///./src/components.js?:11:168\n./src/components.js@tests.webpack.js:625:1\n__webpack_require__@tests.webpack.js:20:30\n@webpack:///./src/basic-tests.js?:3:20\n./src/basic-tests.js@tests.webpack.js:613:1\n__webpack_require__@tests.webpack.js:20:30\n@webpack:///./tests.webpack.js?:21:20\n./tests.webpack.js@tests.webpack.js:637:1\n__webpack_require__@tests.webpack.js:20:30\n@tests.webpack.js:84:18\n@tests.webpack.js:87:10\n\n"
+            ],
+            "results": []
+        },
+        {
+            "browser": {
+                "id": "84151901",
+                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/96.0.4664.93 Safari/537.36",
+                "name": "HeadlessChrome 96.0.4664 (Linux 0.0.0)",
+                "state": "DISCONNECTED",
+                "lastResult": {
+                    "startTime": 1639518997147,
+                    "total": 0,
+                    "success": 0,
+                    "failed": 0,
+                    "skipped": 0,
+                    "totalTime": 182,
+                    "netTime": 0,
+                    "error": true,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0,
+                "noActivityTimeout": 30000,
+                "disconnectDelay": 2000
+            },
+            "errors": [
+                "Uncaught Error: Cannot find module '../dist/module'\nat webpack:///./src/components.js?:11:158\n\nError: Cannot find module '../dist/module'\n    at webpackMissingModule (webpack:///./src/components.js?:11:79)\n    at eval (webpack:///./src/components.js?:11:168)\n    at Object../src/components.js (tests.webpack.js:625:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n    at eval (webpack:///./src/basic-tests.js?:3:1)\n    at Object../src/basic-tests.js (tests.webpack.js:613:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n    at eval (webpack:///./tests.webpack.js?:21:1)\n    at Object../tests.webpack.js (tests.webpack.js:637:1)\n    at __webpack_require__ (tests.webpack.js:20:30)\n"
+            ],
+            "results": []
+        }
+    ],
+    "library": {
+        "name": "@stencil/core",
+        "version": "1.17.4"
+    }
+}
