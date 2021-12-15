@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "cross-env LIBRARY_NAME=@stencil/core karma start",
-    "build": "stencil build && npm run test"
+    "build": "rm -rf ./dist/ ./results/ && stencil build && npm run test"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
