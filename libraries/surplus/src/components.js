@@ -46,7 +46,8 @@ export const ComponentWithChildrenRerender = () => {
 export const ComponentWithDifferentViews = () => {
     const showWC = S.data(true),
       toggle = () => showWC(!showWC());
-    let root = <div ref={root}>
+  let root;
+  root = <div ref={root}>
         {showWC() ? (
           <ce-with-children ref={root.wc}></ce-with-children>
         ) : (
