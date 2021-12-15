@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from "lit";
 import "ce-with-properties";
 
 class ComponentWithProperties extends LitElement {
@@ -36,7 +36,7 @@ class ComponentWithProperties extends LitElement {
     `;
   }
 }
-window.customElements.define(
+customElements.define(
   "component-with-properties",
   ComponentWithProperties
 );
