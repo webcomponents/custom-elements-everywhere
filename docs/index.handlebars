@@ -36,10 +36,12 @@ limitations under the License.
   <link rel="stylesheet" href="styles/bundle.css">
 
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-105089944-1', 'auto');
     ga('send', 'pageview');
@@ -103,77 +105,83 @@ limitations under the License.
   </section>
 
   {{#each libraries}}
-    <section class="section" id="{{name}}">
-      <div class="container">
-        <div class="columns is-flex-widescreen is-block-tablet">
-          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-            <div class="level">
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Library</p>
-                  <h3 class="title">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></h3>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Score</p>
-                  <p class="title">{{results.summary.score}}%</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Basic Tests</p>
-                  <p class="title">{{results.summary.basicSupport.passed}}/{{results.summary.basicSupport.total}}</p><div></div>
-                
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Advanced Tests</p>
-                  <p class="title">{{results.summary.advancedSupport.passed}}/{{results.summary.advancedSupport.total}}</p>
-                </div>
+  <section class="section" id="{{name}}">
+    {{#each aliases}}
+    <span id="{{this}}"></span>
+    {{/each}}
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title">{{fullName}} <span class="library-version">{{results.libraryVersion}}</span></h3>
               </div>
             </div>
-            <progress class="progress {{{warning-level results.summary.score}}}" value="{{results.summary.score}}" max="100">{{results.summary.score}}%</progress>
-            <div class="content">
-              {{{summary.content}}}
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">{{results.summary.score}}%</p>
+              </div>
             </div>
-            <div class="content">
-              <a class="button is-info is-outlined" href="libraries/{{name}}/results/results.html">
-                View the tests
-              </a>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">{{results.summary.basicSupport.passed}}/{{results.summary.basicSupport.total}}</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">{{results.summary.advancedSupport.passed}}/{{results.summary.advancedSupport.total}}
+                </p>
+              </div>
             </div>
           </div>
-          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-            <div class="box">
-              <h4 class="title is-3">Related Issues</h4>
-              {{#if issues}}
-                {{#each issues}}
-                  <article class="media">
-                    <div class="media-content">
-                      <a href="{{link}}">
-                        <div class="content">
-                          <p>
-                            <strong>{{title}}</strong>
-                            <br>
-                            <small>{{meta}}</small>
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </article>
-                {{/each}}
-                {{else}}
-                  <div class="has-text-centered">
-                    <img src="images/smiley.svg" alt="" width="256">
-                    <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+          <progress class="progress {{{warning-level results.summary.score}}}" value="{{results.summary.score}}"
+            max="100">{{results.summary.score}}%</progress>
+          <div class="content">
+            {{{summary.content}}}
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/{{name}}/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            {{#if issues}}
+            {{#each issues}}
+            <article class="media">
+              <div class="media-content">
+                <a href="{{link}}">
+                  <div class="content">
+                    <p>
+                      <strong>{{title}}</strong>
+                      <br>
+                      <small>{{meta}}</small>
+                    </p>
                   </div>
-              {{/if}}
+                </a>
+              </div>
+            </article>
+            {{/each}}
+            {{else}}
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
             </div>
+            {{/if}}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   {{/each}}
   <section class="section">
     <div class="container">
@@ -194,9 +202,13 @@ limitations under the License.
               </p>
               <p>
                 To learn more, check out the
-                <a href="https://developers.google.com/web/fundamentals/architecture/building-components/customelements">custom elements primer</a>
+                <a
+                  href="https://developers.google.com/web/fundamentals/architecture/building-components/customelements">custom
+                  elements primer</a>
                 and
-                <a href="https://developers.google.com/web/fundamentals/architecture/building-components/best-practices">best practices guide</a>.
+                <a
+                  href="https://developers.google.com/web/fundamentals/architecture/building-components/best-practices">best
+                  practices guide</a>.
               </p>
             </div>
             <div class="question">
@@ -276,7 +288,7 @@ limitations under the License.
                 Because Polymer's implementation of declarative event bindings
                 relies on pulling the event name from the <code>on-*</code>
                 attribute, and the HTML parser will <em>always lowercase
-                attribute names</em>, it is unable to listen for events with
+                  attribute names</em>, it is unable to listen for events with
                 capital letters in their names.
               </p>
               <p>
@@ -344,7 +356,9 @@ limitations under the License.
     <div class="hero-body">
       <p class="has-text-centered">
         <strong>Custom Elements Everywhere</strong> by <a href="https://twitter.com/rob_dodson">Rob Dodson</a>.
-        Licensed under <strong><a href="https://github.com/webcomponents/custom-elements-everywhere/blob/master/LICENSE">Apache 2.0</a></strong>.
+        Licensed under <strong><a
+            href="https://github.com/webcomponents/custom-elements-everywhere/blob/master/LICENSE">Apache
+            2.0</a></strong>.
       </p>
       <div class="has-text-centered fork-me-footer">
         <a href="https://github.com/webcomponents/custom-elements-everywhere">

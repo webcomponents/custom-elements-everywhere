@@ -26,7 +26,7 @@ const libraryMap = {
   dojo: "Dojo",
   hybrids: "hybrids",
   hyperhtml: "hyperHTML",
-  litelement: "Lit Element",
+  lit: "Lit",
   mithril: "Mithril",
   polymer: "Polymer",
   preact: "Preact",
@@ -39,6 +39,11 @@ const libraryMap = {
   surplus: "Surplus",
   svelte: "Svelte",
   vue: "Vue"
+};
+
+// When renaming a library, keep an alias so that old URLs still work.
+const aliasMap = {
+  'lit': ['litelement'],
 };
 const libraries = Object.keys(libraryMap);
 
@@ -70,7 +75,8 @@ function buildContext(libraries) {
       fullName: libraryMap[library],
       results: getTestResults(library),
       issues: getIssues(library),
-      summary: getSummary(library)
+      summary: getSummary(library),
+      aliases: aliasMap[library] || [],
     };
   });
 }
