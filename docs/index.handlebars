@@ -233,12 +233,10 @@ limitations under the License.
                 Why is each test counted twice?
               </h3>
               <p>
-                Each test is run on a browser with native support for all of the
-                web components standards (template, shadow DOM, custom elements)
-                and on a browser with polyfilled support. It's possible that a
-                test may work in the native setting and not in the polyfilled
-                one, or vice versa. To account for this, we count both
-                environments as unique tests.
+                We run each test in Chrome and Firefox. These days they behave
+                basically the same with web components but years ago when these
+                tests were first written, Firefox didn't yet have native support
+                for Web Components.
               </p>
             </div>
             <div class="question">
