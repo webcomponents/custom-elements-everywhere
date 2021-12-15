@@ -885,9 +885,9 @@ makes working with Custom Elements cumbersome.</p>
                       <a href="https://github.com/facebook/react/issues/11347">
                         <div class="content">
                           <p>
-                            <strong>RFC: Plan for custom element attributes/properties in React 17</strong>
+                            <strong>RFC: Plan for custom element attributes/properties in React 18</strong>
                             <br>
-                            <small>#11347 opened Oct 23 by robdodson</small>
+                            <small>#11347 opened Oct 23 2017 by robdodson</small>
                           </p>
                         </div>
                       </a>
@@ -913,7 +913,7 @@ makes working with Custom Elements cumbersome.</p>
                           <p>
                             <strong>Passing props to custom elements as properties instead of attributes</strong>
                             <br>
-                            <small>#8755 opened Jan 11 by joeldenning</small>
+                            <small>#8755 opened Jan 11, 2017 by joeldenning</small>
                           </p>
                         </div>
                       </a>
@@ -939,7 +939,7 @@ makes working with Custom Elements cumbersome.</p>
                           <p>
                             <strong>Boolean attributes on Web Components</strong>
                             <br>
-                            <small>#9230 opened Mar 21 by nickdima</small>
+                            <small>#9230 opened Mar 21, 2017 by nickdima</small>
                           </p>
                         </div>
                       </a>
@@ -952,7 +952,78 @@ makes working with Custom Elements cumbersome.</p>
                           <p>
                             <strong>Event Handler on React Component not invoked when React Component is rendered inside a Web Component</strong>
                             <br>
-                            <small>#9242 opened on Mar 23 by nilshartmann</small>
+                            <small>#9242 opened on Mar 23, 2017 by nilshartmann</small>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="react-experimental">
+      <div class="container">
+        <div class="columns is-flex-widescreen is-block-tablet">
+          <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Library</p>
+                  <h3 class="title">React <span class="library-version">^0.0.0-experimental-575791925-20211213</span></h3>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Score</p>
+                  <p class="title">100%</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Basic Tests</p>
+                  <p class="title">16/16</p><div></div>
+                
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Advanced Tests</p>
+                  <p class="title">14/14</p>
+                </div>
+              </div>
+            </div>
+            <progress class="progress is-primary" value="100" max="100">100%</progress>
+            <div class="content">
+              <h4 id="react-experimental-overview">Experimental</h4>
+
+<p>The @experimental release of React features full support for Custom Elements, but the React core team has not yet reached a final decision on whether this will make it into React 18. Your feedback is important, and will be helpful for making this decision. More info at <a href="https://github.com/facebook/react/issues/11347#issuecomment-988970952">https://github.com/facebook/react/issues/11347#issuecomment-988970952</a></p>
+<h4 id="react-experimental-handling-data">Handling data</h4>
+
+<p>React@experimental, as of December 2021, uses a runtime heuristic to determine if it should pass data to Custom Elements as either properties or attributes. If a property is already defined on the element instance, it will use properties, otherwise it will fallback to attributes.</p>
+<h4 id="react-experimental-handling-events">Handling events</h4>
+
+<p>React@experimental, as of December 2021, will register an event listener on any custom element when binding a function to a property whose name begins with <code>on</code>.  It supports lowercase, camelCase, kebab-case, CAPScase, and PascalCase events.</p>
+
+            </div>
+            <div class="content">
+              <a class="button is-info is-outlined" href="libraries/react-experimental/results/results.html">
+                View the tests
+              </a>
+            </div>
+          </div>
+          <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+            <div class="box">
+              <h4 class="title is-3">Related Issues</h4>
+                  <article class="media">
+                    <div class="media-content">
+                      <a href="https://github.com/facebook/react/issues/11347">
+                        <div class="content">
+                          <p>
+                            <strong>RFC: Plan for custom element attributes/properties in React 18</strong>
+                            <br>
+                            <small>#11347 opened Oct 23, 2017 by robdodson</small>
                           </p>
                         </div>
                       </a>
