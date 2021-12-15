@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from "lit";
 import "ce-with-children";
 
 export default class ComponentWithChildrenRerender extends LitElement {
@@ -20,7 +20,7 @@ export default class ComponentWithChildrenRerender extends LitElement {
     `;
   }
 }
-window.customElements.define(
+customElements.define(
   "component-with-children-rerender",
   ComponentWithChildrenRerender
 );

@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from "lit";
 import "ce-with-event";
 
 class ComponentWithImperativeEvent extends LitElement {
@@ -31,7 +31,7 @@ class ComponentWithImperativeEvent extends LitElement {
     `;
   }
 }
-window.customElements.define(
+customElements.define(
   "component-with-imperative-event",
   ComponentWithImperativeEvent
 );

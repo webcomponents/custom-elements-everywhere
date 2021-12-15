@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from "lit";
 import "ce-with-children";
 
 export default class ComponentWithDifferentViews extends LitElement {
@@ -27,7 +27,7 @@ export default class ComponentWithDifferentViews extends LitElement {
     this.showWC = !this.showWC;
   }
 }
-window.customElements.define(
+customElements.define(
   "component-with-different-views",
   ComponentWithDifferentViews
 );

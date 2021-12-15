@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from "lit";
 import "ce-with-event";
 
 class ComponentWithDeclarativeEvent extends LitElement {
@@ -31,31 +31,26 @@ class ComponentWithDeclarativeEvent extends LitElement {
         <div id="pascal">${this.pascalHandled}</div>
         <ce-with-event
           id="wc"
-          @lowercaseevent="${
-            e => {
-              this.handleLowercaseEvent();
-            }
-          }"
-          @kebab-event="${
-            e => {
-              this.handleKebabEvent();
-            }
-          }"
-          @camelEvent="${
-            e => {
-              this.handleCamelEvent();
-            }
-          }"
-          @CAPSevent="${
-            e => {
-              this.handleCapsEvent();
-            }
-          }"
-          @PascalEvent="${
-            e => {
-              this.handlePascalEvent();
-            }
-          }"
+          @lowercaseevent="${e => {
+        this.handleLowercaseEvent();
+      }
+      }"
+          @kebab-event="${e => {
+        this.handleKebabEvent();
+      }
+      }"
+          @camelEvent="${e => {
+        this.handleCamelEvent();
+      }
+      }"
+          @CAPSevent="${e => {
+        this.handleCapsEvent();
+      }
+      }"
+          @PascalEvent="${e => {
+        this.handlePascalEvent();
+      }
+      }"
         ></ce-with-event>
       </div>
     `;
@@ -76,7 +71,7 @@ class ComponentWithDeclarativeEvent extends LitElement {
     this.pascalHandled = true;
   }
 }
-window.customElements.define(
+customElements.define(
   "component-with-declarative-event",
   ComponentWithDeclarativeEvent
 );
