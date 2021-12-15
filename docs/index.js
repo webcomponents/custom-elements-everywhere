@@ -25,12 +25,13 @@ const libraryMap = {
   dio: 'DIO',
   dojo: "Dojo",
   hybrids: "hybrids",
-	hyperhtml: "hyperHTML",
-	litelement: "Lit Element",
+  hyperhtml: "hyperHTML",
+  litelement: "Lit Element",
   mithril: "Mithril",
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
+  'react-experimental': "React",
   riot: "Riot.js",
   skate: "Skate w/ Preact",
   solid: "Solid",
@@ -48,7 +49,7 @@ hbs.registerPartial(
 
 // Helper to color progress bar based on test scores
 // https://bulma.io/documentation/elements/progress/#colors
-hbs.registerHelper("warning-level", function(score) {
+hbs.registerHelper("warning-level", function (score) {
   if (score > 75) {
     return "is-primary";
   } else if (score > 50) {
@@ -64,14 +65,13 @@ const out = render({ libraries: buildContext(libraries) });
 
 function buildContext(libraries) {
   return libraries.map(library => {
-    return Object.assign(
-      { name: library, fullName: libraryMap[library] },
-      {
-        results: getTestResults(library),
-        issues: getIssues(library),
-        summary: getSummary(library)
-      }
-    );
+    return {
+      name: library,
+      fullName: libraryMap[library],
+      results: getTestResults(library),
+      issues: getIssues(library),
+      summary: getSummary(library)
+    };
   });
 }
 
