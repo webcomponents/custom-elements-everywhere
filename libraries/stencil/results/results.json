@@ -1,75 +1,553 @@
 {
     "summary": {
-        "success": 0,
+        "success": 30,
         "failed": 0,
         "skipped": 0,
-        "error": true,
+        "error": false,
         "disconnected": false,
-        "exitCode": 1,
-        "score": null,
+        "exitCode": 0,
+        "score": 100,
         "basicSupport": {
-            "total": 0,
+            "total": 16,
             "failed": 0,
-            "passed": 0
+            "passed": 16
         },
         "advancedSupport": {
-            "total": 0,
+            "total": 14,
             "failed": 0,
-            "passed": 0
+            "passed": 14
         }
     },
     "browsers": [
         {
             "browser": {
-                "id": "44837467",
-                "fullName": "FirefoxHeadless",
-                "name": "FirefoxHeadless",
-                "state": "DISCONNECTED",
-                "lastResult": {
-                    "startTime": 1639531945963,
-                    "total": 0,
-                    "success": 0,
-                    "failed": 0,
-                    "skipped": 0,
-                    "totalTime": 437,
-                    "netTime": 0,
-                    "error": true,
-                    "disconnected": false
-                },
-                "disconnectsCount": 0,
-                "noActivityTimeout": 30000,
-                "disconnectDelay": 2000
-            },
-            "errors": [
-                "Error: Cannot find module '../dist/custom-elements/index'\nat /tmp/_karma_webpack_82240/commons.js line 90 > eval:10:50\n\nwebpackMissingModule@webpack:///./src/components.js?:10:50\n@webpack:///./src/components.js?:10:154\n./src/components.js@/tmp/_karma_webpack_82240/commons.js:90:1\n__webpack_require__@/tmp/_karma_webpack_82240/runtime.js:31:42\n@webpack:///./src/basic-tests.js?:2:91\n./src/basic-tests.js@/tmp/_karma_webpack_82240/commons.js:79:1\n__webpack_require__@/tmp/_karma_webpack_82240/runtime.js:31:42\n@webpack:///./tests.webpack.js?:18:20\n./tests.webpack.js@/tmp/_karma_webpack_82240/commons.js:111:1\n__webpack_require__@/tmp/_karma_webpack_82240/runtime.js:31:42\n__webpack_exec__@tests.webpack.1093285933.js:12:67\n@tests.webpack.1093285933.js:13:71\n__webpack_require__.O@/tmp/_karma_webpack_82240/runtime.js:65:23\n@tests.webpack.1093285933.js:14:56\nwebpackJsonpCallback@/tmp/_karma_webpack_82240/runtime.js:160:46\n@tests.webpack.1093285933.js:10:53\n\n"
-            ],
-            "results": []
-        },
-        {
-            "browser": {
-                "id": "69215800",
+                "id": "53703791",
                 "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/96.0.4664.93 Safari/537.36",
                 "name": "Chrome Headless 96.0.4664.93 (Linux x86_64)",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1639531944767,
-                    "total": 0,
-                    "success": 0,
+                    "startTime": 1639595734101,
+                    "total": 15,
+                    "success": 15,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 222,
-                    "netTime": 0,
-                    "error": true,
+                    "totalTime": 405,
+                    "netTime": 206,
+                    "error": false,
                     "disconnected": false
                 },
                 "disconnectsCount": 0,
                 "noActivityTimeout": 30000,
                 "disconnectDelay": 2000
             },
-            "errors": [
-                "Uncaught Error: Cannot find module '../dist/custom-elements/index'\nat webpack:///./src/components.js?:10:144\n\nError: Cannot find module '../dist/custom-elements/index'\n    at webpackMissingModule (webpack:///./src/components.js?:10:50)\n    at eval (webpack:///./src/components.js?:10:154)\n    at Module../src/components.js (/tmp/_karma_webpack_82240/commons.js:90:1)\n    at __webpack_require__ (/tmp/_karma_webpack_82240/runtime.js:31:42)\n    at eval (webpack:///./src/basic-tests.js?:2:72)\n    at Module../src/basic-tests.js (/tmp/_karma_webpack_82240/commons.js:79:1)\n    at __webpack_require__ (/tmp/_karma_webpack_82240/runtime.js:31:42)\n    at eval (webpack:///./tests.webpack.js?:18:1)\n    at Object../tests.webpack.js (/tmp/_karma_webpack_82240/commons.js:111:1)\n    at __webpack_require__ (/tmp/_karma_webpack_82240/runtime.js:31:42)\n"
-            ],
-            "results": []
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 20,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734108,
+                    "endTime": 1639595734133,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 5,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734138,
+                    "endTime": 1639595734143,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 20,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734150,
+                    "endTime": 1639595734170,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 48,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734172,
+                    "endTime": 1639595734220,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734223,
+                    "endTime": 1639595734237,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734240,
+                    "endTime": 1639595734253,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734256,
+                    "endTime": 1639595734270,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 30,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734273,
+                    "endTime": 1639595734303,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734306,
+                    "endTime": 1639595734321,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734324,
+                    "endTime": 1639595734338,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 16,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734340,
+                    "endTime": 1639595734369,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734372,
+                    "endTime": 1639595734403,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 16,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734406,
+                    "endTime": 1639595734436,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734440,
+                    "endTime": 1639595734470,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595734473,
+                    "endTime": 1639595734503,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "browser": {
+                "id": "76621699",
+                "fullName": "FirefoxHeadless",
+                "name": "FirefoxHeadless",
+                "state": "DISCONNECTED",
+                "lastResult": {
+                    "startTime": 1639595736470,
+                    "total": 15,
+                    "success": 15,
+                    "failed": 0,
+                    "skipped": 0,
+                    "totalTime": 293,
+                    "netTime": 219,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0,
+                "noActivityTimeout": 30000,
+                "disconnectDelay": 2000
+            },
+            "errors": [],
+            "results": [
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with no children",
+                    "suite": [
+                        "basic support",
+                        "no children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736350,
+                    "endTime": 1639595736369,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 3,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736374,
+                    "endTime": 1639595736377,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in a Shadow Root and pass in Light DOM children",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 13,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736387,
+                    "endTime": 1639595736400,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element",
+                    "suite": [
+                        "basic support",
+                        "with children"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 46,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736403,
+                    "endTime": 1639595736449,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass boolean data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 0,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736452,
+                    "endTime": 1639595736468,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass numeric data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736472,
+                    "endTime": 1639595736486,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass string data as either an attribute or a property",
+                    "suite": [
+                        "basic support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736490,
+                    "endTime": 1639595736498,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "can imperatively listen to a DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "basic support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 45,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736500,
+                    "endTime": 1639595736545,
+                    "weight": 3
+                },
+                {
+                    "id": "",
+                    "description": "will pass array data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 2,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736551,
+                    "endTime": 1639595736554,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "will pass object data as a property",
+                    "suite": [
+                        "advanced support",
+                        "attributes and properties"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 1,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736556,
+                    "endTime": 1639595736584,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a lowercase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736592,
+                    "endTime": 1639595736614,
+                    "weight": 2
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a kebab-case DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 17,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736616,
+                    "endTime": 1639595736648,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a camelCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 18,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736650,
+                    "endTime": 1639595736682,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a CAPScase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 16,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736684,
+                    "endTime": 1639595736714,
+                    "weight": 1
+                },
+                {
+                    "id": "",
+                    "description": "can declaratively listen to a PascalCase DOM event dispatched by a Custom Element",
+                    "suite": [
+                        "advanced support",
+                        "events"
+                    ],
+                    "success": true,
+                    "skipped": false,
+                    "time": 22,
+                    "log": [],
+                    "assertionErrors": [],
+                    "startTime": 1639595736715,
+                    "endTime": 1639595736753,
+                    "weight": 1
+                }
+            ]
         }
     ],
     "library": {
