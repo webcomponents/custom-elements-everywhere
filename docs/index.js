@@ -22,9 +22,10 @@ const marked = require("marked");
 const libraryMap = {
   angular: "Angular",
   angularjs: "AngularJS (1.x)",
-  dio: 'DIO',
+  dio: "DIO",
   dojo: "Dojo",
   hybrids: "hybrids",
+  hyperapp: "Hyperapp",
   hyperhtml: "hyperHTML",
   lit: "Lit",
   mithril: "Mithril",
