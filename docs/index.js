@@ -22,22 +22,30 @@ const marked = require("marked");
 const libraryMap = {
   angular: "Angular",
   angularjs: "AngularJS (1.x)",
-  dio: 'DIO',
+  dio: "DIO",
   dojo: "Dojo",
   hybrids: "hybrids",
-	hyperhtml: "hyperHTML",
-	litelement: "Lit Element",
+  hyperapp: "Hyperapp",
+  hyperhtml: "hyperHTML",
+  lit: "Lit",
   mithril: "Mithril",
   omi: "Omi",
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
+  'react-experimental': "React",
   riot: "Riot.js",
   skate: "Skate w/ Preact",
+  solid: "Solid",
   stencil: "Stencil",
   surplus: "Surplus",
   svelte: "Svelte",
   vue: "Vue"
+};
+
+// When renaming a library, keep an alias so that old URLs still work.
+const aliasMap = {
+  'lit': ['litelement'],
 };
 const libraries = Object.keys(libraryMap);
 
@@ -48,7 +56,7 @@ hbs.registerPartial(
 
 // Helper to color progress bar based on test scores
 // https://bulma.io/documentation/elements/progress/#colors
-hbs.registerHelper("warning-level", function(score) {
+hbs.registerHelper("warning-level", function (score) {
   if (score > 75) {
     return "is-primary";
   } else if (score > 50) {
@@ -64,14 +72,14 @@ const out = render({ libraries: buildContext(libraries) });
 
 function buildContext(libraries) {
   return libraries.map(library => {
-    return Object.assign(
-      { name: library, fullName: libraryMap[library] },
-      {
-        results: getTestResults(library),
-        issues: getIssues(library),
-        summary: getSummary(library)
-      }
-    );
+    return {
+      name: library,
+      fullName: libraryMap[library],
+      results: getTestResults(library),
+      issues: getIssues(library),
+      summary: getSummary(library),
+      aliases: aliasMap[library] || [],
+    };
   });
 }
 

@@ -18,7 +18,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     plugins: [
       'karma-chrome-launcher',
@@ -33,7 +33,7 @@ module.exports = function(config) {
     customLaunchers: {
       FirefoxHeadless: {
         base: 'Firefox',
-        flags: [ '-headless' ],
+        flags: ['-headless'],
         displayName: 'FirefoxHeadless'
       },
     },
@@ -79,12 +79,12 @@ module.exports = function(config) {
           // Support for .ts files.
           {
             test: /\.js$/,
-            loaders: ['babel-loader'],
+            use: ['babel-loader'],
             exclude: /node_modules/
           },
           {
             test: /\.ts$/,
-            loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+            use: ['awesome-typescript-loader', 'angular2-template-loader'],
             exclude: /node_modules/
           }
         ]

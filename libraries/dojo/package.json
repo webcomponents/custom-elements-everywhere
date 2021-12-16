@@ -1,29 +1,30 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=@dojo/core karma start",
+    "test": "cross-env LIBRARY_NAME=@dojo/framework karma start",
     "build": "npm run test; DIST=../../docs/libraries/dojo && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
   "dependencies": {
-    "@dojo/framework": "5.0.4",
-    "@webcomponents/webcomponentsjs": "1.2.6"
+    "@dojo/framework": "8.0.0",
+    "@webcomponents/webcomponentsjs": "2.6.0"
   },
   "devDependencies": {
-    "@types/expect": "1.20.3",
-    "@types/mocha": "5.2.7",
+    "@types/chai": "4.3.0",
+    "@types/expect": "24.3.0",
+    "@types/mocha": "9.0.0",
     "babel-core": "6.26.3",
-    "babel-loader": "7.1.5",
+    "babel-loader": "8.2.3",
     "babel-preset-es2015": "6.24.1",
-    "chai": "4.2.0",
-    "cross-env": "5.2.1",
-    "karma": "4.4.1",
-    "karma-chrome-launcher": "2.2.0",
-    "karma-firefox-launcher": "1.2.0",
-    "karma-sourcemap-loader": "0.3.7",
-    "karma-webpack": "2.0.13",
-    "mocha": "6.2.2",
-    "ts-loader": "6.2.1",
-    "typescript": "3.6.4",
+    "chai": "4.3.4",
+    "cross-env": "7.0.3",
+    "karma": "6.3.9",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-firefox-launcher": "2.1.2",
+    "karma-sourcemap-loader": "0.3.8",
+    "karma-webpack": "5.0.0",
+    "mocha": "9.1.3",
+    "ts-loader": "9.2.6",
+    "typescript": "4.5.3",
     "umd-compat-loader": "2.1.2",
-    "webpack": "4.41.2"
+    "webpack": "5.65.0"
   }
 }

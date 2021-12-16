@@ -21,8 +21,7 @@ import {
   ComponentWithDeclarativeEvent
 } from "./components";
 
-import renderer from "@dojo/framework/widget-core/vdom";
-import { w } from "@dojo/framework/widget-core/d";
+import renderer, { w } from "@dojo/framework/core/vdom";
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");

@@ -123,13 +123,22 @@ In the root of the project you'll need to add a couple of `npm` scripts to make
 sure your library builds with the rest of the site. You should be able to copy
 an example from one of the other libraries.
 
-- In the root of the project, Add an `install-*` script to `package.json`.
+- In the root of the project, Add an `install-*` script to `package.json` and run it during the install script.
 - In the `libraries/[your library]/` director, update the `build` script in
   `package.json` to include your library's name.
 
 There's a test runner called `index.js` that lives in the root of the project.
 It will detect when you've added a new folder to `libraries/` and attempt to
 run that folder's build command.
+
+### Step 3. Run `update-goldens`
+
+In the root of the project, run `npm run update-goldens`. This will generate
+an expectedResults.json file for your library's tests.
+
+This way any change that results in a different summary score for any library
+shows up in code review, and any change that would accidentally change the
+summary score will make the tests fail.
 
 ## What kind of behavior do the tests assume?
 

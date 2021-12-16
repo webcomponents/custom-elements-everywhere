@@ -69,14 +69,14 @@ module.exports = function(config) {
       module: {
         rules: [
           {
-            test: /\.(html|js)$/,
+            test: /\.(svelte|js)$/,
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader'
             }
           },
           {
-            test: /\.html$/,
+            test: /\.svelte$/,
             exclude: /node_modules/,
             use: {
               loader: 'svelte-loader'

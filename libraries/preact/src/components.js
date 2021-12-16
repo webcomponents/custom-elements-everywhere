@@ -199,7 +199,7 @@ export class ComponentWithDeclarativeEvent extends Component {
           onlowercaseevent={this.handleLowercaseEvent}
           onkebab-event={this.handleKebabEvent}
           oncamelEvent={this.handleCamelEvent}
-          onCAPSEvent={this.handleCapsEvent}
+          onCAPSevent={this.handleCapsEvent}
           onPascalEvent={this.handlePascalEvent}
         ></ce-with-event> 
       </div>
