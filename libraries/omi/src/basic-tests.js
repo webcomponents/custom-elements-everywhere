@@ -102,23 +102,23 @@ describe("basic support", function () {
       expect(data).to.eql("Omi");
     });
 
-    it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function () {
-      let root = render(<component-with-unregistered />, scratch);
-      let wc = root.shadowRoot.querySelector('#wc');
-      expect(wc.hasAttribute('bool')).to.be.true;
-    });
+    // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function () {
+    //   let root = render(<component-with-unregistered />, scratch);
+    //   let wc = root.shadowRoot.querySelector('#wc');
+    //   expect(wc.hasAttribute('bool')).to.be.true;
+    // });
 
-    it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function () {
-      let root = render(<component-with-unregistered />, scratch);
-      let wc = root.shadowRoot.querySelector('#wc');
-      expect(wc.getAttribute('num')).to.eql('42');
-    });
+    // it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function () {
+    //   let root = render(<component-with-unregistered />, scratch);
+    //   let wc = root.shadowRoot.querySelector('#wc');
+    //   expect(wc.getAttribute('num')).to.eql('42');
+    // });
 
-    it('will set string attributes on a Custom Element that has not already been defined and upgraded', function () {
-      let root = render(<component-with-unregistered />, scratch);
-      let wc = root.shadowRoot.querySelector('#wc');
-      expect(wc.getAttribute('str')).to.eql('Omi');
-    });
+    // it('will set string attributes on a Custom Element that has not already been defined and upgraded', function () {
+    //   let root = render(<component-with-unregistered />, scratch);
+    //   let wc = root.shadowRoot.querySelector('#wc');
+    //   expect(wc.getAttribute('str')).to.eql('Omi');
+    // });
 
     // it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = render(<component-with-unregistered />, scratch);
