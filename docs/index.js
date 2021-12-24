@@ -29,6 +29,7 @@ const libraryMap = {
   hyperhtml: "hyperHTML",
   lit: "Lit",
   mithril: "Mithril",
+  omi: "Omi",
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
