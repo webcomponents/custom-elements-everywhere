@@ -9,14 +9,15 @@ permissions:
   contents: write
 
 jobs:
-  dependabot:
+  close:
     runs-on: ubuntu-latest
-    # If the change comes from a dependency-updating bot
-    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' }}
+    # If the check is called 'build' and it failed and the PR is from either dependabot or renovate
+    # See https://docs.github.com/en/actions/learn-github-actions/expressions for docs on this language.
+    if: ${{ github.event.check_run.conclusion == 'failure' && github.event.check_run.name == 'build' && (startsWith(github.event.check_run.pull_requests[0].head.ref, 'renovate/') || startsWith(github.event.check_run.pull_requests[0].head.ref, 'dependabot/')) }}
     steps:
-      - name: Close pr if it fails build
-        # if the output of gh pr checks includes "build[tab]fail" then close the PR, delete the branch, and leave a comment
-        run: gh pr checks "$PR_URL" | grep "build\tfail" && gh pr close -d "$PR_URL" && gh pr comment "$PR_URL" -b "Auto-closing because it breaks tests"
+      - name: Close pr
+        # Then close the PR and comment
+        run: gh pr close -d -R webcomponents/custom-elements-everywhere "$PR_NUM" && gh pr comment -R webcomponents/custom-elements-everywhere "$PR_NUM" -b "Auto-closing because it breaks tests"
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
+          PR_NUM: ${{github.event.check_run.check_suite.pull_requests[0].number}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
