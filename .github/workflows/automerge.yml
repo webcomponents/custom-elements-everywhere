@@ -1,0 +1,26 @@
+name: Dependency bot auto-merge
+on: pull_request
+
+permissions:
+  pull-requests: write
+  contents: write
+
+# Goal here is that:
+#   if 
+#     1) a change comes from dependabot or renovate
+#     and
+#     2) it passes our tests, meaning that it doesn't change results for any library
+#   then merge it.
+#   
+#     `gh pr merge --auto --merge` handles #2 and we check for #1 ourselves
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' }}
+    steps:
+      - name: Enable auto-merge for Dependabot and renovate PRs
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
