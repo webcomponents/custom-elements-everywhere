@@ -1,0 +1,22 @@
+name: Dependabot auto-close on fail
+on:
+  check_run:
+    types: [completed] # runs whenever a github check action completes
+
+# Gotta be able to operate on PRs
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    # If the change comes from a dependency-updating bot
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' }}
+    steps:
+      - name: Close pr if it fails build
+        # if the output of gh pr checks includes "build[tab]fail" then close the PR, delete the branch, and leave a comment
+        run: gh pr checks "$PR_URL" | grep "build\tfail" && gh pr close -d "$PR_URL" && gh pr comment "$PR_URL" -b "Auto-closing because it breaks tests"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
