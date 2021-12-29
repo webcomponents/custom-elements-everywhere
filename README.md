@@ -152,13 +152,7 @@ summary score will make the tests fail.
 
 ## How does the site get deployed/maintained?
 
-Once a library is added to the repo, we use [Renovate](https://renovatebot.com/)
-to ensure both the library and its dependencies stay up to date. Renovate will
-automatically merge in updates, so long as they don't change the test scores
-for a library. In other words, if merging in an update would cause the library
-to start failing some tests, it will hault the PR and request a human intervene.
-
-Any PR landed to the master branch will trigger an automatic publish to GitHub
+Any PR landed to the main branch will trigger an automatic publish to GitHub
 pages.
 
 ## License
