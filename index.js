@@ -179,6 +179,10 @@ function compareResultsAgainstGoldens(library) {
   } catch (err) {
     throw new Error(`Could not read expectedResults.json for ${library.name}:\n    ${err}`);
   }
+  // A constant, to make sure that if we add/remove any tests, that we add that test to all
+  // tested libraries.
+  const numberOfTests = 30;
+  chai.assert.equal(actual.success + actual.failed, numberOfTests, `${library.name} has incorrect total tests`);
   chai.assert.deepEqual(actual, expected);
 }
 
