@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=elm karma start",
+    "test": "rm -rf elm-stuff && cross-env LIBRARY_NAME=elm karma start",
     "build": "npm run test"
   },
   "devDependencies": {
