@@ -365,6 +365,21 @@ limitations under the License.
       </div>
     </div>
   </section>
+  <script>
+    const prNum = window.location.pathname.match(/\/preview\/preview\/preview\/(\d+)/)[1];
+    if (prNum != null) {
+      const previewDiv = document.createElement('div');
+      previewDiv.id = 'preview-warning';
+      const span = document.createElement('span');
+      span.textContent = `This is a preview of a pull request, the content is still under review. You can find the pull request at `;
+      const previewLink = document.createElement('a');
+      previewLink.href = `https://github.com/webcomponents/custom-elements-everywhere/pull/${prNum}`;
+      previewLink.textContent = `PR #${prNum}`;
+      span.appendChild(previewLink);
+      previewDiv.appendChild(span);
+      document.body.prepend(previewDiv);
+    }
+  </script>
 </body>
 
 </html>
