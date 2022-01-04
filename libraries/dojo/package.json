@@ -3,6 +3,7 @@
     "test": "cross-env LIBRARY_NAME=@dojo/framework karma start",
     "build": "npm run test; DIST=../../docs/libraries/dojo && mkdir -p $DIST && cp -r ./meta $DIST/meta && cp -r ./results $DIST/results"
   },
+  "library_repo": "dojo/framework",
   "dependencies": {
     "@dojo/framework": "8.0.0",
     "@webcomponents/webcomponentsjs": "2.6.0"
