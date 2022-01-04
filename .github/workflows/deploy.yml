@@ -4,22 +4,24 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2.4.0
 
-      - name: Install 🔧
+      - name: Install
         run: |
           npm ci
 
-      - name: Build 🔧
+      - name: Build
         run: |
           npm run build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
+          clean-exclude: "preview/"
+

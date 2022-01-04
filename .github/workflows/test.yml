@@ -16,3 +16,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm test
+
+      - name: Deploy Preview
+        if: ${{github.event_name == 'pull_request'}}
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: gh-pages
+          folder: out
+          target-folder: preview/preview/preview/${{github.event.number}}
+      - name: Comment about preview
+        if: ${{github.event_name == 'pull_request'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            Preview this PR: https://custom-elements-everywhere.com/preview/preview/preview/${{github.event.number}}/
