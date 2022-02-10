@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import Vue from "vue";
+import {createApp, nextTick} from 'vue';
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -29,19 +29,22 @@ import {
 import { expect } from "chai";
 
 // Setup the test harness. This will get cleaned out with every test.
-let app = document.createElement("div");
-app.id = "app";
-document.body.appendChild(app);
+const container = document.createElement("div");
+document.body.appendChild(container);
 let scratch; // This will hold the actual element under test.
+
+const isCustomElement = (tagName) => {
+  return window.customElements.get(tagName) !== undefined;
+}
 
 beforeEach(function() {
   scratch = document.createElement("div");
   scratch.id = "scratch";
-  app.appendChild(scratch);
+  container.appendChild(scratch);
 });
 
 afterEach(function() {
-  app.innerHTML = "";
+  container.innerHTML = "";
   scratch = null;
 });
 
@@ -50,8 +53,10 @@ describe("basic support", function() {
   describe("no children", function() {
     it("can display a Custom Element with no children", function() {
       this.weight = 3;
-      let root = new ComponentWithoutChildren().$mount(scratch).$el;
-      let wc = app.querySelector("#wc");
+      const app = createApp(ComponentWithoutChildren)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
       expect(wc).to.exist;
     });
   });
@@ -59,46 +64,54 @@ describe("basic support", function() {
   describe("with children", function() {
     function expectHasChildren(wc) {
       expect(wc).to.exist;
-      let shadowRoot = wc.shadowRoot;
-      let heading = shadowRoot.querySelector("h1");
+      const shadowRoot = wc.shadowRoot;
+      const heading = shadowRoot.querySelector("h1");
       expect(heading).to.exist;
       expect(heading.textContent).to.eql("Test h1");
-      let paragraph = shadowRoot.querySelector("p");
+      const paragraph = shadowRoot.querySelector("p");
       expect(paragraph).to.exist;
       expect(paragraph.textContent).to.eql("Test p");
     }
 
     it("can display a Custom Element with children in a Shadow Root", function() {
       this.weight = 3;
-      let root = new ComponentWithChildren().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
+      const app = createApp(ComponentWithChildren)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
-      let vm = new ComponentWithChildrenRerender().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      await vm.$nextTick();
+      const app = createApp(ComponentWithChildrenRerender)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      // Waits for the tick in ComponentWithChildrenRerender's mount function
+      await nextTick();
+      // Waits for the increment inside that tick to appear in the DOM.
+      await nextTick();
       expectHasChildren(wc);
       expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", async function() {
       this.weight = 3;
-      let vm = new ComponentWithDifferentViews().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
+      const app = createApp(ComponentWithDifferentViews)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const toggler = scratch.querySelector('#toggler');
+      let wc = scratch.querySelector("#wc");
       expectHasChildren(wc);
-      vm.toggle();
-      await vm.$nextTick();
-      let dummy = root.querySelector("#dummy");
+      toggler.click();
+      await nextTick();
+      const dummy = scratch.querySelector("#dummy");
       expect(dummy).to.exist;
       expect(dummy.textContent).to.eql("Dummy view");
-      vm.toggle();
-      await vm.$nextTick();
-      wc = root.querySelector("#wc");
+      toggler.click();
+      await nextTick();
+      wc = scratch.querySelector("#wc");
       expectHasChildren(wc);
     });
   });
@@ -106,25 +119,31 @@ describe("basic support", function() {
   describe("attributes and properties", function() {
     it("will pass boolean data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
-      let data = wc.bool || wc.hasAttribute("bool");
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      const data = wc.bool || wc.hasAttribute("bool");
       expect(data).to.be.true;
     });
 
     it("will pass numeric data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
-      let data = wc.num || wc.getAttribute("num");
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      const data = wc.num || wc.getAttribute("num");
       expect(parseInt(data, 10)).to.eql(42);
     });
 
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
-      let data = wc.str || wc.getAttribute("str");
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      const data = wc.str || wc.getAttribute("str");
       expect(data).to.eql("Vue");
     });
 
@@ -162,13 +181,14 @@ describe("basic support", function() {
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", async function() {
       this.weight = 3;
-      let vm = new ComponentWithImperativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#handled");
+      const app = createApp(ComponentWithImperativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#handled");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
   });
