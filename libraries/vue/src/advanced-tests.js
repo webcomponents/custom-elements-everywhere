@@ -33,19 +33,18 @@ const isCustomElement = (tagName) => {
 }
 
 // Setup the test harness. This will get cleaned out with every test.
-let app = document.createElement("div");
-app.id = "app";
-document.body.appendChild(app);
+const container = document.createElement("div");
+document.body.appendChild(container);
 let scratch; // This will hold the actual element under test.
 
 beforeEach(function() {
   scratch = document.createElement("div");
   scratch.id = "scratch";
-  app.appendChild(scratch);
+  container.appendChild(scratch);
 });
 
 afterEach(function() {
-  app.innerHTML = "";
+  container.innerHTML = "";
   scratch = null;
 });
 
@@ -57,8 +56,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithProperties)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let data = wc.arr;
+      const wc = scratch.querySelector("#wc");
+      const data = wc.arr;
       expect(data).to.eql(["V", "u", "e"]);
     });
 
@@ -67,8 +66,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithProperties)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let data = wc.obj;
+      const wc = scratch.querySelector("#wc");
+      const data = wc.obj;
       expect(data).to.eql({ org: "vuejs", repo: "vue" });
     });
   });
@@ -79,8 +78,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithDeclarativeEvent)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let handled = scratch.querySelector("#lowercase");
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#lowercase");
       expect(handled.textContent).to.eql("false");
       wc.click();
       await nextTick();
@@ -92,8 +91,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithDeclarativeEvent)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let handled = scratch.querySelector("#kebab");
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#kebab");
       expect(handled.textContent).to.eql("false");
       wc.click();
       await nextTick();
@@ -105,8 +104,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithDeclarativeEvent)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let handled = scratch.querySelector("#camel");
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#camel");
       expect(handled.textContent).to.eql("false");
       wc.click();
       await nextTick();
@@ -118,8 +117,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithDeclarativeEvent)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let handled = scratch.querySelector("#caps");
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#caps");
       expect(handled.textContent).to.eql("false");
       wc.click();
       await nextTick();
@@ -131,8 +130,8 @@ describe("advanced support", function() {
       const app = createApp(ComponentWithDeclarativeEvent)
       app.config.compilerOptions.isCustomElement = isCustomElement;
       app.mount(scratch);
-      let wc = scratch.querySelector("#wc");
-      let handled = scratch.querySelector("#pascal");
+      const wc = scratch.querySelector("#wc");
+      const handled = scratch.querySelector("#pascal");
       expect(handled.textContent).to.eql("false");
       wc.click();
       await nextTick();
