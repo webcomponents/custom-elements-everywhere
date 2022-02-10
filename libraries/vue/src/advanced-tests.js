@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import Vue from "vue";
+import {createApp, nextTick} from 'vue';
 import {
   ComponentWithoutChildren,
   ComponentWithChildren,
@@ -27,6 +27,10 @@ import {
   ComponentWithDeclarativeEvent
 } from "./components";
 import { expect } from "chai";
+
+const isCustomElement = (tagName) => {
+  return window.customElements.get(tagName) !== undefined;
+}
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
@@ -50,16 +54,20 @@ describe("advanced support", function() {
   describe("attributes and properties", function() {
     it("will pass array data as a property", function() {
       this.weight = 2;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
       let data = wc.arr;
       expect(data).to.eql(["V", "u", "e"]);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
-      let root = new ComponentWithProperties().$mount(scratch).$el;
-      let wc = root.querySelector("#wc");
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
       let data = wc.obj;
       expect(data).to.eql({ org: "vuejs", repo: "vue" });
     });
@@ -68,61 +76,66 @@ describe("advanced support", function() {
   describe("events", function() {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
       this.weight = 2;
-      let vm = new ComponentWithDeclarativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#lowercase");
+      const app = createApp(ComponentWithDeclarativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
+      let handled = scratch.querySelector("#lowercase");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let vm = new ComponentWithDeclarativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#kebab");
+      const app = createApp(ComponentWithDeclarativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
+      let handled = scratch.querySelector("#kebab");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let vm = new ComponentWithDeclarativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#camel");
+      const app = createApp(ComponentWithDeclarativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
+      let handled = scratch.querySelector("#camel");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let vm = new ComponentWithDeclarativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#caps");
+      const app = createApp(ComponentWithDeclarativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
+      let handled = scratch.querySelector("#caps");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
 
     it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
       this.weight = 1;
-      let vm = new ComponentWithDeclarativeEvent().$mount(scratch);
-      let root = vm.$el;
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#pascal");
+      const app = createApp(ComponentWithDeclarativeEvent)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      let wc = scratch.querySelector("#wc");
+      let handled = scratch.querySelector("#pascal");
       expect(handled.textContent).to.eql("false");
       wc.click();
-      await vm.$nextTick();
+      await nextTick();
       expect(handled.textContent).to.eql("true");
     });
   });

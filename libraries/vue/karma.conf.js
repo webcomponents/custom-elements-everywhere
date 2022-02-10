@@ -66,7 +66,7 @@ module.exports = function(config) {
           path.resolve(__dirname, './node_modules')
         ],
         alias: {
-          'vue$': 'vue/dist/vue.esm.js' // include Vue's compiler so we don't have to use .vue files
+          'vue$': 'vue/dist/vue.esm-bundler.js' // include Vue's compiler so we don't have to use .vue files
         }
       },
       module: {

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-import Vue from 'vue';
+import {defineComponent, nextTick} from 'vue';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
 
-export const ComponentWithoutChildren = Vue.extend({
+export const ComponentWithoutChildren = defineComponent({
   template: `
     <div>
       <ce-without-children id="wc"></ce-without-children>
@@ -29,7 +29,7 @@ export const ComponentWithoutChildren = Vue.extend({
   `
 });
 
-export const ComponentWithChildren = Vue.extend({
+export const ComponentWithChildren = defineComponent({
   template: `
     <div>
       <ce-with-children id="wc"></ce-with-children>
@@ -37,27 +37,28 @@ export const ComponentWithChildren = Vue.extend({
   `
 });
 
-export const ComponentWithChildrenRerender = Vue.extend({
+export const ComponentWithChildrenRerender = defineComponent({
   template: `
     <div>
       <ce-with-children id="wc">{{count}}</ce-with-children>
     </div>
   `,
-  data: function() {
+  data() {
     return {
       count: 1
     }
   },
-  mounted: function() {
-    Vue.nextTick(function() {
+  mounted() {
+    nextTick(() => {
       this.count += 1;
-    }.bind(this));
-  }
+    });
+  },
 });
 
-export const ComponentWithDifferentViews = Vue.extend({
+export const ComponentWithDifferentViews = defineComponent({
   template: `
     <div>
+      <div id='toggler' @click="toggle"></div>
       <ce-with-children id="wc" v-if="showWC"></ce-with-children>
       <div id="dummy" v-else>Dummy view</div>
     </div>
@@ -74,7 +75,7 @@ export const ComponentWithDifferentViews = Vue.extend({
   }
 });
 
-export const ComponentWithProperties = Vue.extend({
+export const ComponentWithProperties = defineComponent({
   template: `
     <div>
       <ce-with-properties id="wc"
@@ -97,7 +98,7 @@ export const ComponentWithProperties = Vue.extend({
   }
 });
 
-export const ComponentWithUnregistered = Vue.extend({
+export const ComponentWithUnregistered = defineComponent({
   template: `
     <div>
       <!-- This element doesn't actually exist.
@@ -122,7 +123,7 @@ export const ComponentWithUnregistered = Vue.extend({
   }
 });
 
-export const ComponentWithImperativeEvent = Vue.extend({
+export const ComponentWithImperativeEvent = defineComponent({
   template: `
     <div>
       <div id="handled">{{eventHandled}}</div>
@@ -145,7 +146,7 @@ export const ComponentWithImperativeEvent = Vue.extend({
   }
 });
 
-export const ComponentWithDeclarativeEvent = Vue.extend({
+export const ComponentWithDeclarativeEvent = defineComponent({
   template: `
     <div>
       <div id="lowercase">{{lowercaseHandled}}</div>
