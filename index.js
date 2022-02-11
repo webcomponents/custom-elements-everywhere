@@ -4,6 +4,7 @@ const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const ora = require("ora");
 const chai = require("chai");
+const fetch = require("node-fetch");
 
 /**
  * Supported options:
@@ -56,7 +57,8 @@ libraries = libraries
       testsPath: join(__dirname, "libraries", name),
       metaPath: join(__dirname, "libraries", name, "meta"),
       resultsPath: join(__dirname, "libraries", name, "results"),
-      docsPath: join(__dirname, "docs", "libraries", name)
+      docsPath: join(__dirname, "docs", "libraries", name),
+      packageJson: require(join(__dirname, "libraries", name, "package.json"))
     };
   });
 
@@ -106,6 +108,7 @@ async function runTests() {
     }
     try {
       await verifyResults(library);
+      await fetchMetadata(library);
       await cleanDocs(library);
       await copyDocs(library);
       spinner.succeed(`${library.name}`);
@@ -117,6 +120,14 @@ async function runTests() {
     }
   }
   return failed;
+}
+
+async function fetchMetadata(library) {
+  const repoMeta = (await (await fetch(`https://api.github.com/repos/${library.packageJson.library_repo}`)).json());
+  const stargazers_count = repoMeta.stargazers_count;
+  const html_url = repoMeta.html_url;
+  const repoJson = JSON.stringify({ stargazers_count, html_url });
+  fs.writeFileSync(join(library.resultsPath, "repo.json"), repoJson);
 }
 
 /**

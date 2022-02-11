@@ -72,14 +72,24 @@ const out = render({ libraries: buildContext(libraries) });
 
 function buildContext(libraries) {
   return libraries.map(library => {
+    const repo = require(path.resolve(
+      __dirname,
+      "libraries",
+      library,
+      "results/repo.json"
+    ));
+
     return {
       name: library,
       fullName: libraryMap[library],
+      repo,
       results: getTestResults(library),
       issues: getIssues(library),
       summary: getSummary(library),
       aliases: aliasMap[library] || [],
     };
+  }).sort((a, b) => {
+    return b.repo.stargazers_count - a.repo.stargazers_count
   });
 }
 
