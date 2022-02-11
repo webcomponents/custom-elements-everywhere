@@ -170,8 +170,9 @@ also provides syntax to instruct its bindings to use properties instead. To bind
 to a Custom Element property use <code>:foo.prop="bar"</code>.</p>
 <h4 id="vue-handling-events">Handling events</h4>
 
-<p>Vue can listen to native DOM events dispatched from Custom Elements. It supports
-all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+<p>Vue can listen to native DOM events dispatched from Custom Elements. Its
+declarative event bindings only support lowercase and kebab case events. To
+listen for any events named with capital letters you must write imperative code.</p>
 
           </div>
           <div class="content">
