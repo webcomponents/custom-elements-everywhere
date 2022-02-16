@@ -155,11 +155,11 @@ export const ComponentWithDeclarativeEvent = defineComponent({
       <div id="caps">{{capsHandled}}</div>
       <div id="pascal">{{pascalHandled}}</div>
       <ce-with-event id="wc"
-        v-on:lowercaseevent="handleLowercaseEvent"
-        v-on:kebab-event="handleKebabEvent"
-        v-on:camelEvent="handleCamelEvent"
-        v-on:CAPSevent="handleCapsEvent"
-        v-on:PascalEvent="handlePascalEvent"
+        v-event:lowercaseevent="handleLowercaseEvent"
+        v-event:kebab-event="handleKebabEvent"
+        v-event:camelEvent="handleCamelEvent"
+        v-event:CAPSevent="handleCapsEvent"
+        v-event:PascalEvent="handlePascalEvent"
       ></ce-with-event>
     </div>
   `,
@@ -187,6 +187,16 @@ export const ComponentWithDeclarativeEvent = defineComponent({
     },
     handlePascalEvent: function() {
       this.pascalHandled = true;
+    }
+  },
+  directives: {
+    event: {
+      beforeMount(el, {arg, value}) {
+        el.addEventListener(arg, value)
+      },
+      beforeUnmount(el, {arg, value }) {
+        el.removeEventListener(arg, value)
+      }
     }
   }
 });

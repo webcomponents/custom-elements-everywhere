@@ -7,5 +7,6 @@ to a Custom Element property use <code>:foo.prop="bar"</code>.
 <h4 id="vue-handling-events">Handling events</h4>
 
 Vue can listen to native DOM events dispatched from Custom Elements. Its
-declarative event bindings only support lowercase and kebab case events. To
-listen for any events named with capital letters you must write imperative code.
+built-in declarative event bindings only support lowercase and kebab case
+events. To declaratively listen for events named with capital letters you must
+use a custom directive, see [the v-event directive mentioned in #5401](https://github.com/vuejs/core/issues/5401#issuecomment-1041214293).
