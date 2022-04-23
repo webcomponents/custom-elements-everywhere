@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy Preview
         if: ${{github.event_name == 'pull_request' && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]')}}
-        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        uses: JamesIves/github-pages-deploy-action@v4.3.1
         with:
           branch: gh-pages
           folder: out
