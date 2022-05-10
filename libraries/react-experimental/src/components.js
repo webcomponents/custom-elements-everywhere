@@ -16,7 +16,6 @@
  */
 
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
