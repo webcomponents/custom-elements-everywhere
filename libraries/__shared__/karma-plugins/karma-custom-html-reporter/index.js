@@ -120,6 +120,9 @@ var HTMLReporter = function(baseReporterDecorator, config, emitter, logger, help
       overview = suite.ele('header', { class: 'overview' });
 
       // Assemble the Overview
+      let pkg = require(path.join(process.cwd(), './package.json'));
+      let libraryVersion = pkg.dependencies[process.env.LIBRARY_NAME];
+      overview.ele('div', { class: 'title is-6' }, 'Version: ' + libraryVersion);
       overview.ele('div', { class: 'browser title is-6' }, 'Browser: ' + browser.name);
       overview.ele('div', { class: 'timestamp title is-6' }, 'Timestamp: ' + timestamp);
 
