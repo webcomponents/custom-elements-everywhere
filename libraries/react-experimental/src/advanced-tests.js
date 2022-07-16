@@ -47,6 +47,10 @@ before(() => {
   window.IS_REACT_ACT_ENVIRONMENT = true;
 })
 
+after(() => {
+  window.IS_REACT_ACT_ENVIRONMENT = false;
+})
+
 beforeEach(function() {
   scratch = document.createElement("div");
   scratch.id = "scratch";
