@@ -16,8 +16,9 @@
  */
 
 import React from "react";
-import ReactDOM from "react-dom";
-import ReactTestUtils from "react-dom/test-utils";
+import { createRoot } from "react-dom/client";
+import { act } from "react-dom/test-utils";
+import * as ReactDOM from "react-dom";
 import { expect } from "chai";
 import {
   ComponentWithoutChildren,
@@ -36,15 +37,32 @@ app.id = "app";
 document.body.appendChild(app);
 let scratch; // This will hold the actual element under test.
 
+let reactRoot = null;
+function render(element) {
+  act(() => {
+    reactRoot.render(element);
+  })
+}
+
+before(() => {
+  window.IS_REACT_ACT_ENVIRONMENT = true;
+})
+
 beforeEach(function() {
   scratch = document.createElement("div");
   scratch.id = "scratch";
   app.appendChild(scratch);
+
+  reactRoot = createRoot(scratch);
 });
 
 afterEach(function() {
   app.innerHTML = "";
   scratch = null;
+
+  act(() => {
+    reactRoot.unmount();
+  });
 });
 
 describe("basic support", function() {
@@ -52,7 +70,14 @@ describe("basic support", function() {
   describe("no children", function() {
     it("can display a Custom Element with no children", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithoutChildren />, scratch);
+      let root;
+      render(
+        <ComponentWithoutChildren
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       expect(wc).to.exist;
     });
@@ -72,30 +97,57 @@ describe("basic support", function() {
 
     it("can display a Custom Element with children in a Shadow Root", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithChildren />, scratch);
+      let root;
+      render(
+        <ComponentWithChildren
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       expectHasChildren(wc);
     });
 
     it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithChildrenRerender />, scratch);
+      let root;
+      render(
+        <ComponentWithChildrenRerender
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
-      await Promise.resolve();
+      await act(async () => {
+        await Promise.resolve();
+      });
       expectHasChildren(wc);
       expect(wc.textContent.includes("2")).to.be.true;
     });
 
     it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithDifferentViews />, scratch);
+      let root;
+      render(
+        <ComponentWithDifferentViews
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       expectHasChildren(wc);
-      root.toggle();
+      act(() => {
+        root.toggle();
+      });
       let dummy = ReactDOM.findDOMNode(root.refs.dummy);
       expect(dummy).to.exist;
       expect(dummy.textContent).to.eql("Dummy view");
-      root.toggle();
+      act(() => {
+        root.toggle();
+      });
       wc = root.wc;
       expectHasChildren(wc);
     });
@@ -104,7 +156,14 @@ describe("basic support", function() {
   describe("attributes and properties", function() {
     it("will pass boolean data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let root;
+      render(
+        <ComponentWithProperties
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       let data = wc.bool || wc.hasAttribute("bool");
       expect(data).to.be.true;
@@ -112,7 +171,14 @@ describe("basic support", function() {
 
     it("will pass numeric data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let root;
+      render(
+        <ComponentWithProperties
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       let data = wc.num || wc.getAttribute("num");
       expect(parseInt(data, 10)).to.eql(42);
@@ -120,7 +186,14 @@ describe("basic support", function() {
 
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithProperties />, scratch);
+      let root;
+      render(
+        <ComponentWithProperties
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       let data = wc.str || wc.getAttribute("str");
       expect(data).to.eql("React");
@@ -166,14 +239,23 @@ describe("basic support", function() {
   describe("events", function() {
     it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
       this.weight = 3;
-      let root = ReactDOM.render(<ComponentWithImperativeEvent />, scratch);
+      let root;
+      render(
+        <ComponentWithImperativeEvent
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
       let wc = root.wc;
       let handled = root.handled;
       expect(handled.textContent).to.eql("false");
-      wc.click();
-      root.forceUpdate();
+      act(() => {
+        wc.click();
+      })
       expect(handled.textContent).to.eql("true");
     });
   });
 
 });
+ 
