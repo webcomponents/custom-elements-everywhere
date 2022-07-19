@@ -23,14 +23,14 @@
       <h1 class="title is-2">React + Custom Elements</h1>
       <section>
         <header class="overview">
-          <div class="browser title is-6">Browser: Chrome Headless 100.0.4896.75 (Linux x86_64)</div>
-          <div class="timestamp title is-6">Timestamp: 4/12/2022, 11:33:25 PM</div>
+          <div class="browser title is-6">Browser: Chrome Headless 103.0.5060.114 (Linux x86_64)</div>
+          <div class="timestamp title is-6">Timestamp: 7/19/2022, 9:35:25 PM</div>
           <p class="results title is-6">
             15 tests / 
             0 errors / 
             7 failures / 
             0 skipped / 
-            runtime: 0.057s
+            runtime: 0.038s
           </p>
         </header>
         <div class="spec spec--group">
@@ -42,7 +42,7 @@
               <p class="spec__suite">no children</p>
               <em class="spec__descrip">can display a Custom Element with no children</em>
             </div>
-            <div class="spec__status">Passed in 0.019s</div>
+            <div class="spec__status">Passed in 0.008s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -60,7 +60,7 @@
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
             </div>
-            <div class="spec__status">Passed in 0.004s</div>
+            <div class="spec__status">Passed in 0.012s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -68,192 +68,6 @@
             <div class="spec__title">
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.005s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.002s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.004s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />    at Context.eval (webpack:///./src/advanced-tests.js?:51:61)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />    at Context.eval (webpack:///./src/advanced-tests.js?:58:61)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:73:76)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:83:76)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:93:76)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:103:76)<br /></p>
-        </div>
-        <div class="spec spec--fail" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Failed</div>
-          </h3>
-          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:113:76)<br /></p>
-        </div>
-        <div class="system-out"><strong>System output:</strong><br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />Chrome Headless 100.0.4896.75 (Linux x86_64) ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-</div>
-      </section>
-      <section>
-        <header class="overview">
-          <div class="browser title is-6">Browser: FirefoxHeadless</div>
-          <div class="timestamp title is-6">Timestamp: 4/12/2022, 11:33:27 PM</div>
-          <p class="results title is-6">
-            15 tests / 
-            0 errors / 
-            7 failures / 
-            0 skipped / 
-            runtime: 0.127s
-          </p>
-        </header>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">basic support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">no children</p>
-              <em class="spec__descrip">can display a Custom Element with no children</em>
-            </div>
-            <div class="spec__status">Passed in 0.036s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
-            </div>
-            <div class="spec__status">Passed in 0.004s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
-            </div>
-            <div class="spec__status">Passed in 0.011s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.019s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
             </div>
             <div class="spec__status">Passed in 0.003s</div>
           </h3>
@@ -262,9 +76,18 @@
           <h3 class="spec__header">
             <div class="spec__title">
               <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
               <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
             </div>
-            <div class="spec__status">Passed in 0.002s</div>
+            <div class="spec__status">Passed in 0s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -273,7 +96,7 @@
               <p class="spec__suite">attributes and properties</p>
               <em class="spec__descrip">will pass string data as either an attribute or a property</em>
             </div>
-            <div class="spec__status">Passed in 0.002s</div>
+            <div class="spec__status">Passed in 0s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -282,7 +105,7 @@
               <p class="spec__suite">events</p>
               <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
             </div>
-            <div class="spec__status">Passed in 0.015s</div>
+            <div class="spec__status">Passed in 0.003s</div>
           </h3>
         </div>
         <div class="spec spec--group">
@@ -296,7 +119,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:51:61<br /><br /></p>
+          <p class="spec__log">AssertionError: expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />    at Context.eval (webpack:///./src/advanced-tests.js?:71:61)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -306,7 +129,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:58:61<br /><br /></p>
+          <p class="spec__log">AssertionError: expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />    at Context.eval (webpack:///./src/advanced-tests.js?:83:61)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -316,7 +139,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:73:76<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:104:76)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -326,7 +149,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:83:76<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:120:76)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -336,7 +159,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:93:76<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:136:76)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -346,7 +169,7 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:103:76<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:152:76)<br /></p>
         </div>
         <div class="spec spec--fail" style="margin-left:20px;">
           <h3 class="spec__header">
@@ -356,24 +179,169 @@
             </div>
             <div class="spec__status">Failed</div>
           </h3>
-          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:113:76<br /><br /></p>
+          <p class="spec__log">AssertionError: expected 'false' to deeply equal 'true'<br />    at Context.eval (webpack:///./src/advanced-tests.js?:168:76)<br /></p>
         </div>
-        <div class="system-out"><strong>System output:</strong><br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-<br />FirefoxHeadless ERROR: 'Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot'
-</div>
+      </section>
+      <section>
+        <header class="overview">
+          <div class="browser title is-6">Browser: FirefoxHeadless</div>
+          <div class="timestamp title is-6">Timestamp: 7/19/2022, 9:35:27 PM</div>
+          <p class="results title is-6">
+            15 tests / 
+            0 errors / 
+            7 failures / 
+            0 skipped / 
+            runtime: 0.072s
+          </p>
+        </header>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">basic support</h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">no children</p>
+              <em class="spec__descrip">can display a Custom Element with no children</em>
+            </div>
+            <div class="spec__status">Passed in 0.032s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
+            </div>
+            <div class="spec__status">Passed in 0.003s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
+            </div>
+            <div class="spec__status">Passed in 0.008s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
+            </div>
+            <div class="spec__status">Passed in 0.004s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.004s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.006s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass array data as a property</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected undefined to deeply equal [ 'R', 'e', 'a', 'c', 't' ]<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:71:61<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass object data as a property</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected undefined to deeply equal { org: 'facebook', repo: 'react' }<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:83:61<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:104:76<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:120:76<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:136:76<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:152:76<br /><br /></p>
+        </div>
+        <div class="spec spec--fail" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Failed</div>
+          </h3>
+          <p class="spec__log">expected 'false' to deeply equal 'true'<br />AssertionError@webpack:///./node_modules/assertion-error/index.js?:74:13<br />module.exports/Assertion.prototype.assert@webpack:///./node_modules/chai/lib/chai/assertion.js?:152:13<br />assertEql@webpack:///./node_modules/chai/lib/chai/core/assertions.js?:1096:10<br />methodWrapper@webpack:///./node_modules/chai/lib/chai/utils/addMethod.js?:57:25<br />@webpack:///./src/advanced-tests.js?:168:76<br /><br /></p>
+        </div>
       </section>
     </div>
   </body>
