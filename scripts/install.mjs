@@ -3,9 +3,13 @@
 import {libraries} from './common.mjs';
 import * as util from 'util';
 import {exec as baseExec} from 'child_process';
-import {join} from 'path';
+import * as pathlib from 'path';
 import ora from 'ora';
+import { fileURLToPath } from 'url';
 const exec = util.promisify(baseExec);
+
+const __dirname = pathlib.dirname(fileURLToPath(import.meta.url));
+const join = pathlib.join;
 
 // Runs npm ci in every one of our subpackages.
 async function install() {
