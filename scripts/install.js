@@ -17,7 +17,7 @@ async function install() {
   ];
   const packages = allLibs.map((lib) => join(__dirname, '..', 'libraries', lib.name));
   packages.push(join(__dirname, '..', 'docs'));
-  const progress = ora('').start();
+  const progress = ora('Installing deps of subpackages').start();
   for (const pkg of packages) {
     progress.text = `Running \`npm ci\` in ${pkg}`;
     await exec("npm ci", { cwd: pkg });

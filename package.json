@@ -4,7 +4,7 @@
   "description": "Compare how different frameworks handle Web Components.",
   "license": "Apache 2.0",
   "scripts": {
-    "install": "wireit",
+    "install": "node scripts/install",
     "build": "wireit",
     "copy-and-verify-results": "wireit",
     "update-goldens": "node index.js --update-goldens",
@@ -22,9 +22,6 @@
     "wireit": "^0.7.1"
   },
   "wireit": {
-    "install": {
-      "command": "node scripts/install"
-    },
     "test": {
       "dependencies": [
         "build"
