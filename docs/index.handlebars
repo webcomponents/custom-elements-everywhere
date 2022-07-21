@@ -367,7 +367,7 @@ limitations under the License.
     </div>
   </section>
   <script>
-    const prNum = window.location.pathname.match(/\/preview\/preview\/preview\/(\d+)/)[1];
+    const prNum = window.location.pathname.match(/\/preview\/preview\/preview\/(\d+)/)?.[1];
     if (prNum != null) {
       const previewDiv = document.createElement('div');
       previewDiv.id = 'preview-warning';
