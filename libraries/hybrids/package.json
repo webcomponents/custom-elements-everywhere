@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=hybrids karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "hybridsjs/hybrids",
   "devDependencies": {
@@ -19,5 +19,24 @@
   },
   "dependencies": {
     "hybrids": "4.3.4"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.ts",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=hybrids karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }
