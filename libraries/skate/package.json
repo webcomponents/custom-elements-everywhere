@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=skatejs karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "solidjs/solid",
   "devDependencies": {
@@ -22,5 +22,25 @@
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "preact": "8.5.3",
     "skatejs": "5.2.4"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        ".babelrc",
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=skatejs karma start || echo ''"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }
