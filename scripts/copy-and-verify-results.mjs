@@ -36,14 +36,14 @@ async function fetchMetadata(library) {
 async function verifyResults(library) {
   const { metaPath, resultsPath } = library;
   // Verify files, throw otherwise
-  if (!fs.existsSync(join(metaPath, "issues.json")))
-    throw new Error("Missing issues.json");
-  if (!fs.existsSync(join(metaPath, "summary.md")))
-    throw new Error("Missing summary.md");
-  if (!fs.existsSync(join(resultsPath, "results.json")))
-    throw new Error("Missing results.json");
-  if (!fs.existsSync(join(resultsPath, "results.html")))
-    throw new Error("missing results.html");
+  if (!fs.existsSync(join(metaPath, `issues.json`)))
+    throw new Error(`Missing issues.json in ${library.name}`);
+  if (!fs.existsSync(join(metaPath, `summary.md`)))
+    throw new Error(`Missing summary.md in ${library.name}`);
+  if (!fs.existsSync(join(resultsPath, `results.json`)))
+    throw new Error(`Missing results.json in ${library.name}`);
+  if (!fs.existsSync(join(resultsPath, `results.html`)))
+    throw new Error(`missing results.html in ${library.name}`);
   compareResultsAgainstGoldens(library);
 }
 
