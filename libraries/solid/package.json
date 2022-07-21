@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=solid-js karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
@@ -20,5 +20,25 @@
   },
   "dependencies": {
     "solid-js": "1.4.7"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        ".babelrc",
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=solid-js karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

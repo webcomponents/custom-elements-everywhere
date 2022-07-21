@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=@polymer/polymer karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "polymer/polymer",
   "devDependencies": {
@@ -18,5 +18,24 @@
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=@polymer/polymer karma start || echo ''"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=vue karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "vuejs/vue",
   "devDependencies": {
@@ -18,5 +18,24 @@
   },
   "dependencies": {
     "vue": "^3.1.0"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=vue karma start || echo ''"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

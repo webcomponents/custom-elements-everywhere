@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=preact karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "preactjs/preact",
   "devDependencies": {
@@ -22,5 +22,25 @@
   },
   "dependencies": {
     "preact": "^10.0.1"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        ".babelrc",
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=preact karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

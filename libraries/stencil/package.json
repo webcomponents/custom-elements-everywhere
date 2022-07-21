@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=@stencil/core karma start",
-    "build": "rm -rf ./dist/ ./results/ && stencil build && npm run test"
+    "test": "wireit",
+    "build": "wireit",
+    "build:stencil": "wireit"
   },
   "library_repo": "ionic-team/stencil",
   "devDependencies": {
@@ -18,5 +19,35 @@
   },
   "dependencies": {
     "@stencil/core": "2.17.1"
+  },
+  "wireit": {
+    "test": {
+      "dependencies": ["build:stencil"],
+      "files": [
+        "karma.conf.js",
+        "stencil.config.ts",
+        "tests.webpack.js",
+        "tsconfig.json",
+        "src",
+        "dist",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=@stencil/core karma start"
+    },
+    "build": {
+      "dependencies": ["test"]
+    },
+    "build:stencil": {
+      "files": [
+        "stencil.config.ts",
+        "tsconfig.json",
+        "src"
+      ],
+      "output": ["dist"],
+      "command": "stencil build"
+    }
   }
 }

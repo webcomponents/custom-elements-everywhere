@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=dio.js karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "dyo/dyo",
   "devDependencies": {
@@ -20,5 +20,25 @@
   },
   "dependencies": {
     "dio.js": "9.1.1"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        ".babelrc",
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=dio.js karma start || echo ''"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

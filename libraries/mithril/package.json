@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=mithril karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "MithrilJS/mithril.js",
   "devDependencies": {
@@ -19,5 +19,24 @@
   },
   "dependencies": {
     "mithril": "2.2.2"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=mithril karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

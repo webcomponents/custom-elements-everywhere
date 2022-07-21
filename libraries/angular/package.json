@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=@angular/core karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "angular/angular",
   "devDependencies": {
@@ -34,5 +34,25 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "7.5.6",
     "zone.js": "0.11.7"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.ts",
+        "tsconfig.json",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=@angular/core karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }

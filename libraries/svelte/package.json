@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "cross-env LIBRARY_NAME=svelte karma start",
-    "build": "npm run test"
+    "test": "wireit",
+    "build": "wireit"
   },
   "library_repo": "sveltejs/svelte",
   "devDependencies": {
@@ -22,5 +22,25 @@
   },
   "dependencies": {
     "svelte": "3.49.0"
+  },
+  "wireit": {
+    "test": {
+      "files": [
+        ".babelrc",
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=svelte karma start"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
   }
 }
