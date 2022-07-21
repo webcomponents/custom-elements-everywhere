@@ -123,7 +123,7 @@ function getSummary(library) {
     path.resolve(__dirname, "libraries", library, "meta/summary.md"),
     "utf8"
   );
-  const content = marked(md);
+  const content = marked.parse(md);
 
   return { content };
 }
