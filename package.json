@@ -5,37 +5,11 @@
   "license": "Apache 2.0",
   "scripts": {
     "install": "wireit",
-    "install-docs": "cd docs && npm ci",
-    "install-karma-custom-html-reporter": "cd libraries/__shared__/karma-plugins/karma-custom-html-reporter && npm ci",
-    "install-karma-custom-json-reporter": "cd libraries/__shared__/karma-plugins/karma-custom-json-reporter && npm ci",
-    "install-karma-plugins": "wireit",
-    "install-webcomponents": "cd libraries/__shared__/webcomponents && npm ci",
-    "install-karma-mocha": "cd libraries/__shared__/karma-plugins/karma-mocha && npm ci",
-    "install-angular": "cd libraries/angular && npm ci",
-    "install-angularjs": "cd libraries/angularjs && npm ci",
-    "install-dio": "cd libraries/dio && npm ci",
-    "install-dojo": "cd libraries/dojo && npm ci",
-    "install-hybrids": "cd libraries/hybrids && npm ci",
-    "install-hyperapp": "cd libraries/hyperapp && npm ci",
-    "install-hyperhtml": "cd libraries/hyperhtml && npm ci",
-    "install-lit": "cd libraries/lit && npm ci",
-    "install-mithril": "cd libraries/mithril && npm ci",
-    "install-skate": "cd libraries/skate && npm ci",
-    "install-solid": "cd libraries/solid && npm ci",
-    "install-stencil": "cd libraries/stencil && npm ci",
-    "install-surplus": "cd libraries/surplus && npm ci",
-    "install-svelte": "cd libraries/svelte && npm ci",
-    "install-omi": "cd libraries/omi && npm ci",
-    "install-polymer": "cd libraries/polymer && npm ci",
-    "install-preact": "cd libraries/preact && npm ci",
-    "install-react": "cd libraries/react && npm ci",
-    "install-react-experimental": "cd libraries/react-experimental && npm ci",
-    "install-riot": "cd libraries/riot && npm ci",
-    "install-vue": "cd libraries/vue && npm ci",
-    "build": "node index.js",
+    "build": "wireit",
+    "copy-and-verify-results": "wireit",
     "update-goldens": "node index.js --update-goldens",
     "test": "wireit",
-    "start": "cd out && http-server -o -c-1"
+    "start": "wireit"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -49,43 +23,52 @@
   },
   "wireit": {
     "install": {
-      "dependencies": [
-        "install-docs",
-        "install-angular",
-        "install-angularjs",
-        "install-omi",
-        "install-preact",
-        "install-polymer",
-        "install-react",
-        "install-vue",
-        "install-dojo",
-        "install-hybrids",
-        "install-hyperapp",
-        "install-hyperhtml",
-        "install-lit",
-        "install-dio",
-        "install-riot",
-        "install-skate",
-        "install-solid",
-        "install-stencil",
-        "install-surplus",
-        "install-svelte",
-        "install-mithril",
-        "install-karma-plugins",
-        "install-webcomponents",
-        "install-karma-mocha",
-        "install-react-experimental"
-      ]
-    },
-    "install-karma-plugins": {
-      "dependencies": [
-        "install-karma-custom-html-reporter",
-        "install-karma-custom-json-reporter",
-        "install-karma-mocha"
-      ]
+      "command": "node scripts/install"
     },
     "test": {
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
+    },
+    "copy-and-verify-results": {
+      "dependencies": [
+        "./libraries/angular:build",
+        "./libraries/angularjs:build",
+        "./libraries/dio:build",
+        "./libraries/dojo:build",
+        "./libraries/hybrids:build",
+        "./libraries/hyperapp:build",
+        "./libraries/hyperhtml:build",
+        "./libraries/lit:build",
+        "./libraries/mithril:build",
+        "./libraries/omi:build",
+        "./libraries/polymer:build",
+        "./libraries/preact:build",
+        "./libraries/react:build",
+        "./libraries/react-experimental:build",
+        "./libraries/riot:build",
+        "./libraries/skate:build",
+        "./libraries/solid:build",
+        "./libraries/stencil:build",
+        "./libraries/surplus:build",
+        "./libraries/svelte:build",
+        "./libraries/vue:build"
+      ],
+      "output": [
+        "docs/libraries"
+      ],
+      "command": "node scripts/copy-and-verify-results.js"
+    },
+    "build": {
+      "dependencies": [
+        "./docs:build"
+      ]
+    },
+    "start": {
+      "dependencies": [
+        "build"
+      ],
+      "command": "cd out && http-server -o -c-1"
     }
   }
 }

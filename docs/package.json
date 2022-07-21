@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-html && npm run build-css && npm run copy",
-    "build-html": "mkdir ../out; node index.js > ../out/index.html",
-    "build-css": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css",
-    "copy": "cp 404.html CNAME robots.txt ../out && cp -r images ../out && cp -r libraries ../out"
+    "build": "wireit",
+    "build-html": "wireit",
+    "build-css": "wireit",
+    "copy": "wireit"
   },
   "author": "Rob Dodson",
   "license": "MIT",
@@ -14,5 +14,59 @@
     "clean-css-cli": "5.6.1",
     "handlebars": "4.7.7",
     "marked": "0.8.2"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build-html",
+        "build-css",
+        "copy"
+      ]
+    },
+    "build-css": {
+      "files": [
+        "styles/third_party/bulma.css",
+        "styles/site.css"
+      ],
+      "commentedOut-output": [
+        "../out/styles/bundle.css"
+      ],
+      "command": "mkdir -p ../out/styles; cat ./styles/third_party/bulma.css ./styles/site.css | cleancss -o ../out/styles/bundle.css"
+    },
+    "build-html": {
+      "dependencies": [
+        "../:copy-and-verify-results"
+      ],
+      "files": [
+        "libraries",
+        "index.handlebars",
+        "index.js",
+        "partials"
+      ],
+      "commentedOut-output": [
+        "../out/index.html"
+      ],
+      "command": "mkdir -p ../out; node index.js > ../out/index.html"
+    },
+    "copy": {
+      "dependencies": [
+        "../:copy-and-verify-results"
+      ],
+      "files": [
+        "404.html",
+        "CNAME",
+        "robots.txt",
+        "images",
+        "libraries"
+      ],
+      "commentedOut-output": [
+        "../out/404.html",
+        "../out/CNAME",
+        "../out/robots.txt",
+        "../out/images",
+        "../out/libraries"
+      ],
+      "command": "cp 404.html CNAME robots.txt ../out && cp -r images ../out && cp -r libraries ../out"
+    }
   }
 }
