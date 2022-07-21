@@ -4,10 +4,10 @@
   "description": "Compare how different frameworks handle Web Components.",
   "license": "Apache 2.0",
   "scripts": {
-    "install": "node scripts/install",
+    "install": "node scripts/install.mjs",
     "build": "wireit",
     "copy-and-verify-results": "wireit",
-    "update-goldens": "node index.js --update-goldens",
+    "update-goldens": "wireit",
     "test": "wireit",
     "start": "wireit"
   },
@@ -18,7 +18,7 @@
     "http-server": "14.1.1",
     "minimist": "1.2.6",
     "node-fetch": "^2.0.0",
-    "ora": "3.4.0",
+    "ora": "6.1.2",
     "wireit": "^0.7.1"
   },
   "wireit": {
@@ -54,7 +54,7 @@
       "output": [
         "docs/libraries"
       ],
-      "command": "node scripts/copy-and-verify-results.js"
+      "command": "node scripts/copy-and-verify-results.mjs"
     },
     "build": {
       "dependencies": [
@@ -66,6 +66,12 @@
         "build"
       ],
       "command": "cd out && http-server -o -c-1"
+    },
+    "update-goldens": {
+      "dependencies": [
+        "build"
+      ],
+      "command": "node script/copy-and-verify-results.mjs --update-goldens"
     }
   }
 }

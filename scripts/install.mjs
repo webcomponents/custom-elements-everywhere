@@ -1,10 +1,11 @@
 // Runs npm ci in each of the libraries
 
-const {libraries} = require('./common');
-const util = require('util');
-const exec = util.promisify(require("child_process").exec);
-const {join} = require('path');
-const ora = require('ora');
+import {libraries} from './common.mjs';
+import * as util from 'util';
+import {exec as baseExec} from 'child_process';
+import {join} from 'path';
+import ora from 'ora';
+const exec = util.promisify(baseExec);
 
 // Runs npm ci in every one of our subpackages.
 async function install() {

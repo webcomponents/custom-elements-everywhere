@@ -1,12 +1,16 @@
-const fs = require("fs");
-const pathlib = require("path");
+import * as fs from 'fs';
+import * as pathlib from 'path';
+import minimist from 'minimist';
+import { fileURLToPath } from 'url';
+
+const __dirname = pathlib.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Supported options:
  * -v, --verbose      Verbose output
  * -e, --exclude      Exclude a library from tests
  */
-const opts = require("minimist")(process.argv.slice(2), {
+export const opts = minimist(process.argv.slice(2), {
   boolean: ["verbose", "update-goldens"],
   string: "exclude",
   alias: { v: "verbose", e: "exclude", u: "update-goldens" }
@@ -38,7 +42,7 @@ const excludes = [
  * otherwise, test all of the subfolders in the libraries directory, minus
  * any excluded ones.
  */
-let libraries;
+export let libraries;
 if (opts._.length) {
   libraries = opts._;
 } else {
@@ -53,9 +57,6 @@ libraries = libraries
       metaPath: pathlib.join(__dirname,"..", "libraries", name, "meta"),
       resultsPath: pathlib.join(__dirname,"..", "libraries", name, "results"),
       docsPath: pathlib.join(__dirname,"..", "docs", "libraries", name),
-      packageJson: require(pathlib.join(__dirname, "..", "libraries", name, "package.json"))
+      packageJson: JSON.parse(fs.readFileSync(pathlib.join(__dirname, "..", "libraries", name, "package.json")))
     };
   });
-
-exports.opts = opts;
-exports.libraries = libraries;

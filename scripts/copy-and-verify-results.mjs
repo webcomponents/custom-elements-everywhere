@@ -1,8 +1,8 @@
-const fs = require("fs-extra");
-const { join } = require("path");
-const chai = require("chai");
-const fetch = require("node-fetch");
-const {opts, libraries} = require('./common');
+import fs from 'fs-extra';
+import { join } from "path";
+import * as chai from "chai";
+import fetch from "node-fetch";
+import {opts, libraries} from './common.mjs';
 
 /**
  * wireit has ensured that all of the libraries results have been built.
