@@ -23,9 +23,167 @@
       <h1 class="title is-2">Lit Element + Custom Elements</h1>
       <section>
         <header class="overview">
-          <div class="title is-6">Version: 2.5.0</div>
+          <div class="title is-6">Version: 2.7.3</div>
           <div class="browser title is-6">Browser: Chrome Headless 112.0.5615.165 (Linux x86_64)</div>
-          <div class="timestamp title is-6">Timestamp: 5/4/2023, 6:29:21 PM</div>
+          <div class="timestamp title is-6">Timestamp: 5/4/2023, 7:12:14 PM</div>
+          <p class="results title is-6">
+            15 tests / 
+            0 errors / 
+            0 failures / 
+            0 skipped / 
+            runtime: 0.029s
+          </p>
+        </header>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">basic support</h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">no children</p>
+              <em class="spec__descrip">can display a Custom Element with no children</em>
+            </div>
+            <div class="spec__status">Passed in 0.006s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
+            </div>
+            <div class="spec__status">Passed in 0.003s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
+            </div>
+            <div class="spec__status">Passed in 0.014s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
+            </div>
+            <div class="spec__status">Passed in 0.002s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass array data as a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass object data as a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="system-out"><strong>System output:</strong><br />Chrome Headless 112.0.5615.165 (Linux x86_64) WARN: 'Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.'
+<br />Chrome Headless 112.0.5615.165 (Linux x86_64) WARN: 'Element component-with-children-rerender scheduled an update (generally because a property was set) after an update completed, causing a new update to be scheduled. This is inefficient and should be avoided unless the next update can only be scheduled as a side effect of the previous update. See https://lit.dev/msg/change-in-update for more information.'
+</div>
+      </section>
+      <section>
+        <header class="overview">
+          <div class="title is-6">Version: 2.7.3</div>
+          <div class="browser title is-6">Browser: FirefoxHeadless</div>
+          <div class="timestamp title is-6">Timestamp: 5/4/2023, 7:12:17 PM</div>
           <p class="results title is-6">
             15 tests / 
             0 errors / 
@@ -43,7 +201,7 @@
               <p class="spec__suite">no children</p>
               <em class="spec__descrip">can display a Custom Element with no children</em>
             </div>
-            <div class="spec__status">Passed in 0.003s</div>
+            <div class="spec__status">Passed in 0.004s</div>
           </h3>
         </div>
         <div class="spec spec--pass" style="margin-left:20px;">
@@ -51,6 +209,24 @@
             <div class="spec__title">
               <p class="spec__suite">with children</p>
               <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
+            </div>
+            <div class="spec__status">Passed in 0.003s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">with children</p>
+              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
             </div>
             <div class="spec__status">Passed in 0.002s</div>
           </h3>
@@ -58,8 +234,83 @@
         <div class="spec spec--pass" style="margin-left:20px;">
           <h3 class="spec__header">
             <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--group">
+          <h3 class="spec__header title is-6">advanced support</h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass array data as a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">attributes and properties</p>
+              <em class="spec__descrip">will pass object data as a property</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0.001s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
+            </div>
+            <div class="spec__status">Passed in 0s</div>
+          </h3>
+        </div>
+        <div class="spec spec--pass" style="margin-left:20px;">
+          <h3 class="spec__header">
+            <div class="spec__title">
+              <p class="spec__suite">events</p>
+              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
             </div>
             <div class="spec__status">Passed in 0.003s</div>
           </h3>
@@ -67,99 +318,6 @@
         <div class="spec spec--pass" style="margin-left:20px;">
           <h3 class="spec__header">
             <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.004s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
               <p class="spec__suite">events</p>
               <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
             </div>
@@ -172,165 +330,7 @@
               <p class="spec__suite">events</p>
               <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
             </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="system-out"><strong>System output:</strong><br />Chrome Headless 112.0.5615.165 (Linux x86_64) WARN: 'Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.'
-<br />Chrome Headless 112.0.5615.165 (Linux x86_64) WARN: 'Element component-with-children-rerender scheduled an update (generally because a property was set) after an update completed, causing a new update to be scheduled. This is inefficient and should be avoided unless the next update can only be scheduled as a side effect of the previous update. See https://lit.dev/msg/change-in-update for more information.'
-</div>
-      </section>
-      <section>
-        <header class="overview">
-          <div class="title is-6">Version: 2.5.0</div>
-          <div class="browser title is-6">Browser: FirefoxHeadless</div>
-          <div class="timestamp title is-6">Timestamp: 5/4/2023, 6:29:27 PM</div>
-          <p class="results title is-6">
-            15 tests / 
-            0 errors / 
-            0 failures / 
-            0 skipped / 
-            runtime: 0.058s
-          </p>
-        </header>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">basic support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">no children</p>
-              <em class="spec__descrip">can display a Custom Element with no children</em>
-            </div>
-            <div class="spec__status">Passed in 0.019s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in a Shadow Root and pass in Light DOM children</em>
-            </div>
-            <div class="spec__status">Passed in 0.011s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">with children</p>
-              <em class="spec__descrip">can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element</em>
-            </div>
-            <div class="spec__status">Passed in 0.007s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass boolean data as either an attribute or a property</em>
-            </div>
             <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass numeric data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass string data as either an attribute or a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can imperatively listen to a DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.011s</div>
-          </h3>
-        </div>
-        <div class="spec spec--group">
-          <h3 class="spec__header title is-6">advanced support</h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass array data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">attributes and properties</p>
-              <em class="spec__descrip">will pass object data as a property</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a lowercase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.006s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a kebab-case DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a camelCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a CAPScase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0s</div>
-          </h3>
-        </div>
-        <div class="spec spec--pass" style="margin-left:20px;">
-          <h3 class="spec__header">
-            <div class="spec__title">
-              <p class="spec__suite">events</p>
-              <em class="spec__descrip">can declaratively listen to a PascalCase DOM event dispatched by a Custom Element</em>
-            </div>
-            <div class="spec__status">Passed in 0.001s</div>
           </h3>
         </div>
         <div class="system-out"><strong>System output:</strong><br />FirefoxHeadless WARN: 'Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.'
