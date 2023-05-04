@@ -2,6 +2,9 @@ name: Test that the site builds
 
 on: [push, pull_request]
 
+permissions:
+  contents: write # To push a preview to gh pages
+
 jobs:
   build:
 
