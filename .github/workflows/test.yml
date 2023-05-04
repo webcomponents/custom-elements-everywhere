@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: google/wireit@setup-github-actions-caching/v1
       - uses: actions/checkout@v3
-      - name: Use Node.js 18
+      - name: Use Node.js 19
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '19'
       - name: Install dependencies
         run: npm ci
       - run: npm test
