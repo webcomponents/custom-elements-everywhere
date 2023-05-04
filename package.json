@@ -9,7 +9,8 @@
     "copy-and-verify-results": "wireit",
     "update-goldens": "wireit",
     "test": "wireit",
-    "start": "wireit"
+    "start": "wireit",
+    "karma-plugins": "wireit"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -72,6 +73,14 @@
         "build"
       ],
       "command": "node script/copy-and-verify-results.mjs --update-goldens"
+    },
+    "karma-plugins": {
+      "#comment": "Each project that uses the karma plugins should depend on this so that cache invalidation is done properly.",
+      "dependencies": [
+        "./libraries/__shared__/karma-plugins/karma-custom-html-reporter:build",
+        "./libraries/__shared__/karma-plugins/karma-custom-json-reporter:build",
+        "./libraries/__shared__/karma-plugins/karma-mocha:build"
+      ]
     }
   }
 }
