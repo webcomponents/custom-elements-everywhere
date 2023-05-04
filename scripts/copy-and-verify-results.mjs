@@ -69,7 +69,7 @@ function compareResultsAgainstGoldens(library) {
   // tested libraries.
   const numberOfTests = 30;
   chai.assert.equal(actual.success + actual.failed, numberOfTests, `${library.name} has incorrect total tests`);
-  chai.assert.deepEqual(actual, expected);
+  chai.assert.deepEqual(actual, expected, `${library.name} has incorrect deep results equal`);
 }
 
 
