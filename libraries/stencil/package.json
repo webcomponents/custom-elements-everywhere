@@ -22,7 +22,12 @@
   },
   "wireit": {
     "test": {
-      "dependencies": ["build:stencil"],
+      "dependencies": [
+        "../..:karma-plugins"
+      ],
+      "dependencies": [
+        "build:stencil"
+      ],
       "files": [
         "karma.conf.js",
         "stencil.config.ts",
@@ -38,7 +43,9 @@
       "command": "cross-env LIBRARY_NAME=@stencil/core karma start"
     },
     "build": {
-      "dependencies": ["test"]
+      "dependencies": [
+        "test"
+      ]
     },
     "build:stencil": {
       "files": [
@@ -46,7 +53,9 @@
         "tsconfig.json",
         "src"
       ],
-      "output": ["dist"],
+      "output": [
+        "dist"
+      ],
       "command": "stencil build"
     }
   }
