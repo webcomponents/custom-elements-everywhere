@@ -36,6 +36,7 @@ const libraryMap = {
   'react-experimental': "React",
   riot: "Riot.js",
   skate: "Skate w/ Preact",
+  skruv: "Skruv",
   solid: "Solid",
   stencil: "Stencil",
   surplus: "Surplus",
