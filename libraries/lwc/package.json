@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "test": "wireit",
+    "build": "wireit"
+  },
+  "library_repo": "salesforce/lwc",
+  "devDependencies": {
+    "@babel/core": "7.22.5",
+    "@babel/plugin-transform-runtime": "7.22.5",
+    "@babel/preset-env": "7.22.5",
+    "babel-core": "6.26.3",
+    "babel-loader": "9.1.2",
+    "chai": "4.3.7",
+    "cross-env": "7.0.3",
+    "karma": "6.4.2",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-firefox-launcher": "2.1.2",
+    "karma-sourcemap-loader": "0.4.0",
+    "karma-webpack": "5.0.0",
+    "webpack": "5.86.0"
+  },
+  "dependencies": {
+    "lwc": "5.0.0",
+    "lwc-webpack-plugin": "3.0.5"
+  },
+  "wireit": {
+    "test": {
+      "dependencies": [
+        "../..:karma-plugins"
+      ],
+      "files": [
+        "karma.conf.js",
+        "tests.webpack.js",
+        "src",
+        "meta"
+      ],
+      "output": [
+        "results"
+      ],
+      "command": "cross-env LIBRARY_NAME=lwc karma start || echo ''"
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<template>
+    <button onclick={handleClick}></button>
+    <template lwc:if={showWC}>
+        <ce-with-children lwc:external></ce-with-children>
+    </template>
+    <template lwc:else>
+        <div id="dummy">Dummy view</div>
+    </template>
+</template>
