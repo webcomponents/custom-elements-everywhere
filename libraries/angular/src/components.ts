@@ -89,6 +89,7 @@ export class ComponentWithDifferentViews {
         [str]="data.str"
         [arr]="data.arr"
         [obj]="data.obj"
+        [camelCaseObj]="data.camelCaseObj"
       ></ce-with-properties>
     </div>
   `
@@ -99,7 +100,8 @@ export class ComponentWithProperties {
     num: 42,
     str: 'Angular',
     arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
-    obj: { org: 'angular', repo: 'angular' }
+    obj: { org: 'angular', repo: 'angular' },
+    camelCaseObj: { label: "passed" }
   }
 }
 
