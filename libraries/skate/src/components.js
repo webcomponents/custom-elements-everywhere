@@ -23,6 +23,7 @@ import { h } from "preact";
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
+import "ce-with-inheritance";
 import "ce-with-event";
 
 export class ComponentWithoutChildren extends withComponent(withPreact()) {
@@ -127,6 +128,33 @@ export class ComponentWithProperties extends withComponent(withPreact()) {
   }
 }
 customElements.define("component-with-properties", ComponentWithProperties);
+
+export class ComponentWithInheritance extends withComponent(withPreact()) {
+  render() {
+    const data = {
+      bool: true,
+      num: 42,
+      str: "Skate",
+      arr: ["S", "k", "a", "t", "e"],
+      obj: { org: "skatejs", repo: "skatejs" },
+      camelCaseObj: { label: "passed" }
+    };
+    return (
+      <div>
+        <ce-with-inheritance
+          id="wc"
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+          camelCaseObj={data.camelCaseObj}
+        />
+      </div>
+    );
+  }
+}
+customElements.define("component-with-inheritance", ComponentWithInheritance);
 
 export class ComponentWithUnregistered extends withComponent(withPreact()) {
   render() {
