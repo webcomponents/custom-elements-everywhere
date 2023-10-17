@@ -19,6 +19,7 @@ import { render } from 'solid-js/web';
 import { expect } from "chai";
 import {
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithDeclarativeEvent
 } from "./components";
 
@@ -49,6 +50,15 @@ describe("advanced support", function() {
       render(() => wc = <ComponentWithProperties />, document.body);
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      let wc;
+      render(() => wc = <ComponentWithInheritance />, document.body);
+      expect(wc.arr).to.eql(["S", "o", "l", "i", "d"]);
+      expect(wc.obj).to.eql({ org: "ryansolid", repo: "solid" });
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

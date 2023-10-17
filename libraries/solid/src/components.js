@@ -20,6 +20,7 @@ import { createStore } from "solid-js/store";
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
+import "ce-with-inheritance";
 import "ce-with-event";
 
 export const ComponentWithoutChildren = () => <ce-without-children />;
@@ -53,6 +54,27 @@ export const ComponentWithProperties = () => {
   };
   return (
     <ce-with-properties
+      bool={data.bool}
+      num={data.num}
+      str={data.str}
+      arr={data.arr}
+      obj={data.obj}
+      camelCaseObj={data.camelCaseObj}
+    />
+  );
+};
+
+export const ComponentWithInheritance = () => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: "Solid",
+    arr: ["S", "o", "l", "i", "d"],
+    obj: { org: "ryansolid", repo: "solid" },
+    camelCaseObj: { label: "passed" },
+  };
+  return (
+    <ce-with-inheritance
       bool={data.bool}
       num={data.num}
       str={data.str}
