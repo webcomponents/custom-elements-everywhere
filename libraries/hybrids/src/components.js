@@ -62,6 +62,20 @@ export const ComponentWithProperties = {
   `,
 };
 
+export const ComponentWithInheritance = {
+  render: () => html`
+    <ce-with-inheritance 
+      id="wc"
+      bool=${true}
+      num=${42}
+      str=${"hybrids"}
+      arr=${["h", "y", "b", "r", "i", "d", "s"]}
+      obj=${{ library: "hybrids" }},
+      camelCaseObj=${{ label: "passed" }}
+    ></ce-with-inheritance>
+  `,
+};
+
 export const ComponentWithDeclarativeEvent = {
   lowercaseHandled: false,
   kebabHandled: false,
