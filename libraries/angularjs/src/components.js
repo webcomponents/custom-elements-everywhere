@@ -62,6 +62,7 @@ const ComponentWithProps = {
         ng-prop-str="$ctrl.str"
         ng-prop-arr="$ctrl.arr"
         ng-prop-obj="$ctrl.obj"
+        ng-prop-camel-case-obj="$ctrl.camelCaseObj"
       ></ce-with-properties>
     </div>
   `,
@@ -73,7 +74,8 @@ const ComponentWithProps = {
         num: 42,
         str: 'Angular',
         arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
-        obj: { org: 'angular', repo: 'angular' }
+        obj: { org: 'angular', repo: 'angular' },
+        camelCaseObj: { label: "passed" }
       });
     }
   }
