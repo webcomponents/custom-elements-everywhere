@@ -38,40 +38,46 @@ afterEach(function () {
 
 describe("advanced support", function () {
   describe("attributes and properties", function () {
-    let root;
-    let wc;
-
-    beforeEach(async function () {
-      root = document.createElement("component-with-properties");
-      scratch.appendChild(root);
-      await waitForRender(root);
-      wc = root.shadowRoot.querySelector("#wc");
-    });
 
     it("will pass array data as a property", async function () {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await waitForRender(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.arr;
-      expect(data).to.eql([
-        "S",
-        "t",
-        "e",
-        "n",
-        "c",
-        "i",
-        "l"
-      ]);
+      expect(data).to.eql(["S", "t", "e", "n", "c", "i", "l"]);
     });
 
-    it("will pass object data as a property", function () {
+    it("will pass object data as a property", async function () {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await waitForRender(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.obj;
       expect(data).to.eql({ org: "Ionic", repo: "stencil" });
     });
 
-    it("will pass object data to a camelCase-named property", function () {
+    it("will pass object data to a camelCase-named property", async function () {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await waitForRender(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", async function () {
+      this.weight = 2;
+      const root = document.createElement("component-with-inheritance");
+      scratch.appendChild(root);
+      await waitForRender(root);
+      const wc = root.shadowRoot.querySelector("#wc");
+      expect(wc.arr).to.eql(["S", "t", "e", "n", "c", "i", "l"]);
+      expect(wc.obj).to.eql({ org: "Ionic", repo: "stencil" });
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

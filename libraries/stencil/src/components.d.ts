@@ -25,6 +25,14 @@ export namespace Components {
     interface ComponentWithImperativeEvent {
         "eventHandled": boolean;
     }
+    interface ComponentWithInheritance {
+        "arr": string[];
+        "bool": boolean;
+        "camelCaseObj": { label: string; };
+        "num": number;
+        "obj": { org: string; repo: string; };
+        "str": string;
+    }
     interface ComponentWithProperties {
         "arr": string[];
         "bool": boolean;
@@ -67,6 +75,12 @@ declare global {
         prototype: HTMLComponentWithImperativeEventElement;
         new (): HTMLComponentWithImperativeEventElement;
     };
+    interface HTMLComponentWithInheritanceElement extends Components.ComponentWithInheritance, HTMLStencilElement {
+    }
+    var HTMLComponentWithInheritanceElement: {
+        prototype: HTMLComponentWithInheritanceElement;
+        new (): HTMLComponentWithInheritanceElement;
+    };
     interface HTMLComponentWithPropertiesElement extends Components.ComponentWithProperties, HTMLStencilElement {
     }
     var HTMLComponentWithPropertiesElement: {
@@ -85,6 +99,7 @@ declare global {
         "component-with-declarative-event": HTMLComponentWithDeclarativeEventElement;
         "component-with-different-views": HTMLComponentWithDifferentViewsElement;
         "component-with-imperative-event": HTMLComponentWithImperativeEventElement;
+        "component-with-inheritance": HTMLComponentWithInheritanceElement;
         "component-with-properties": HTMLComponentWithPropertiesElement;
         "component-without-children": HTMLComponentWithoutChildrenElement;
     }
@@ -108,6 +123,14 @@ declare namespace LocalJSX {
     interface ComponentWithImperativeEvent {
         "eventHandled"?: boolean;
     }
+    interface ComponentWithInheritance {
+        "arr"?: string[];
+        "bool"?: boolean;
+        "camelCaseObj"?: { label: string; };
+        "num"?: number;
+        "obj"?: { org: string; repo: string; };
+        "str"?: string;
+    }
     interface ComponentWithProperties {
         "arr"?: string[];
         "bool"?: boolean;
@@ -124,6 +147,7 @@ declare namespace LocalJSX {
         "component-with-declarative-event": ComponentWithDeclarativeEvent;
         "component-with-different-views": ComponentWithDifferentViews;
         "component-with-imperative-event": ComponentWithImperativeEvent;
+        "component-with-inheritance": ComponentWithInheritance;
         "component-with-properties": ComponentWithProperties;
         "component-without-children": ComponentWithoutChildren;
     }
@@ -137,6 +161,7 @@ declare module "@stencil/core" {
             "component-with-declarative-event": LocalJSX.ComponentWithDeclarativeEvent & JSXBase.HTMLAttributes<HTMLComponentWithDeclarativeEventElement>;
             "component-with-different-views": LocalJSX.ComponentWithDifferentViews & JSXBase.HTMLAttributes<HTMLComponentWithDifferentViewsElement>;
             "component-with-imperative-event": LocalJSX.ComponentWithImperativeEvent & JSXBase.HTMLAttributes<HTMLComponentWithImperativeEventElement>;
+            "component-with-inheritance": LocalJSX.ComponentWithInheritance & JSXBase.HTMLAttributes<HTMLComponentWithInheritanceElement>;
             "component-with-properties": LocalJSX.ComponentWithProperties & JSXBase.HTMLAttributes<HTMLComponentWithPropertiesElement>;
             "component-without-children": LocalJSX.ComponentWithoutChildren & JSXBase.HTMLAttributes<HTMLComponentWithoutChildrenElement>;
         }
