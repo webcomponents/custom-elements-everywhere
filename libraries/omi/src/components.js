@@ -60,7 +60,8 @@ define('component-with-properties', _ => {
     num: 42,
     str: 'Omi',
     arr: ['O', 'm', 'i'],
-    obj: { org: 'tencent', repo: 'omi' }
+    obj: { org: 'tencent', repo: 'omi' },
+    camelCaseObj: { label: "passed" }
   };
   return (
     <div>
@@ -70,6 +71,7 @@ define('component-with-properties', _ => {
         str={data.str}
         arr={data.arr}
         obj={data.obj}
+        camelCaseObj={data.camelCaseObj}
       ></ce-with-properties>
     </div>
   );

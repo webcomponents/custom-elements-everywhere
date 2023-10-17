@@ -38,6 +38,14 @@ describe("advanced support", function () {
       let data = wc.obj;
       expect(data).to.eql({ org: "tencent", repo: "omi" });
     });
+
+    it("will pass object data to a camelCase-named property", function () {
+      this.weight = 2;
+      let root = render(<component-with-properties />, scratch);
+      let wc = root.shadowRoot.querySelector("#wc");
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
   });
 
   describe("events", function () {
