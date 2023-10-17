@@ -13,11 +13,19 @@ import {opts, libraries} from './common.mjs';
 async function copyAndVerifyLibraryResults() {
   const verb = opts['update-goldens'] ? "Updating test goldens" : "Testing";
   console.log(`\n### ${verb}\n`);
-  await Promise.all(libraries.map(async (library) => {
+  const results = await Promise.allSettled(libraries.map(async (library) => {
     await verifyResults(library);
     await fetchMetadata(library);
     await copyDocs(library);
   }));
+  for (let i = 0; i < libraries.length; i++) {
+    const result = results[i];
+    if (result.status === 'rejected') {
+      const library = libraries[i];
+      console.error(`Failure in ${library.name}`);
+      console.error(result.reason);
+    }
+  }
 }
 
 async function fetchMetadata(library) {
