@@ -46,6 +46,12 @@ class CEWithProperties extends HTMLElement {
   get obj() {
     return this._obj;
   }
+  set camelCaseObj(value) {
+    this._camelCaseObj = value;
+  }
+  get camelCaseObj() {
+    return this._camelCaseObj;
+  }
 }
 
 customElements.define('ce-with-properties', CEWithProperties);
