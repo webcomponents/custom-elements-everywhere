@@ -19,6 +19,7 @@ import {defineComponent, nextTick} from 'vue';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export const ComponentWithoutChildren = defineComponent({
@@ -86,6 +87,31 @@ export const ComponentWithProperties = defineComponent({
         :obj.prop="obj"
         :camelCaseObj.prop="camelCaseObj"
       ></ce-with-properties>
+    </div>
+  `,
+  data: function() {
+    return {
+      bool: true,
+      num: 42,
+      str: 'Vue',
+      arr: ['V', 'u', 'e'],
+      obj: { org: 'vuejs', repo: 'vue' },
+      camelCaseObj: { label: "passed" }
+    }
+  }
+});
+
+export const ComponentWithInheritance = defineComponent({
+  template: `
+    <div>
+      <ce-with-inheritance id="wc"
+        :bool.prop="bool"
+        :num.prop="num"
+        :str.prop="str"
+        :arr.prop="arr"
+        :obj.prop="obj"
+        :camelCaseObj.prop="camelCaseObj"
+      ></ce-with-inheritance>
     </div>
   `,
   data: function() {
