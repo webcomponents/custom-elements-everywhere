@@ -42,6 +42,15 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "ryansolid", repo: "solid" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      let wc;
+      render(() => wc = <ComponentWithProperties />, document.body);
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {
