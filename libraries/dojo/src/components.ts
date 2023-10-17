@@ -67,6 +67,18 @@ export const ComponentWithProperties = factory(() => {
   return v('ce-with-properties', data);
 });
 
+export const ComponentWithInheritance = factory(() => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Dojo',
+    arr: ['d', 'o', 'j', 'o'],
+    obj: { org: 'dojo', repo: 'dojo' },
+    camelCaseObj: { label: "passed" }
+  };
+  return v('ce-with-inheritance', data);
+});
+
 export const ComponentWithUnregistered = factory(() => {
   const data = {
     bool: true,
