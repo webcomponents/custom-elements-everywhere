@@ -61,7 +61,8 @@ export const ComponentWithProperties = factory(() => {
     num: 42,
     str: 'Dojo',
     arr: ['d', 'o', 'j', 'o'],
-    obj: { org: 'dojo', repo: 'dojo' }
+    obj: { org: 'dojo', repo: 'dojo' },
+    camelCaseObj: { label: "passed" }
   };
   return v('ce-with-properties', data);
 });

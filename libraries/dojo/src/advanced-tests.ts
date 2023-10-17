@@ -60,6 +60,16 @@ describe("advanced support", function() {
       const data = wc.obj;
       expect(data).to.eql({ org: "dojo", repo: "dojo" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      const r = renderer(() => w(ComponentWithProperties, {}));
+      r.mount({ domNode: scratch, sync: true });
+      const wc: any = document.querySelector("ce-with-properties");
+      const data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {
