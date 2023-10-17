@@ -18,6 +18,7 @@
 import 'ce-without-children'
 import 'ce-with-children'
 import 'ce-with-properties'
+import 'ce-with-inheritance'
 import 'ce-with-event'
 
 import m from 'mithril'
@@ -76,6 +77,20 @@ export const ComponentWithProperties = () => ({
   view: () =>
     m('div',
       m('ce-with-properties#wc', {
+        bool: true,
+        num: 42,
+        str: 'Mithril',
+        arr: ['M', 'i', 't', 'h', 'r', 'i', 'l'],
+        obj: { org: 'MithrilJS', repo: 'mithril.js' },
+        camelCaseObj: { label: "passed" },
+      })
+    )
+})
+
+export const ComponentWithInheritance = () => ({
+  view: () =>
+    m('div',
+      m('ce-with-inheritance#wc', {
         bool: true,
         num: 42,
         str: 'Mithril',
