@@ -24,6 +24,7 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
@@ -54,6 +55,15 @@ describe("advanced support", function() {
       let wc = root.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      let root = mount(<ComponentWithInheritance />).getDOMNode();
+      let wc = root.querySelector("#wc");
+      expect(wc.arr).to.eql(["P", "r", "e", "a", "c", "t"]);
+      expect(wc.obj).to.eql({ org: "developit", repo: "preact" });
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });
