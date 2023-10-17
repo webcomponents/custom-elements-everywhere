@@ -37,31 +37,42 @@ afterEach(function() {
 
 describe("advanced support", function() {
   describe("attributes and properties", function() {
-    let root;
-    let wc;
-
-    beforeEach(function() {
-      root = document.createElement("component-with-properties");
-      scratch.appendChild(root);
-      wc = root.shadowRoot.querySelector("#wc");
-    });
 
     it("will pass array data as a property", function() {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.arr;
       expect(data).to.eql(["P", "o", "l", "y", "m", "e", "r"]);
     });
 
     it("will pass object data as a property", function() {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.obj;
       expect(data).to.eql({ org: "polymer", repo: "polymer" });
     });
 
     it("will pass object data to a camelCase-named property", function() {
       this.weight = 2;
+      const root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      const wc = root.shadowRoot.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      const root = document.createElement("component-with-inheritance");
+      scratch.appendChild(root);
+      const wc = root.shadowRoot.querySelector("#wc");
+      expect(wc.arr).to.eql(["P", "o", "l", "y", "m", "e", "r"]);
+      expect(wc.obj).to.eql({ org: "polymer", repo: "polymer" });
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });
