@@ -26,7 +26,8 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithInheritance
 } from "./components";
 
 describe("advanced support", function() {
@@ -59,6 +60,17 @@ describe("advanced support", function() {
         let wc = root.wc;
         let data = wc.camelCaseObj;
         expect(data).to.eql({ label: "passed" });
+      });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      S.root(() => {
+        let root = <ComponentWithInheritance />;
+        let wc = root.wc;
+        expect(wc.arr).to.eql(["S", "u", "r", "p", "l", "u", "s"]);
+        expect(wc.obj).to.eql({ org: "adam.haile@gmail.com", repo: "surplus" });
+        expect(wc.camelCaseObj).to.eql({ label: "passed" });
       });
     });
 
