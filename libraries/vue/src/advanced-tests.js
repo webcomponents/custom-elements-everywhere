@@ -70,6 +70,17 @@ describe("advanced support", function() {
       const data = wc.obj;
       expect(data).to.eql({ org: "vuejs", repo: "vue" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      const app = createApp(ComponentWithProperties)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      const data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {
