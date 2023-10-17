@@ -2,6 +2,7 @@ import { define, h } from 'omi'
 import 'ce-without-children'
 import 'ce-with-children'
 import 'ce-with-properties'
+import 'ce-with-inheritance'
 import 'ce-with-event'
 
 define('component-without-children', _ => (
@@ -78,8 +79,30 @@ define('component-with-properties', _ => {
 
 })
 
+define('component-with-inheritance', _ => {
 
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Omi',
+    arr: ['O', 'm', 'i'],
+    obj: { org: 'tencent', repo: 'omi' },
+    camelCaseObj: { label: "passed" }
+  };
+  return (
+    <div>
+      <ce-with-inheritance id="wc"
+        bool={data.bool}
+        num={data.num}
+        str={data.str}
+        arr={data.arr}
+        obj={data.obj}
+        camelCaseObj={data.camelCaseObj}
+      ></ce-with-inheritance>
+    </div>
+  );
 
+})
 
 define('component-with-unregistered', _ => {
 
