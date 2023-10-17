@@ -124,7 +124,7 @@ describe("basic support", function() {
     it("will pass string data as either an attribute or a property", function() {
       this.weight = 3;
       let data = wc.str || wc.getAttribute("str");
-      expect(data).to.eql("Lit element");
+      expect(data).to.eql("Lit");
     });
   });
 
