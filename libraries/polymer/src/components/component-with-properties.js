@@ -30,6 +30,12 @@ class ComponentWithProperties extends PolymerElement {
         value: function() {
           return { org: "polymer", repo: "polymer" };
         }
+      },
+      camelCaseObj: {
+        type: Object,
+        value: function() {
+          return { label: "passed" };
+        }
       }
     };
   }
@@ -42,6 +48,7 @@ class ComponentWithProperties extends PolymerElement {
           str="[[str]]"
           arr="[[arr]]"
           obj="[[obj]]"
+          camel-case-obj="[[camelCaseObj]]"
         ></ce-with-properties>
       </div>
     `;
