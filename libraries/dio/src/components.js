@@ -109,6 +109,31 @@ export class ComponentWithProperties extends Component {
   }
 }
 
+export class ComponentWithInheritance extends Component {
+  render () {
+    const data = {
+      bool: true,
+      num: 42,
+      str: 'DIO',
+      arr: ['D', 'I', 'O'],
+      obj: { org: 'thysultan', repo: 'dio.js' },
+      camelCaseObj: { label: "passed" }
+    };
+    return (
+      <div>
+        <ce-with-inheritance id="wc"
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+          camelCaseObj={data.camelCaseObj}
+        ></ce-with-inheritance>
+      </div>
+    );
+  }
+}
+
 export class ComponentWithUnregistered extends Component {
   render () {
     const data = {
