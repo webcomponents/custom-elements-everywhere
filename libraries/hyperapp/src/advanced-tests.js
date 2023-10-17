@@ -24,7 +24,8 @@ import {
   ComponentWithDifferentViews,
   ComponentWithProperties,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithInheritance
 } from "./components";
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -66,6 +67,16 @@ describe("advanced support", function () {
       ComponentWithProperties(root);
       await new Promise(requestAnimationFrame);
       let wc = testContainer.querySelector("#wc");
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", async function () {
+      this.weight = 2;
+      ComponentWithInheritance(root);
+      await new Promise(requestAnimationFrame);
+      let wc = testContainer.querySelector("#wc");
+      expect(wc.arr).to.eql(["H", "y", "p", "e", "r", "a", "p", "p"]);
+      expect(wc.obj).to.eql({ org: "Hyperapp", repo: "hyperapp.js" });
       expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 

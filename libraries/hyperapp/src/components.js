@@ -81,6 +81,24 @@ export const ComponentWithProperties = node =>
       ]),
   })
 
+export const ComponentWithInheritance = node =>
+app({
+  node,
+  init: {},
+  view: () =>
+    h("div", {}, [
+      h("ce-with-inheritance", {
+        id: "wc",
+        bool: true,
+        num: 42,
+        str: "Hyperapp",
+        arr: ["H", "y", "p", "e", "r", "a", "p", "p"],
+        obj: { org: "Hyperapp", repo: "hyperapp.js" },
+        camelCaseObj: { label: "passed" },
+      }),
+    ]),
+})
+
 export const ComponentWithImperativeEvent = node => {
   const _withElem = (_, opts) =>
     requestAnimationFrame(_ => {
