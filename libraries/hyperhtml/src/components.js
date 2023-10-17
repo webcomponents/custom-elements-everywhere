@@ -79,6 +79,18 @@ export const ComponentWithProperties = (root) => hyper(root)`
     ></ce-with-properties>
   </div>`;
 
+export const ComponentWithInheritance = (root) => hyper(root)`
+  <div>
+    <ce-with-inheritance id="wc"
+      bool=${true}
+      num=${42}
+      str=${'hyperHTML'}
+      arr=${['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']}
+      obj=${{org: 'viperHTML', repo: 'hyperHTML'}}
+      camelCaseObj=${{ label: "passed" }}
+    ></ce-with-inheritance>
+  </div>`;
+
 export class ComponentWithImperativeEvent extends HyperHTMLELement {
   created() {
     this.eventClicks = 0;
