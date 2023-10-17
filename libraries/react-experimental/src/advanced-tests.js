@@ -100,6 +100,21 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "facebook", repo: "react" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      let root;
+      render(
+        <ComponentWithProperties
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
+      let wc = root.wc;
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
   });
 
   describe("events", function() {

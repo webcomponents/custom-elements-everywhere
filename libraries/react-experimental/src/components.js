@@ -91,7 +91,8 @@ export class ComponentWithProperties extends Component {
       num: 42,
       str: 'React',
       arr: ['R', 'e', 'a', 'c', 't'],
-      obj: { org: 'facebook', repo: 'react' }
+      obj: { org: 'facebook', repo: 'react' },
+      camelCaseObj: { label: "passed" }
     };
     return (
       <div>
@@ -101,6 +102,7 @@ export class ComponentWithProperties extends Component {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          camelCaseObj={data.camelCaseObj}
         ></ce-with-properties>
       </div>
     );
