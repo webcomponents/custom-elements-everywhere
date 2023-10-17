@@ -27,7 +27,8 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithInheritance
 } from "./components";
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -115,6 +116,23 @@ describe("advanced support", function() {
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
     });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      let root;
+      render(
+        <ComponentWithInheritance
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
+      let wc = root.wc;
+      expect(wc.arr).to.eql(["R", "e", "a", "c", "t"]);
+      expect(wc.obj).to.eql({ org: "facebook", repo: "react" });
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {
