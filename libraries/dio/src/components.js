@@ -91,7 +91,8 @@ export class ComponentWithProperties extends Component {
       num: 42,
       str: 'DIO',
       arr: ['D', 'I', 'O'],
-      obj: { org: 'thysultan', repo: 'dio.js' }
+      obj: { org: 'thysultan', repo: 'dio.js' },
+      camelCaseObj: { label: "passed" }
     };
     return (
       <div>
@@ -101,6 +102,7 @@ export class ComponentWithProperties extends Component {
           str={data.str}
           arr={data.arr}
           obj={data.obj}
+          camelCaseObj={data.camelCaseObj}
         ></ce-with-properties>
       </div>
     );
