@@ -28,6 +28,7 @@ export namespace Components {
     interface ComponentWithProperties {
         "arr": string[];
         "bool": boolean;
+        "camelCaseObj": { label: string; };
         "num": number;
         "obj": { org: string; repo: string; };
         "str": string;
@@ -110,6 +111,7 @@ declare namespace LocalJSX {
     interface ComponentWithProperties {
         "arr"?: string[];
         "bool"?: boolean;
+        "camelCaseObj"?: { label: string; };
         "num"?: number;
         "obj"?: { org: string; repo: string; };
         "str"?: string;

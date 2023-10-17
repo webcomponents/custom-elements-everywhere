@@ -51,6 +51,17 @@ describe("advanced support", function() {
         expect(data).to.eql({ org: "adam.haile@gmail.com", repo: "surplus" });
       });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      S.root(() => {
+        let root = <ComponentWithProperties />;
+        let wc = root.wc;
+        let data = wc.camelCaseObj;
+        expect(data).to.eql({ label: "passed" });
+      });
+    });
+
   });
 
   describe("events", function() {

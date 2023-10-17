@@ -84,6 +84,7 @@ export const ComponentWithProperties = defineComponent({
         :str.prop="str"
         :arr.prop="arr"
         :obj.prop="obj"
+        :camelCaseObj.prop="camelCaseObj"
       ></ce-with-properties>
     </div>
   `,
@@ -93,7 +94,8 @@ export const ComponentWithProperties = defineComponent({
       num: 42,
       str: 'Vue',
       arr: ['V', 'u', 'e'],
-      obj: { org: 'vuejs', repo: 'vue' }
+      obj: { org: 'vuejs', repo: 'vue' },
+      camelCaseObj: { label: "passed" }
     }
   }
 });

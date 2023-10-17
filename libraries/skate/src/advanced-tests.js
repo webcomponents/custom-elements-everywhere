@@ -66,6 +66,17 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "skatejs", repo: "skatejs" });
     });
+
+    it("will pass object data to a camelCase-named property", async function() {
+      this.weight = 2;
+      let root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await Promise.resolve();
+      let wc = root.shadowRoot.querySelector("#wc");
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {

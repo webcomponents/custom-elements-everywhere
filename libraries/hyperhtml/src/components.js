@@ -75,6 +75,7 @@ export const ComponentWithProperties = (root) => hyper(root)`
       str=${'hyperHTML'}
       arr=${['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']}
       obj=${{org: 'viperHTML', repo: 'hyperHTML'}}
+      camelCaseObj=${{ label: "passed" }}
     ></ce-with-properties>
   </div>`;
 

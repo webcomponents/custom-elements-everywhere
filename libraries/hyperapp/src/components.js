@@ -76,6 +76,7 @@ export const ComponentWithProperties = node =>
           str: "Hyperapp",
           arr: ["H", "y", "p", "e", "r", "a", "p", "p"],
           obj: { org: "Hyperapp", repo: "hyperapp.js" },
+          camelCaseObj: { label: "passed" },
         }),
       ]),
   })

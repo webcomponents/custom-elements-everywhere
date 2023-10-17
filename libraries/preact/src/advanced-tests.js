@@ -47,6 +47,15 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "developit", repo: "preact" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      let root = mount(<ComponentWithProperties />).getDOMNode();
+      let wc = root.querySelector("#wc");
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
+
   });
 
   describe("events", function() {

@@ -67,6 +67,17 @@ describe("advanced support", function() {
         done();
       });
     });
+
+    it("will pass object data to a camelCase-named property", function(done) {
+      this.weight = 2;
+      requestAnimationFrame(() => {
+        const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
+        const data = wc.camelCaseObj;
+        expect(data).to.eql({ label: "passed" });
+        done();
+      });
+    });
+
   });
 
   describe("events", function() {

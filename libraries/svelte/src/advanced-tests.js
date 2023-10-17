@@ -57,6 +57,14 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "sveltejs", repo: "svelte" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      new ComponentWithProperties({ target: scratch });
+      let wc = scratch.querySelector("#wc");
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
   });
 
   describe("events", function() {

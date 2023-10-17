@@ -10,6 +10,7 @@ export class ComponentWithProperties {
   @Prop() str = "Stencil";
   @Prop() arr = ["S", "t", "e", "n", "c", "i", "l"];
   @Prop() obj = { org: "Ionic", repo: "stencil" };
+  @Prop() camelCaseObj = { label: "passed" };
 
   render() {
     return (
@@ -21,6 +22,7 @@ export class ComponentWithProperties {
           str={this.str}
           arr={this.arr}
           obj={this.obj}
+          camelCaseObj={this.camelCaseObj}
         ></ce-with-properties>
       </Host>
     );

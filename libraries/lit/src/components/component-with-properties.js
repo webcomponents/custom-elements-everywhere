@@ -8,7 +8,8 @@ class ComponentWithProperties extends LitElement {
       num: { type: Number },
       str: { type: String },
       arr: { type: Array },
-      obj: { type: Object }
+      obj: { type: Object },
+      camelCaseObj: { type: Object },
     };
   }
 
@@ -31,6 +32,7 @@ class ComponentWithProperties extends LitElement {
           str="${this.str}"
           .arr="${this.arr}"
           .obj="${this.obj}"
+          .camelCaseObj=${{ label: "passed" }}
         ></ce-with-properties>
       </div>
     `;

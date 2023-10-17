@@ -68,6 +68,16 @@ describe("advanced support", function() {
       let data = wc.obj;
       expect(data).to.eql({ org: "angular", repo: "angular" });
     });
+
+    it("will pass object data to a camelCase-named property", function() {
+      this.weight = 2;
+      let fixture = TestBed.createComponent(ComponentWithProperties);
+      fixture.detectChanges();
+      let root = fixture.debugElement.nativeElement;
+      let wc = root.querySelector("#wc");
+      let data = wc.camelCaseObj;
+      expect(data).to.eql({ label: "passed" });
+    });
   });
 
   describe("events", function() {

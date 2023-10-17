@@ -52,6 +52,7 @@ describe("advanced support", function () {
       let wc = testContainer.querySelector("#wc");
       expect(wc.arr).to.eql(["H", "y", "p", "e", "r", "a", "p", "p"]);
     });
+
     it("will pass object data as a property", async function () {
       this.weight = 2;
       ComponentWithProperties(root);
@@ -59,7 +60,17 @@ describe("advanced support", function () {
       let wc = testContainer.querySelector("#wc");
       expect(wc.obj).to.eql({ org: "Hyperapp", repo: "hyperapp.js" });
     });
+
+    it("will pass object data to a camelCase-named property", async function () {
+      this.weight = 2;
+      ComponentWithProperties(root);
+      await new Promise(requestAnimationFrame);
+      let wc = testContainer.querySelector("#wc");
+      expect(wc.camelCaseObj).to.eql({ label: "passed" });
+    });
+
   });
+
   describe("events", function () {
     it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function () {
       this.weight = 2;

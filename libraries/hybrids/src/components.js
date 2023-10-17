@@ -56,7 +56,8 @@ export const ComponentWithProperties = {
       num=${42}
       str=${"hybrids"}
       arr=${["h", "y", "b", "r", "i", "d", "s"]}
-      obj=${{ library: "hybrids" }}
+      obj=${{ library: "hybrids" }},
+      camelCaseObj=${{ label: "passed" }}
     ></ce-with-properties>
   `,
 };

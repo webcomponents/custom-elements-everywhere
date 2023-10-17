@@ -49,6 +49,7 @@ export const ComponentWithProperties = () => {
     str: "Solid",
     arr: ["S", "o", "l", "i", "d"],
     obj: { org: "ryansolid", repo: "solid" },
+    camelCaseObj: { label: "passed" },
   };
   return (
     <ce-with-properties
@@ -57,6 +58,7 @@ export const ComponentWithProperties = () => {
       str={data.str}
       arr={data.arr}
       obj={data.obj}
+      camelCaseObj={data.camelCaseObj}
     />
   );
 };

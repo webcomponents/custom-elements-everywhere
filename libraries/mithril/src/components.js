@@ -80,7 +80,8 @@ export const ComponentWithProperties = () => ({
         num: 42,
         str: 'Mithril',
         arr: ['M', 'i', 't', 'h', 'r', 'i', 'l'],
-        obj: { org: 'MithrilJS', repo: 'mithril.js' }
+        obj: { org: 'MithrilJS', repo: 'mithril.js' },
+        camelCaseObj: { label: "passed" },
       })
     )
 })
