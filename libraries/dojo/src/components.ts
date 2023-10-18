@@ -20,6 +20,7 @@ import icache from '@dojo/framework/core/middleware/icache';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 const factory = create({ icache });

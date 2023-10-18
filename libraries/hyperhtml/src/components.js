@@ -18,6 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 import HyperHTMLELement from 'hyperhtml-element/esm';

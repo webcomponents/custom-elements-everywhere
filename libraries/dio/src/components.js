@@ -19,6 +19,7 @@ import { h, render, Component } from 'dio.js';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export class ComponentWithoutChildren extends Component {

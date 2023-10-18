@@ -18,6 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export { default as ComponentWithoutChildren } from './components/ComponentWithoutChildren.svelte';
