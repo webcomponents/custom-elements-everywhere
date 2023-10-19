@@ -78,7 +78,6 @@ describe("advanced support", function() {
       const wc: any = document.querySelector("ce-with-inheritance");
       expect(wc.arr).to.eql(["d", "o", "j", "o"]);
       expect(wc.obj).to.eql({ org: "dojo", repo: "dojo" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

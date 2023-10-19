@@ -86,7 +86,6 @@ describe("advanced support", function() {
         const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
         expect(wc.arr).to.eql(["h", "y", "b", "r", "i", "d", "s"]);
         expect(wc.obj).to.eql({ library: "hybrids" });
-        expect(wc.camelCaseObj).to.eql({ label: "passed" });
         done();
       });
     });

@@ -73,7 +73,6 @@ describe("advanced support", function() {
       let wc = scratch.querySelector("#wc");
       expect(wc.arr).to.eql(["s", "v", "e", "l", "t", "e"]);
       expect(wc.obj).to.eql({ org: "sveltejs", repo: "svelte" });
-      // expect(wc.camelCaseObj).to.eql({ label: "passed"});
     });
 
   });

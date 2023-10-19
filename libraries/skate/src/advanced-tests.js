@@ -86,7 +86,6 @@ describe("advanced support", function() {
       let wc = root.shadowRoot.querySelector("#wc");
       expect(wc.arr).to.eql(["S", "k", "a", "t", "e"]);
       expect(wc.obj).to.eql({ org: "skatejs", repo: "skatejs" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

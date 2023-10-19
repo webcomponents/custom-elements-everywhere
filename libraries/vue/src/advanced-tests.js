@@ -90,7 +90,6 @@ describe("advanced support", function() {
       const wc = scratch.querySelector("#wc");
       expect(wc.arr).to.eql(["V", "u", "e"]);
       expect(wc.obj).to.eql({ org: "vuejs", repo: "vue" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

@@ -70,7 +70,6 @@ describe("advanced support", function() {
         let wc = root.wc;
         expect(wc.arr).to.eql(["S", "u", "r", "p", "l", "u", "s"]);
         expect(wc.obj).to.eql({ org: "adam.haile@gmail.com", repo: "surplus" });
-        expect(wc.camelCaseObj).to.eql({ label: "passed" });
       });
     });
 

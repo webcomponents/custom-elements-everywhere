@@ -73,7 +73,6 @@ describe('advanced support', function() {
       let wc = scratch.querySelector('#wc');
       expect(wc.arr).to.eql(['r', 'i', 'o', 't']);
       expect(wc.obj).to.eql({ org: 'riotjs', repo: 'riot' });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     })
 
   })

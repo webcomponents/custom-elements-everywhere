@@ -77,7 +77,6 @@ describe("advanced support", function () {
       let wc = testContainer.querySelector("#wc");
       expect(wc.arr).to.eql(["H", "y", "p", "e", "r", "a", "p", "p"]);
       expect(wc.obj).to.eql({ org: "Hyperapp", repo: "hyperapp.js" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

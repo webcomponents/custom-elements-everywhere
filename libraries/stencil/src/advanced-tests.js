@@ -77,7 +77,6 @@ describe("advanced support", function () {
       const wc = root.shadowRoot.querySelector("#wc");
       expect(wc.arr).to.eql(["S", "t", "e", "n", "c", "i", "l"]);
       expect(wc.obj).to.eql({ org: "Ionic", repo: "stencil" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

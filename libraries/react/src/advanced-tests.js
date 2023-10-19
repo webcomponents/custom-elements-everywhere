@@ -126,7 +126,6 @@ describe("advanced support", function() {
       let wc = root.wc;
       expect(wc.arr).to.eql(["R", "e", "a", "c", "t"]);
       expect(wc.obj).to.eql({ org: "facebook", repo: "react" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

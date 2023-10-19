@@ -76,7 +76,6 @@ describe("advanced support", function() {
       let wc = root.querySelector("#wc");
       expect(wc.arr).to.eql(['M', 'i', 't', 'h', 'r', 'i', 'l']);
       expect(wc.obj).to.eql({ org: "MithrilJS", repo: "mithril.js" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

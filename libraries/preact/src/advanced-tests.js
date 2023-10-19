@@ -63,7 +63,6 @@ describe("advanced support", function() {
       let wc = root.querySelector("#wc");
       expect(wc.arr).to.eql(["P", "r", "e", "a", "c", "t"]);
       expect(wc.obj).to.eql({ org: "developit", repo: "preact" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

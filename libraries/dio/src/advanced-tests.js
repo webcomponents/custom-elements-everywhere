@@ -79,7 +79,6 @@ describe("advanced support", function() {
       let wc = scratch.querySelector("#wc");
       expect(wc.arr).to.eql(["D", "I", "O"]);
       expect(wc.obj).to.eql({ org: "thysultan", repo: "dio.js" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

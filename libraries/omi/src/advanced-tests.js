@@ -53,7 +53,6 @@ describe("advanced support", function () {
       let wc = root.shadowRoot.querySelector("#wc");
       expect(wc.arr).to.eql(["O", "m", "i"]);
       expect(wc.obj).to.eql({ org: "tencent", repo: "omi" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });

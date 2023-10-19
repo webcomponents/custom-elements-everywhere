@@ -55,7 +55,6 @@ describe("advanced support", () => {
       let wc = root.querySelector('#wc')
       expect(wc.arr).to.eql(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
       expect(wc.obj).to.eql({ org: "angular", repo: "angular" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
   });
 

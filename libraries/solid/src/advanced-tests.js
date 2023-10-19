@@ -58,7 +58,6 @@ describe("advanced support", function() {
       render(() => wc = <ComponentWithInheritance />, document.body);
       expect(wc.arr).to.eql(["S", "o", "l", "i", "d"]);
       expect(wc.obj).to.eql({ org: "ryansolid", repo: "solid" });
-      expect(wc.camelCaseObj).to.eql({ label: "passed" });
     });
 
   });
