@@ -135,43 +135,6 @@ describe('basic support', function() {
       const data = wc.str || wc.getAttribute('str');
       expect(data).to.eql('lwc');
     });
-
-    /*
-    it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
-      const cmp = ComponentWithUnregistered();
-      scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-unregistered');
-      expect(wc.hasAttribute('bool')).to.be.true;
-    });
-
-    it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
-      const cmp = ComponentWithUnregistered();
-      scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-unregistered');
-      expect(wc.getAttribute('num')).to.eql('42');
-    });
-
-    it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
-      const cmp = ComponentWithUnregistered();
-      scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-unregistered');
-      expect(wc.getAttribute('str')).to.eql('lwc');
-    });
-
-    it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
-      const cmp = ComponentWithUnregistered();
-      scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-unregistered');
-      expect(wc.arr).to.eql(['L', 'W', 'C']);
-    });
-
-    it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
-      const cmp = ComponentWithUnregistered();
-      scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-unregistered');
-      expect(wc.obj).to.eql({ org: 'salesforce', repo: 'lwc' });
-    });
-    */
   });
 
   describe('events', function() {

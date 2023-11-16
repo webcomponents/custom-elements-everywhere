@@ -27,7 +27,6 @@ import WithChildren from 'x/withChildren';
 import WithChildrenRerender from 'x/withChildrenRerender';
 import WithDifferentViews from 'x/withDifferentViews';
 import WithProperties from 'x/withProperties';
-import WithUnregistered from 'x/withUnregistered';
 import WithImperativeEvent from 'x/withImperativeEvent';
 import WithDeclarativeEvent from 'x/withDeclarativeEvent';
 
@@ -49,10 +48,6 @@ export function createComponentWithDifferentViews() {
 
 export function createComponentWithProperties() {
   return createElement('x-with-properties', { is: WithProperties });
-}
-
-export function createComponentWithUnregistered() {
-  return createElement('x-with-unregistered', { is: WithUnregistered });
 }
 
 export function createComponentWithImperativeEvent() {
