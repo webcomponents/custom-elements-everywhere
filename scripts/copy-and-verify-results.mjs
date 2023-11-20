@@ -13,11 +13,19 @@ import {opts, libraries} from './common.mjs';
 async function copyAndVerifyLibraryResults() {
   const verb = opts['update-goldens'] ? "Updating test goldens" : "Testing";
   console.log(`\n### ${verb}\n`);
-  await Promise.all(libraries.map(async (library) => {
+  const results = await Promise.allSettled(libraries.map(async (library) => {
     await verifyResults(library);
     await fetchMetadata(library);
     await copyDocs(library);
   }));
+  for (let i = 0; i < libraries.length; i++) {
+    const result = results[i];
+    if (result.status === 'rejected') {
+      const library = libraries[i];
+      console.error(`Failure in ${library.name}`);
+      console.error(result.reason);
+    }
+  }
 }
 
 async function fetchMetadata(library) {
@@ -65,11 +73,11 @@ function compareResultsAgainstGoldens(library) {
   } catch (err) {
     throw new Error(`Could not read expectedResults.json for ${library.name}:\n    ${err}`);
   }
+  chai.assert.deepEqual(actual, expected, `${library.name} has incorrect deep results equal`);
   // A constant, to make sure that if we add/remove any tests, that we add that test to all
   // tested libraries.
-  const numberOfTests = 32;
+  const numberOfTests = 34;
   chai.assert.equal(actual.success + actual.failed, numberOfTests, `${library.name} has incorrect total tests`);
-  chai.assert.deepEqual(actual, expected, `${library.name} has incorrect deep results equal`);
 }
 
 

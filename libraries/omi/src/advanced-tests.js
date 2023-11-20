@@ -46,6 +46,15 @@ describe("advanced support", function () {
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
     });
+
+    it("will pass object data to inherited properties", function () {
+      this.weight = 2;
+      let root = render(<component-with-inheritance />, scratch);
+      let wc = root.shadowRoot.querySelector("#wc");
+      expect(wc.arr).to.eql(["O", "m", "i"]);
+      expect(wc.obj).to.eql({ org: "tencent", repo: "omi" });
+    });
+
   });
 
   describe("events", function () {

@@ -23,6 +23,7 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
@@ -75,6 +76,16 @@ describe("advanced support", function() {
       let wc = root.shadowRoot.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", async function() {
+      this.weight = 2;
+      let root = document.createElement("component-with-inheritance");
+      scratch.appendChild(root);
+      await Promise.resolve();
+      let wc = root.shadowRoot.querySelector("#wc");
+      expect(wc.arr).to.eql(["S", "k", "a", "t", "e"]);
+      expect(wc.obj).to.eql({ org: "skatejs", repo: "skatejs" });
     });
 
   });

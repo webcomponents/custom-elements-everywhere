@@ -21,6 +21,7 @@ import on from 'surplus-mixin-on';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export const ComponentWithoutChildren = () =>
@@ -78,6 +79,29 @@ export const ComponentWithProperties = () => {
         ></ce-with-properties>
       </div>
     );
+}
+
+export const ComponentWithInheritance = () => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Surplus',
+    arr: ['S', 'u', 'r', 'p', 'l', 'u', 's'],
+    obj: { org: 'adam.haile@gmail.com', repo: 'surplus' },
+    camelCaseObj: { label: "passed" }
+  };
+  return (
+    <div>
+      <ce-with-inheritance ref={__.wc}
+        bool={data.bool}
+        num={data.num}
+        str={data.str}
+        arr={data.arr}
+        obj={data.obj}
+        camelCaseObj={data.camelCaseObj}
+      ></ce-with-inheritance>
+    </div>
+  );
 }
 
 export const ComponentWithUnregistered = () => {

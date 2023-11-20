@@ -19,6 +19,7 @@ import React, { Component } from 'react';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export class ComponentWithoutChildren extends Component {
@@ -104,6 +105,31 @@ export class ComponentWithProperties extends Component {
           obj={data.obj}
           camelCaseObj={data.camelCaseObj}
         ></ce-with-properties>
+      </div>
+    );
+  }
+}
+
+export class ComponentWithInheritance extends Component {
+  render () {
+    const data = {
+      bool: true,
+      num: 42,
+      str: 'React',
+      arr: ['R', 'e', 'a', 'c', 't'],
+      obj: { org: 'facebook', repo: 'react' },
+      camelCaseObj: { label: "passed" }
+    };
+    return (
+      <div>
+        <ce-with-inheritance ref={(el) => this.wc = el}
+          bool={data.bool}
+          num={data.num}
+          str={data.str}
+          arr={data.arr}
+          obj={data.obj}
+          camelCaseObj={data.camelCaseObj}
+        ></ce-with-inheritance>
       </div>
     );
   }

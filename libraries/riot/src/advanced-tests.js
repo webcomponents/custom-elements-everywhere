@@ -19,6 +19,7 @@ import { expect } from 'chai'
 import { component } from 'riot'
 import {
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithDeclarativeEvent
 } from './components'
 
@@ -64,6 +65,14 @@ describe('advanced support', function() {
       let wc = scratch.querySelector('#wc')
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    })
+
+    it('will pass object data to inherited properties', function() {
+      this.weight = 2;
+      component(ComponentWithInheritance)(scratch);
+      let wc = scratch.querySelector('#wc');
+      expect(wc.arr).to.eql(['r', 'i', 'o', 't']);
+      expect(wc.obj).to.eql({ org: 'riotjs', repo: 'riot' });
     })
 
   })

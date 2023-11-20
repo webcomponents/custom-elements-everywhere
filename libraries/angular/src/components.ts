@@ -26,6 +26,7 @@ import {
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 @Component({
@@ -95,6 +96,31 @@ export class ComponentWithDifferentViews {
   `
 })
 export class ComponentWithProperties {
+  data = {
+    bool: true,
+    num: 42,
+    str: 'Angular',
+    arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
+    obj: { org: 'angular', repo: 'angular' },
+    camelCaseObj: { label: "passed" }
+  }
+}
+
+@Component({
+  template: `
+    <div>
+      <ce-with-inheritance id="wc"
+        [bool]="data.bool"
+        [num]="data.num"
+        [str]="data.str"
+        [arr]="data.arr"
+        [obj]="data.obj"
+        [camelCaseObj]="data.camelCaseObj"
+      ></ce-with-inheritance>
+    </div>
+  `
+})
+export class ComponentWithInheritance {
   data = {
     bool: true,
     num: 42,

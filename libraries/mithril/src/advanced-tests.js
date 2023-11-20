@@ -25,6 +25,7 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
 } from "./components";
@@ -67,6 +68,14 @@ describe("advanced support", function() {
       m.mount(root, ComponentWithProperties());
       let wc = root.querySelector("#wc");
       expect(wc.camelCaseObj).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to a camelCase-named property", async function() {
+      this.weight = 2;
+      m.mount(root, ComponentWithInheritance());
+      let wc = root.querySelector("#wc");
+      expect(wc.arr).to.eql(['M', 'i', 't', 'h', 'r', 'i', 'l']);
+      expect(wc.obj).to.eql({ org: "MithrilJS", repo: "mithril.js" });
     });
 
   });

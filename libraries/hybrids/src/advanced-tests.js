@@ -20,6 +20,7 @@ import { define } from "hybrids";
 
 import {
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithDeclarativeEvent,
 } from "./components";
 
@@ -43,12 +44,10 @@ describe("advanced support", function() {
 
   describe("attributes and properties", function() {
     define("component-with-properties", ComponentWithProperties);
-
-    beforeEach(() => {
-      root.appendChild(document.createElement("component-with-properties"));
-    })
+    define("component-with-inheritance", ComponentWithInheritance);
 
     it("will pass array data as a property", function(done) {
+      root.appendChild(document.createElement("component-with-properties"));
       this.weight = 2;
       requestAnimationFrame(() => {
         const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
@@ -59,6 +58,7 @@ describe("advanced support", function() {
     });
 
     it("will pass object data as a property", function(done) {
+      root.appendChild(document.createElement("component-with-properties"));
       this.weight = 2;
       requestAnimationFrame(() => {
         const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
@@ -69,11 +69,23 @@ describe("advanced support", function() {
     });
 
     it("will pass object data to a camelCase-named property", function(done) {
+      root.appendChild(document.createElement("component-with-properties"));
       this.weight = 2;
       requestAnimationFrame(() => {
         const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
         const data = wc.camelCaseObj;
         expect(data).to.eql({ label: "passed" });
+        done();
+      });
+    });
+
+    it("will pass object data to inherited properties", function(done) {
+      root.appendChild(document.createElement("component-with-inheritance"));
+      this.weight = 2;
+      requestAnimationFrame(() => {
+        const wc = root.firstElementChild.shadowRoot.querySelector('#wc');
+        expect(wc.arr).to.eql(["h", "y", "b", "r", "i", "d", "s"]);
+        expect(wc.obj).to.eql({ library: "hybrids" });
         done();
       });
     });

@@ -24,7 +24,8 @@ import {
   ComponentWithChildren,
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
-ComponentWithProperties,
+  ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
@@ -111,6 +112,22 @@ describe("advanced support", function() {
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
     });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      let root;
+      render(
+        <ComponentWithInheritance
+          ref={(current) => {
+            root = current;
+          }}
+        />
+      );
+      let wc = root.wc;
+      expect(wc.arr).to.eql(["R", "e", "a", "c", "t"]);
+      expect(wc.obj).to.eql({ org: "facebook", repo: "react" });
+    });
+
   });
 
   describe("events", function() {

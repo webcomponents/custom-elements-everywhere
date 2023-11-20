@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
-import "ce-with-properties";
+import "ce-with-inheritance";
 
-class ComponentWithProperties extends LitElement {
+class ComponentWithInheritance extends LitElement {
   static get properties() {
     return {
       bool: { type: Boolean },
@@ -25,7 +25,7 @@ class ComponentWithProperties extends LitElement {
   render() {
     return html`
       <div>
-        <ce-with-properties
+        <ce-with-inheritance
           id="wc"
           bool="${this.bool}"
           num="${this.num}"
@@ -33,12 +33,12 @@ class ComponentWithProperties extends LitElement {
           .arr="${this.arr}"
           .obj="${this.obj}"
           .camelCaseObj=${{ label: "passed" }}
-        ></ce-with-properties>
+        ></ce-with-inheritance>
       </div>
     `;
   }
 }
 customElements.define(
-  "component-with-properties",
-  ComponentWithProperties
+  "component-with-inheritance",
+  ComponentWithInheritance
 );

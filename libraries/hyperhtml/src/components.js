@@ -18,6 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 import HyperHTMLELement from 'hyperhtml-element/esm';
@@ -77,6 +78,18 @@ export const ComponentWithProperties = (root) => hyper(root)`
       obj=${{org: 'viperHTML', repo: 'hyperHTML'}}
       camelCaseObj=${{ label: "passed" }}
     ></ce-with-properties>
+  </div>`;
+
+export const ComponentWithInheritance = (root) => hyper(root)`
+  <div>
+    <ce-with-inheritance id="wc"
+      bool=${true}
+      num=${42}
+      str=${'hyperHTML'}
+      arr=${['h', 'y', 'p', 'e', 'r', 'H', 'T', 'M', 'L']}
+      obj=${{org: 'viperHTML', repo: 'hyperHTML'}}
+      camelCaseObj=${{ label: "passed" }}
+    ></ce-with-inheritance>
   </div>`;
 
 export class ComponentWithImperativeEvent extends HyperHTMLELement {

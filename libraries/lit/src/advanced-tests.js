@@ -40,42 +40,47 @@ describe("advanced support", function() {
     let root;
     let wc;
 
-    beforeEach(async function() {
+
+    it("will pass array data as a property", async function() {
+      this.weight = 2;
       root = document.createElement("component-with-properties");
       scratch.appendChild(root);
       await root.updateComplete;
       wc = root.shadowRoot.querySelector("#wc");
-    });
-
-    it("will pass array data as a property", function() {
-      this.weight = 2;
       let data = wc.arr;
-      expect(data).to.eql([
-        "L",
-        "i",
-        "t",
-        "-",
-        "e",
-        "l",
-        "e",
-        "m",
-        "e",
-        "n",
-        "t"
-      ]);
+      expect(data).to.eql(["L", "i", "t"]);
     });
 
-    it("will pass object data as a property", function() {
+    it("will pass object data as a property", async function() {
       this.weight = 2;
+      root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await root.updateComplete;
+      wc = root.shadowRoot.querySelector("#wc");
       let data = wc.obj;
-      expect(data).to.eql({ org: "polymer", repo: "lit-element" });
+      expect(data).to.eql({ org: "lit", repo: "lit" });
     });
 
-    it("will pass object data to a camelCase-named property", function() {
+    it("will pass object data to a camelCase-named property", async function() {
       this.weight = 2;
+      root = document.createElement("component-with-properties");
+      scratch.appendChild(root);
+      await root.updateComplete;
+      wc = root.shadowRoot.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
     });
+
+    it("will pass object data to inherited properties", async function() {
+      this.weight = 2;
+      root = document.createElement("component-with-inheritance");
+      scratch.appendChild(root);
+      await root.updateComplete;
+      wc = root.shadowRoot.querySelector("#wc");
+      expect(wc.arr).to.eql(["L", "i", "t"]);
+      expect(wc.obj).to.eql({ org: "lit", repo: "lit" });
+    });
+
   });
 
   describe("events", function() {

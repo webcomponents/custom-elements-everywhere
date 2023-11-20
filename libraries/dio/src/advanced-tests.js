@@ -25,7 +25,8 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithInheritance
 } from "./components";
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -70,6 +71,14 @@ describe("advanced support", function() {
       let wc = scratch.querySelector("#wc");
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      render(<ComponentWithInheritance />, scratch);
+      let wc = scratch.querySelector("#wc");
+      expect(wc.arr).to.eql(["D", "I", "O"]);
+      expect(wc.obj).to.eql({ org: "thysultan", repo: "dio.js" });
     });
 
   });

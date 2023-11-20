@@ -18,7 +18,8 @@
 import { expect } from "chai";
 import {
   ComponentWithProperties,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithInheritance
 } from "./components";
 
 import renderer, { w } from "@dojo/framework/core/vdom";
@@ -68,6 +69,15 @@ describe("advanced support", function() {
       const wc: any = document.querySelector("ce-with-properties");
       const data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      const r = renderer(() => w(ComponentWithInheritance, {}));
+      r.mount({ domNode: scratch, sync: true });
+      const wc: any = document.querySelector("ce-with-inheritance");
+      expect(wc.arr).to.eql(["d", "o", "j", "o"]);
+      expect(wc.obj).to.eql({ org: "dojo", repo: "dojo" });
     });
 
   });

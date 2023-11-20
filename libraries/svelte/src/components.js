@@ -18,6 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 export { default as ComponentWithoutChildren } from './components/ComponentWithoutChildren.svelte';
@@ -25,6 +26,7 @@ export { default as ComponentWithChildren } from './components/ComponentWithChil
 export { default as ComponentWithChildrenRerender } from './components/ComponentWithChildrenRerender.svelte';
 export { default as ComponentWithDifferentViews } from './components/ComponentWithDifferentViews.svelte';
 export { default as ComponentWithProperties } from './components/ComponentWithProperties.svelte';
+export { default as ComponentWithInheritance } from './components/ComponentWithInheritance.svelte';
 export { default as ComponentWithUnregistered } from './components/ComponentWithUnregistered.svelte';
 export { default as ComponentWithImperativeEvent } from './components/ComponentWithImperativeEvent.svelte';
 export { default as ComponentWithDeclarativeEvent } from './components/ComponentWithDeclarativeEvent.svelte';

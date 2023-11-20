@@ -1,6 +1,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 const ComponentWithoutChildren = {
@@ -64,6 +65,34 @@ const ComponentWithProps = {
         ng-prop-obj="$ctrl.obj"
         ng-prop-camel-case-obj="$ctrl.camelCaseObj"
       ></ce-with-properties>
+    </div>
+  `,
+  controller: class {
+    constructor() {}
+    $onInit() {
+      angular.extend(this, {
+        bool: true,
+        num: 42,
+        str: 'Angular',
+        arr: ['A', 'n', 'g', 'u', 'l', 'a', 'r'],
+        obj: { org: 'angular', repo: 'angular' },
+        camelCaseObj: { label: "passed" }
+      });
+    }
+  }
+};
+
+const ComponentWithInheritance = {
+  template: `
+    <div>
+      <ce-with-inheritance id="wc"
+        ng-prop-bool="$ctrl.bool"
+        ng-prop-num="$ctrl.num"
+        ng-prop-str="$ctrl.str"
+        ng-prop-arr="$ctrl.arr"
+        ng-prop-obj="$ctrl.obj"
+        ng-prop-camel-case-obj="$ctrl.camelCaseObj"
+      ></ce-with-inheritance>
     </div>
   `,
   controller: class {
@@ -154,6 +183,7 @@ export {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProps,
+  ComponentWithInheritance,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
 }

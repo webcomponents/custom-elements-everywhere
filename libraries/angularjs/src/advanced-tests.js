@@ -47,6 +47,15 @@ describe("advanced support", () => {
       let data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
     });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      let root = prep("<comp-with-inheritance>")
+      scope.$digest()
+      let wc = root.querySelector('#wc')
+      expect(wc.arr).to.eql(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
+      expect(wc.obj).to.eql({ org: "angular", repo: "angular" });
+    });
   });
 
   describe("events", () => {

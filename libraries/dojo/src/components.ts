@@ -20,6 +20,7 @@ import icache from '@dojo/framework/core/middleware/icache';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 const factory = create({ icache });
@@ -65,6 +66,18 @@ export const ComponentWithProperties = factory(() => {
     camelCaseObj: { label: "passed" }
   };
   return v('ce-with-properties', data);
+});
+
+export const ComponentWithInheritance = factory(() => {
+  const data = {
+    bool: true,
+    num: 42,
+    str: 'Dojo',
+    arr: ['d', 'o', 'j', 'o'],
+    obj: { org: 'dojo', repo: 'dojo' },
+    camelCaseObj: { label: "passed" }
+  };
+  return v('ce-with-inheritance', data);
 });
 
 export const ComponentWithUnregistered = factory(() => {

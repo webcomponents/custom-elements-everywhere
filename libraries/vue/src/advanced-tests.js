@@ -22,6 +22,7 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
+  ComponentWithInheritance,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
@@ -79,6 +80,16 @@ describe("advanced support", function() {
       const wc = scratch.querySelector("#wc");
       const data = wc.camelCaseObj;
       expect(data).to.eql({ label: "passed" });
+    });
+
+    it("will pass object data to inherited properties", function() {
+      this.weight = 2;
+      const app = createApp(ComponentWithInheritance)
+      app.config.compilerOptions.isCustomElement = isCustomElement;
+      app.mount(scratch);
+      const wc = scratch.querySelector("#wc");
+      expect(wc.arr).to.eql(["V", "u", "e"]);
+      expect(wc.obj).to.eql({ org: "vuejs", repo: "vue" });
     });
 
   });

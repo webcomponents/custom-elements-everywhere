@@ -18,6 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
+import 'ce-with-inheritance';
 import 'ce-with-event';
 
 import { html } from 'hybrids';
@@ -59,6 +60,20 @@ export const ComponentWithProperties = {
       obj=${{ library: "hybrids" }},
       camelCaseObj=${{ label: "passed" }}
     ></ce-with-properties>
+  `,
+};
+
+export const ComponentWithInheritance = {
+  render: () => html`
+    <ce-with-inheritance 
+      id="wc"
+      bool=${true}
+      num=${42}
+      str=${"hybrids"}
+      arr=${["h", "y", "b", "r", "i", "d", "s"]}
+      obj=${{ library: "hybrids" }},
+      camelCaseObj=${{ label: "passed" }}
+    ></ce-with-inheritance>
   `,
 };
 
