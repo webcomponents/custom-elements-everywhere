@@ -8,7 +8,6 @@ handle this scenario.
 
 <h4 id="lwc-handling-events">Handling events</h4>
 
-LWC has no restrictions on event names when listening for events imperatively via the
-`addEventListener()` API. When listening for events declaratively in the template, LWC supports
-neither arbitrarily capitalized event names (camelCase, CAPSCase, PascalCase, etc.) nor kebab-cased
-names.
+When listening for events declaratively in the template, LWC supports neither arbitrarily
+capitalized event names (camelCase, CAPSCase, PascalCase, etc.) nor kebab-cased names. To listen for
+events named in such formats, use `addEventListener()` imperatively.
