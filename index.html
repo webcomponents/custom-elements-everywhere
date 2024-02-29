@@ -1432,6 +1432,84 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
       </div>
     </div>
   </section>
+  <section class="section" id="lwc">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/salesforce/lwc">LWC</a> <span
+                    class="library-version">5.0.0</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">89%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">8/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="89"
+            max="100">89%</progress>
+          <div class="content">
+            <h4 id="lwc-handling-data">Handling data</h4>
+
+<p>When passing data to a custom element, LWC takes a properties-if-available approach where attributes
+are set by default, but properties are set when they exist. This heuristical approach involves a
+runtime check to see whether a property is defined, and as such, data will be passed as an attribute
+if the custom element has not been upgraded. It is the responsibility of the component author to
+handle this scenario.</p>
+<h4 id="lwc-handling-events">Handling events</h4>
+
+<p>When listening for events declaratively in the template, LWC supports neither arbitrarily
+capitalized event names (camelCase, CAPSCase, PascalCase, etc.) nor kebab-cased names. To listen for
+events named in such formats, use <code>addEventListener()</code> imperatively.</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/lwc/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <article class="media">
+              <div class="media-content">
+                <a href="https://github.com/salesforce/lwc/issues/3335">
+                  <div class="content">
+                    <p>
+                      <strong>Score 100% on Custom Elements Everywhere benchmark</strong>
+                      <br>
+                      <small>#3335 opened Feb 28, 2023 by Nolan Lawson</small>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="dio">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
