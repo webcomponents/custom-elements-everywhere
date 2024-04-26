@@ -38,7 +38,7 @@ npm start
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
-- [React@experimental](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react-experimental)
+- [React 19](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react-19)
 - [Riot.js](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/riot)
 - [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
 - [Solid](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/solid)
