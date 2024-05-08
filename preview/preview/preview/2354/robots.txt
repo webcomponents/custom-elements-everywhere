@@ -1,0 +1,8 @@
+# We host a bunch of copies of the site under the /preview/ URL for previewing,
+# PRs but search engines etc should ignore them in favor of the main site.
+User-agent: *
+Disallow: /preview/
+
+# Otherwise robots are welcome
+User-agent: *
+Allow: /
