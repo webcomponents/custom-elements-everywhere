@@ -24,6 +24,7 @@ npm start
 ```
 
 ## Current List of [Libraries/Frameworks](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries)
+
 - [Angular](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angular)
 - [AngularJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angularjs)
 - [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
@@ -38,7 +39,7 @@ npm start
 - [Polymer](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/polymer)
 - [Preact](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/preact)
 - [React](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react)
-- [React 19](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react-19)
+- [React Beta](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/react-beta)
 - [Riot.js](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/riot)
 - [Skate](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/skate)
 - [Solid](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/solid)
@@ -82,6 +83,7 @@ your library's npm package name. This is used during the build process to
 grab the library's semver and publish it on the site.
 
 Example:
+
 ```
 "scripts": {
   "test": "cross-env LIBRARY_NAME=@angular/core karma start",
@@ -167,7 +169,7 @@ Licensed under the [Apache License, Version 2.0](LICENSE) (the "License");
 you may not use this file except in compliance with the License. You may
 obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

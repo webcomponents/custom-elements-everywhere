@@ -34,7 +34,7 @@ const libraryMap = {
   polymer: "Polymer",
   preact: "Preact",
   react: "React",
-  'react-19': "React",
+  'react-beta': "React Beta",
   riot: "Riot.js",
   skate: "Skate w/ Preact",
   solid: "Solid",
