@@ -1,0 +1,15 @@
+<template>
+    <div id="lowercase">{lowercaseHandled}</div>
+    <div id="kebab">{kebabHandled}</div>
+    <div id="camel">{camelHandled}</div>
+    <div id="caps">{capsHandled}</div>
+    <div id="pascal">{pascalHandled}</div>
+
+    <!--
+    LWC compiler throws exceptions for kebab-cased and arbitrarily capitalized events in the
+    template so they are not included here.
+    -->
+    <ce-with-event lwc:ref="wc" lwc:external
+        onlowercaseevent={handleLowercaseEvent}
+    ></ce-with-event>
+</template>

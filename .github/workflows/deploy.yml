@@ -1,17 +1,15 @@
 name: Build and Deploy
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 permissions:
   contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: google/wireit@setup-github-actions-caching/v1
       - name: Checkout
-        uses: actions/checkout@v3.6.0
-
+        uses: actions/checkout@v4.1.1
       - name: Install
         run: |
           npm ci
@@ -26,4 +24,3 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
           clean-exclude: "preview/"
-
