@@ -58,7 +58,7 @@ export const ComponentWithProperties = () => {
       str={data.str}
       arr={data.arr}
       obj={data.obj}
-      camelCaseObj={data.camelCaseObj}
+      prop:camelCaseObj={data.camelCaseObj} // verbatim prop syntax, otherwise defaults to dash-case-to-camel-case
     />
   );
 };
