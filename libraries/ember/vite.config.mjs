@@ -17,11 +17,10 @@ const extensions = [
   ".mts",
   ".gts",
   ".ts",
-  ".hbs",
   ".json",
 ];
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
     resolve: {
       extensions,
@@ -48,8 +47,15 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: "index.html",
+          ...(shouldBuildTests(mode)
+            ? { tests: "tests/index.html" }
+            : undefined),
         },
       },
     },
   };
 });
+
+function shouldBuildTests(mode) {
+  return mode !== "production" || process.env.FORCE_BUILD_TESTS;
+}

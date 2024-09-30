@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-import "ce-without-children";
-import "ce-with-children";
-import "ce-with-properties";
-import "ce-with-event";
+import "webcomponents/ce-without-children";
+import "webcomponents/ce-with-children";
+import "webcomponents/ce-with-properties";
+import "webcomponents/ce-with-event";
 
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
@@ -107,8 +107,10 @@ export class ComponentWithImperativeEvent extends Component {
   @tracked eventHandled = false;
 
   addEventListenerTheLongWay = customModifier(element => {
-    element.addEventListener('camelEvent', () => this.eventHandled = true))
-  })
+    element.addEventListener('camelEvent', () => {
+      this.eventHandled = true;
+    });
+  });
 
   <template>
     <div id="handled">{{ this.eventHandled }}</div>

@@ -8,7 +8,7 @@
   "author": "NullVoxPopuli",
   "scripts": {
     "test": "wireit",
-    "build": "wireit"
+    "build": "wireit",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
     "lint:hbs": "ember-template-lint .",
@@ -23,7 +23,8 @@
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@ember/optional-features": "^2.1.0",
-    "@ember/string": "^3.1.1",
+    "@ember/string": "^4.0.0",
+    "@ember/test-helpers": "^4.0.4",
     "@embroider/compat": "3.6.2-unstable.f33728f",
     "@embroider/config-meta-loader": "0.0.1-unstable.f33728f",
     "@embroider/core": "3.4.16-unstable.f33728f",
@@ -43,6 +44,7 @@
     "ember-load-initializers": "^3.0.1",
     "ember-modifier": "^4.2.0",
     "ember-page-title": "^8.2.3",
+    "ember-qunit": "^8.1.0",
     "ember-resolver": "^13.0.2",
     "ember-source": "~5.11.0",
     "ember-template-lint": "^5.13.0",
@@ -55,14 +57,17 @@
     "globals": "^15.9.0",
     "karma": "6.4.2",
     "karma-chrome-launcher": "3.2.0",
-    "karma-firefox-launcher": "2.1.2",
+    "karma-firefox-launcher": "2.1.3",
     "karma-sourcemap-loader": "0.4.0",
-    "karma-webpack": "5.0.0",
+    "karma-webpack": "5.0.1",
     "loader.js": "^4.7.0",
     "prettier": "^3.3.3",
     "prettier-plugin-ember-template-tag": "^2.0.2",
+    "qunit": "^2.22.0",
+    "qunit-dom": "^3.2.1",
     "tracked-built-ins": "^3.3.0",
     "vite": "^5.4.8",
+    "webcomponents": "link:../__shared__/webcomponents",
     "webpack": "^5.93.0"
   },
   "engines": {
@@ -101,5 +106,8 @@
         "test"
       ]
     }
+  },
+  "dependencies": {
+    "ember-route-template": "^1.0.3"
   }
 }
