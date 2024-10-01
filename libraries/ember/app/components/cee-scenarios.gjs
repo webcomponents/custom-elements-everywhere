@@ -61,7 +61,7 @@ export class ComponentWithDifferentViews extends Component {
   }
 
   <template>
-    {{#if this.showWC}}
+    {{#if this.show}}
       <ce-with-children id="wc" />
     {{else}}
       <div id="dummy">Dummy view</div>
