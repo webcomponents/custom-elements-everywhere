@@ -1,3 +1,5 @@
+import "qunit-theme-ember/qunit.css";
+
 import Application from "ember-cee-app/app";
 import config from "ember-cee-app/config/environment";
 import * as QUnit from "qunit";

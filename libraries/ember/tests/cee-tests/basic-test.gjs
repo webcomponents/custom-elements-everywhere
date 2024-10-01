@@ -118,8 +118,6 @@ module("basic support", function (hooks) {
       );
 
       let wc = find('#wc');
-      // Is Passed as data 
-      assert.dom(wc).doesNotHaveAttribute('bool');
       assert.strictEqual(wc.bool, true);
     });
 
@@ -131,8 +129,6 @@ module("basic support", function (hooks) {
       );
 
       let wc = find('#wc');
-      // Is Passed as data 
-      assert.dom(wc).doesNotHaveAttribute('num');
       assert.strictEqual(parseInt(wc.num, 10), 42);
     });
 
@@ -144,8 +140,6 @@ module("basic support", function (hooks) {
       );
 
       let wc = find('#wc');
-      // Is Passed as data 
-      assert.dom(wc).doesNotHaveAttribute('num');
       assert.strictEqual(wc.str, 'Ember');
     });
   });

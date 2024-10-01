@@ -118,7 +118,7 @@ export class ComponentWithImperativeEvent extends Component {
   </template>
 }
 
-export class ComponentWithDeclarativeEvent {
+export class ComponentWithDeclarativeEvent extends Component {
   @tracked lowercaseHandled = false;
   @tracked kebabHandled = false;
   @tracked camelHandled = false;
