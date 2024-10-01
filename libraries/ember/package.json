@@ -4,6 +4,7 @@
   "private": true,
   "description": "Small description for ember-cee-app goes here",
   "repository": "",
+  "library_repo": "emberjs/ember.js",
   "license": "MIT",
   "author": "NullVoxPopuli",
   "scripts": {
@@ -87,20 +88,19 @@
   },
   "wireit": {
     "test": {
-      "dependencies": [
-        "../..:karma-plugins"
-      ],
       "files": [
-        ".babelrc",
-        "karma.conf.js",
-        "tests.webpack.js",
-        "src",
+        "babel.config.cjs",
+        "vite.config.mjs",
+        "ember-cli-build.js",
+        "app",
+        "config",
+        "tests",
         "meta"
       ],
       "output": [
         "results"
       ],
-      "command": "cross-env LIBRARY_NAME=svelte karma start || echo ''"
+      "command": "cross-env LIBRARY_NAME=ember pnpm start || echo ''"
     },
     "build": {
       "dependencies": [
