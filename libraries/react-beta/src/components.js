@@ -66,6 +66,7 @@ export class ComponentWithDifferentViews extends Component {
   constructor () {
     super();
     this.state = { showWC: true };
+    this.dummy = React.createRef();
   }
   toggle() {
     this.setState({ showWC: !this.state.showWC });
@@ -77,7 +78,7 @@ export class ComponentWithDifferentViews extends Component {
         {showWC ? (
           <ce-with-children ref={(el) => this.wc = el}></ce-with-children>
         ) : (
-          <div ref="dummy">Dummy view</div>
+          <div ref={this.dummy}>Dummy view</div>
         )}
       </div>
     );
@@ -153,7 +154,7 @@ export class ComponentWithImperativeEvent extends Component {
     return (
       <div>
         <div ref={(el) => this.handled = el}>{state.eventHandled.toString()}</div>
-        <ce-with-event id="wc" ref={(el) => this.wc = el}></ce-with-event> 
+        <ce-with-event id="wc" ref={(el) => this.wc = el}></ce-with-event>
       </div>
     );
   }
@@ -205,7 +206,7 @@ export class ComponentWithDeclarativeEvent extends Component {
           oncamelEvent={this.handleCamelEvent}
           onCAPSevent={this.handleCapsEvent}
           onPascalEvent={this.handlePascalEvent}
-        ></ce-with-event> 
+        ></ce-with-event>
       </div>
     );
   }
