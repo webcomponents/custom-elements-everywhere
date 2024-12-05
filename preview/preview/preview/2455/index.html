@@ -135,150 +135,6 @@ limitations under the License.
               <div>
                 <p class="heading">Library</p>
                 <h3 class="title"><a href="https://github.com/facebook/react">React</a> <span
-                    class="library-version">18.2.0</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">67%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">0/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-warning" value="67"
-            max="100">67%</progress>
-          <div class="content">
-            <h4 id="react-handling-data">Handling data</h4>
-
-<p>React passes all data to Custom Elements in the form of HTML attributes. For
-primitive data this is fine, but the system breaks down when passing rich data,
-like objects or arrays. In these instances you end up with stringified values
-like <code>some-attr="[object Object]"</code> which can&#39;t actually be used.</p>
-<h4 id="react-handling-events">Handling events</h4>
-
-<p>Because React implements its own synthetic event system, it cannot listen for
-DOM events coming from Custom Elements without the use of a workaround.
-Developers will need to reference their Custom Elements using a <code>ref</code>
-and manually attach event listeners with <code>addEventListener</code>. This
-makes working with Custom Elements cumbersome.</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/react/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/issues/11347">
-                  <div class="content">
-                    <p>
-                      <strong>RFC: Plan for custom element attributes/properties in React 19</strong>
-                      <br>
-                      <small>#11347 opened Oct 23 2017 by robdodson</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/issues/7901">
-                  <div class="content">
-                    <p>
-                      <strong>Bypass synthetic event system for Web Component events</strong>
-                      <br>
-                      <small>#7901 opened Oct 6, 2016 by staltz</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/pull/8755">
-                  <div class="content">
-                    <p>
-                      <strong>Passing props to custom elements as properties instead of attributes</strong>
-                      <br>
-                      <small>#8755 opened Jan 11, 2017 by joeldenning</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/issues/7249">
-                  <div class="content">
-                    <p>
-                      <strong>Attributes and properties for Custom Components</strong>
-                      <br>
-                      <small>#7249 opened Jul 12, 2016 by edoardocavazza</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/issues/9230">
-                  <div class="content">
-                    <p>
-                      <strong>Boolean attributes on Web Components</strong>
-                      <br>
-                      <small>#9230 opened Mar 21, 2017 by nickdima</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/facebook/react/issues/9242">
-                  <div class="content">
-                    <p>
-                      <strong>Event Handler on React Component not invoked when React Component is rendered inside a Web Component</strong>
-                      <br>
-                      <small>#9242 opened on Mar 23, 2017 by nilshartmann</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="react-beta">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="https://github.com/facebook/react">React Beta</a> <span
                     class="library-version">^19</span></h3>
               </div>
             </div>
@@ -307,19 +163,19 @@ makes working with Custom Elements cumbersome.</p>
           <progress class="progress is-primary" value="100"
             max="100">100%</progress>
           <div class="content">
-            <h4 id="react-1beta-overview">React Beta</h4>
+            <h4 id="react-overview">React</h4>
 
-<p>The React 19 Beta features full support for Custom Elements.</p>
-<h4 id="react-beta-handling-data">Handling data</h4>
+<p>React 19 features full support for Custom Elements.</p>
+<h4 id="react-handling-data">Handling data</h4>
 
-<p>React@beta, as of April 2024, uses a runtime heuristic to determine if it should pass data to Custom Elements as either properties or attributes. If a property is already defined on the element instance, it will use properties, otherwise it will fallback to attributes.</p>
-<h4 id="react-beta-handling-events">Handling events</h4>
+<p>React now uses a runtime heuristic to determine if it should pass data to Custom Elements as either properties or attributes. If a property is already defined on the element instance, it will use properties, otherwise it will fallback to attributes.</p>
+<h4 id="react-handling-events">Handling events</h4>
 
-<p>React@beta, as of April 2024, will register an event listener on any custom element when binding a function to a property whose name begins with <code>on</code>. It supports lowercase, camelCase, kebab-case, CAPScase, and PascalCase events.</p>
+<p>React will register an event listener on any custom element when binding a function to a property whose name begins with <code>on</code>. It supports lowercase, camelCase, kebab-case, CAPScase, and PascalCase events.</p>
 
           </div>
           <div class="content">
-            <a class="button is-info is-outlined" href="libraries/react-beta/results/results.html">
+            <a class="button is-info is-outlined" href="libraries/react/results/results.html">
               View the tests
             </a>
           </div>
