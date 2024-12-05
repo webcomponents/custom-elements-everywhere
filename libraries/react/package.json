@@ -16,11 +16,11 @@
     "karma-firefox-launcher": "2.1.2",
     "karma-sourcemap-loader": "0.4.0",
     "karma-webpack": "5.0.0",
-    "webpack": "5.95.0"
+    "webpack": "5.94.0"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "wireit": {
     "test": {
@@ -37,7 +37,7 @@
       "output": [
         "results"
       ],
-      "command": "cross-env LIBRARY_NAME=react karma start || echo ''"
+      "command": "cross-env LIBRARY_NAME=react karma start"
     },
     "build": {
       "dependencies": [

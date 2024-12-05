@@ -24,7 +24,7 @@ import {
   ComponentWithChildren,
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
-ComponentWithProperties,
+  ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent
@@ -45,6 +45,10 @@ function render(element) {
 
 before(() => {
   window.IS_REACT_ACT_ENVIRONMENT = true;
+})
+
+after(() => {
+  window.IS_REACT_ACT_ENVIRONMENT = false;
 })
 
 beforeEach(function() {

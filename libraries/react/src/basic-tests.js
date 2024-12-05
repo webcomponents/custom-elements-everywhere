@@ -28,7 +28,7 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
 } from "./components";
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -41,14 +41,14 @@ let reactRoot = null;
 function render(element) {
   act(() => {
     reactRoot.render(element);
-  })
+  });
 }
 
 before(() => {
   window.IS_REACT_ACT_ENVIRONMENT = true;
-})
+});
 
-beforeEach(function() {
+beforeEach(function () {
   scratch = document.createElement("div");
   scratch.id = "scratch";
   app.appendChild(scratch);
@@ -56,7 +56,7 @@ beforeEach(function() {
   reactRoot = createRoot(scratch);
 });
 
-afterEach(function() {
+afterEach(function () {
   app.innerHTML = "";
   scratch = null;
 
@@ -65,10 +65,9 @@ afterEach(function() {
   });
 });
 
-describe("basic support", function() {
-
-  describe("no children", function() {
-    it("can display a Custom Element with no children", function() {
+describe("basic support", function () {
+  describe("no children", function () {
+    it("can display a Custom Element with no children", function () {
       this.weight = 3;
       let root;
       render(
@@ -83,7 +82,7 @@ describe("basic support", function() {
     });
   });
 
-  describe("with children", function() {
+  describe("with children", function () {
     function expectHasChildren(wc) {
       expect(wc).to.exist;
       let shadowRoot = wc.shadowRoot;
@@ -95,7 +94,7 @@ describe("basic support", function() {
       expect(paragraph.textContent).to.eql("Test p");
     }
 
-    it("can display a Custom Element with children in a Shadow Root", function() {
+    it("can display a Custom Element with children in a Shadow Root", function () {
       this.weight = 3;
       let root;
       render(
@@ -109,7 +108,7 @@ describe("basic support", function() {
       expectHasChildren(wc);
     });
 
-    it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function() {
+    it("can display a Custom Element with children in a Shadow Root and pass in Light DOM children", async function () {
       this.weight = 3;
       let root;
       render(
@@ -127,7 +126,7 @@ describe("basic support", function() {
       expect(wc.textContent.includes("2")).to.be.true;
     });
 
-    it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function() {
+    it("can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element", function () {
       this.weight = 3;
       let root;
       render(
@@ -142,7 +141,7 @@ describe("basic support", function() {
       act(() => {
         root.toggle();
       });
-      let dummy = ReactDOM.findDOMNode(root.refs.dummy);
+      let dummy = root.dummy.current;
       expect(dummy).to.exist;
       expect(dummy.textContent).to.eql("Dummy view");
       act(() => {
@@ -153,8 +152,8 @@ describe("basic support", function() {
     });
   });
 
-  describe("attributes and properties", function() {
-    it("will pass boolean data as either an attribute or a property", function() {
+  describe("attributes and properties", function () {
+    it("will pass boolean data as either an attribute or a property", function () {
       this.weight = 3;
       let root;
       render(
@@ -169,7 +168,7 @@ describe("basic support", function() {
       expect(data).to.be.true;
     });
 
-    it("will pass numeric data as either an attribute or a property", function() {
+    it("will pass numeric data as either an attribute or a property", function () {
       this.weight = 3;
       let root;
       render(
@@ -184,7 +183,7 @@ describe("basic support", function() {
       expect(parseInt(data, 10)).to.eql(42);
     });
 
-    it("will pass string data as either an attribute or a property", function() {
+    it("will pass string data as either an attribute or a property", function () {
       this.weight = 3;
       let root;
       render(
@@ -236,8 +235,8 @@ describe("basic support", function() {
     // });
   });
 
-  describe("events", function() {
-    it("can imperatively listen to a DOM event dispatched by a Custom Element", function() {
+  describe("events", function () {
+    it("can imperatively listen to a DOM event dispatched by a Custom Element", function () {
       this.weight = 3;
       let root;
       render(
@@ -252,10 +251,8 @@ describe("basic support", function() {
       expect(handled.textContent).to.eql("false");
       act(() => {
         wc.click();
-      })
+      });
       expect(handled.textContent).to.eql("true");
     });
   });
-
 });
- 
