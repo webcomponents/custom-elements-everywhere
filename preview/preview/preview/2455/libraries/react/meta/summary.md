@@ -1,10 +1,6 @@
-<h4 id="react-overview">React</h4>
-
-React 19 features full support for Custom Elements.
-
 <h4 id="react-handling-data">Handling data</h4>
 
-React now uses a runtime heuristic to determine if it should pass data to Custom Elements as either properties or attributes. If a property is already defined on the element instance, it will use properties, otherwise it will fallback to attributes.
+As of v19, React now uses a runtime heuristic to determine if it should pass data to Custom Elements as either properties or attributes. If a property is already defined on the element instance, it will use properties, otherwise it will fallback to attributes.
 
 <h4 id="react-handling-events">Handling events</h4>
 
