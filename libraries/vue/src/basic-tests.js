@@ -24,7 +24,8 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
+  ComponentWithMethods
 } from "./components";
 import { expect } from "chai";
 
@@ -146,6 +147,13 @@ describe("basic support", function() {
       const data = wc.str || wc.getAttribute("str");
       expect(data).to.eql("Vue");
     });
+
+    it('will not overwrite methods', function () {
+     const app = createApp(ComponentWithMethods);
+     app.mount(scratch);
+     const wc = scratch.querySelector('#wc');
+     expect(wc.innerText).to.eql('Success');
+    })
 
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
     //   let root = new ComponentWithUnregistered().$mount(scratch).$el;
