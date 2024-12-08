@@ -27,6 +27,7 @@ import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
+import 'ce-with-methods';
 
 @Component({
   template: `
@@ -104,6 +105,15 @@ export class ComponentWithProperties {
     camelCaseObj: { label: "passed" }
   }
 }
+
+@Component({
+  template: `
+    <div>
+      <ce-with-methods [test]="true"></ce-with-methods>
+    </div>
+  `
+})
+export class ComponentWithMethods {}
 
 @Component({
   template: `
