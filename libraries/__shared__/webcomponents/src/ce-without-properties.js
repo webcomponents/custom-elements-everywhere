@@ -15,16 +15,26 @@
  * limitations under the License.
  */
 
-class CEWithMethods extends HTMLElement {
+class CEWithoutProperties extends HTMLElement {
 
-    test() {
+    amethod() {
         this.innerText = 'Success';
+        return 'method';
+    }
+
+    get agetter() {
+        return 'getter';
     }
 
     connectedCallback() {
-        this.test();
+        this.amethod();
     }
 
 }
 
-customElements.define('ce-with-methods', CEWithMethods);
+Object.defineProperty(CEWithoutProperties.prototype, 'areadonly', {
+    value: 'readonly',
+    writable: false
+});
+
+customElements.define('ce-without-properties', CEWithoutProperties);

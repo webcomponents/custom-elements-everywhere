@@ -25,7 +25,7 @@ import {
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent,
-  ComponentWithMethods
+  ComponentWithoutProperties
 } from "./components";
 import { expect } from "chai";
 
@@ -148,11 +148,14 @@ describe("basic support", function() {
       expect(data).to.eql("Vue");
     });
 
-    it('will not overwrite methods', function () {
-     const app = createApp(ComponentWithMethods);
+    it('will not overwrite unwriteable properties', function () {
+     const app = createApp(ComponentWithoutProperties);
      app.mount(scratch);
      const wc = scratch.querySelector('#wc');
-     expect(wc.innerText).to.eql('Success');
+     expect(wc.getAttribute('amethod')).to.eql('method');
+     expect(wc.getAttribute('agetter')).to.eql('getter');
+     expect(wc.getAttribute('areadonly')).to.eql('readonly');
+     expect(wc.innerHTML).to.eql('Success');
     })
 
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {

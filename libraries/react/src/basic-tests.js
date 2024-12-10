@@ -29,7 +29,7 @@ import {
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent,
-  ComponentWithMethods,
+  ComponentWithoutProperties,
 } from "./components";
 
 // Setup the test harness. This will get cleaned out with every test.
@@ -199,18 +199,20 @@ describe("basic support", function () {
       expect(data).to.eql("React");
     });
 
-    it('will not overwrite methods', function () {
-      let root;
+    it('will not overwrite unwriteable properties', function () {
+      let wc;
       render(
-        <ComponentWithMethods
+        <ComponentWithoutProperties
           ref={(current) => {
-            root = current;
+            wc = current;
           }}
         />
       )
-      let wc = root.wc;
-      expect(wc.innerText).to.eql('Success');
-    })
+      expect(wc.getAttribute('amethod')).to.eql('method');
+      expect(wc.getAttribute('agetter')).to.eql('getter');
+      expect(wc.getAttribute('areadonly')).to.eql('readonly');
+      expect(wc.innerHTML).to.eql('Success');
+    });
 
     // TODO: Is it the framework's responsibility to check if the underlying
     // property is defined? Or should it just always assume it is and do its

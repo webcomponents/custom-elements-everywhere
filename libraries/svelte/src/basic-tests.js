@@ -24,7 +24,7 @@ import {
   ComponentWithProperties,
   ComponentWithUnregistered,
   ComponentWithImperativeEvent,
-  ComponentWithMethods,
+  ComponentWithoutProperties,
 } from "./components";
 import { tick } from "svelte";
 
@@ -127,9 +127,12 @@ describe("basic support", function() {
     });
 
     it('will not overwrite methods', function () {
-      new ComponentWithMethods({ target: scratch });
+      new ComponentWithoutProperties({ target: scratch });
       const wc = scratch.querySelector('#wc');
-      expect(wc.innerText).to.eql('Success');
+      expect(wc.getAttribute('amethod')).to.eql('method');
+      expect(wc.getAttribute('agetter')).to.eql('getter');
+      expect(wc.getAttribute('areadonly')).to.eql('readonly');
+      expect(wc.innerHTML).to.eql('Success');
     })
 
     // it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
