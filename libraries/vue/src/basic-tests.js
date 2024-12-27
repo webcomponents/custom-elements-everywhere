@@ -148,7 +148,7 @@ describe("basic support", function() {
       expect(data).to.eql("Vue");
     });
 
-    it('will not overwrite unwriteable properties', function () {
+    it("will not overwrite unwriteable properties", function () {
      const app = createApp(ComponentWithoutProperties);
      app.mount(scratch);
      const wc = scratch.querySelector('#wc');
