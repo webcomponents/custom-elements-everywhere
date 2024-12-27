@@ -149,6 +149,7 @@ describe("basic support", function() {
     });
 
     it("will not overwrite unwriteable properties", function () {
+     this.weight = 3;
      const app = createApp(ComponentWithoutProperties);
      app.mount(scratch);
      const wc = scratch.querySelector('#wc');
