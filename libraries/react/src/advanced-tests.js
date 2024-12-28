@@ -30,6 +30,8 @@ import {
   ComponentWithDeclarativeEvent
 } from "./components";
 
+import tests from 'advanced-tests';
+
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement("div");
 app.id = "app";
@@ -37,11 +39,6 @@ document.body.appendChild(app);
 let scratch; // This will hold the actual element under test.
 
 let reactRoot = null;
-function render(element) {
-  act(() => {
-    reactRoot.render(element);
-  });
-}
 
 before(() => {
   window.IS_REACT_ACT_ENVIRONMENT = true;
@@ -68,150 +65,32 @@ afterEach(function() {
   });
 });
 
-describe("advanced support", function() {
 
-  describe("attributes and properties", function() {
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let root;
-      render(
-        <ComponentWithProperties
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let data = wc.arr;
-      expect(data).to.eql(["R", "e", "a", "c", "t"]);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let root;
-      render(
-        <ComponentWithProperties
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let data = wc.obj;
-      expect(data).to.eql({ org: "facebook", repo: "react" });
-    });
-
-    it("will pass object data to a camelCase-named property", function() {
-      this.weight = 2;
-      let root;
-      render(
-        <ComponentWithProperties
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let data = wc.camelCaseObj;
-      expect(data).to.eql({ label: "passed" });
-    });
+function render(Component) {
+  let root;
+  act(() => {
+    reactRoot.render(
+      <Component
+        ref={(current) => {
+          root = current;
+        }}
+      />
+    );
   });
+  return {wc: root.wc, root}
+}
 
-  describe("events", function() {
-    it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
-      this.weight = 2;
-      let root;
-      render(
-        <ComponentWithDeclarativeEvent
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let handled = root.lowercase;
-      expect(handled.textContent).to.eql("false");
+tests({
+  renderComponentWithProperties() {
+    return render(ComponentWithProperties);
+  },
+  renderComponentWithDeclarativeEvent() {
+    const { wc, root } = render(ComponentWithDeclarativeEvent)
+    function click() {
       act(() => {
         wc.click();
       });
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      let root;
-      render(
-        <ComponentWithDeclarativeEvent
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let handled = root.kebab;
-      expect(handled.textContent).to.eql("false");
-      act(() => {
-        wc.click();
-      });
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      let root;
-      render(
-        <ComponentWithDeclarativeEvent
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let handled = root.camel;
-      expect(handled.textContent).to.eql("false");
-      act(() => {
-        wc.click();
-      });
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      let root;
-      render(
-        <ComponentWithDeclarativeEvent
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let handled = root.caps;
-      expect(handled.textContent).to.eql("false");
-      act(() => {
-        wc.click();
-      });
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      let root;
-      render(
-        <ComponentWithDeclarativeEvent
-          ref={(current) => {
-            root = current;
-          }}
-        />
-      );
-      let wc = root.wc;
-      let handled = root.pascal;
-      expect(handled.textContent).to.eql("false");
-      act(() => {
-        wc.click();
-      });
-      expect(handled.textContent).to.eql("true");
-    });
-  });
-
-});
+    }
+    return { wc, root, click }
+  }
+})

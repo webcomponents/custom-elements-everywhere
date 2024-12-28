@@ -72,7 +72,7 @@ export default function (
         const { wc, toggle } = await renderComponentWithDifferentViews.call(this);
         expectHasChildren(wc)
         toggle()
-        let dummy = document.querySelector('#dummy')
+        const dummy = document.querySelector('#dummy')
         expect(dummy).to.exist
         expect(dummy.textContent).to.eql('Dummy view')
         toggle()
@@ -99,18 +99,18 @@ export default function (
         this.weight = 3
         const { wc } = await renderComponentWithProperties.call(this);
         let data = wc.str || wc.getAttribute('str')
-        expect(data).to.eql('riot')
+        expect(data).to.eql('custom')
       })
     })
 
     describe('events', async function () {
       it('can imperatively listen to a DOM event dispatched by a Custom Element', async function () {
         this.weight = 3
-        const { wc } = await renderComponentWithImperativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithImperativeEvent.call(this)
         expect(wc).to.exist
         let handled = document.querySelector('#handled')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
     })

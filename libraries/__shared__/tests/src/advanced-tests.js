@@ -37,14 +37,14 @@ export default function (
         this.weight = 2
         const { wc } = await renderComponentWithProperties.call(this)
         let data = wc.arr
-        expect(data).to.eql(['r', 'i', 'o', 't'])
+        expect(data).to.eql(['c', 'u', 's', 't', 'o', 'm'])
       })
 
       it('will pass object data as a property', async function () {
         this.weight = 2
         const { wc } = await renderComponentWithProperties.call(this)
         let data = wc.obj
-        expect(data).to.eql({org: 'riotjs', repo: 'riot'})
+        expect(data).to.eql({org: 'webcomponents', repo: 'custom-elements-everywhere'})
       })
 
       it('will pass object data to a camelCase-named property', async function () {
@@ -59,47 +59,47 @@ export default function (
     describe('events', function () {
       it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', async function () {
         this.weight = 2
-        const { wc } = await renderComponentWithDeclarativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithDeclarativeEvent.call(this)
         expect(wc).to.exist
         let handled = document.querySelector('#lowercase')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
 
       it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', async function () {
         this.weight = 1
-        const { wc } = await renderComponentWithDeclarativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#kebab')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
 
       it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', async function () {
         this.weight = 1
-        const { wc } = await renderComponentWithDeclarativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#camel')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
 
       it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', async function () {
         this.weight = 1
-        const { wc } = await renderComponentWithDeclarativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#caps')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
 
       it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', async function () {
         this.weight = 1
-        const { wc } = await renderComponentWithDeclarativeEvent.call(this)
+        const { wc, click = wc.click } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#pascal')
         expect(handled.textContent).to.eql('false')
-        wc.click()
+        click()
         expect(handled.textContent).to.eql('true')
       })
     })
