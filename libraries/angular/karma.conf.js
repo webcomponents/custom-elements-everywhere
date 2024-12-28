@@ -68,6 +68,7 @@ module.exports = function (config) {
         extensions: ['.js', '.ts'],
         modules: [
           path.resolve(__dirname, '../__shared__/webcomponents/src'),
+          path.resolve(__dirname, '../__shared__/tests/src'),
           path.resolve(__dirname, './node_modules')
         ]
       },

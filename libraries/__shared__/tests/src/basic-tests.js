@@ -106,7 +106,7 @@ export default function (
     describe('events', async function () {
       it('can imperatively listen to a DOM event dispatched by a Custom Element', async function () {
         this.weight = 3
-        const { wc, click = wc.click } = await renderComponentWithImperativeEvent.call(this)
+        const { wc, click = wc.click.bind(wc) } = await renderComponentWithImperativeEvent.call(this)
         expect(wc).to.exist
         let handled = document.querySelector('#handled')
         expect(handled.textContent).to.eql('false')
