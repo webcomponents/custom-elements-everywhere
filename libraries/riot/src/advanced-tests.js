@@ -19,8 +19,10 @@ import { expect } from 'chai'
 import { component } from 'riot'
 import {
   ComponentWithProperties,
-  ComponentWithDeclarativeEvent
+  ComponentWithDeclarativeEvent,
 } from './components'
+
+import tests from 'advanced-tests';
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement('div')
@@ -39,86 +41,18 @@ afterEach(function() {
   scratch = null
 })
 
-describe('advanced support', function() {
 
-  describe('attributes and properties', function() {
-    it('will pass array data as a property', function() {
-      this.weight = 2
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.arr
-      expect(data).to.eql(['r', 'i', 'o', 't'])
-    })
+function render(Component) {
+  const el = component(Component)(scratch)
+  return {wc: scratch.querySelector('#wc'), el}
+}
 
-    it('will pass object data as a property', function() {
-      this.weight = 2
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.obj
-      expect(data).to.eql({ org: 'riotjs', repo: 'riot' })
-    })
 
-    it('will pass object data to a camelCase-named property', function() {
-      this.weight = 2
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.camelCaseObj;
-      expect(data).to.eql({ label: "passed" });
-    })
-
-  })
-
-  describe('events', function() {
-    it('can declaratively listen to a lowercase DOM event dispatched by a Custom Element', function() {
-      this.weight = 2
-      component(ComponentWithDeclarativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc).to.exist
-      let handled = scratch.querySelector('#lowercase')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-
-    it('can declaratively listen to a kebab-case DOM event dispatched by a Custom Element', function() {
-      this.weight = 1
-      component(ComponentWithDeclarativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let handled = scratch.querySelector('#kebab')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-
-    it('can declaratively listen to a camelCase DOM event dispatched by a Custom Element', function() {
-      this.weight = 1
-      component(ComponentWithDeclarativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let handled = scratch.querySelector('#camel')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-
-    it('can declaratively listen to a CAPScase DOM event dispatched by a Custom Element', function() {
-      this.weight = 1
-      component(ComponentWithDeclarativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let handled = scratch.querySelector('#caps')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-
-    it('can declaratively listen to a PascalCase DOM event dispatched by a Custom Element', function() {
-      this.weight = 1
-      component(ComponentWithDeclarativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let handled = scratch.querySelector('#pascal')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-  })
-
+tests({
+  renderComponentWithProperties() {
+    return render(ComponentWithProperties)
+  },
+  renderComponentWithDeclarativeEvent() {
+    return render(ComponentWithDeclarativeEvent)
+  }
 })

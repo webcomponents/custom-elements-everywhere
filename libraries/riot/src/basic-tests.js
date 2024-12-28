@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-import { expect } from 'chai'
 import { component } from 'riot'
 import {
   ComponentWithoutChildren,
@@ -23,9 +22,10 @@ import {
   ComponentWithChildrenRerender,
   ComponentWithDifferentViews,
   ComponentWithProperties,
-  ComponentWithUnregistered,
   ComponentWithImperativeEvent
 } from './components'
+
+import tests from 'basic-tests';
 
 // Setup the test harness. This will get cleaned out with every test.
 let app = document.createElement('div')
@@ -44,130 +44,29 @@ afterEach(function() {
   scratch = null
 })
 
-describe('basic support', function() {
+function render(Component) {
+  const el = component(Component)(scratch)
+  return {wc: scratch.querySelector('#wc'), el}
+}
 
-  describe('no children', function() {
-    it('can display a Custom Element with no children', function() {
-      this.weight = 3
-      component(ComponentWithoutChildren)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc).to.exist
-    })
-  })
-
-  describe('with children', function() {
-    function expectHasChildren(wc) {
-      expect(wc).to.exist
-      let shadowRoot = wc.shadowRoot
-      let heading = shadowRoot.querySelector('h1')
-      expect(heading).to.exist
-      expect(heading.textContent).to.eql('Test h1')
-      let paragraph = shadowRoot.querySelector('p')
-      expect(paragraph).to.exist
-      expect(paragraph.textContent).to.eql('Test p')
-    }
-
-    it('can display a Custom Element with children in a Shadow Root', function() {
-      this.weight = 3
-      component(ComponentWithChildren)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expectHasChildren(wc)
-    })
-
-    it('can display a Custom Element with children in a Shadow Root and pass in Light DOM children', function() {
-      this.weight = 3
-      component(ComponentWithChildrenRerender)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expectHasChildren(wc)
-      expect(wc.textContent.includes('2')).to.be.true
-    })
-
-    it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', function() {
-      this.weight = 3
-      const el = component(ComponentWithDifferentViews)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expectHasChildren(wc)
-      el.toggle()
-      let dummy = scratch.querySelector('#dummy')
-      expect(dummy).to.exist
-      expect(dummy.textContent).to.eql('Dummy view')
-      el.toggle()
-      wc = scratch.querySelector('#wc')
-      expectHasChildren(wc)
-    })
-  })
-
-  describe('attributes and properties', function() {
-    it('will pass boolean data as either an attribute or a property', function() {
-      this.weight = 3
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.bool || wc.hasAttribute('bool')
-      expect(data).to.be.true
-    })
-
-    it('will pass numeric data as either an attribute or a property', function() {
-      this.weight = 3
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.num || wc.getAttribute('num')
-      expect(parseInt(data, 10)).to.eql(42)
-    })
-
-    it('will pass string data as either an attribute or a property', function() {
-      this.weight = 3
-      component(ComponentWithProperties)(scratch)
-      let wc = scratch.querySelector('#wc')
-      let data = wc.str || wc.getAttribute('str')
-      expect(data).to.eql('riot')
-    })
-
-    // Riot.js passes all the following tests but they must be commented out
-    // being consistent with the other frameworks ¯\_(ツ)_/¯
-    /*
-    it('will set boolean attributes on a Custom Element that has not already been defined and upgraded', function() {
-      component(ComponentWithUnregistered)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc.hasAttribute('bool')).to.be.true
-    })
-
-    it('will set numeric attributes on a Custom Element that has not already been defined and upgraded', function() {
-      component(ComponentWithUnregistered)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc.getAttribute('num')).to.eql('42')
-    })
-
-    it('will set string attributes on a Custom Element that has not already been defined and upgraded', function() {
-      component(ComponentWithUnregistered)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc.getAttribute('str')).to.eql('riot')
-    })
-
-    it('will set array properties on a Custom Element that has not already been defined and upgraded', function() {
-      component(ComponentWithUnregistered)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc.arr).to.eql(['r', 'i', 'o', 't'])
-    })
-
-    it('will set object properties on a Custom Element that has not already been defined and upgraded', function() {
-      component(ComponentWithUnregistered)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc.obj).to.eql({ org: 'riotjs', repo: 'riot' })
-    })
-    */
-  })
-
-  describe('events', function() {
-    it('can imperatively listen to a DOM event dispatched by a Custom Element', function() {
-      this.weight = 3
-      component(ComponentWithImperativeEvent)(scratch)
-      let wc = scratch.querySelector('#wc')
-      expect(wc).to.exist
-      let handled = scratch.querySelector('#handled')
-      expect(handled.textContent).to.eql('false')
-      wc.click()
-      expect(handled.textContent).to.eql('true')
-    })
-  })
-
+tests({
+  renderComponentWithoutChildren() {
+    return render(ComponentWithoutChildren)
+  },
+  renderComponentWithChildren() {
+    return render(ComponentWithChildren)
+  },
+  renderComponentWithChildrenRerender() {
+    return render(ComponentWithChildrenRerender)
+  },
+  renderComponentWithDifferentViews() {
+    const {wc, el} = render(ComponentWithDifferentViews)
+    return {wc, el, toggle: () => el.toggle()}
+  },
+  renderComponentWithProperties() {
+    return render(ComponentWithProperties)
+  },
+  renderComponentWithImperativeEvent() {
+    return render(ComponentWithImperativeEvent)
+  }
 })
