@@ -63,7 +63,7 @@ export default function (
         expect(wc).to.exist
         let handled = document.querySelector('#lowercase')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
 
@@ -72,7 +72,7 @@ export default function (
         const { wc, click = wc.click.bind(wc) } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#kebab')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
 
@@ -81,7 +81,7 @@ export default function (
         const { wc, click = wc.click.bind(wc) } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#camel')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
 
@@ -90,7 +90,7 @@ export default function (
         const { wc, click = wc.click.bind(wc) } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#caps')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
 
@@ -99,7 +99,7 @@ export default function (
         const { wc, click = wc.click.bind(wc) } = await renderComponentWithDeclarativeEvent.call(this)
         let handled = document.querySelector('#pascal')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
     })

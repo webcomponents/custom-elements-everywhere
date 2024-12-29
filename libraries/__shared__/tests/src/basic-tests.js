@@ -71,11 +71,11 @@ export default function (
         this.weight = 3
         const { wc, toggle } = await renderComponentWithDifferentViews.call(this);
         expectHasChildren(wc)
-        toggle()
+        await toggle()
         const dummy = document.querySelector('#dummy')
         expect(dummy).to.exist
         expect(dummy.textContent).to.eql('Dummy view')
-        toggle()
+        await toggle()
         expectHasChildren(wc)
       })
     })
@@ -110,7 +110,7 @@ export default function (
         expect(wc).to.exist
         let handled = document.querySelector('#handled')
         expect(handled.textContent).to.eql('false')
-        click()
+        await click()
         expect(handled.textContent).to.eql('true')
       })
     })

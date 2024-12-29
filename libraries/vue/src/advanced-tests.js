@@ -16,17 +16,8 @@
  */
 
 import {createApp, nextTick} from 'vue';
-import {
-  ComponentWithoutChildren,
-  ComponentWithChildren,
-  ComponentWithChildrenRerender,
-  ComponentWithDifferentViews,
-  ComponentWithProperties,
-  ComponentWithUnregistered,
-  ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
-} from "./components";
-import { expect } from "chai";
+import {ComponentWithDeclarativeEvent, ComponentWithProperties} from "./components";
+import tests from 'advanced-tests';
 
 const isCustomElement = (tagName) => {
   return window.customElements.get(tagName) !== undefined;
@@ -48,106 +39,25 @@ afterEach(function() {
   scratch = null;
 });
 
-describe("advanced support", function() {
 
-  describe("attributes and properties", function() {
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      const app = createApp(ComponentWithProperties)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const data = wc.arr;
-      expect(data).to.eql(["V", "u", "e"]);
-    });
+function render(Component) {
+  const app = createApp(Component)
+  app.config.compilerOptions.isCustomElement = isCustomElement;
+  app.mount(scratch);
+  const wc = scratch.querySelector("#wc");
+  return {wc}
+}
 
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      const app = createApp(ComponentWithProperties)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const data = wc.obj;
-      expect(data).to.eql({ org: "vuejs", repo: "vue" });
-    });
-
-    it("will pass object data to a camelCase-named property", function() {
-      this.weight = 2;
-      const app = createApp(ComponentWithProperties)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const data = wc.camelCaseObj;
-      expect(data).to.eql({ label: "passed" });
-    });
-
-  });
-
-  describe("events", function() {
-    it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", async function() {
-      this.weight = 2;
-      const app = createApp(ComponentWithDeclarativeEvent)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const handled = scratch.querySelector("#lowercase");
-      expect(handled.textContent).to.eql("false");
+tests({
+   renderComponentWithProperties() {
+    return render(ComponentWithProperties);
+  },
+  renderComponentWithDeclarativeEvent() {
+    const { wc } = render(ComponentWithDeclarativeEvent);
+    async function click() {
       wc.click();
       await nextTick();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", async function() {
-      this.weight = 1;
-      const app = createApp(ComponentWithDeclarativeEvent)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const handled = scratch.querySelector("#kebab");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      await nextTick();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", async function() {
-      this.weight = 1;
-      const app = createApp(ComponentWithDeclarativeEvent)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const handled = scratch.querySelector("#camel");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      await nextTick();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", async function() {
-      this.weight = 1;
-      const app = createApp(ComponentWithDeclarativeEvent)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const handled = scratch.querySelector("#caps");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      await nextTick();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", async function() {
-      this.weight = 1;
-      const app = createApp(ComponentWithDeclarativeEvent)
-      app.config.compilerOptions.isCustomElement = isCustomElement;
-      app.mount(scratch);
-      const wc = scratch.querySelector("#wc");
-      const handled = scratch.querySelector("#pascal");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      await nextTick();
-      expect(handled.textContent).to.eql("true");
-    });
-  });
-
+    }
+    return { wc, click }
+  }
 });
