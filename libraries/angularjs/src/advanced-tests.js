@@ -1,114 +1,40 @@
-import { expect } from "chai";
 import prodApp from "./app.module";
 
-describe("advanced support", () => {
+import tests from 'advanced-tests';
 
+describe('', function () {
   beforeEach(angular.mock.module(prodApp));
 
   let compile;
   let scope;
   let interval;
+
   beforeEach(
     inject(($compile, $rootScope, $interval) => {
       compile = $compile;
-      scope = $rootScope.$new();
+      scope = $rootScope;
       interval = $interval;
     })
   );
 
-  describe("attributes and properties", () => {
-    const prep = el => {
-      return compile(el)(scope)[0];
+  function render(component) {
+    const root = compile(component)(scope)[0];
+    scope.$apply();
+    const wc = root.querySelector('#wc');
+    return { wc, root }
+  }
+
+  tests({
+    renderComponentWithProperties() {
+      return render('<comp-with-props>')
+    },
+    renderComponentWithDeclarativeEvent() {
+      const { wc, root } = render('<comp-with-declarative-event>');
+      function click() {
+        wc.click();
+        scope.$digest();
+      }
+      return { wc, click, root };
     }
-
-    it("will pass array data as a property", function() {
-      this.weight = 2;
-      let root = prep("<comp-with-props>")
-      scope.$digest()
-      let wc = root.querySelector('#wc')
-      let data = wc.arr;
-      expect(data).to.eql(['A', 'n', 'g', 'u', 'l', 'a', 'r']);
-    });
-
-    it("will pass object data as a property", function() {
-      this.weight = 2;
-      let root = prep("<comp-with-props>")
-      scope.$digest()
-      let wc = root.querySelector('#wc')
-      let data = wc.obj;
-      expect(data).to.eql({ org: "angular", repo: "angular" });
-    });
-
-    it("will pass object data to a camelCase-named property", function() {
-      this.weight = 2;
-      let root = prep("<comp-with-props>")
-      scope.$digest()
-      let wc = root.querySelector('#wc')
-      let data = wc.camelCaseObj;
-      expect(data).to.eql({ label: "passed" });
-    });
   });
-
-  describe("events", () => {
-    it("can declaratively listen to a lowercase DOM event dispatched by a Custom Element", function() {
-      this.weight = 2;
-      const root = compile("<comp-with-declarative-event>")(scope)[0];
-      scope.$digest();
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#lowercase");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      scope.$digest();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a kebab-case DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      const root = compile("<comp-with-declarative-event>")(scope)[0];
-      scope.$digest();
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#kebab");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      scope.$digest();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a camelCase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      const root = compile("<comp-with-declarative-event>")(scope)[0];
-      scope.$digest();
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#camel");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      scope.$digest();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a CAPScase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      const root = compile("<comp-with-declarative-event>")(scope)[0];
-      scope.$digest();
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#caps");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      scope.$digest();
-      expect(handled.textContent).to.eql("true");
-    });
-
-    it("can declaratively listen to a PascalCase DOM event dispatched by a Custom Element", function() {
-      this.weight = 1;
-      const root = compile("<comp-with-declarative-event>")(scope)[0];
-      scope.$digest();
-      let wc = root.querySelector("#wc");
-      let handled = root.querySelector("#pascal");
-      expect(handled.textContent).to.eql("false");
-      wc.click();
-      scope.$digest();
-      expect(handled.textContent).to.eql("true");
-    });
-  });
-  
 });

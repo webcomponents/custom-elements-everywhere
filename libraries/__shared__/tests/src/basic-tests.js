@@ -69,10 +69,10 @@ export default function (
 
       it('can display a Custom Element with children in the Shadow DOM and handle hiding and showing the element', async function () {
         this.weight = 3
-        const { wc, toggle } = await renderComponentWithDifferentViews.call(this);
+        const { wc, toggle, root = document } = await renderComponentWithDifferentViews.call(this);
         expectHasChildren(wc)
         await toggle()
-        const dummy = document.querySelector('#dummy')
+        const dummy = root.querySelector('#dummy')
         expect(dummy).to.exist
         expect(dummy.textContent).to.eql('Dummy view')
         await toggle()
@@ -106,9 +106,9 @@ export default function (
     describe('events', async function () {
       it('can imperatively listen to a DOM event dispatched by a Custom Element', async function () {
         this.weight = 3
-        const { wc, click = wc.click.bind(wc) } = await renderComponentWithImperativeEvent.call(this)
+        const { wc, click = wc.click.bind(wc), root = document } = await renderComponentWithImperativeEvent.call(this)
         expect(wc).to.exist
-        let handled = document.querySelector('#handled')
+        let handled = root.querySelector('#handled')
         expect(handled.textContent).to.eql('false')
         await click()
         expect(handled.textContent).to.eql('true')

@@ -100,7 +100,7 @@ tests({
         root.toggle();
       });
     }
-    return { wc, root, toggle }
+    return { wc, toggle }
   },
   renderComponentWithImperativeEvent() {
     const { wc, root } = render(ComponentWithImperativeEvent)
@@ -109,6 +109,6 @@ tests({
         wc.click();
       });
     }
-    return { wc, root, click }
+    return { wc, click }
   }
 });

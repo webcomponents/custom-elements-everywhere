@@ -85,12 +85,12 @@ tests({
     return render(ComponentWithProperties);
   },
   renderComponentWithDeclarativeEvent() {
-    const { wc, root } = render(ComponentWithDeclarativeEvent)
+    const { wc } = render(ComponentWithDeclarativeEvent)
     function click() {
       act(() => {
         wc.click();
       });
     }
-    return { wc, root, click }
+    return { wc, click }
   }
 })
