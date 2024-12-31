@@ -15,24 +15,45 @@
  * limitations under the License.
  */
 
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { TestBed } from "@angular/core/testing";
-
+import 'reflect-metadata/Reflect';
+import 'zone.js/dist/zone';
+import 'zone.js/dist/webapis-shadydom'; // https://github.com/angular/zone.js/pull/784
+import 'zone.js/dist/long-stack-trace-zone';
+import 'zone.js/dist/proxy';
+import 'zone.js/dist/sync-test';
+import 'zone.js/dist/mocha-patch';
+import 'zone.js/dist/async-test';
+import 'zone.js/dist/fake-async-test';
+import { getTestBed } from '@angular/core/testing';
 import {
-  ComponentWithoutChildren,
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
   ComponentWithChildren,
-  ComponentWithChildrenRerender,
-  ComponentWithDifferentViews,
-  ComponentWithProperties,
-  ComponentWithUnregistered,
-  ComponentWithImperativeEvent,
-  ComponentWithDeclarativeEvent
-} from "./components";
+  ComponentWithChildrenRerender, ComponentWithDeclarativeEvent,
+  ComponentWithDifferentViews, ComponentWithImperativeEvent,
+  ComponentWithoutChildren, ComponentWithProperties, ComponentWithUnregistered
+} from "./src/components";
 
-import tests from 'basic-tests';
+import basicTests from "basic-tests";
+import advancedTests from "advanced-tests";
+
+
+// Prevent Karma from running prematurely.
+__karma__.loaded = function () {};
+
+// First, initialize the Angular testing environment.
+getTestBed().initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting()
+);
+// Run basic and advanced tests through Karma
+
 
 beforeEach(function() {
-  TestBed.configureTestingModule({
+  getTestBed().configureTestingModule({
     declarations: [
       ComponentWithoutChildren,
       ComponentWithChildren,
@@ -48,14 +69,14 @@ beforeEach(function() {
 });
 
 function render(Component) {
-  const fixture = TestBed.createComponent(Component);
+  const fixture = getTestBed().createComponent(Component);
   fixture.detectChanges();
   const el = fixture.debugElement.nativeElement;
   const wc = el.querySelector('#wc');
   return { wc, fixture }
 }
 
-tests({
+const renderers = {
   renderComponentWithoutChildren() {
     return render(ComponentWithoutChildren);
   },
@@ -86,5 +107,19 @@ tests({
       fixture.detectChanges();
     }
     return { wc, fixture, click };
+  },
+  renderComponentWithDeclarativeEvent() {
+    const { wc, fixture } = render(ComponentWithDeclarativeEvent);
+    function click() {
+      wc.click();
+      fixture.detectChanges();
+    }
+    return { wc, fixture, click };
   }
-});
+};
+
+basicTests(renderers);
+advancedTests(renderers);
+
+// Finally, start Karma to run the tests.
+__karma__.start();
