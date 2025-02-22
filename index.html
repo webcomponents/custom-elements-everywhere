@@ -642,6 +642,71 @@ FAQ.</p>
       </div>
     </div>
   </section>
+  <section class="section" id="lit">
+    <span id="litelement"></span>
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/lit/lit">Lit</a> <span
+                    class="library-version">3.0.0</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="lit-handling-data">Handling data</h4>
+
+<p>By default, Lit passes all data to Custom Elements as attributes. However, Lit also provides syntax to bind to properties instead. To bind to a Custom Element property, prefix the property name with a <code>.</code> as in <code>&lt;input .value=${value}&gt;</code>.</p>
+<h4 id="lit-handling-events">Handling events</h4>
+
+<p>Lit can listen to native DOM events dispatched from Custom Elements. It
+supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/lit/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="hyperapp">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
@@ -692,71 +757,6 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
           </div>
           <div class="content">
             <a class="button is-info is-outlined" href="libraries/hyperapp/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="lit">
-    <span id="litelement"></span>
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="https://github.com/lit/lit">Lit</a> <span
-                    class="library-version">3.0.0</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="lit-handling-data">Handling data</h4>
-
-<p>By default, Lit passes all data to Custom Elements as attributes. However, Lit also provides syntax to bind to properties instead. To bind to a Custom Element property, prefix the property name with a <code>.</code> as in <code>&lt;input .value=${value}&gt;</code>.</p>
-<h4 id="lit-handling-events">Handling events</h4>
-
-<p>Lit can listen to native DOM events dispatched from Custom Elements. It
-supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/lit/results/results.html">
               View the tests
             </a>
           </div>
@@ -973,7 +973,7 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
               <div>
                 <p class="heading">Library</p>
                 <h3 class="title"><a href="https://github.com/ionic-team/stencil">Stencil</a> <span
-                    class="library-version">2.20.0</span></h3>
+                    class="library-version">4.27.0</span></h3>
               </div>
             </div>
             <div class="level-item has-text-centered">
@@ -1144,72 +1144,6 @@ kebab-case names, but not camelCase, PascalCase, or CAPScase events (e.g.
       </div>
     </div>
   </section>
-  <section class="section" id="hyperhtml">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="https://github.com/WebReflection/hyperHTML">hyperHTML</a> <span
-                    class="library-version">2.34.2</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="hyperhtml-handling-data">Handling data</h4>
-
-<p>hyperHTML will pass data to an element as properties, as long as the property
-is defined on the element&#39;s prototype. Otherwise it will fallback to passing
-data as attributes.</p>
-<h4 id="hyperhtml-handling-events">Handling events</h4>
-
-<p>hyperHTML can listen to native DOM events dispatched from Custom Elements. It
-supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/hyperhtml/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <section class="section" id="hybrids">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
@@ -1260,6 +1194,72 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
           </div>
           <div class="content">
             <a class="button is-info is-outlined" href="libraries/hybrids/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="hyperhtml">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/WebReflection/hyperHTML">hyperHTML</a> <span
+                    class="library-version">2.34.2</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="hyperhtml-handling-data">Handling data</h4>
+
+<p>hyperHTML will pass data to an element as properties, as long as the property
+is defined on the element&#39;s prototype. Otherwise it will fallback to passing
+data as attributes.</p>
+<h4 id="hyperhtml-handling-events">Handling events</h4>
+
+<p>hyperHTML can listen to native DOM events dispatched from Custom Elements. It
+supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/hyperhtml/results/results.html">
               View the tests
             </a>
           </div>
