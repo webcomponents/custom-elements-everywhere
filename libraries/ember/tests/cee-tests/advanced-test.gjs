@@ -3,13 +3,13 @@ import { setupRenderingTest } from 'ember-qunit';
 import { click, render, find } from '@ember/test-helpers';
 
 import {
-  ComponentWithoutChildren,
-  ComponentWithChildren,
-  ComponentWithChildrenRerender,
-  ComponentWithDifferentViews,
+  //ComponentWithoutChildren,
+  //ComponentWithChildren,
+  //ComponentWithChildrenRerender,
+  //ComponentWithDifferentViews,
   ComponentWithProperties,
-  ComponentWithUnregistered,
-  ComponentWithImperativeEvent,
+  //ComponentWithUnregistered,
+  //ComponentWithImperativeEvent,
   ComponentWithDeclarativeEvent,
 } from 'ember-cee-app/components/cee-scenarios';
 
