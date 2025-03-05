@@ -10,6 +10,9 @@ const ENV = {
   },
 };
 
+// TODO: this should not be needed (ember-qunit is looking for it)
+Object.assign(window, { EmberENV: ENV.EmberENV });
+
 export default ENV;
 
 export function enterTestMode() {
