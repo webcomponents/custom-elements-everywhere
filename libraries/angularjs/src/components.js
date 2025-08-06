@@ -84,11 +84,11 @@ const ComponentWithProps = {
 const ComponentWithoutProps = {
   template: `
     <div>
-      <ce-without-properties id="wc"
+      <ce-without-settable-properties id="wc"
         ng-attr-amethod="{{ $ctrl.method }}"
         ng-attr-agetter="{{ $ctrl.getter }}"
         ng-attr-areadonly="{{ $ctrl.readonly }}"
-      ></ce-without-properties>
+      ></ce-without-settable-properties>
     </div>
   `,
   controller: class {

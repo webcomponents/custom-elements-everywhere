@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2017 Google Inc. All rights reserved.
+ * Copyright 2024 Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,13 @@
  * limitations under the License.
  */
 
-class CEWithoutProperties extends HTMLElement {
+
+/**
+ * This is a custom element that has methods and unsettable properties. It is used to test
+ * heuristics used by frameworks, and catch those that naiively assume that 'x in obj' means that
+ * obj is a settable property.
+ */
+class CEWithoutSettableProperties extends HTMLElement {
 
     amethod() {
         this.innerText = 'Success';
@@ -32,9 +38,9 @@ class CEWithoutProperties extends HTMLElement {
 
 }
 
-Object.defineProperty(CEWithoutProperties.prototype, 'areadonly', {
+Object.defineProperty(CEWithoutSettableProperties.prototype, 'areadonly', {
     value: 'readonly',
     writable: false
 });
 
-customElements.define('ce-without-properties', CEWithoutProperties);
+customElements.define('ce-without-settable-properties', CEWithoutSettableProperties);

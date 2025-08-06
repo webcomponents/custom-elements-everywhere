@@ -141,7 +141,7 @@ describe('basic support', function() {
       this.weight = 3;
       const cmp = createComponentWithoutProperties();
       scratch.appendChild(cmp);
-      const wc = cmp.shadowRoot.querySelector('ce-without-properties');
+      const wc = cmp.shadowRoot.querySelector('ce-without-settable-properties');
       expect(wc.getAttribute('amethod')).to.eql('method');
       expect(wc.getAttribute('agetter')).to.eql('getter');
       expect(wc.getAttribute('areadonly')).to.eql('readonly');

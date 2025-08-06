@@ -133,7 +133,7 @@ describe("basic support", function() {
     it('will not overwrite unwriteable properties', function () {
       const r = renderer(() => w(ComponentWithoutProperties, {}));
       r.mount({ domNode: scratch, sync: true });
-      const wc: any = document.querySelector("ce-without-properties");
+      const wc: any = document.querySelector("ce-without-settable-properties");
       expect(wc.getAttribute('amethod')).to.eql('method');
       expect(wc.getAttribute('agetter')).to.eql('getter');
       expect(wc.getAttribute('areadonly')).to.eql('readonly');

@@ -20,7 +20,7 @@ import { createStore } from "solid-js/store";
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
-import "ce-without-properties";
+import "ce-without-settable-properties";
 import "ce-with-event";
 
 export const ComponentWithoutChildren = () => <ce-without-children />;
@@ -71,7 +71,7 @@ export const ComponentWithoutProperties = () => {
     readonly: 'readonly',
   }
   return (
-    <ce-without-properties
+    <ce-without-settable-properties
       attr:agetter={data.getter}
       attr:amethod={data.method}
       attr:areadonly={data.readonly}

@@ -20,7 +20,7 @@ import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
-import 'ce-without-properties';
+import 'ce-without-settable-properties';
 
 export const ComponentWithoutChildren = defineComponent({
   template: `
@@ -104,11 +104,11 @@ export const ComponentWithProperties = defineComponent({
 export const ComponentWithoutProperties = defineComponent({
   template: `
     <div>
-      <ce-without-properties id="wc"
+      <ce-without-settable-properties id="wc"
         :amethod.attr="method"
         :agetter.attr="getter"
         :areadonly.attr="readonly"
-      ></ce-without-properties>
+      ></ce-without-settable-properties>
     </div>
   `,
   data: function () {

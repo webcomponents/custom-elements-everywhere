@@ -19,7 +19,7 @@ import "ce-without-children"
 import "ce-with-children"
 import "ce-with-properties"
 import "ce-with-event"
-import "ce-without-properties"
+import "ce-without-settable-properties"
 
 import { app, h, text } from "hyperapp"
 
@@ -88,7 +88,7 @@ export const ComponentWithoutProperties = node =>
     init: {},
     view: () =>
       h('div', {}, [
-        h('ce-without-properties', {
+        h('ce-without-settable-properties', {
           amethod: 'method',
           agetter: 'getter',
           areadonly: 'readonly'

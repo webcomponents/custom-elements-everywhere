@@ -14,12 +14,12 @@ export class ComponentWithoutProperties {
     }
     return (
       <Host>
-        <ce-without-properties
+        <ce-without-settable-properties
           id="wc"
           amethod={data.method}
           agetter={data.getter}
           areadonly={data.readonly}
-        ></ce-without-properties>
+        ></ce-without-settable-properties>
       </Host>
     );
   }

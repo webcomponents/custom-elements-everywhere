@@ -19,7 +19,7 @@ import { h, render, Component } from 'preact';
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
-import 'ce-without-properties';
+import 'ce-without-settable-properties';
 import 'ce-with-event';
 
 export class ComponentWithoutChildren extends Component {
@@ -119,11 +119,11 @@ export class ComponentWithoutProperties extends Component {
     }
     return (
       <div>
-        <ce-without-properties id="wc"
+        <ce-without-settable-properties id="wc"
           amethod={data.method}
           agetter={data.getter}
           areadonly={data.readonly}
-        ></ce-without-properties>
+        ></ce-without-settable-properties>
       </div>
     )
   }

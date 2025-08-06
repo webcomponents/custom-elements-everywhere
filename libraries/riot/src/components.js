@@ -18,7 +18,7 @@
 import 'ce-without-children'
 import 'ce-with-children'
 import 'ce-with-properties'
-import 'ce-without-properties'
+import 'ce-without-settable-properties'
 import 'ce-with-event'
 
 export { default as ComponentWithoutChildren } from './components/ComponentWithoutChildren.riot'

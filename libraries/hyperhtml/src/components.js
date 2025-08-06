@@ -18,7 +18,7 @@
 import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
-import 'ce-without-properties';
+import 'ce-without-settable-properties';
 import 'ce-with-event';
 
 import HyperHTMLELement from 'hyperhtml-element/esm';
@@ -82,11 +82,11 @@ export const ComponentWithProperties = (root) => hyper(root)`
 
 export const ComponentWithoutProperties = (root) => hyper(root)`
   <div>
-    <ce-without-properties id="wc"
+    <ce-without-settable-properties id="wc"
       amethod="${"method"}"
       agetter="${"getter"}"
       areadonly="${"readonly"}"
-    ></ce-without-properties>
+    ></ce-without-settable-properties>
   </div>
 `
 

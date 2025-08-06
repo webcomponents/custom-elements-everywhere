@@ -1,5 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
-import "ce-without-properties";
+import "ce-without-settable-properties";
 
 class ComponentWithoutProperties extends PolymerElement {
   static get is() {
@@ -24,11 +24,11 @@ class ComponentWithoutProperties extends PolymerElement {
   static get template() {
     return html`
       <div>
-        <ce-without-properties id="wc"
+        <ce-without-settable-properties id="wc"
           amethod="[[method]]"
           agetter="[[getter]]"
           readonly="[[readonly]]"
-        ></ce-without-properties>
+        ></ce-without-settable-properties>
       </div>
     `;
   }

@@ -23,7 +23,7 @@ import { h } from "preact";
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
-import "ce-without-properties";
+import "ce-without-settable-properties";
 import "ce-with-event";
 
 export class ComponentWithoutChildren extends withComponent(withPreact()) {
@@ -138,12 +138,12 @@ export class ComponentWithoutProperties extends withComponent(withPreact()) {
     }
     return (
       <div>
-        <ce-without-properties
+        <ce-without-settable-properties
           id="wc"
           agetter={data.getter}
           areadonly={data.readonly}
           amethod={data.method}
-        ></ce-without-properties>
+        ></ce-without-settable-properties>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import "ce-without-children";
 import "ce-with-children";
 import "ce-with-properties";
-import "ce-without-properties";
+import "ce-without-settable-properties";
 import "ce-with-event";
 import { ComponentWithChildren } from "../dist/components/component-with-children.js";
 import { ComponentWithChildrenRerender } from "../dist/components/component-with-children-rerender.js";

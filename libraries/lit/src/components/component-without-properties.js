@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import "ce-without-properties";
+import "ce-without-settable-properties";
 
 class ComponentWithoutProperties extends LitElement {
 
@@ -10,12 +10,12 @@ class ComponentWithoutProperties extends LitElement {
   render() {
     return html`
       <div>
-        <ce-without-properties
+        <ce-without-settable-properties
           id="wc"
           amethod="${"method"}"
           agetter="${"getter"}"
           areadonly="${"readonly"}"
-        ></ce-without-properties>
+        ></ce-without-settable-properties>
       </div>
     `;
   }

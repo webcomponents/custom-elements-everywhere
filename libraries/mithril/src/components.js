@@ -19,7 +19,7 @@ import 'ce-without-children'
 import 'ce-with-children'
 import 'ce-with-properties'
 import 'ce-with-event'
-import 'ce-without-properties'
+import 'ce-without-settable-properties'
 
 import m from 'mithril'
 
@@ -90,7 +90,7 @@ export const ComponentWithProperties = () => ({
 export const ComponentWithoutProperties = () => ({
   view: () =>
     m('div',
-      m('ce-without-properties#wc', {
+      m('ce-without-settable-properties#wc', {
         amethod: 'method',
         agetter: 'getter',
         areadonly: 'readonly'

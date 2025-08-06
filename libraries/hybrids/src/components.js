@@ -19,7 +19,7 @@ import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
-import 'ce-without-properties';
+import 'ce-without-settable-properties';
 
 import { html } from 'hybrids';
 
@@ -65,12 +65,12 @@ export const ComponentWithProperties = {
 
 export const ComponentWithoutProperties = {
   render: () => html`
-    <ce-without-properties
+    <ce-without-settable-properties
       id="wc"
       amethod="method"
       agetter="getter"
       areadonly="readonly"
-    ></ce-without-properties>
+    ></ce-without-settable-properties>
   `
 }
 

@@ -27,7 +27,7 @@ import 'ce-without-children';
 import 'ce-with-children';
 import 'ce-with-properties';
 import 'ce-with-event';
-import 'ce-without-properties';
+import 'ce-without-settable-properties';
 
 @Component({
   template: `
@@ -109,7 +109,7 @@ export class ComponentWithProperties {
 @Component({
   template: `
     <div>
-      <ce-without-properties amethod="method" agetter="getter" areadonly="readonly" id="wc"></ce-without-properties>
+      <ce-without-settable-properties amethod="method" agetter="getter" areadonly="readonly" id="wc"></ce-without-settable-properties>
     </div>
   `
 })
