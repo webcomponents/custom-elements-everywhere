@@ -22,14 +22,16 @@ jobs:
       - run: npm test
 
       - name: Deploy Preview
-        if: ${{github.event_name == 'pull_request' && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]')}}
+        # Only run this job if the repository is NOT a fork and the actor is not dependabot or renovate
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]') }}
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           branch: gh-pages
           folder: out
           target-folder: preview/preview/preview/${{github.event.number}}
       - name: Comment about preview
-        if: ${{github.event_name == 'pull_request' && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]')}}
+        # Only run this job if the repository is NOT a fork and the actor is not dependabot or renovate
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]') }}
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: |
