@@ -13,17 +13,45 @@ export namespace Components {
     }
     interface ComponentWithDeclarativeEvent {
         "camelHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "camel-handled"?: boolean;
         "capsHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "caps-handled"?: boolean;
         "kebabHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "kebab-handled"?: boolean;
         "lowercaseHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "lowercase-handled"?: boolean;
         "pascalHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "pascal-handled"?: boolean;
     }
     interface ComponentWithDifferentViews {
         "showWC": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "show-w-c"?: boolean;
         "toggle": () => Promise<void>;
     }
     interface ComponentWithImperativeEvent {
         "eventHandled": boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "event-handled"?: boolean;
     }
     interface ComponentWithProperties {
         "arr": string[];
@@ -97,16 +125,44 @@ declare namespace LocalJSX {
     }
     interface ComponentWithDeclarativeEvent {
         "camelHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "camel-handled"?: boolean;
         "capsHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "caps-handled"?: boolean;
         "kebabHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "kebab-handled"?: boolean;
         "lowercaseHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "lowercase-handled"?: boolean;
         "pascalHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "pascal-handled"?: boolean;
     }
     interface ComponentWithDifferentViews {
         "showWC"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "show-w-c"?: boolean;
     }
     interface ComponentWithImperativeEvent {
         "eventHandled"?: boolean;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "event-handled"?: boolean;
     }
     interface ComponentWithProperties {
         "arr"?: string[];
