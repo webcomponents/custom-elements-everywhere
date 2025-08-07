@@ -63,6 +63,8 @@ export namespace Components {
     }
     interface ComponentWithoutChildren {
     }
+    interface ComponentWithoutProperties {
+    }
 }
 declare global {
     interface HTMLComponentWithChildrenElement extends Components.ComponentWithChildren, HTMLStencilElement {
@@ -107,6 +109,12 @@ declare global {
         prototype: HTMLComponentWithoutChildrenElement;
         new (): HTMLComponentWithoutChildrenElement;
     };
+    interface HTMLComponentWithoutPropertiesElement extends Components.ComponentWithoutProperties, HTMLStencilElement {
+    }
+    var HTMLComponentWithoutPropertiesElement: {
+        prototype: HTMLComponentWithoutPropertiesElement;
+        new (): HTMLComponentWithoutPropertiesElement;
+    };
     interface HTMLElementTagNameMap {
         "component-with-children": HTMLComponentWithChildrenElement;
         "component-with-children-rerender": HTMLComponentWithChildrenRerenderElement;
@@ -115,6 +123,7 @@ declare global {
         "component-with-imperative-event": HTMLComponentWithImperativeEventElement;
         "component-with-properties": HTMLComponentWithPropertiesElement;
         "component-without-children": HTMLComponentWithoutChildrenElement;
+        "component-without-properties": HTMLComponentWithoutPropertiesElement;
     }
 }
 declare namespace LocalJSX {
@@ -174,6 +183,8 @@ declare namespace LocalJSX {
     }
     interface ComponentWithoutChildren {
     }
+    interface ComponentWithoutProperties {
+    }
     interface IntrinsicElements {
         "component-with-children": ComponentWithChildren;
         "component-with-children-rerender": ComponentWithChildrenRerender;
@@ -182,6 +193,7 @@ declare namespace LocalJSX {
         "component-with-imperative-event": ComponentWithImperativeEvent;
         "component-with-properties": ComponentWithProperties;
         "component-without-children": ComponentWithoutChildren;
+        "component-without-properties": ComponentWithoutProperties;
     }
 }
 export { LocalJSX as JSX };
@@ -195,6 +207,7 @@ declare module "@stencil/core" {
             "component-with-imperative-event": LocalJSX.ComponentWithImperativeEvent & JSXBase.HTMLAttributes<HTMLComponentWithImperativeEventElement>;
             "component-with-properties": LocalJSX.ComponentWithProperties & JSXBase.HTMLAttributes<HTMLComponentWithPropertiesElement>;
             "component-without-children": LocalJSX.ComponentWithoutChildren & JSXBase.HTMLAttributes<HTMLComponentWithoutChildrenElement>;
+            "component-without-properties": LocalJSX.ComponentWithoutProperties & JSXBase.HTMLAttributes<HTMLComponentWithoutPropertiesElement>;
         }
     }
 }
