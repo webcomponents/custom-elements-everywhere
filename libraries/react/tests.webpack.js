@@ -76,6 +76,7 @@ function render(Component) {
 
 const renderers = {
   renderComponentWithoutChildren() {
+    this.skip()
     return render(ComponentWithoutChildren);
   },
   renderComponentWithChildren() {
