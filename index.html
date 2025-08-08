@@ -189,6 +189,73 @@ limitations under the License.
       </div>
     </div>
   </section>
+  <section class="section" id="vue">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/vuejs/vue">Vue</a> <span
+                    class="library-version">^3.2.38</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="vue-handling-data">Handling data</h4>
+
+<p>By default, Vue passes all data to Custom Elements as attributes. However, Vue
+also provides syntax to instruct its bindings to use properties instead. To bind
+to a Custom Element property use <code>:foo.prop="bar"</code>.</p>
+<h4 id="vue-handling-events">Handling events</h4>
+
+<p>Vue can listen to native DOM events dispatched from Custom Elements. Its
+declarative event bindings only support lowercase and kebab case events. To
+listen for any events named with capital letters you must write imperative code.</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/vue/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="angular">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
@@ -243,6 +310,72 @@ etc).</p>
           </div>
           <div class="content">
             <a class="button is-info is-outlined" href="libraries/angular/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="svelte">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/sveltejs/svelte">Svelte</a> <span
+                    class="library-version">4.2.19</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="svelte-handling-data">Handling data</h4>
+
+<p>Svelte uses a heuristic to determine whether to pass data as properties or
+attributes — if the property is defined on the element instance, a property
+is used, otherwise it will fall back to attributes.</p>
+<h4 id="svelte-handling-events">Handling events</h4>
+
+<p>Svelte can listen to native DOM events dispatched from Custom Elements.
+It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/svelte/results/results.html">
               View the tests
             </a>
           </div>
@@ -320,6 +453,110 @@ uppercase characters with an underscore (<code>_</code>).</p>
               <img src="images/smiley.svg" alt="" width="256">
               <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="preact">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/preactjs/preact">Preact</a> <span
+                    class="library-version">^10.0.1</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="preact-handling-data">Handling data</h4>
+
+<p>Preact uses a runtime heuristic to determine if it should pass data to Custom
+Elements as either properties or attributes. If a property is already defined
+on the element instance, Preact will use properties, otherwise it will fallback
+to attributes. The exception to this rule is when it tries to pass rich data,
+like objects or arrays. In those instances it will always use a property.</p>
+<h4 id="preact-handling-events">Handling events</h4>
+
+<p>Preact can listen to native DOM events dispatched from Custom Elements. It uses
+a heuristic to convert JSX event binding syntax into event names. It supports
+lowercase, camelCase, kebab-case, CAPScase, and PascalCase events.</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/preact/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <article class="media">
+              <div class="media-content">
+                <a href="https://github.com/developit/preact/pull/511">
+                  <div class="content">
+                    <p>
+                      <strong>check for typeof attribute value, if is string use setAttribute</strong>
+                      <br>
+                      <small>#511 opened on Jan 17 by enapupe</small>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </article>
+            <article class="media">
+              <div class="media-content">
+                <a href="https://github.com/developit/preact/issues/678">
+                  <div class="content">
+                    <p>
+                      <strong>Checking &#x60;prop in elem&#x60; fails with deferred custom element definitions</strong>
+                      <br>
+                      <small>#678 opened on Apr 27 by treshugart</small>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </article>
+            <article class="media">
+              <div class="media-content">
+                <a href="https://github.com/developit/preact/pull/715">
+                  <div class="content">
+                    <p>
+                      <strong>feat: Add native support for custom elements.</strong>
+                      <br>
+                      <small>#715 opened on May 31 by treshugart</small>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -536,6 +773,70 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
       </div>
     </div>
   </section>
+  <section class="section" id="riot">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/riot/riot">Riot.js</a> <span
+                    class="library-version">4.14.0</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="riot-handling-data">Handling data</h4>
+
+<p>By default, Riot.js passes all primitive data (strings, numbers, booleans) to Custom Elements as attributes. It passes complex data (Objects, Arrays) to Custom Elements as properties.</p>
+<h4 id="riot-handling-events">Handling events</h4>
+
+<p>Riot.js can listen to native DOM events dispatched from Custom Elements. It supports
+all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/riot/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="mithril">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
@@ -647,6 +948,69 @@ supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
           </div>
           <div class="content">
             <a class="button is-info is-outlined" href="libraries/omi/results/results.html">
+              View the tests
+            </a>
+          </div>
+        </div>
+        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
+          <div class="box">
+            <h4 class="title is-3">Related Issues</h4>
+            <div class="has-text-centered">
+              <img src="images/smiley.svg" alt="" width="256">
+              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="stencil">
+    <div class="container">
+      <div class="columns is-flex-widescreen is-block-tablet">
+        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Library</p>
+                <h3 class="title"><a href="https://github.com/stenciljs/core">Stencil</a> <span
+                    class="library-version">4.27.0</span></h3>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Score</p>
+                <p class="title">100%</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Basic Tests</p>
+                <p class="title">16/16</p>
+                <div></div>
+
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Advanced Tests</p>
+                <p class="title">16/16
+                </p>
+              </div>
+            </div>
+          </div>
+          <progress class="progress is-primary" value="100"
+            max="100">100%</progress>
+          <div class="content">
+            <h4 id="stencil-handling-data">Handling data</h4>
+
+<p>By default, Stencil passes all data to Custom Elements as properties.</p>
+<h4 id="stencil-handling-events">Handling events</h4>
+
+<p>Stencil can listen to native DOM events dispatched from Custom Elements. It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+
+          </div>
+          <div class="content">
+            <a class="button is-info is-outlined" href="libraries/stencil/results/results.html">
               View the tests
             </a>
           </div>
@@ -1071,367 +1435,6 @@ camelCase, PascalCase, or CAPScase events (e.g. <code>'URLchanged'</code>).</p>
       </div>
     </div>
   </section>
-  <section class="section" id="dojo">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="https://github.com/dojo/framework">Dojo</a> <span
-                    class="library-version">8.0.0</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="dojo-handling-data">Handling data</h4>
-
-<p>Dojo will pass data as attributes only when the data is a type of <code>string</code>, otherwise it is
-set as a property.</p>
-<h4 id="dojo-handling-events">Handling events</h4>
-
-<p>Dojo can listen to native DOM events dispatched from Custom Elements. However the event
-names must be prefixed with <code>on</code>, so a Custom Event of <code>camelEvent</code> would be <code>oncamelEvent</code>.
-Other than that, Dojo supports all kinds of event names.</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/dojo/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="preact">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="">Preact</a> <span
-                    class="library-version">^10.0.1</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="preact-handling-data">Handling data</h4>
-
-<p>Preact uses a runtime heuristic to determine if it should pass data to Custom
-Elements as either properties or attributes. If a property is already defined
-on the element instance, Preact will use properties, otherwise it will fallback
-to attributes. The exception to this rule is when it tries to pass rich data,
-like objects or arrays. In those instances it will always use a property.</p>
-<h4 id="preact-handling-events">Handling events</h4>
-
-<p>Preact can listen to native DOM events dispatched from Custom Elements. It uses
-a heuristic to convert JSX event binding syntax into event names. It supports
-lowercase, camelCase, kebab-case, CAPScase, and PascalCase events.</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/preact/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/developit/preact/pull/511">
-                  <div class="content">
-                    <p>
-                      <strong>check for typeof attribute value, if is string use setAttribute</strong>
-                      <br>
-                      <small>#511 opened on Jan 17 by enapupe</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/developit/preact/issues/678">
-                  <div class="content">
-                    <p>
-                      <strong>Checking &#x60;prop in elem&#x60; fails with deferred custom element definitions</strong>
-                      <br>
-                      <small>#678 opened on Apr 27 by treshugart</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-            <article class="media">
-              <div class="media-content">
-                <a href="https://github.com/developit/preact/pull/715">
-                  <div class="content">
-                    <p>
-                      <strong>feat: Add native support for custom elements.</strong>
-                      <br>
-                      <small>#715 opened on May 31 by treshugart</small>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="riot">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="">Riot.js</a> <span
-                    class="library-version">4.14.0</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="riot-handling-data">Handling data</h4>
-
-<p>By default, Riot.js passes all primitive data (strings, numbers, booleans) to Custom Elements as attributes. It passes complex data (Objects, Arrays) to Custom Elements as properties.</p>
-<h4 id="riot-handling-events">Handling events</h4>
-
-<p>Riot.js can listen to native DOM events dispatched from Custom Elements. It supports
-all styles of events (lowercase, camelCase, kebab-case, etc).</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/riot/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="solid">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="">Solid</a> <span
-                    class="library-version">1.6.8</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="solid-handling-data">Handling data</h4>
-
-<p>Solid passes all non-JSX expression data as attributes. JSX expressions default to attributes unless they are booleans, applied to a custom element, or indicated with <code>prop:</code> namespace.</p>
-<h4 id="solid-handling-events">Handling events</h4>
-
-<p>By default, typical &quot;on_____&quot; event handlers are registered in Solid using <code>&lt;div onClick={...}&gt;&lt;/div&gt;</code>. However, it always lowercases the event names and does automatic event delegation for input and mouse events.</p>
-<p>For custom events with non-standard names, Solid uses its &quot;on&quot; binding: <code>&lt;div on:my-custom-event={...}&gt;&lt;/div&gt;</code>.</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/solid/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="stencil">
-    <div class="container">
-      <div class="columns is-flex-widescreen is-block-tablet">
-        <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
-          <div class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Library</p>
-                <h3 class="title"><a href="">Stencil</a> <span
-                    class="library-version">4.27.0</span></h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Score</p>
-                <p class="title">100%</p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Basic Tests</p>
-                <p class="title">16/16</p>
-                <div></div>
-
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Advanced Tests</p>
-                <p class="title">16/16
-                </p>
-              </div>
-            </div>
-          </div>
-          <progress class="progress is-primary" value="100"
-            max="100">100%</progress>
-          <div class="content">
-            <h4 id="stencil-handling-data">Handling data</h4>
-
-<p>By default, Stencil passes all data to Custom Elements as properties.</p>
-<h4 id="stencil-handling-events">Handling events</h4>
-
-<p>Stencil can listen to native DOM events dispatched from Custom Elements. It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
-
-          </div>
-          <div class="content">
-            <a class="button is-info is-outlined" href="libraries/stencil/results/results.html">
-              View the tests
-            </a>
-          </div>
-        </div>
-        <div class="column is-10-tablet is-offset-1-tablet is-5-widescreen is-offset-1-widescreen">
-          <div class="box">
-            <h4 class="title is-3">Related Issues</h4>
-            <div class="has-text-centered">
-              <img src="images/smiley.svg" alt="" width="256">
-              <p class="title is-4 no-issues-caption">Yay! No open issues!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <section class="section" id="surplus">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
@@ -1498,7 +1501,7 @@ known to be available only as an attribute (<code>aria-*</code>, some SVG attrib
       </div>
     </div>
   </section>
-  <section class="section" id="svelte">
+  <section class="section" id="dojo">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
         <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
@@ -1506,8 +1509,8 @@ known to be available only as an attribute (<code>aria-*</code>, some SVG attrib
             <div class="level-item has-text-centered">
               <div>
                 <p class="heading">Library</p>
-                <h3 class="title"><a href="">Svelte</a> <span
-                    class="library-version">4.2.19</span></h3>
+                <h3 class="title"><a href="https://github.com/dojo/framework">Dojo</a> <span
+                    class="library-version">8.0.0</span></h3>
               </div>
             </div>
             <div class="level-item has-text-centered">
@@ -1535,19 +1538,19 @@ known to be available only as an attribute (<code>aria-*</code>, some SVG attrib
           <progress class="progress is-primary" value="100"
             max="100">100%</progress>
           <div class="content">
-            <h4 id="svelte-handling-data">Handling data</h4>
+            <h4 id="dojo-handling-data">Handling data</h4>
 
-<p>Svelte uses a heuristic to determine whether to pass data as properties or
-attributes — if the property is defined on the element instance, a property
-is used, otherwise it will fall back to attributes.</p>
-<h4 id="svelte-handling-events">Handling events</h4>
+<p>Dojo will pass data as attributes only when the data is a type of <code>string</code>, otherwise it is
+set as a property.</p>
+<h4 id="dojo-handling-events">Handling events</h4>
 
-<p>Svelte can listen to native DOM events dispatched from Custom Elements.
-It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
+<p>Dojo can listen to native DOM events dispatched from Custom Elements. However the event
+names must be prefixed with <code>on</code>, so a Custom Event of <code>camelEvent</code> would be <code>oncamelEvent</code>.
+Other than that, Dojo supports all kinds of event names.</p>
 
           </div>
           <div class="content">
-            <a class="button is-info is-outlined" href="libraries/svelte/results/results.html">
+            <a class="button is-info is-outlined" href="libraries/dojo/results/results.html">
               View the tests
             </a>
           </div>
@@ -1564,7 +1567,7 @@ It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
       </div>
     </div>
   </section>
-  <section class="section" id="vue">
+  <section class="section" id="solid">
     <div class="container">
       <div class="columns is-flex-widescreen is-block-tablet">
         <div class="column is-10-tablet is-offset-1-tablet is-6-widescreen is-offset-0-widescreen">
@@ -1572,8 +1575,8 @@ It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
             <div class="level-item has-text-centered">
               <div>
                 <p class="heading">Library</p>
-                <h3 class="title"><a href="">Vue</a> <span
-                    class="library-version">^3.2.38</span></h3>
+                <h3 class="title"><a href="">Solid</a> <span
+                    class="library-version">1.6.8</span></h3>
               </div>
             </div>
             <div class="level-item has-text-centered">
@@ -1601,20 +1604,17 @@ It supports all styles of events (lowercase, camelCase, kebab-case, etc).</p>
           <progress class="progress is-primary" value="100"
             max="100">100%</progress>
           <div class="content">
-            <h4 id="vue-handling-data">Handling data</h4>
+            <h4 id="solid-handling-data">Handling data</h4>
 
-<p>By default, Vue passes all data to Custom Elements as attributes. However, Vue
-also provides syntax to instruct its bindings to use properties instead. To bind
-to a Custom Element property use <code>:foo.prop="bar"</code>.</p>
-<h4 id="vue-handling-events">Handling events</h4>
+<p>Solid passes all non-JSX expression data as attributes. JSX expressions default to attributes unless they are booleans, applied to a custom element, or indicated with <code>prop:</code> namespace.</p>
+<h4 id="solid-handling-events">Handling events</h4>
 
-<p>Vue can listen to native DOM events dispatched from Custom Elements. Its
-declarative event bindings only support lowercase and kebab case events. To
-listen for any events named with capital letters you must write imperative code.</p>
+<p>By default, typical &quot;on_____&quot; event handlers are registered in Solid using <code>&lt;div onClick={...}&gt;&lt;/div&gt;</code>. However, it always lowercases the event names and does automatic event delegation for input and mouse events.</p>
+<p>For custom events with non-standard names, Solid uses its &quot;on&quot; binding: <code>&lt;div on:my-custom-event={...}&gt;&lt;/div&gt;</code>.</p>
 
           </div>
           <div class="content">
-            <a class="button is-info is-outlined" href="libraries/vue/results/results.html">
+            <a class="button is-info is-outlined" href="libraries/solid/results/results.html">
               View the tests
             </a>
           </div>
