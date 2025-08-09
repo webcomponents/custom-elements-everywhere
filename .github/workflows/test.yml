@@ -24,7 +24,7 @@ jobs:
       - name: Deploy Preview
         # Only run this job if the repository is NOT a fork and the actor is not dependabot or renovate
         if: ${{ github.event.pull_request.head.repo.full_name == github.repository && !(github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]') }}
-        uses: JamesIves/github-pages-deploy-action@v4.4.3
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: gh-pages
           folder: out
