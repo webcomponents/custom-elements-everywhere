@@ -43,7 +43,7 @@ async function verifyResults(library) {
   if (!fs.existsSync(join(resultsPath, `results.json`)))
     throw new Error(`Missing results.json in ${library.name}`);
   if (!fs.existsSync(join(resultsPath, `results.html`)))
-    throw new Error(`missing results.html in ${library.name}`);
+    throw new Error(`missing results.html or index.html in ${library.name}`);
   compareResultsAgainstGoldens(library);
 }
 

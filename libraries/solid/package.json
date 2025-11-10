@@ -1,42 +1,39 @@
 {
   "scripts": {
+    "compile": "wireit",
     "test": "wireit",
     "build": "wireit"
   },
   "devDependencies": {
-    "@babel/core": "7.28.0",
-    "@babel/preset-env": "7.28.0",
-    "babel-loader": "9.2.1",
-    "babel-preset-solid": "1.6.7",
-    "chai": "4.5.0",
-    "cross-env": "7.0.3",
-    "expect": "29.7.0",
-    "karma": "6.4.4",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-firefox-launcher": "2.1.3",
-    "karma-sourcemap-loader": "0.4.0",
-    "karma-webpack": "5.0.1",
-    "webpack": "5.101.0"
+    "vite": "^7.2.2",
+    "vite-plugin-solid": "^2.11.10"
   },
   "dependencies": {
-    "solid-js": "1.6.8"
+    "solid-js": "^1.9.10",
+    "wc": "workspace:*"
   },
-  "wireit": {
-    "test": {
-      "dependencies": [
-        "../..:karma-plugins"
-      ],
+ "wireit": {
+    "compile": {
       "files": [
-        ".babelrc",
-        "karma.conf.js",
-        "tests.webpack.js",
+        "index.html",
         "src",
-        "meta"
+        "vite.config.js"
       ],
       "output": [
-        "results"
+        "dist"
       ],
-      "command": "cross-env LIBRARY_NAME=solid-js karma start || echo ''"
+      "command": "vite build"
+    },
+    "test": {
+      "files": ["dist"],
+      "dependencies": [
+        "compile",
+        "../__shared__/tests:test-files"
+      ],
+      "command": "pnpm run --filter tests test",
+      "output": [
+        "results"
+      ]
     },
     "build": {
       "dependencies": [

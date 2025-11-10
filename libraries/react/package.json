@@ -1,43 +1,40 @@
 {
   "scripts": {
-    "test": "wireit",
-    "build": "wireit"
+    "build": "wireit",
+    "test": "wireit"
   },
+  "library_package": "react",
   "library_repo": "facebook/react",
   "devDependencies": {
-    "@babel/preset-react": "^7.16.0",
-    "babel-core": "6.26.3",
-    "babel-loader": "9.2.1",
-    "babel-preset-react": "6.24.1",
-    "chai": "4.5.0",
-    "cross-env": "7.0.3",
-    "karma": "6.4.4",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-firefox-launcher": "2.1.3",
-    "karma-sourcemap-loader": "0.4.0",
-    "karma-webpack": "5.0.1",
-    "webpack": "5.101.0"
+    "vite": "^7.2.2"
   },
   "dependencies": {
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "wc": "workspace:*"
   },
   "wireit": {
-    "test": {
-      "dependencies": [
-        "../..:karma-plugins"
-      ],
+    "compile": {
       "files": [
-        ".babelrc",
-        "karma.conf.js",
-        "tests.webpack.js",
+        "index.html",
         "src",
-        "meta"
+        "vite.config.js"
       ],
       "output": [
-        "results"
+        "dist"
       ],
-      "command": "cross-env LIBRARY_NAME=react karma start"
+      "command": "vite build"
+    },
+    "test": {
+      "files": ["dist"],
+      "dependencies": [
+        "compile",
+        "../__shared__/tests:test-files"
+      ],
+      "command": "pnpm run --filter tests test",
+      "output": [
+        "results"
+      ]
     },
     "build": {
       "dependencies": [

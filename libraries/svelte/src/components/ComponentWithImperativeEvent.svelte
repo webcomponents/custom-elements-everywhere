@@ -1,5 +1,5 @@
-<div id="handled">{eventHandled}</div>
-<ce-with-event id="wc" bind:this={customElement}></ce-with-event>
+<div id="ce-with-imperative-event-handled">{eventHandled}</div>
+<ce-with-event id="ce-with-imperative-event" bind:this={customElement}>Imperative</ce-with-event>
 
 <script>
     import { onMount } from 'svelte';

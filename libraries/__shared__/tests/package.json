@@ -1,0 +1,27 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "serve": "http-server harness",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "http-server": "^14.1.1"
+  },
+  "wireit": {
+    "test-files": {
+      "files": [
+        "advanced-tests.test.js",
+        "basic-tests.test.js",
+        "playwright.config.js",
+        "reporter.js",
+        "utils.js"
+      ]
+    }
+  }
+}

@@ -15,68 +15,122 @@
  * limitations under the License.
  */
 
-import 'ce-without-children';
-import 'ce-with-children';
-import 'ce-with-properties';
-import 'ce-with-event';
+import 'wc/ce-without-children';
+import 'wc/ce-with-children';
+import 'wc/ce-with-properties';
+import 'wc/ce-with-event';
 
-import { html } from 'hybrids';
+import {html, define} from 'hybrids';
 
-export const ComponentWithoutChildren = {
+define({
+  tag: 'hybrids-without-children',
   render: () => html`
-    <ce-without-children id="wc"></ce-without-children>
+      <ce-without-children id="ce-without-children"></ce-without-children>
   `,
-};
+});
 
-export const ComponentWithChildren = {
+define({
+  tag: 'hybrids-with-children',
   render: () => html`
-    <ce-with-children id="wc"></ce-with-children>
+      <ce-with-children id="ce-with-children"></ce-with-children>
   `,
-};
+});
 
-export const ComponentWithChildrenCount = {
+define({
+  tag: 'hybrids-with-children-rerender',
   count: 1,
-  render: ({ count }) => html`
-    <ce-with-children id="wc">${count}</ce-with-children>
-  `,
-};
+  render: {
+    value: (host) => html`
+        <ce-with-children id="ce-with-children-rerender">${host.count}</ce-with-children>
+    `,
+    connect(host, key, invalidate) {
+      host.count += 1;
+    }
+  }
+})
 
-export const ComponentWithDifferentViews = {
+define({
+  tag: 'hybrids-with-different-views',
   showWc: true,
-  render: ({ showWc }) => html`
-    ${showWc ? html`<ce-with-children id="wc"></ce-with-children>` : html`<div id="dummy">Dummy view</div>`}
+  render: ({showWc}) => html`
+      <div id="ce-with-different-views">
+          <button onclick="${host => {
+              host.showWc = !host.showWc
+          }}">Toggle views
+          </button>
+          ${showWc ? html`
+              <ce-with-children></ce-with-children>` : html`
+              <div id="dummy">Dummy view</div>`}
+      </div>
   `
-};
+});
 
-export const ComponentWithProperties = {
+define({
+  tag: 'hybrids-with-properties',
   render: () => html`
-    <ce-with-properties 
-      id="wc"
-      bool=${true}
-      num=${42}
-      str=${"hybrids"}
-      arr=${["h", "y", "b", "r", "i", "d", "s"]}
-      obj=${{ library: "hybrids" }},
-      camelCaseObj=${{ label: "passed" }}
-    ></ce-with-properties>
+      <ce-with-properties
+              id="ce-with-properties"
+              bool=${true}
+              num=${42}
+              str=${"custom"}
+              arr=${['c', 'u', 's', 't', 'o', 'm']}
+              obj=${{org: 'webcomponents', repo: 'custom-elements-everywhere'}}
+              camelCaseObj=${{label: "passed"}}
+      ></ce-with-properties>
   `,
-};
+});
 
-export const ComponentWithDeclarativeEvent = {
+
+define({
+  tag: 'hybrids-with-imperative-event',
+  eventHandled: false,
+  render: {
+    value: (host) => html`
+        <div>
+            <div id="ce-with-imperative-event-handled">${host.eventHandled.toString()}</div>
+            <ce-with-event id="ce-with-imperative-event">Imperative</ce-with-event>
+        </div>
+    `,
+    observe(host) {
+      host.querySelector('ce-with-event').addEventListener('camelEvent', () => host.eventHandled = true);
+    }
+  }
+});
+
+
+define({
+  tag: 'hybrids-with-declarative-event',
   lowercaseHandled: false,
   kebabHandled: false,
   camelHandled: false,
   capsHandled: false,
   pascalHandled: false,
-  render: () => html`
-    <ce-with-event
-      id="wc" 
-      onlowercaseevent="${host => {host.lowercaseHandled = true; }}"
-      onkebab-event="${host => {host.kebabHandled = true; }}"
-      oncamelEvent="${host => {host.camelHandled = true; }}"
-      onCAPSevent="${host => {host.capsHandled = true; }}"
-      onPascalEvent="${host => {host.pascalHandled = true; }}"
-    >
-    </ce-with-event>
+  render: (host) => html`
+      <div>
+          <div>lowercase: ${host.lowercaseHandled.toString()}</div>
+          <div>kebab-case: ${host.kebabHandled.toString()}</div>
+          <div>camelCase: ${host.camelHandled.toString()}</div>
+          <div>CAPScase: ${host.capsHandled.toString()}</div>
+          <div>PascalCase: ${host.pascalHandled.toString()}</div>
+          <ce-with-event
+                  id="ce-with-declarative-event"
+                  onlowercaseevent="${host => {
+                      host.lowercaseHandled = true;
+                  }}"
+                  onkebab-event="${host => {
+                      host.kebabHandled = true;
+                  }}"
+                  oncamelEvent="${host => {
+                      host.camelHandled = true;
+                  }}"
+                  onCAPSevent="${host => {
+                      host.capsHandled = true;
+                  }}"
+                  onPascalEvent="${host => {
+                      host.pascalHandled = true;
+                  }}"
+          >Declarative
+          </ce-with-event>
+      </div>
   `
-};
+});

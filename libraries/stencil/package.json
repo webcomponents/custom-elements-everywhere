@@ -1,50 +1,19 @@
 {
   "scripts": {
+    "compile": "wireit",
     "test": "wireit",
     "build": "wireit",
     "build:stencil": "wireit"
   },
   "library_repo": "ionic-team/stencil",
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-loader": "9.2.1",
-    "chai": "4.5.0",
-    "cross-env": "7.0.3",
-    "karma": "6.4.4",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-firefox-launcher": "2.1.3",
-    "karma-sourcemap-loader": "0.4.0",
-    "karma-webpack": "5.0.1",
-    "webpack": "5.101.0"
+    "vite": "^7.2.2"
   },
   "dependencies": {
-    "@stencil/core": "4.36.2"
+    "@stencil/core": "4.36.2",
+    "wc": "workspace:*"
   },
   "wireit": {
-    "test": {
-      "dependencies": [
-        "../..:karma-plugins",
-        "build:stencil"
-      ],
-      "files": [
-        "karma.conf.js",
-        "stencil.config.ts",
-        "tests.webpack.js",
-        "tsconfig.json",
-        "src",
-        "dist",
-        "meta"
-      ],
-      "output": [
-        "results"
-      ],
-      "command": "cross-env LIBRARY_NAME=@stencil/core karma start"
-    },
-    "build": {
-      "dependencies": [
-        "test"
-      ]
-    },
     "build:stencil": {
       "files": [
         "stencil.config.ts",
@@ -52,9 +21,38 @@
         "src"
       ],
       "output": [
-        "dist"
+        "build"
       ],
       "command": "stencil build"
+    },
+    "compile": {
+      "dependencies": ["build:stencil"],
+      "files": [
+        "index.html",
+        "build",
+        "src",
+        "vite.config.js"
+      ],
+      "output": [
+        "dist"
+      ],
+      "command": "vite build"
+    },
+   "test": {
+      "files": ["dist"],
+      "dependencies": [
+        "compile",
+        "../__shared__/tests:test-files"
+      ],
+      "command": "pnpm run --filter tests test",
+      "output": [
+        "results"
+      ]
+    },
+    "build": {
+      "dependencies": [
+        "test"
+      ]
     }
   }
 }

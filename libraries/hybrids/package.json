@@ -1,40 +1,42 @@
 {
   "scripts": {
+    "compile": "wireit",
     "test": "wireit",
     "build": "wireit"
   },
+  "library_package": "hybrids",
   "library_repo": "hybridsjs/hybrids",
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-loader": "9.2.1",
-    "chai": "4.5.0",
-    "copy-webpack-plugin": "11.0.0",
-    "cross-env": "7.0.3",
-    "karma": "6.4.4",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-firefox-launcher": "2.1.3",
-    "karma-sourcemap-loader": "0.4.0",
-    "karma-webpack": "5.0.1",
-    "webpack": "5.101.0"
+    "vite": "^7.2.2"
   },
   "dependencies": {
-    "hybrids": "4.3.4"
+    "hybrids": "9.1.20",
+    "wc": "workspace:*"
   },
   "wireit": {
-    "test": {
-      "dependencies": [
-        "../..:karma-plugins"
-      ],
+    "compile": {
       "files": [
-        "karma.conf.js",
-        "tests.webpack.js",
+        "index.html",
         "src",
-        "meta"
+        "vite.config.js"
       ],
       "output": [
-        "results"
+        "dist"
       ],
-      "command": "cross-env LIBRARY_NAME=hybrids karma start || echo ''"
+      "command": "vite build"
+    },
+    "test": {
+      "files": [
+        "dist"
+      ],
+      "dependencies": [
+        "compile",
+        "../__shared__/tests:test-files"
+      ],
+      "command": "pnpm run --filter tests test",
+      "output": [
+        "results"
+      ]
     },
     "build": {
       "dependencies": [

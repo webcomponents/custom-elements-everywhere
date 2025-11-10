@@ -1,4 +1,4 @@
-<ce-with-children id="wc">{count}</ce-with-children>
+<ce-with-children id="ce-with-children-rerender">{count}</ce-with-children>
 
 <script>
     import { onMount } from 'svelte';

@@ -32,7 +32,7 @@
         "build"
       ]
     },
-    "copy-and-verify-results": {
+    "build-all": {
       "dependencies": [
         "./libraries/angular:build",
         "./libraries/angularjs:build",
@@ -55,6 +55,11 @@
         "./libraries/surplus:build",
         "./libraries/svelte:build",
         "./libraries/vue:build"
+      ]
+    },
+    "copy-and-verify-results": {
+      "dependencies": [
+        "build-all"
       ],
       "output": [
         "docs/libraries"
@@ -74,7 +79,7 @@
     },
     "update-goldens": {
       "dependencies": [
-        "build"
+        "build-all"
       ],
       "command": "node scripts/copy-and-verify-results.mjs --update-goldens"
     },

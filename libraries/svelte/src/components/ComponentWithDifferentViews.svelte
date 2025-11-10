@@ -1,12 +1,16 @@
-{#if showWC}
-    <ce-with-children id="wc"></ce-with-children>
-{:else}
-    <div id="dummy">Dummy view</div>
-{/if}
+<div id="ce-with-different-views">
+    <button on:click={toggle}>Toggle views</button>
+    {#if showWC}
+        <ce-with-children></ce-with-children>
+    {:else}
+        <div>Dummy view</div>
+    {/if}
+</div>
 
 <script>
-    let showWC = true;
-    export function toggle() {
-        showWC = !showWC;
-    }
+  let showWC = true;
+
+  export function toggle() {
+    showWC = !showWC;
+  }
 </script>

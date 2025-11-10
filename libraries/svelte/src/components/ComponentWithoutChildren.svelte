@@ -1,1 +1,1 @@
-<ce-without-children id="wc"></ce-without-children>
+<ce-without-children id="ce-without-children"></ce-without-children>
