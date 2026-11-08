@@ -24,6 +24,7 @@ const libraryMap = {
   angularjs: "AngularJS (1.x)",
   dio: "DIO",
   dojo: "Dojo",
+  ecopages: "Ecopages",
   hybrids: "hybrids",
   hyperapp: "Hyperapp",
   hyperhtml: "hyperHTML",

@@ -29,6 +29,7 @@ npm start
 - [AngularJs](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/angularjs)
 - [Dio](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dio)
 - [Dojo](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/dojo)
+- [Ecopages](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/ecopages)
 - [Hybrids](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hybrids)
 - [Hyperapp](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperapp)
 - [HyperHTML](https://github.com/webcomponents/custom-elements-everywhere/tree/master/libraries/hyperhtml)
